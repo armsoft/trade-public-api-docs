@@ -1,0 +1,152 @@
+type: object
+description: Product row returned by list endpoint
+properties:
+  typeName:
+    type: string
+  groupName:
+    type: string
+  groupPath:
+    type: string
+  labelUnitMeasureAbbreviation:
+    type: string
+  costingMethodName:
+    type: string
+  countryName:
+    type: string
+  producerName:
+    type: string
+  mainSupplierName:
+    type: string
+  substituteItemsGroupName:
+    type: string
+  lastModifierName:
+    type: string
+  lastModifyDate:
+    type: string
+    format: date-time
+    nullable: true
+  creatorName:
+    type: string
+  creationDate:
+    type: string
+    format: date-time
+    nullable: true
+  prices:
+    type: object
+    additionalProperties:
+      type: number
+      format: decimal
+  id:
+    type: integer
+    format: int64
+    example: 100000
+  code:
+    type: string
+    example: "1001"
+  name:
+    type: string
+  fullName:
+    type: string
+  type:
+    type: string
+  cpaClassifier:
+    type: string
+  group:
+    type: string
+  baseUnitMeasure:
+    type: string
+  baseUnitMeasureAbbreviation:
+    type: string
+  alternativeUnitMeasure:
+    type: string
+  alternativeUnitMeasureAbbreviation:
+    type: string
+  barcode:
+    type: string
+  specification:
+    type: string
+  externalCode:
+    type: string
+  costingMethod:
+    type: string
+  vat:
+    type: boolean
+    nullable: true
+  checkMarking:
+    type: boolean
+    nullable: true
+  weight:
+    type: boolean
+    nullable: true
+  showInPriceLists:
+    type: boolean
+    nullable: true
+  environmentalFeePercent:
+    type: number
+    format: decimal
+    nullable: true
+  labelUnitMeasure:
+    type: string
+  labelUnitMeasureCoefficient:
+    type: number
+    format: decimal
+    nullable: true
+  country:
+    type: string
+  producer:
+    type: string
+  property1:
+    type: string
+  property2:
+    type: string
+  minimumQuantity:
+    type: number
+    format: decimal
+    nullable: true
+  maximumQuantity:
+    type: number
+    format: decimal
+    nullable: true
+  addedValuePercent:
+    type: number
+    format: decimal
+    nullable: true
+  aoeCoefficient:
+    type: number
+    format: decimal
+    nullable: true
+  bonusPercent:
+    type: number
+    format: decimal
+    nullable: true
+  bonusPoint:
+    type: number
+    format: decimal
+    nullable: true
+  discountPercent:
+    type: number
+    format: decimal
+    nullable: true
+  mainSupplierId:
+    type: integer
+    format: int32
+    nullable: true
+  substituteItemsGroup:
+    type: string
+  nameEN:
+    type: string
+  nameRU:
+    type: string
+  additionalSpecification1:
+    type: string
+  additionalSpecification2:
+    type: string
+  pluCode:
+    type: integer
+    format: int32
+    nullable: true
+  lastModifiedDate:
+    type: string
+    format: date-time
+    nullable: true
+additionalProperties: true

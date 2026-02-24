@@ -1,0 +1,10 @@
+type: object
+description: Generic API response container
+properties:
+  data:
+    type: array
+    items:
+      type: object
+      additionalProperties: true
+required:
+  - data

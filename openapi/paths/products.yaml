@@ -1,0 +1,395 @@
+/directories/products/list:
+  post:
+    tags: [Products]
+    summary: Get products by filters
+    operationId: Products_GetAll
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../schemas/ProductFilters.yaml
+          examples:
+            default:
+              value:
+                showMode: '3'
+                group: ""
+                type: ""
+                codes:
+                  - "1001"
+                  - "1002"
+                extended: true
+                priceListTypes:
+                  - "01"
+                lastModifiedDate: null
+    responses:
+      '200':
+        description: Products fetched successfully
+        content:
+          application/json:
+            schema:
+              $ref: ../schemas/ApiResponseProductRow.yaml
+            examples:
+              default:
+                value:
+                  data:
+                    - id: 100000
+                      code: "1001"
+                      name: "Հեռուստացույց LED Panasonic TX-LR55ET5"
+                      type: "1"
+                      group: "110"
+                      baseUnitMeasure: "001"
+                      vat: true
+                      showInPriceLists: true
+      '400':
+        $ref: ../../openapi.yaml#/components/responses/BadRequest
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+      '403':
+        $ref: ../../openapi.yaml#/components/responses/Forbidden
+      '405':
+        $ref: ../../openapi.yaml#/components/responses/MethodNotAllowed
+      '429':
+        $ref: ../../openapi.yaml#/components/responses/TooManyRequests
+      '500':
+        $ref: ../../openapi.yaml#/components/responses/InternalError
+      '503':
+        $ref: ../../openapi.yaml#/components/responses/ServiceUnavailable
+
+/directories/products/{code}:
+  get:
+    tags: [Products]
+    summary: Get product by code
+    operationId: Products_Get
+    parameters:
+      - name: code
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Product code
+    responses:
+      '200':
+        description: Product fetched successfully
+        content:
+          application/json:
+            schema:
+              $ref: ../schemas/Product.yaml
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+      '403':
+        $ref: ../../openapi.yaml#/components/responses/Forbidden
+      '404':
+        $ref: ../../openapi.yaml#/components/responses/NotFound
+      '405':
+        $ref: ../../openapi.yaml#/components/responses/MethodNotAllowed
+      '429':
+        $ref: ../../openapi.yaml#/components/responses/TooManyRequests
+      '500':
+        $ref: ../../openapi.yaml#/components/responses/InternalError
+      '503':
+        $ref: ../../openapi.yaml#/components/responses/ServiceUnavailable
+  put:
+    tags: [Products]
+    summary: Update product
+    operationId: Products_Update
+    parameters:
+      - name: code
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Product code
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../schemas/Product.yaml
+    responses:
+      '200':
+        description: Product updated successfully
+        content:
+          application/json:
+            schema:
+              $ref: ../schemas/Product.yaml
+      '400':
+        $ref: ../../openapi.yaml#/components/responses/BadRequest
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+      '403':
+        $ref: ../../openapi.yaml#/components/responses/Forbidden
+      '404':
+        $ref: ../../openapi.yaml#/components/responses/NotFound
+      '405':
+        $ref: ../../openapi.yaml#/components/responses/MethodNotAllowed
+      '409':
+        $ref: ../../openapi.yaml#/components/responses/Conflict
+      '429':
+        $ref: ../../openapi.yaml#/components/responses/TooManyRequests
+      '500':
+        $ref: ../../openapi.yaml#/components/responses/InternalError
+      '503':
+        $ref: ../../openapi.yaml#/components/responses/ServiceUnavailable
+  delete:
+    tags: [Products]
+    summary: Delete product
+    operationId: Products_Delete
+    parameters:
+      - name: code
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Product code
+    responses:
+      '200':
+        description: Product deleted successfully
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+      '403':
+        $ref: ../../openapi.yaml#/components/responses/Forbidden
+      '404':
+        $ref: ../../openapi.yaml#/components/responses/NotFound
+      '405':
+        $ref: ../../openapi.yaml#/components/responses/MethodNotAllowed
+      '409':
+        $ref: ../../openapi.yaml#/components/responses/Conflict
+      '429':
+        $ref: ../../openapi.yaml#/components/responses/TooManyRequests
+      '500':
+        $ref: ../../openapi.yaml#/components/responses/InternalError
+      '503':
+        $ref: ../../openapi.yaml#/components/responses/ServiceUnavailable
+
+/directories/products:
+  post:
+    tags: [Products]
+    summary: Create product
+    operationId: Products_Create
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../schemas/Product.yaml
+    responses:
+      '201':
+        description: Product created successfully
+        content:
+          application/json:
+            schema:
+              $ref: ../schemas/Product.yaml
+      '400':
+        $ref: ../../openapi.yaml#/components/responses/BadRequest
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+      '403':
+        $ref: ../../openapi.yaml#/components/responses/Forbidden
+      '405':
+        $ref: ../../openapi.yaml#/components/responses/MethodNotAllowed
+      '409':
+        $ref: ../../openapi.yaml#/components/responses/Conflict
+      '429':
+        $ref: ../../openapi.yaml#/components/responses/TooManyRequests
+      '500':
+        $ref: ../../openapi.yaml#/components/responses/InternalError
+      '503':
+        $ref: ../../openapi.yaml#/components/responses/ServiceUnavailable
+
+/directories/products/measureunits/list:
+  post:
+    tags: [Measure Units]
+    summary: Get product measure units by filters
+    operationId: ProductsMeasureUnits_GetAll
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../schemas/MeasureUnitFilters.yaml
+          examples:
+            default:
+              value:
+                itemCodes:
+                  - PROD001
+    responses:
+      '200':
+        description: Product measure units fetched successfully
+        content:
+          application/json:
+            schema:
+              $ref: ../schemas/ApiResponseProductMeasureUnit.yaml
+      '400':
+        $ref: ../../openapi.yaml#/components/responses/BadRequest
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+      '403':
+        $ref: ../../openapi.yaml#/components/responses/Forbidden
+      '405':
+        $ref: ../../openapi.yaml#/components/responses/MethodNotAllowed
+      '429':
+        $ref: ../../openapi.yaml#/components/responses/TooManyRequests
+      '500':
+        $ref: ../../openapi.yaml#/components/responses/InternalError
+      '503':
+        $ref: ../../openapi.yaml#/components/responses/ServiceUnavailable
+
+/directories/products/{productCode}/measureunits/{unitCode}:
+  get:
+    tags: [Measure Units]
+    summary: Get product measure unit by product and unit code
+    operationId: ProductsMeasureUnits_Get
+    parameters:
+      - name: productCode
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Product code
+      - name: unitCode
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Measure unit code
+    responses:
+      '200':
+        description: Product measure unit fetched successfully
+        content:
+          application/json:
+            schema:
+              $ref: ../schemas/ProductMeasureUnit.yaml
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+      '403':
+        $ref: ../../openapi.yaml#/components/responses/Forbidden
+      '404':
+        $ref: ../../openapi.yaml#/components/responses/NotFound
+      '405':
+        $ref: ../../openapi.yaml#/components/responses/MethodNotAllowed
+      '429':
+        $ref: ../../openapi.yaml#/components/responses/TooManyRequests
+      '500':
+        $ref: ../../openapi.yaml#/components/responses/InternalError
+      '503':
+        $ref: ../../openapi.yaml#/components/responses/ServiceUnavailable
+  put:
+    tags: [Measure Units]
+    summary: Update product measure unit
+    operationId: ProductsMeasureUnits_Update
+    parameters:
+      - name: productCode
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Product code
+      - name: unitCode
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Measure unit code
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../schemas/ProductMeasureUnit.yaml
+    responses:
+      '200':
+        description: Product measure unit updated successfully
+        content:
+          application/json:
+            schema:
+              $ref: ../schemas/ProductMeasureUnit.yaml
+      '400':
+        $ref: ../../openapi.yaml#/components/responses/BadRequest
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+      '403':
+        $ref: ../../openapi.yaml#/components/responses/Forbidden
+      '404':
+        $ref: ../../openapi.yaml#/components/responses/NotFound
+      '405':
+        $ref: ../../openapi.yaml#/components/responses/MethodNotAllowed
+      '409':
+        $ref: ../../openapi.yaml#/components/responses/Conflict
+      '429':
+        $ref: ../../openapi.yaml#/components/responses/TooManyRequests
+      '500':
+        $ref: ../../openapi.yaml#/components/responses/InternalError
+      '503':
+        $ref: ../../openapi.yaml#/components/responses/ServiceUnavailable
+  delete:
+    tags: [Measure Units]
+    summary: Delete product measure unit
+    operationId: ProductsMeasureUnits_Delete
+    parameters:
+      - name: productCode
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Product code
+      - name: unitCode
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Measure unit code
+    responses:
+      '200':
+        description: Product measure unit deleted successfully
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+      '403':
+        $ref: ../../openapi.yaml#/components/responses/Forbidden
+      '404':
+        $ref: ../../openapi.yaml#/components/responses/NotFound
+      '405':
+        $ref: ../../openapi.yaml#/components/responses/MethodNotAllowed
+      '409':
+        $ref: ../../openapi.yaml#/components/responses/Conflict
+      '429':
+        $ref: ../../openapi.yaml#/components/responses/TooManyRequests
+      '500':
+        $ref: ../../openapi.yaml#/components/responses/InternalError
+      '503':
+        $ref: ../../openapi.yaml#/components/responses/ServiceUnavailable
+
+/directories/products/measureunits:
+  post:
+    tags: [Measure Units]
+    summary: Create product measure unit
+    operationId: ProductsMeasureUnits_Create
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../schemas/ProductMeasureUnit.yaml
+    responses:
+      '201':
+        description: Product measure unit created successfully
+        content:
+          application/json:
+            schema:
+              $ref: ../schemas/ProductMeasureUnit.yaml
+      '400':
+        $ref: ../../openapi.yaml#/components/responses/BadRequest
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+      '403':
+        $ref: ../../openapi.yaml#/components/responses/Forbidden
+      '405':
+        $ref: ../../openapi.yaml#/components/responses/MethodNotAllowed
+      '409':
+        $ref: ../../openapi.yaml#/components/responses/Conflict
+      '429':
+        $ref: ../../openapi.yaml#/components/responses/TooManyRequests
+      '500':
+        $ref: ../../openapi.yaml#/components/responses/InternalError
+      '503':
+        $ref: ../../openapi.yaml#/components/responses/ServiceUnavailable

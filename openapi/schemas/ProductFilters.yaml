@@ -1,0 +1,37 @@
+type: object
+properties:
+  showMode:
+    type: string
+    description: Product visibility mode. `1` = only in price list, `2` = only not in price list, `3` = all.
+    enum: ['1', '2', '3']
+    example: '3'
+  group:
+    type: string
+    nullable: true
+    description: Product group filter (maps to `filters.Group`)
+  type:
+    type: string
+    nullable: true
+    description: Item type filter. `1` = products, `2` = services.
+    enum: ['1', '2']
+  codes:
+    type: array
+    items:
+      type: string
+    description: Product code filter list (maps to `filters.Codes`)
+  extended:
+    type: boolean
+    description: Include extended fields (maps to `filters.Extended`)
+    default: false
+  priceListTypes:
+    type: array
+    items:
+      type: string
+    description: Price list type code list (maps to `filters.PriceListTypes`)
+  lastModifiedDate:
+    type: string
+    format: date-time
+    nullable: true
+    description: Return records changed after this timestamp
+required:
+  - showMode

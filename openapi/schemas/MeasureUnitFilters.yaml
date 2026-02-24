@@ -1,0 +1,8 @@
+type: object
+properties:
+  itemCodes:
+    type: array
+    items:
+      type: string
+    description: Filter by product codes (maps to `filters.ItemCodes`)
+    example: ["1001", "1002"]

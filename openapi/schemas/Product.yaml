@@ -1,0 +1,148 @@
+type: object
+description: Product DTO used for create, update, and get operations
+properties:
+  id:
+    type: integer
+    format: int64
+    example: 100000
+  code:
+    type: string
+    example: "1001"
+  name:
+    type: string
+    example: "Հեռուստացույց LED Panasonic TX-LR55ET5"
+  fullName:
+    type: string
+  type:
+    type: string
+    description: "1 = Products, 2 = Services"
+  cpaClassifier:
+    type: string
+  group:
+    type: string
+  baseUnitMeasure:
+    type: string
+  baseUnitMeasureAbbreviation:
+    type: string
+  alternativeUnitMeasure:
+    type: string
+  alternativeUnitMeasureAbbreviation:
+    type: string
+  barcode:
+    type: string
+  specification:
+    type: string
+  externalCode:
+    type: string
+  costingMethod:
+    type: string
+  vat:
+    type: boolean
+    nullable: true
+  checkMarking:
+    type: boolean
+    nullable: true
+  weight:
+    type: boolean
+    nullable: true
+  pluCode:
+    type: integer
+    format: int32
+    nullable: true
+  showInPriceLists:
+    type: boolean
+    nullable: true
+  environmentalFeePercent:
+    type: number
+    format: decimal
+    nullable: true
+  labelUnitMeasure:
+    type: string
+  labelUnitMeasureCoefficient:
+    type: number
+    format: decimal
+    nullable: true
+  country:
+    type: string
+  producer:
+    type: string
+  property1:
+    type: string
+  property2:
+    type: string
+  minimumQuantity:
+    type: number
+    format: decimal
+    nullable: true
+  maximumQuantity:
+    type: number
+    format: decimal
+    nullable: true
+  addedValuePercent:
+    type: number
+    format: decimal
+    nullable: true
+  aoeCoefficient:
+    type: number
+    format: decimal
+    nullable: true
+  bonusPercent:
+    type: number
+    format: decimal
+    nullable: true
+  bonusPoint:
+    type: number
+    format: decimal
+    nullable: true
+  discountPercent:
+    type: number
+    format: decimal
+    nullable: true
+  mainSupplierId:
+    type: integer
+    format: int32
+    nullable: true
+  substituteItemsGroup:
+    type: string
+  nameEN:
+    type: string
+  nameRU:
+    type: string
+  additionalSpecification1:
+    type: string
+  additionalSpecification2:
+    type: string
+  baseUnitMeasureName:
+    type: string
+  alternativeUnitMeasureName:
+    type: string
+  mainSupplierCode:
+    type: string
+  measureUnits:
+    type: array
+    items:
+      type: object
+      properties:
+        default:
+          type: boolean
+          nullable: true
+        coefficient:
+          type: number
+          format: decimal
+          nullable: true
+        code:
+          type: string
+        abbreviation:
+          type: string
+  barcodes:
+    type: array
+    items:
+      type: object
+      properties:
+        unitMeasure:
+          type: string
+        abbreviation:
+          type: string
+        barcode:
+          type: string
+additionalProperties: true

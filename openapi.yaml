@@ -1,0 +1,192 @@
+openapi: 3.0.3
+info:
+  title: ArmSoft SME Trade Public API
+  description: REST API for managing products, partners, inventory, and more in the ArmSoft SME Trade system
+  version: 1
+  contact:
+    name: ArmSoft Support
+    email: support@armsoft.am
+    url: https://armsoft.am
+
+security:
+  - apiKeyAuth: []
+
+tags:
+  - name: Products
+    description: Product management endpoints
+  - name: Measure Units
+    description: Product measurement units
+
+paths:
+  $ref: ./openapi/paths/products.yaml
+
+components:
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: apiKey
+      description: API key required in `apiKey` header
+
+  schemas:
+    Product:
+      $ref: ./openapi/schemas/Product.yaml
+    ProductRow:
+      $ref: ./openapi/schemas/ProductRow.yaml
+    ProductMeasureUnit:
+      $ref: ./openapi/schemas/ProductMeasureUnit.yaml
+    ProductFilters:
+      $ref: ./openapi/schemas/ProductFilters.yaml
+    MeasureUnitFilters:
+      $ref: ./openapi/schemas/MeasureUnitFilters.yaml
+    ApiResponse:
+      $ref: ./openapi/schemas/ApiResponse.yaml
+    ApiResponseProductRow:
+      $ref: ./openapi/schemas/ApiResponseProductRow.yaml
+    ApiResponseProductMeasureUnit:
+      $ref: ./openapi/schemas/ApiResponseProductMeasureUnit.yaml
+
+  responses:
+    BadRequest:
+      description: Bad Request - Invalid parameters or validation failure
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+              title:
+                type: string
+              status:
+                type: integer
+              detail:
+                type: string
+
+    Unauthorized:
+      description: Unauthorized - Missing or invalid API key
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+              title:
+                type: string
+              status:
+                type: integer
+              detail:
+                type: string
+
+    Forbidden:
+      description: Forbidden - Insufficient permissions
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+              title:
+                type: string
+              status:
+                type: integer
+              detail:
+                type: string
+
+    MethodNotAllowed:
+      description: Method Not Allowed
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+              title:
+                type: string
+              status:
+                type: integer
+              detail:
+                type: string
+
+    NotFound:
+      description: Not Found - Resource doesn't exist
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+              title:
+                type: string
+              status:
+                type: integer
+              detail:
+                type: string
+
+    Conflict:
+      description: Conflict - Resource conflict (e.g., duplicate code)
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+              title:
+                type: string
+              status:
+                type: integer
+              detail:
+                type: string
+
+    InternalError:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+              title:
+                type: string
+              status:
+                type: integer
+              detail:
+                type: string
+
+    TooManyRequests:
+      description: Too Many Requests - Rate limit exceeded
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+              title:
+                type: string
+              status:
+                type: integer
+              detail:
+                type: string
+
+    ServiceUnavailable:
+      description: Service Unavailable
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+              title:
+                type: string
+              status:
+                type: integer
+              detail:
+                type: string
