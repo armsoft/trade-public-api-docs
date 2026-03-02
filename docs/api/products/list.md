@@ -195,7 +195,7 @@ curl -X POST "https://api.armsoft.am/trade/v1/directories/products/list" \
   -H "Content-Type: application/json" \
   -d '{
     "showMode": "3",
-    "pageSize": 10
+    "pageSize": 5000
   }'
 ```
 
@@ -213,4 +213,4 @@ curl -X POST "https://api.armsoft.am/trade/v1/directories/products/list/nextpage
   }'
 ```
 
-When `hasMore` is `false` in the response, all products have been retrieved. To stop pagination before reaching the end, send a request with `"close": true`.
+When `hasMore` is `false` in the response, all rows have been retrieved. To stop pagination before reaching the end, send a request with `"close": true`.

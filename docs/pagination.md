@@ -69,15 +69,15 @@ Content-Type: application/json
 
 ```json
 {
-        "id": "550e8400-e29b-41d4-a716-446655440001",
-        "hasMore": true,
-        "data": [
-          {
+    "id": "550e8400-e29b-41d4-a716-446655440001",
+    "hasMore": true,
+    "data": [
+        {
             "id": 100001,
             "code": "PROD001",
             "name": "Product 1"
-          }
-        ]
+        }
+    ]
 }
 ```
 
@@ -97,21 +97,15 @@ Content-Type: application/json
 
 ```json
 {
-  "data": [
-    {
-      "id": "550e8400-e29b-41d4-a716-446655440010",
-      "hasMore": true,
-      "code": "PROD011",
-      "name": "Product 11"
-    },
-    {
-      "id": "550e8400-e29b-41d4-a716-446655440011",
-      "hasMore": false,
-      "code": "PROD012",
-      "name": "Product 12"
-    }
-    // ... more items (10 total)
-  ]
+    "id": "550e8400-e29b-41d4-a716-446655440001",
+    "hasMore": true,
+    "data": [
+        {
+        "id": 100011,
+        "code": "PROD011",
+        "name": "Product 11"
+        }
+    ]
 }
 ```
 
@@ -133,7 +127,7 @@ Content-Type: application/json
 
 This signals the server to release the pagination context and stop maintaining state for this pagination session.
 
-## Best Practices
+## Best Practicesgit status
 
 - **Always check `hasMore`**: Before making a `/nextpage` request, verify that `hasMore` is `true`
 - **Store the pagination ID**: Keep the `id` value from the response to use in subsequent requests
@@ -143,10 +137,15 @@ This signals the server to release the pagination context and stop maintaining s
 
 ## Supported Endpoints
 
-Pagination is supported on all `/list` endpoints, including:
+Pagination is supported on these calls:
 
 - `POST /v1/directories/products/list`
-- `POST /v1/reports/journals/{journalName}/list`
+- `POST /v1/directories/products/measureunits/list`
+- `POST /v1/directories/barcodes/list`
+- `POST /v1/directories/partners/list`
+- `POST /v1/directories/partners/contracts/list`
+- `POST /v1/reports/journals/{journalName}`
+- `POST /v1/reports/reports/{reportName}`
 - Other directory and report list endpoints
 
 Consult the specific endpoint documentation for details on available filters and response properties.
