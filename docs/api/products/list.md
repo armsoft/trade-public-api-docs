@@ -22,7 +22,8 @@ Returns a list of products using complex filters.
   "codes": [""],
   "extended": true,
   "priceListTypes": ["01"],
-  "lastModifiedDate": null
+  "lastModifiedDate": null,
+  "pageSize": 5000
 }
 ```
 
@@ -40,6 +41,10 @@ Returns a list of products using complex filters.
 - `extended` shows extended information when `true`.
 - `priceListTypes` includes prices by provided price list type codes (example: `"01"`, `"02"`).
 - `lastModifiedDate` filters by last modification date when provided (example: `"2026-01-01T00:00:00Z"`).
+- `pageSize` (optional) controls pagination:
+  - `0` or omitted - Returns all products in a single response
+  - `> 0` - Returns specified number of products per page; use pagination to access additional pages
+  - See [Pagination](../../pagination.md) for detailed pagination workflow
 
 ## Successful response
 
@@ -50,6 +55,8 @@ Returns a list of products using complex filters.
 
 ```json
 {
+  "id": "550e8400-e29b-41d4-a716-446655440000",
+  "hasMore": true,
   "data": [
     {
       "typeName": "Ապրանք",
@@ -171,3 +178,39 @@ curl -X POST "https://api.armsoft.am/trade/v1/directories/products/list" \
   -H "Content-Type: application/json" \
   -d '{ "showMode": "3" }'
 ```
+
+## Pagination
+
+This endpoint supports pagination through the `pageSize` parameter. See [Pagination](../../pagination.md) for complete documentation on handling paginated responses.
+
+### Pagination example
+
+**Request (Page 1 with pageSize=10):**
+
+```bash
+curl -X POST "https://api.armsoft.am/trade/v1/directories/products/list" \
+  -H "accept: application/json" \
+  -H "Accept-Language: hy-AM" \
+  -H "apiKey: YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "showMode": "3",
+    "pageSize": 10
+  }'
+```
+
+**Request (Subsequent Page):**
+
+```bash
+curl -X POST "https://api.armsoft.am/trade/v1/directories/products/list/nextpage" \
+  -H "accept: application/json" \
+  -H "Accept-Language: hy-AM" \
+  -H "apiKey: YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "id": "550e8400-e29b-41d4-a716-446655440000",
+    "close": false
+  }'
+```
+
+When `hasMore` is `false` in the response, all products have been retrieved. To stop pagination before reaching the end, send a request with `"close": true`.

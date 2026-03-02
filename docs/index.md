@@ -7,6 +7,7 @@ Complete documentation for the ArmSoft SME Trade Public API.
 - [Getting Started](getting-started.md)
 - [Authentication](authentication.md)
 - [Error Handling](error-handling.md)
+- [Pagination](pagination.md)
 
 ## API Reference
 
