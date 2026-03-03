@@ -1,5 +1,12 @@
 type: object
 properties:
+  id:
+    type: string
+    format: uuid
+    description: Pagination context identifier (returned when `pageSize` not 0).
+  hasMore:
+    type: boolean
+    description: Indicates if additional pages are available.
   data:
     type: array
     items:

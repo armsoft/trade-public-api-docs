@@ -22,6 +22,7 @@
                 priceListTypes:
                   - "01"
                 lastModifiedDate: null
+                pageSize: 5000
     responses:
       '200':
         description: Products fetched successfully
@@ -32,6 +33,8 @@
             examples:
               default:
                 value:
+                  id: "550e8400-e29b-41d4-a716-446655440000"
+                  hasMore: true
                   data:
                     - id: 100000
                       code: "1001"
@@ -213,6 +216,7 @@
               value:
                 itemCodes:
                   - PROD001
+                pageSize: 5000
     responses:
       '200':
         description: Product measure units fetched successfully

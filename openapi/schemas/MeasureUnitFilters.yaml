@@ -6,3 +6,12 @@ properties:
       type: string
     description: Filter by product codes (maps to `filters.ItemCodes`)
     example: ["1001", "1002"]
+  pageSize:
+    type: integer
+    format: int32
+    minimum: 0
+    description: |
+      Number of rows to return per request. If omitted or set to `0`, all rows are
+      returned in a single response. When greater than zero, minimum value can be 5000 the response will include
+      pagination metadata (`id` and `hasMore`).
+    example: 5000
