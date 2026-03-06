@@ -6,7 +6,7 @@ Updates a product by code.
 
 ## Endpoint
 
-- **Base URL:** `https://api.armsoft.am/trade`
+- **Base URL:** `https://api.armsoft.am/trade/v1`
 - **Method:** `PUT`
 - **Route:** `/v1/directories/products/{code}`
 - **Request content type:** `application/json`

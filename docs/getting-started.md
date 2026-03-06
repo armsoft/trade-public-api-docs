@@ -14,24 +14,28 @@ This guide will help you make your first API call in under 5 minutes.
 
 Test your API key with a simple request:
 
-curl -X POST "https://api.armsoft.am/trade/v1/directories/products/list" 
--H "apiKey: your-api-key-here" 
--H "Accept-Language: en-US" 
--H "Content-Type: application/json" 
--d '{"showMode": "3"}'
-
+```bash
+curl -X POST "https://api.armsoft.am/trade/v1/directories/products/list" \
+  -H "apiKey: your-api-key-here" \
+  -H "Accept-Language: en-US" \
+  -H "Content-Type: application/json" \
+  -d '{"showMode": "3"}'
+```
 
 **Expected Response:**
-{ 
-    "id": 12345, 
-    "code": "PROD001", 
-    "name": "Sample Product", 
-    "baseUnitMeasure": "PCS", 
-    "vat": true, 
-    "showInPriceLists": true 
+
+```json
+{
+    "id": 12345,
+    "code": "PROD001",
+    "name": "Sample Product",
+    "baseUnitMeasure": "PCS",
+    "vat": true,
+    "showInPriceLists": true
 }
+```
 
 ## Next Steps
 
 - Read the endpoint docs: [Products API](api/products/README.md)
-- Import the OpenAPI file into Postman/Insomnia: [openapi.yaml](../openapi.yaml)
+- Import the OpenAPI file into Postman/Insomnia: [openapi/openapi.yaml](../openapi/openapi.yaml)

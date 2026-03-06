@@ -6,7 +6,7 @@ Returns a list of products using complex filters.
 
 ## Endpoint
 
-- **Base URL:** `https://api.armsoft.am/trade`
+- **Base URL:** `https://api.armsoft.am/trade/v1`
 - **Method:** `POST`
 - **Route:** `/v1/directories/products/list`
 - **Request content type:** `application/json`

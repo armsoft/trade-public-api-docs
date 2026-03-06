@@ -1,0 +1,123 @@
+/directories/products/{productCode}/measureunits/{unitCode}:
+  get:
+    tags: [Measure Units]
+    summary: Get product measure unit by product and unit code
+    operationId: ProductsMeasureUnits_Get
+    parameters:
+      - name: productCode
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Product code
+      - name: unitCode
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Measure unit code
+    responses:
+      '200':
+        description: Product measure unit fetched successfully
+        content:
+          application/json:
+            schema:
+              $ref: ../../components/schemas/directories/ProductMeasureUnit.yaml
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+      '403':
+        $ref: ../../openapi.yaml#/components/responses/Forbidden
+      '404':
+        $ref: ../../openapi.yaml#/components/responses/NotFound
+      '405':
+        $ref: ../../openapi.yaml#/components/responses/MethodNotAllowed
+      '429':
+        $ref: ../../openapi.yaml#/components/responses/TooManyRequests
+      '500':
+        $ref: ../../openapi.yaml#/components/responses/InternalError
+      '503':
+        $ref: ../../openapi.yaml#/components/responses/ServiceUnavailable
+  put:
+    tags: [Measure Units]
+    summary: Update product measure unit
+    operationId: ProductsMeasureUnits_Update
+    parameters:
+      - name: productCode
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Product code
+      - name: unitCode
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Measure unit code
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/directories/ProductMeasureUnit.yaml
+    responses:
+      '200':
+        description: Product measure unit updated successfully
+        content:
+          application/json:
+            schema:
+              $ref: ../../components/schemas/directories/ProductMeasureUnit.yaml
+      '400':
+        $ref: ../../openapi.yaml#/components/responses/BadRequest
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+      '403':
+        $ref: ../../openapi.yaml#/components/responses/Forbidden
+      '404':
+        $ref: ../../openapi.yaml#/components/responses/NotFound
+      '405':
+        $ref: ../../openapi.yaml#/components/responses/MethodNotAllowed
+      '409':
+        $ref: ../../openapi.yaml#/components/responses/Conflict
+      '429':
+        $ref: ../../openapi.yaml#/components/responses/TooManyRequests
+      '500':
+        $ref: ../../openapi.yaml#/components/responses/InternalError
+      '503':
+        $ref: ../../openapi.yaml#/components/responses/ServiceUnavailable
+  delete:
+    tags: [Measure Units]
+    summary: Delete product measure unit
+    operationId: ProductsMeasureUnits_Delete
+    parameters:
+      - name: productCode
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Product code
+      - name: unitCode
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Measure unit code
+    responses:
+      '200':
+        description: Product measure unit deleted successfully
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+      '403':
+        $ref: ../../openapi.yaml#/components/responses/Forbidden
+      '404':
+        $ref: ../../openapi.yaml#/components/responses/NotFound
+      '405':
+        $ref: ../../openapi.yaml#/components/responses/MethodNotAllowed
+      '409':
+        $ref: ../../openapi.yaml#/components/responses/Conflict
+      '429':
+        $ref: ../../openapi.yaml#/components/responses/TooManyRequests
+      '500':
+        $ref: ../../openapi.yaml#/components/responses/InternalError
+      '503':
+        $ref: ../../openapi.yaml#/components/responses/ServiceUnavailable

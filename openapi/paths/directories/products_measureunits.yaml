@@ -1,0 +1,106 @@
+/directories/products/measureunits/list:
+  post:
+    tags: [Measure Units]
+    summary: Get product measure units by filters
+    operationId: ProductsMeasureUnits_GetAll
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/directories/MeasureUnitFilters.yaml
+          examples:
+            default:
+              value:
+                itemCodes:
+                  - PROD001
+                pageSize: 5000
+    responses:
+      '200':
+        description: Product measure units fetched successfully
+        content:
+          application/json:
+            schema:
+              $ref: ../../components/schemas/directories/ProductMeasureUnitApiResponse.yaml
+      '400':
+        $ref: ../../openapi.yaml#/components/responses/BadRequest
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+      '403':
+        $ref: ../../openapi.yaml#/components/responses/Forbidden
+      '405':
+        $ref: ../../openapi.yaml#/components/responses/MethodNotAllowed
+      '429':
+        $ref: ../../openapi.yaml#/components/responses/TooManyRequests
+      '500':
+        $ref: ../../openapi.yaml#/components/responses/InternalError
+      '503':
+        $ref: ../../openapi.yaml#/components/responses/ServiceUnavailable
+
+/directories/products/measureunits/list/nextpage:
+  post:
+    tags: [Measure Units]
+    summary: Get next page of product measure units
+    operationId: ProductsMeasureUnits_GetAllNextPage
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/_shared/NextPageRequest.yaml
+    responses:
+      '200':
+        description: Next page of product measure units fetched successfully
+        content:
+          application/json:
+            schema:
+              $ref: ../../components/schemas/directories/ProductMeasureUnitApiResponse.yaml
+      '400':
+        $ref: ../../openapi.yaml#/components/responses/BadRequest
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+      '403':
+        $ref: ../../openapi.yaml#/components/responses/Forbidden
+      '405':
+        $ref: ../../openapi.yaml#/components/responses/MethodNotAllowed
+      '429':
+        $ref: ../../openapi.yaml#/components/responses/TooManyRequests
+      '500':
+        $ref: ../../openapi.yaml#/components/responses/InternalError
+      '503':
+        $ref: ../../openapi.yaml#/components/responses/ServiceUnavailable
+
+/directories/products/measureunits:
+  post:
+    tags: [Measure Units]
+    summary: Create product measure unit
+    operationId: ProductsMeasureUnits_Create
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/directories/ProductMeasureUnit.yaml
+    responses:
+      '201':
+        description: Product measure unit created successfully
+        content:
+          application/json:
+            schema:
+              $ref: ../../components/schemas/directories/ProductMeasureUnit.yaml
+      '400':
+        $ref: ../../openapi.yaml#/components/responses/BadRequest
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+      '403':
+        $ref: ../../openapi.yaml#/components/responses/Forbidden
+      '405':
+        $ref: ../../openapi.yaml#/components/responses/MethodNotAllowed
+      '409':
+        $ref: ../../openapi.yaml#/components/responses/Conflict
+      '429':
+        $ref: ../../openapi.yaml#/components/responses/TooManyRequests
+      '500':
+        $ref: ../../openapi.yaml#/components/responses/InternalError
+      '503':
+        $ref: ../../openapi.yaml#/components/responses/ServiceUnavailable

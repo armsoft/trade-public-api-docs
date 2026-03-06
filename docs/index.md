@@ -22,4 +22,4 @@ Complete documentation for the ArmSoft SME Trade Public API.
 
 ## OpenAPI
 
-- [OpenAPI 3.0 Spec](../openapi.yaml)
+- [OpenAPI 3.0 Spec](../openapi/openapi.yaml)

@@ -6,7 +6,7 @@ Deletes a product by code.
 
 ## Endpoint
 
-- **Base URL:** `https://api.armsoft.am/trade`
+- **Base URL:** `https://api.armsoft.am/trade/v1`
 - **Method:** `DELETE`
 - **Route:** `/v1/directories/products/{code}`
 - **Authorization:** API key in header `apiKey`

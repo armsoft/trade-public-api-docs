@@ -2,11 +2,15 @@ openapi: 3.0.3
 info:
   title: ArmSoft SME Trade Public API
   description: REST API for managing products, partners, inventory, and more in the ArmSoft SME Trade system
-  version: 1
+  version: "1"
   contact:
     name: ArmSoft Support
     email: support@armsoft.am
     url: https://armsoft.am
+
+servers:
+  - url: https://api.armsoft.am/trade/v1
+    description: Production
 
 security:
   - apiKeyAuth: []
@@ -18,33 +22,51 @@ tags:
     description: Product measurement units
 
 paths:
-  $ref: ./openapi/paths/products.yaml
+  /directories/products/list:
+    $ref: ./paths/directories/products.yaml#/~1directories~1products~1list
+  /directories/products/list/nextpage:
+    $ref: ./paths/directories/products.yaml#/~1directories~1products~1list~1nextpage
+  /directories/products:
+    $ref: ./paths/directories/products.yaml#/~1directories~1products
+  /directories/products/{code}:
+    $ref: ./paths/directories/products_{code}.yaml#/~1directories~1products~1{code}
+  /directories/products/measureunits/list:
+    $ref: ./paths/directories/products_measureunits.yaml#/~1directories~1products~1measureunits~1list
+  /directories/products/measureunits/list/nextpage:
+    $ref: ./paths/directories/products_measureunits.yaml#/~1directories~1products~1measureunits~1list~1nextpage
+  /directories/products/measureunits:
+    $ref: ./paths/directories/products_measureunits.yaml#/~1directories~1products~1measureunits
+  /directories/products/{productCode}/measureunits/{unitCode}:
+    $ref: ./paths/directories/products_{code}_measureunits_{unitCode}.yaml#/~1directories~1products~1{productCode}~1measureunits~1{unitCode}
 
 components:
   securitySchemes:
     apiKeyAuth:
-      type: apiKey
-      in: header
-      name: apiKey
-      description: API key required in `apiKey` header
+      $ref: ./components/securitySchemes/api-key.yaml
 
   schemas:
-    Product:
-      $ref: ./openapi/schemas/Product.yaml
-    ProductRow:
-      $ref: ./openapi/schemas/ProductRow.yaml
-    ProductMeasureUnit:
-      $ref: ./openapi/schemas/ProductMeasureUnit.yaml
-    ProductFilters:
-      $ref: ./openapi/schemas/ProductFilters.yaml
-    MeasureUnitFilters:
-      $ref: ./openapi/schemas/MeasureUnitFilters.yaml
+    # Shared
     ApiResponse:
-      $ref: ./openapi/schemas/ApiResponse.yaml
-    ApiResponseProductRow:
-      $ref: ./openapi/schemas/ApiResponseProductRow.yaml
-    ApiResponseProductMeasureUnit:
-      $ref: ./openapi/schemas/ApiResponseProductMeasureUnit.yaml
+      $ref: ./components/schemas/_shared/ApiResponse.yaml
+    NextPageRequest:
+      $ref: ./components/schemas/_shared/NextPageRequest.yaml
+    Error:
+      $ref: ./components/schemas/_shared/Error.yaml
+    # Directories — Products
+    Product:
+      $ref: ./components/schemas/directories/Product.yaml
+    ProductRow:
+      $ref: ./components/schemas/directories/ProductRow.yaml
+    ProductRowApiResponse:
+      $ref: ./components/schemas/directories/ProductRowApiResponse.yaml
+    ProductFilters:
+      $ref: ./components/schemas/directories/ProductFilters.yaml
+    ProductMeasureUnit:
+      $ref: ./components/schemas/directories/ProductMeasureUnit.yaml
+    ProductMeasureUnitApiResponse:
+      $ref: ./components/schemas/directories/ProductMeasureUnitApiResponse.yaml
+    MeasureUnitFilters:
+      $ref: ./components/schemas/directories/MeasureUnitFilters.yaml
 
   responses:
     BadRequest:

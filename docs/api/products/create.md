@@ -6,7 +6,7 @@ Creates a product.
 
 ## Endpoint
 
-- **Base URL:** `https://api.armsoft.am/trade`
+- **Base URL:** `https://api.armsoft.am/trade/v1`
 - **Method:** `POST`
 - **Route:** `/v1/directories/products`
 - **Request content type:** `application/json`

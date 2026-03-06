@@ -6,7 +6,7 @@ Returns one product by product code.
 
 ## Endpoint
 
-- **Base URL:** `https://api.armsoft.am/trade`
+- **Base URL:** `https://api.armsoft.am/trade/v1`
 - **Method:** `GET`
 - **Route:** `/v1/directories/products/{code}`
 - **Authorization:** API key in header `apiKey`

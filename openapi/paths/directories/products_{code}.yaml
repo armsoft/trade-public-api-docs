@@ -1,0 +1,105 @@
+/directories/products/{code}:
+  get:
+    tags: [Products]
+    summary: Get product by code
+    operationId: Products_Get
+    parameters:
+      - name: code
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Product code
+    responses:
+      '200':
+        description: Product fetched successfully
+        content:
+          application/json:
+            schema:
+              $ref: ../../components/schemas/directories/Product.yaml
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+      '403':
+        $ref: ../../openapi.yaml#/components/responses/Forbidden
+      '404':
+        $ref: ../../openapi.yaml#/components/responses/NotFound
+      '405':
+        $ref: ../../openapi.yaml#/components/responses/MethodNotAllowed
+      '429':
+        $ref: ../../openapi.yaml#/components/responses/TooManyRequests
+      '500':
+        $ref: ../../openapi.yaml#/components/responses/InternalError
+      '503':
+        $ref: ../../openapi.yaml#/components/responses/ServiceUnavailable
+  put:
+    tags: [Products]
+    summary: Update product
+    operationId: Products_Update
+    parameters:
+      - name: code
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Product code
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/directories/Product.yaml
+    responses:
+      '200':
+        description: Product updated successfully
+        content:
+          application/json:
+            schema:
+              $ref: ../../components/schemas/directories/Product.yaml
+      '400':
+        $ref: ../../openapi.yaml#/components/responses/BadRequest
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+      '403':
+        $ref: ../../openapi.yaml#/components/responses/Forbidden
+      '404':
+        $ref: ../../openapi.yaml#/components/responses/NotFound
+      '405':
+        $ref: ../../openapi.yaml#/components/responses/MethodNotAllowed
+      '409':
+        $ref: ../../openapi.yaml#/components/responses/Conflict
+      '429':
+        $ref: ../../openapi.yaml#/components/responses/TooManyRequests
+      '500':
+        $ref: ../../openapi.yaml#/components/responses/InternalError
+      '503':
+        $ref: ../../openapi.yaml#/components/responses/ServiceUnavailable
+  delete:
+    tags: [Products]
+    summary: Delete product
+    operationId: Products_Delete
+    parameters:
+      - name: code
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Product code
+    responses:
+      '200':
+        description: Product deleted successfully
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+      '403':
+        $ref: ../../openapi.yaml#/components/responses/Forbidden
+      '404':
+        $ref: ../../openapi.yaml#/components/responses/NotFound
+      '405':
+        $ref: ../../openapi.yaml#/components/responses/MethodNotAllowed
+      '409':
+        $ref: ../../openapi.yaml#/components/responses/Conflict
+      '429':
+        $ref: ../../openapi.yaml#/components/responses/TooManyRequests
+      '500':
+        $ref: ../../openapi.yaml#/components/responses/InternalError
+      '503':
+        $ref: ../../openapi.yaml#/components/responses/ServiceUnavailable

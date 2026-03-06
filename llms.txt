@@ -1,24 +1,68 @@
 # ArmSoft SME Trade Public API Docs
 
+> REST API for managing trade operations (products, partners, inventory, documents) in the ArmSoft SME Trade ERP system.
+> Base URL: https://api.armsoft.am/trade/v1
+> Authentication: API Key via `apiKey` request header
+> Languages: Armenian (hy-AM), English (en-US), Russian (ru-RU)
+
 ## Canonical Docs
 - README: ./README.md
+- Full inline reference (for LLMs): ./llms-full.txt
 - Docs index: ./docs/index.md
+- Getting Started: ./docs/getting-started.md
+- Authentication: ./docs/authentication.md
+- Error Handling: ./docs/error-handling.md
+- Pagination: ./docs/pagination.md
+- Localization: ./docs/localization.md
 - API reference: ./docs/api/README.md
 - Products API: ./docs/api/products/README.md
-- OpenAPI spec: ./openapi.yaml
+- List Products: ./docs/api/products/list.md
+- Get Product: ./docs/api/products/get.md
+- Create Product: ./docs/api/products/create.md
+- Update Product: ./docs/api/products/update.md
+- Delete Product: ./docs/api/products/delete.md
+- Product Measure Units: ./docs/api/products/measure-units.md
+- Changelog: ./CHANGELOG.md
+
+## OpenAPI Specs
+- Full spec (auto-generated, all endpoints): ./swagger.json
+- Curated spec (products & measure units): ./openapi/openapi.yaml
+- Source OpenAPI (modular YAML): ./openapi/openapi.yaml
 
 ## Authentication
 - Header: `apiKey`
 - Optional locale header: `Accept-Language` (`hy-AM`, `en-US`, `ru-RU`)
+- Full Access keys: complete CRUD on all resources
+- Limited Access keys: read-only product catalog + sale document creation (online store use case)
 
 ## Endpoints (v1)
-- POST /api/v1/directories/products/list
-- GET /api/v1/directories/products/{code}
-- POST /api/v1/directories/products
-- PUT /api/v1/directories/products/{code}
-- DELETE /api/v1/directories/products/{code}
-- POST /api/v1/directories/products/measureunits/list
-- GET /api/v1/directories/products/{productCode}/measureunits/{unitCode}
-- POST /api/v1/directories/products/measureunits
-- PUT /api/v1/directories/products/{productCode}/measureunits/{unitCode}
-- DELETE /api/v1/directories/products/{productCode}/measureunits/{unitCode}
+
+### Products
+- POST /trade/v1/directories/products/list
+- POST /trade/v1/directories/products/list/nextpage
+- GET /trade/v1/directories/products/{code}
+- POST /trade/v1/directories/products
+- PUT /trade/v1/directories/products/{code}
+- DELETE /trade/v1/directories/products/{code}
+
+### Product Measure Units
+- POST /trade/v1/directories/products/measureunits/list
+- POST /trade/v1/directories/products/measureunits/list/nextpage
+- GET /trade/v1/directories/products/{productCode}/measureunits/{unitCode}
+- POST /trade/v1/directories/products/measureunits
+- PUT /trade/v1/directories/products/{productCode}/measureunits/{unitCode}
+- DELETE /trade/v1/directories/products/{productCode}/measureunits/{unitCode}
+
+## Pagination
+- Controlled via `pageSize` in request body (0 = all rows)
+- Minimum page size: 5000 rows
+- Responses include `id` (UUID) and `hasMore` fields
+- Fetch next page: POST to `/list/nextpage` with `{ "id": "...", "close": false }`
+- Close context early: POST with `{ "id": "...", "close": true }`
+
+## Key Concepts
+- Products have a `code` (string identifier), `name`, `baseUnitMeasure`, `vat` (boolean), `showInPriceLists` (boolean)
+- Measure units are linked to products via `productCode` + `unitCode`
+- All list endpoints support filtering and pagination
+- Error responses: `{ "message": "...", "fieldName": "...", "errorCode": "..." }`
+- Swagger UI: https://api.armsoft.am/trade/swagger/index.html
