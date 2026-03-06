@@ -1,0 +1,24 @@
+﻿type: object
+properties:
+  code:
+    type: string
+    nullable: true
+  itemId:
+    type: integer
+    format: int32
+  itemCode:
+    type: string
+    nullable: true
+  itemName:
+    type: string
+    nullable: true
+  unitMeasure:
+    type: string
+    nullable: true
+  unitMeasureAbbreviation:
+    type: string
+    nullable: true
+  weightItem:
+    type: boolean
+additionalProperties: false
+

@@ -1,0 +1,19 @@
+﻿type: object
+properties:
+  code:
+    type: string
+    nullable: true
+  name:
+    type: string
+    nullable: true
+  currency:
+    type: string
+    nullable: true
+  roundingDegree:
+    type: string
+    nullable: true
+  includingVAT:
+    type: boolean
+    nullable: true
+additionalProperties: false
+

@@ -1,0 +1,14 @@
+﻿type: object
+properties:
+  id:
+    type: string
+    format: uuid
+  hasMore:
+    type: boolean
+  data:
+    type: array
+    items:
+      $ref: "#/components/schemas/PriceListDataRow"
+    nullable: true
+additionalProperties: false
+

@@ -1,0 +1,56 @@
+﻿/directories/partners/contracts:
+  post:
+    tags: [Partners]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/directories/Contract.yaml
+    responses:
+      '201':
+        description: Created
+        content:
+          application/json:
+            schema:
+              $ref: ../../components/schemas/directories/Contract.yaml
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+
+/directories/partners/contracts/list:
+  post:
+    tags: [Partners]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/directories/ContractFilters.yaml
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: ../../components/schemas/directories/ContractRowApiResponse.yaml
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+
+/directories/partners/contracts/list/nextpage:
+  post:
+    tags: [Partners]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/_shared/NextPageRequest.yaml
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: ../../components/schemas/directories/ContractRowApiResponse.yaml
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized

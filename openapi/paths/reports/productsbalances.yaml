@@ -1,0 +1,37 @@
+﻿/reports/productsbalances:
+  post:
+    tags: [Reports]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/reports/ProductsBalancesParam.yaml
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: ../../components/schemas/reports/ProductsBalancesDataRowApiResponse.yaml
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+
+/reports/productsbalances/nextpage:
+  post:
+    tags: [Reports]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/_shared/NextPageRequest.yaml
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: ../../components/schemas/reports/ProductsBalancesDataRowApiResponse.yaml
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized

@@ -1,0 +1,125 @@
+﻿type: object
+properties:
+  isn:
+    type: string
+    format: uuid
+  date:
+    type: string
+    format: date
+    nullable: true
+  documentNumber:
+    type: string
+    nullable: true
+  state:
+    type: integer
+    format: int32
+  customer:
+    type: string
+    nullable: true
+  currency:
+    type: string
+    nullable: true
+  exchangeRate:
+    type: number
+    format: double
+  exchangeBase:
+    type: number
+    format: double
+  contract:
+    type: string
+    nullable: true
+  contractDate:
+    type: string
+    format: date
+    nullable: true
+  comment:
+    type: string
+    nullable: true
+  owner:
+    type: string
+    nullable: true
+  vatCalculationType:
+    type: string
+    nullable: true
+  priceType:
+    type: string
+    nullable: true
+  storage:
+    type: string
+    nullable: true
+  discountPercent:
+    type: number
+    format: double
+  vatAmount:
+    type: number
+    format: double
+  totalAmount:
+    type: number
+    format: double
+  supplierName:
+    type: string
+    nullable: true
+  supplierLegalAddress:
+    type: string
+    nullable: true
+  supplierBusinessAddress:
+    type: string
+    nullable: true
+  supplierSettlementAccount:
+    type: string
+    nullable: true
+  supplierTaxCode:
+    type: string
+    nullable: true
+  supplierManagerPosition:
+    type: string
+    nullable: true
+  supplierManagerName:
+    type: string
+    nullable: true
+  supplierAccountantPosition:
+    type: string
+    nullable: true
+  supplierAccountantName:
+    type: string
+    nullable: true
+  customerName:
+    type: string
+    nullable: true
+  customerLegalAddress:
+    type: string
+    nullable: true
+  customerBusinessAddress:
+    type: string
+    nullable: true
+  customerSettlementAccount:
+    type: string
+    nullable: true
+  customerTaxCode:
+    type: string
+    nullable: true
+  customerManagerPosition:
+    type: string
+    nullable: true
+  customerManagerName:
+    type: string
+    nullable: true
+  customerAccountantPosition:
+    type: string
+    nullable: true
+  customerAccountantName:
+    type: string
+    nullable: true
+  stateRegisterNumber:
+    type: string
+    nullable: true
+  passportNumber:
+    type: string
+    nullable: true
+  itemList:
+    type: array
+    items:
+      $ref: "#/components/schemas/TransferInvoiceSpecificationRow"
+    nullable: true
+additionalProperties: false
+

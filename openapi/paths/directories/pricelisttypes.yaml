@@ -1,0 +1,76 @@
+﻿/directories/pricelisttypes:
+  get:
+    tags: [PriceListTypes]
+    responses:
+      '200':
+        description: OK
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+  post:
+    tags: [PriceListTypes]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/directories/PriceListType.yaml
+    responses:
+      '201':
+        description: Created
+        content:
+          application/json:
+            schema:
+              $ref: ../../components/schemas/directories/PriceListType.yaml
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+
+/directories/pricelisttypes/{code}:
+  get:
+    tags: [PriceListTypes]
+    parameters:
+      - name: code
+        in: path
+        required: true
+        schema:
+          type: string
+    responses:
+      '200':
+        description: OK
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+  put:
+    tags: [PriceListTypes]
+    parameters:
+      - name: code
+        in: path
+        required: true
+        schema:
+          type: string
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/directories/PriceListType.yaml
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: ../../components/schemas/directories/PriceListType.yaml
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+  delete:
+    tags: [PriceListTypes]
+    parameters:
+      - name: code
+        in: path
+        required: true
+        schema:
+          type: string
+    responses:
+      '200':
+        description: OK
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized

@@ -1,0 +1,82 @@
+﻿type: object
+properties:
+  isn:
+    type: string
+    format: uuid
+  date:
+    type: string
+    format: date
+    nullable: true
+  documentNumber:
+    type: string
+    nullable: true
+  state:
+    type: integer
+    format: int32
+  storageOutput:
+    type: string
+    nullable: true
+  storageInput:
+    type: string
+    nullable: true
+  priceType:
+    type: string
+    nullable: true
+  comment:
+    type: string
+    nullable: true
+  owner:
+    type: string
+    nullable: true
+  mediator:
+    type: string
+    nullable: true
+  chiefAccount:
+    type: string
+    nullable: true
+  allowed:
+    type: string
+    nullable: true
+  bookNumber:
+    type: string
+    nullable: true
+  bookPage:
+    type: integer
+    format: int32
+  bookLine:
+    type: integer
+    format: int32
+  taxExportType:
+    type: string
+    nullable: true
+  taxInvoiceSeries:
+    type: string
+    nullable: true
+  taxInvoiceNumber:
+    type: string
+    nullable: true
+  submissionDate:
+    type: string
+    format: date
+    nullable: true
+  transportationMethod:
+    type: string
+    nullable: true
+  vehicle:
+    type: boolean
+  brand:
+    type: string
+    nullable: true
+  licensePlate:
+    type: string
+    nullable: true
+  baseDocumentISN:
+    type: string
+    format: uuid
+  productsList:
+    type: array
+    items:
+      $ref: "#/components/schemas/ProductsMovementSpecificationRow"
+    nullable: true
+additionalProperties: false
+

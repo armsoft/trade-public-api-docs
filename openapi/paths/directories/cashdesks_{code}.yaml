@@ -1,0 +1,50 @@
+﻿/directories/cashdesks/{code}:
+  get:
+    tags: [CashDesks]
+    parameters:
+      - name: code
+        in: path
+        required: true
+        schema:
+          type: string
+    responses:
+      '200':
+        description: OK
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+  put:
+    tags: [CashDesks]
+    parameters:
+      - name: code
+        in: path
+        required: true
+        schema:
+          type: string
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/directories/CashDesk.yaml
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: ../../components/schemas/directories/CashDesk.yaml
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+  delete:
+    tags: [CashDesks]
+    parameters:
+      - name: code
+        in: path
+        required: true
+        schema:
+          type: string
+    responses:
+      '200':
+        description: OK
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized

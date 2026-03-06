@@ -1,0 +1,65 @@
+﻿/directories/partners/{partnerCode}/contracts/{contractCode}:
+  get:
+    tags: [Partners]
+    parameters:
+      - name: partnerCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: contractCode
+        in: path
+        required: true
+        schema:
+          type: string
+    responses:
+      '200':
+        description: OK
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+  put:
+    tags: [Partners]
+    parameters:
+      - name: partnerCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: contractCode
+        in: path
+        required: true
+        schema:
+          type: string
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/directories/Contract.yaml
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: ../../components/schemas/directories/Contract.yaml
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+  delete:
+    tags: [Partners]
+    parameters:
+      - name: partnerCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: contractCode
+        in: path
+        required: true
+        schema:
+          type: string
+    responses:
+      '200':
+        description: OK
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized

@@ -1,0 +1,58 @@
+﻿required:
+  - endDate
+  - startDate
+type: object
+properties:
+  pageSize:
+    type: integer
+    format: int32
+    nullable: true
+  startDate:
+    type: string
+    format: date
+  endDate:
+    type: string
+    format: date
+  storages:
+    type: array
+    items:
+      type: string
+    nullable: true
+  itemType:
+    type: string
+    nullable: true
+  itemsGroup:
+    type: string
+    nullable: true
+  itemCode:
+    type: string
+    nullable: true
+  partnersGroup:
+    type: string
+    nullable: true
+  partnerCode:
+    type: string
+    nullable: true
+  showQuantitiesWithAdditionalUnits:
+    type: boolean
+  showSumsWithoutVAT:
+    type: boolean
+  showSumsWithVAT:
+    type: boolean
+  showCurrencySums:
+    type: boolean
+  showParties:
+    type: boolean
+  showCostAndSalePrices:
+    type: boolean
+  showDiscounts:
+    type: boolean
+  showBonusPoints:
+    type: boolean
+  showVATAmounts:
+    type: boolean
+  groupBy:
+    type: string
+    nullable: true
+additionalProperties: false
+

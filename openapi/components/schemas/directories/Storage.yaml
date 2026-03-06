@@ -1,0 +1,19 @@
+﻿type: object
+properties:
+  code:
+    type: string
+    nullable: true
+  name:
+    type: string
+    nullable: true
+  stockkeeper:
+    type: string
+    nullable: true
+  address:
+    type: string
+    nullable: true
+  retail:
+    type: boolean
+    nullable: true
+additionalProperties: false
+

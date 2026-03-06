@@ -1,0 +1,94 @@
+﻿type: object
+properties:
+  isn:
+    type: string
+    format: uuid
+  date:
+    type: string
+    format: date
+    nullable: true
+  documentNumber:
+    type: string
+    nullable: true
+  state:
+    type: integer
+    format: int32
+  baseDocumentISN:
+    type: string
+    format: uuid
+  storage:
+    type: string
+    nullable: true
+  supplierCode:
+    type: string
+    nullable: true
+  supplierContract:
+    type: string
+    nullable: true
+  purchaseDocumentNumber:
+    type: string
+    nullable: true
+  purchaseDocumentDate:
+    type: string
+    format: date
+    nullable: true
+  comment:
+    type: string
+    nullable: true
+  owner:
+    type: string
+    nullable: true
+  currency:
+    type: string
+    nullable: true
+  currencyExchangeRate:
+    type: number
+    format: double
+    nullable: true
+  currencyExchangeBase:
+    type: number
+    format: double
+    nullable: true
+  vatCalculationType:
+    type: string
+    nullable: true
+  includeVATInCost:
+    type: boolean
+  priceType:
+    type: string
+    nullable: true
+  discountPercent:
+    type: number
+    format: double
+    nullable: true
+  vatAmount:
+    type: number
+    format: double
+  totalAmount:
+    type: number
+    format: double
+  letterOfAttorney:
+    type: string
+    nullable: true
+  mediator:
+    type: string
+    nullable: true
+  vehicle:
+    type: string
+    nullable: true
+  chiefAccount:
+    type: string
+    nullable: true
+  allowed:
+    type: string
+    nullable: true
+  accepted:
+    type: string
+    nullable: true
+  productsList:
+    type: array
+    items:
+      $ref: "#/components/schemas/StorageInputOrderRetailSpecificationRow"
+    nullable: true
+additionalProperties: false
+

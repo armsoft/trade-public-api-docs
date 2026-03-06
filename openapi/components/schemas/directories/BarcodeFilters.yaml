@@ -1,0 +1,13 @@
+﻿type: object
+properties:
+  pageSize:
+    type: integer
+    format: int32
+    nullable: true
+  itemCodes:
+    type: array
+    items:
+      type: string
+    nullable: true
+additionalProperties: false
+

@@ -1,0 +1,35 @@
+﻿type: object
+properties:
+  id:
+    type: integer
+    format: int32
+  code:
+    type: string
+    nullable: true
+  name:
+    type: string
+    nullable: true
+  status:
+    type: string
+    nullable: true
+  contractCode:
+    type: string
+    nullable: true
+  contractName:
+    type: string
+    nullable: true
+  contractDate:
+    type: string
+    format: date
+    nullable: true
+  currency:
+    type: string
+    nullable: true
+  balance:
+    type: number
+    format: double
+  balanceCurrency:
+    type: number
+    format: double
+additionalProperties: false
+

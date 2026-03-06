@@ -1,0 +1,262 @@
+﻿type: object
+properties:
+  documentNumber:
+    type: string
+    nullable: true
+  date:
+    type: string
+    format: date
+    nullable: true
+  isn:
+    type: string
+    format: uuid
+  operationType:
+    type: string
+    nullable: true
+  documentCurrency:
+    type: string
+    nullable: true
+  documentVATType:
+    type: string
+    nullable: true
+  documentVATTypeName:
+    type: string
+    nullable: true
+  ecrCheckNumber:
+    type: string
+    nullable: true
+  itemType:
+    type: string
+    nullable: true
+  itemTypeName:
+    type: string
+    nullable: true
+  itemId:
+    type: integer
+    format: int32
+  itemCode:
+    type: string
+    nullable: true
+  itemName:
+    type: string
+    nullable: true
+  unitMeasure:
+    type: string
+    nullable: true
+  unitMeasureAbbreviation:
+    type: string
+    nullable: true
+  storage:
+    type: string
+    nullable: true
+  storageName:
+    type: string
+    nullable: true
+  cashDesk:
+    type: string
+    nullable: true
+  cashDeskName:
+    type: string
+    nullable: true
+  customer:
+    type: string
+    nullable: true
+  customerName:
+    type: string
+    nullable: true
+  customerContractName:
+    type: string
+    nullable: true
+  quantity:
+    type: number
+    format: double
+  costAmountWithoutVAT:
+    type: number
+    format: double
+  costPriceWithoutVAT:
+    type: number
+    format: double
+  salePriceWithoutVAT:
+    type: number
+    format: double
+  saleAmountWithoutVAT:
+    type: number
+    format: double
+  profitWithoutVAT:
+    type: number
+    format: double
+  profitPercentBySaleWithoutVAT:
+    type: number
+    format: double
+  profitPercentByCostWithoutVAT:
+    type: number
+    format: double
+  initialPriceWithoutVAT:
+    type: number
+    format: double
+  initialAmountWithoutVAT:
+    type: number
+    format: double
+  discountPercentWithoutVAT:
+    type: number
+    format: double
+  discountAmountWithoutVAT:
+    type: number
+    format: double
+  costAmountWithVAT:
+    type: number
+    format: double
+  costPriceWithVAT:
+    type: number
+    format: double
+  salePriceWithVAT:
+    type: number
+    format: double
+  saleAmountWithVAT:
+    type: number
+    format: double
+  profitWithVAT:
+    type: number
+    format: double
+  profitPercentBySaleWithVAT:
+    type: number
+    format: double
+  profitPercentByCostWithVAT:
+    type: number
+    format: double
+  initialPriceWithVAT:
+    type: number
+    format: double
+  initialAmountWithVAT:
+    type: number
+    format: double
+  discountPercentWithVAT:
+    type: number
+    format: double
+  discountAmountWithVAT:
+    type: number
+    format: double
+  costVATAmount:
+    type: number
+    format: double
+  costVATPrice:
+    type: number
+    format: double
+  saleVATAmount:
+    type: number
+    format: double
+  discountVATAmount:
+    type: number
+    format: double
+  costAmountCurrency:
+    type: number
+    format: double
+  costPriceCurrency:
+    type: number
+    format: double
+  salePriceCurrency:
+    type: number
+    format: double
+  saleAmountCurrency:
+    type: number
+    format: double
+  profitCurrency:
+    type: number
+    format: double
+  profitPercentBySaleCurrency:
+    type: number
+    format: double
+  profitPercentByCostCurrency:
+    type: number
+    format: double
+  initialPriceCurrency:
+    type: number
+    format: double
+  initialAmountCurrency:
+    type: number
+    format: double
+  discountPercentCurrency:
+    type: number
+    format: double
+  discountAmountCurrency:
+    type: number
+    format: double
+  usedBonus:
+    type: number
+    format: double
+  accumulatedBonus:
+    type: number
+    format: double
+  description:
+    type: string
+    nullable: true
+  seller:
+    type: string
+    nullable: true
+  sellerName:
+    type: string
+    nullable: true
+  comment:
+    type: string
+    nullable: true
+  itemGroup:
+    type: string
+    nullable: true
+  itemSpecification:
+    type: string
+    nullable: true
+  businessAddress:
+    type: string
+    nullable: true
+  incomeDate:
+    type: string
+    format: date
+    nullable: true
+  partySupplierId:
+    type: integer
+    format: int32
+  partySupplierName:
+    type: string
+    nullable: true
+  partySupplierTaxCode:
+    type: string
+    nullable: true
+  partyContractName:
+    type: string
+    nullable: true
+  partyDocumentTypeName:
+    type: string
+    nullable: true
+  partyDocumentNumber:
+    type: string
+    nullable: true
+  partyExpirationDate:
+    type: string
+    format: date
+    nullable: true
+  partyCountryName:
+    type: string
+    nullable: true
+  partyProducerName:
+    type: string
+    nullable: true
+  partyPropertyType1Name:
+    type: string
+    nullable: true
+  partyPropertyValue1Name:
+    type: string
+    nullable: true
+  partyPropertyType2Name:
+    type: string
+    nullable: true
+  partyPropertyValue2Name:
+    type: string
+    nullable: true
+  partyBase:
+    type: string
+    format: uuid
+  partyRow:
+    type: integer
+    format: int32
+additionalProperties: false
+
