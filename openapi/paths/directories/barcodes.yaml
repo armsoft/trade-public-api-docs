@@ -1,0 +1,56 @@
+﻿/directories/barcodes:
+  post:
+    tags: [Barcodes]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/directories/Barcode.yaml
+    responses:
+      '201':
+        description: Created
+        content:
+          application/json:
+            schema:
+              $ref: ../../components/schemas/directories/Barcode.yaml
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+
+/directories/barcodes/list:
+  post:
+    tags: [Barcodes]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/directories/BarcodeFilters.yaml
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: ../../components/schemas/directories/BarcodeApiResponse.yaml
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+
+/directories/barcodes/list/nextpage:
+  post:
+    tags: [Barcodes]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/_shared/NextPageRequest.yaml
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: ../../components/schemas/directories/BarcodeApiResponse.yaml
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized

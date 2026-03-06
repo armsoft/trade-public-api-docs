@@ -1,0 +1,62 @@
+﻿type: object
+properties:
+  currency:
+    type: string
+    nullable: true
+  priceType:
+    type: string
+    nullable: true
+  date:
+    type: string
+    format: date
+    nullable: true
+  description:
+    type: string
+    nullable: true
+  discountPercent:
+    type: number
+    format: double
+    nullable: true
+  cardCode:
+    type: string
+    nullable: true
+  bonusCard:
+    type: boolean
+    nullable: true
+  bonusPercent:
+    type: number
+    format: double
+    nullable: true
+  bonusPoint:
+    type: number
+    format: double
+    nullable: true
+  validationPeriodStart:
+    type: string
+    format: date
+    nullable: true
+  validationPeriodEnd:
+    type: string
+    format: date
+    nullable: true
+  canceled:
+    type: boolean
+    nullable: true
+  receivablesControl:
+    type: boolean
+    nullable: true
+  receivablesLimit:
+    type: number
+    format: double
+    nullable: true
+  default:
+    type: boolean
+    nullable: true
+  code:
+    type: string
+    nullable: true
+  name:
+    type: string
+    nullable: true
+additionalProperties: false
+

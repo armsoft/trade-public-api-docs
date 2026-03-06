@@ -1,0 +1,73 @@
+﻿type: object
+properties:
+  isn:
+    type: string
+    format: uuid
+  date:
+    type: string
+    format: date
+  dayOrderNumber:
+    type: integer
+    format: int32
+  documentNumber:
+    type: string
+    nullable: true
+  type:
+    type: integer
+    format: int32
+  typeName:
+    type: string
+    nullable: true
+  currency:
+    type: string
+    nullable: true
+  amount:
+    type: number
+    format: double
+  state:
+    type: integer
+    format: int32
+  stateName:
+    type: string
+    nullable: true
+  storageCode:
+    type: string
+    nullable: true
+  storageName:
+    type: string
+    nullable: true
+  information:
+    type: string
+    nullable: true
+  comment:
+    type: string
+    nullable: true
+  partnerId:
+    type: integer
+    format: int32
+  partnerCode:
+    type: string
+    nullable: true
+  partnerName:
+    type: string
+    nullable: true
+  partnerTaxCode:
+    type: string
+    nullable: true
+  employeeCode:
+    type: string
+    nullable: true
+  employeeName:
+    type: string
+    nullable: true
+  userName:
+    type: string
+    nullable: true
+  lastChange:
+    type: string
+    format: date-time
+  owner:
+    type: string
+    nullable: true
+additionalProperties: false
+

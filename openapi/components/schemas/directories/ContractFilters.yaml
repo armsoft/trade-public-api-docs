@@ -1,0 +1,26 @@
+﻿type: object
+properties:
+  pageSize:
+    type: integer
+    format: int32
+    nullable: true
+  partnerCode:
+    type: string
+    nullable: true
+  currency:
+    type: string
+    nullable: true
+  exceptNCC:
+    type: boolean
+  onlyCustomers:
+    type: boolean
+  onlySuppliers:
+    type: boolean
+  onlyBonusCards:
+    type: boolean
+  lastModifiedDate:
+    type: string
+    format: date-time
+    nullable: true
+additionalProperties: false
+

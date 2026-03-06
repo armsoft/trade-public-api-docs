@@ -1,0 +1,50 @@
+﻿/directories/barcodes/{code}:
+  get:
+    tags: [Barcodes]
+    parameters:
+      - name: code
+        in: path
+        required: true
+        schema:
+          type: string
+    responses:
+      '200':
+        description: OK
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+  put:
+    tags: [Barcodes]
+    parameters:
+      - name: code
+        in: path
+        required: true
+        schema:
+          type: string
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/directories/Barcode.yaml
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: ../../components/schemas/directories/Barcode.yaml
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+  delete:
+    tags: [Barcodes]
+    parameters:
+      - name: code
+        in: path
+        required: true
+        schema:
+          type: string
+    responses:
+      '200':
+        description: OK
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized

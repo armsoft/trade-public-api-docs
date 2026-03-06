@@ -1,0 +1,12 @@
+﻿type: object
+properties:
+  account:
+    type: string
+    nullable: true
+  name:
+    type: string
+    nullable: true
+  default:
+    type: boolean
+additionalProperties: false
+

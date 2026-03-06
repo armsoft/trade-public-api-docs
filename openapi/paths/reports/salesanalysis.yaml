@@ -1,0 +1,37 @@
+﻿/reports/salesanalysis:
+  post:
+    tags: [Reports]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/reports/SalesAnalysisParam.yaml
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: ../../components/schemas/reports/SalesAnalysisDataRowApiResponse.yaml
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+
+/reports/salesanalysis/nextpage:
+  post:
+    tags: [Reports]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/_shared/NextPageRequest.yaml
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: ../../components/schemas/reports/SalesAnalysisDataRowApiResponse.yaml
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized

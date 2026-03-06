@@ -1,0 +1,24 @@
+﻿required:
+  - date
+type: object
+properties:
+  pageSize:
+    type: integer
+    format: int32
+    nullable: true
+  date:
+    type: string
+    format: date
+  partnerGroup:
+    type: string
+    nullable: true
+  partner:
+    type: string
+    nullable: true
+  contract:
+    type: string
+    nullable: true
+  openedByContracts:
+    type: boolean
+additionalProperties: false
+

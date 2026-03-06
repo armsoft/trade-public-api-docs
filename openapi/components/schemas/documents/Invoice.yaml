@@ -1,0 +1,174 @@
+﻿type: object
+properties:
+  isn:
+    type: string
+    format: uuid
+  date:
+    type: string
+    format: date
+    nullable: true
+  documentNumber:
+    type: string
+    nullable: true
+  state:
+    type: integer
+    format: int32
+  baseDocumentISN:
+    type: string
+    format: uuid
+  customer:
+    type: string
+    nullable: true
+  customerContract:
+    type: string
+    nullable: true
+  bookNumber:
+    type: string
+    nullable: true
+  bookPage:
+    type: integer
+    format: int32
+  bookLine:
+    type: integer
+    format: int32
+  taxExportType:
+    type: string
+    nullable: true
+  taxInvoiceSeries:
+    type: string
+    nullable: true
+  taxInvoiceNumber:
+    type: string
+    nullable: true
+  submissionDate:
+    type: string
+    format: date
+    nullable: true
+  seller:
+    type: string
+    nullable: true
+  comment:
+    type: string
+    nullable: true
+  owner:
+    type: string
+    nullable: true
+  currency:
+    type: string
+    nullable: true
+  exchangeRate:
+    type: number
+    format: double
+  exchangeBase:
+    type: number
+    format: double
+  vatCalculationType:
+    type: string
+    nullable: true
+  dealType:
+    type: string
+    nullable: true
+  priceType:
+    type: string
+    nullable: true
+  storage:
+    type: string
+    nullable: true
+  discountPercent:
+    type: number
+    format: double
+  vatAmount:
+    type: number
+    format: double
+  totalAmount:
+    type: number
+    format: double
+  supplierName:
+    type: string
+    nullable: true
+  supplierLegalAddress:
+    type: string
+    nullable: true
+  supplierBusinessAddress:
+    type: string
+    nullable: true
+  supplierSettlementAccount:
+    type: string
+    nullable: true
+  supplierTaxCode:
+    type: string
+    nullable: true
+  supplierManagerPosition:
+    type: string
+    nullable: true
+  supplierManagerName:
+    type: string
+    nullable: true
+  supplierAccountantPosition:
+    type: string
+    nullable: true
+  supplierAccountantName:
+    type: string
+    nullable: true
+  supplierAdditionalData:
+    type: string
+    nullable: true
+  customerName:
+    type: string
+    nullable: true
+  customerLegalAddress:
+    type: string
+    nullable: true
+  customerBusinessAddress:
+    type: string
+    nullable: true
+  customerSettlementAccount:
+    type: string
+    nullable: true
+  customerTaxCode:
+    type: string
+    nullable: true
+  customerManagerPosition:
+    type: string
+    nullable: true
+  customerManagerName:
+    type: string
+    nullable: true
+  customerAccountantPosition:
+    type: string
+    nullable: true
+  customerAccountantName:
+    type: string
+    nullable: true
+  stateRegisterNumber:
+    type: string
+    nullable: true
+  idDocumentType:
+    type: string
+    nullable: true
+  passportNumber:
+    type: string
+    nullable: true
+  customerAdditionalData:
+    type: string
+    nullable: true
+  shippingMethod:
+    type: string
+    nullable: true
+  additionalFullName:
+    type: string
+    nullable: true
+  credentialNumber:
+    type: string
+    nullable: true
+  credentialDate:
+    type: string
+    format: date
+    nullable: true
+  itemList:
+    type: array
+    items:
+      $ref: "#/components/schemas/InvoiceSpecificationRow"
+    nullable: true
+additionalProperties: false
+

@@ -1,0 +1,22 @@
+﻿type: object
+properties:
+  code:
+    type: string
+    nullable: true
+  name:
+    type: string
+    nullable: true
+  parent:
+    type: string
+    nullable: true
+  path:
+    type: string
+    nullable: true
+  nameEN:
+    type: string
+    nullable: true
+  nameRU:
+    type: string
+    nullable: true
+additionalProperties: false
+

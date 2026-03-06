@@ -7,7 +7,14 @@ The ArmSoft SME Trade Public API uses standard HTTP status codes and returns str
 ## Error Response Format
 
 All errors return a consistent JSON structure:
-{ "message": "Detailed error description", "fieldName": "problematic-field-name", "errorCode": "SPECIFIC_ERROR_CODE" }
+
+```json
+{
+  "message": "Detailed error description",
+  "fieldName": "problematic-field-name",
+  "errorCode": "SPECIFIC_ERROR_CODE"
+}
+```
 
 ### Properties
 
@@ -52,26 +59,41 @@ All errors return a consistent JSON structure:
 #### Missing API Key
 
 **Request:**
+
+```bash
 curl -X GET "https://api.armsoft.am/trade/v1/directories/products/PROD001"
+```
 
 **Response:**
+
+```
 HTTP/1.1 401 Unauthorized
+```
 
 **Solution:** Include `apiKey` header in all requests
-curl -X GET "https://api.armsoft.am/trade/v1/directories/products/PROD001" 
--H "apiKey: your-api-key-here"
+
+```bash
+curl -X GET "https://api.armsoft.am/trade/v1/directories/products/PROD001" \
+  -H "apiKey: your-api-key-here"
+```
 
 ---
 
 #### Invalid API Key
 
 **Request:**
-curl -X GET "https://api.armsoft.am/trade/v1/directories/products/PROD001" 
--H "apiKey: invalid-key-12345"
+
+```bash
+curl -X GET "https://api.armsoft.am/trade/v1/directories/products/PROD001" \
+  -H "apiKey: invalid-key-12345"
+```
 
 **Response:**
+
+```json
 HTTP/1.1 401 Unauthorized
 { "message": "Public API access is not available for this API Key" }
+```
 
 **Solution:** 
 - Verify API key is correct
@@ -83,12 +105,18 @@ HTTP/1.1 401 Unauthorized
 #### Access Denied (Limited Access Key)
 
 **Request:**
-curl -X DELETE "https://api.armsoft.am/trade/v1/directories/products/PROD001" 
--H "apiKey: limited-access-key"
+
+```bash
+curl -X DELETE "https://api.armsoft.am/trade/v1/directories/products/PROD001" \
+  -H "apiKey: limited-access-key"
+```
 
 **Response:**
+
+```json
 HTTP/1.1 401 Unauthorized
 { "message": "Access denied. This API Key has limited access and cannot perform this operation." }
+```
 
 **Solution:**
 - Use full-access API key for administrative operations
@@ -102,17 +130,26 @@ HTTP/1.1 401 Unauthorized
 #### Missing Required Field
 
 **Request:**
-curl -X POST "https://api.armsoft.am/trade/v1/directories/products/list" 
--H "apiKey: your-api-key-here" 
--H "Content-Type: application/json" 
--d '{}'
+
+```bash
+curl -X POST "https://api.armsoft.am/trade/v1/directories/products/list" \
+  -H "apiKey: your-api-key-here" \
+  -H "Content-Type: application/json" \
+  -d '{}'
+```
 
 **Response:**
+
+```json
 HTTP/1.1 400 Bad Request
 { "message": "ShowMode is required", "fieldName": "showMode" }
+```
 
 **Solution:** Include all required fields
+
+```json
 { "showMode": "3" }
+```
 
 ---
 
@@ -121,8 +158,14 @@ HTTP/1.1 400 Bad Request
 #### Resource Not Found
 
 **Request:**
-curl -X GET "https://api.armsoft.am/trade/v1/directories/products/INVALID001" 
--H "apiKey: your-api-key-here"
+
+```bash
+curl -X GET "https://api.armsoft.am/trade/v1/directories/products/INVALID001" \
+  -H "apiKey: your-api-key-here"
+```
 
 **Response:**
+
+```
 HTTP/1.1 404 Not Found
+```

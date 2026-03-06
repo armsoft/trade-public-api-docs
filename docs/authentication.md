@@ -70,35 +70,42 @@ API keys with restricted permissions are limited to the following endpoints:
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| POST | `/api/directories/products/list` | Get all products |
-| GET | `/api/directories/products/{code}` | Get product by code |
-| POST | `/api/directories/products/measureunits/list` | Get all measure units |
-| GET | `/api/directories/products/{productCode}/measureunits/{unitCode}` | Get measure unit |
+| POST | `/directories/products/list` | Get all products |
+| GET | `/directories/products/{code}` | Get product by code |
+| POST | `/directories/products/measureunits/list` | Get all measure units |
+| GET | `/directories/products/{productCode}/measureunits/{unitCode}` | Get measure unit |
 
 #### Reports
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| POST | `/api/reports/price-list` | Get price list report |
-| POST | `/api/reports/products/balances` | Get products balances |
-| POST | `/api/reports/products/balances/short` | Get short balances |
+| POST | `/reports/price-list` | Get price list report |
+| POST | `/reports/products/balances` | Get products balances |
+| POST | `/reports/products/balances/short` | Get short balances |
 
 #### Documents (Limited)
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| POST | `/api/documents/sale/create` | Create sale document (MT bill) |
-| GET | `/api/documents/sale/{isn}` | Get sale document by ISN |
-| PUT | `/api/documents/sale/{isn}` | Update sale document |
-| DELETE | `/api/documents/sale/{isn}` | Delete sale document |
+| POST | `/documents/sale/create` | Create sale document (MT bill) |
+| GET | `/documents/sale/{isn}` | Get sale document by ISN |
+| PUT | `/documents/sale/{isn}` | Update sale document |
+| DELETE | `/documents/sale/{isn}` | Delete sale document |
 
 #### Journal
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| POST | `/api/journal/ecrchecks` | Get ECR check documents journal |
+| POST | `/journal/ecrchecks` | Get ECR check documents journal |
 
 ## How Authentication Works
+
+Every request is validated server-side before processing:
+1. The server reads the `apiKey` header value.
+2. The key is looked up in the system and its access level is checked.
+3. If the key is missing or invalid, a `401 Unauthorized` response is returned immediately.
+4. If the key exists but lacks permission for the requested operation, a `401` with an access-denied message is returned.
+5. On success, the request proceeds and the response is localized according to the `Accept-Language` header.
 
 ## Response Codes & Errors
 
@@ -114,33 +121,57 @@ API keys with restricted permissions are limited to the following endpoints:
 
 #### Missing API Key
 **Request:**
+
+```bash
 curl -X GET "https://api.armsoft.am/trade/v1/directories/products/PROD001"
+```
+
 **Response:**
+
+```
 HTTP/1.1 401 Unauthorized (No response body)
+```
 
 #### Invalid API Key
 **Request:**
-curl -X GET "https://api.armsoft.am/trade/v1/directories/products/PROD001" 
--H "apiKey: invalid-key-12345"
+
+```bash
+curl -X GET "https://api.armsoft.am/trade/v1/directories/products/PROD001" \
+  -H "apiKey: invalid-key-12345"
+```
 
 **Response:**
+
+```json
 HTTP/1.1 401 Unauthorized
 { "message": "Public API access is not available for this API Key" }
+```
 
 #### Access Denied (Limited Access Key)
 **Request:**
-curl -X DELETE "https://api.armsoft.am/trade/v1/directories/products/PROD001" 
--H "apiKey: limited-access-key"
+
+```bash
+curl -X DELETE "https://api.armsoft.am/trade/v1/directories/products/PROD001" \
+  -H "apiKey: limited-access-key"
+```
 
 **Response:**
+
+```json
 HTTP/1.1 401 Unauthorized
 { "message": "Access denied. This API Key has limited access and cannot perform this operation." }
+```
 
 ## Multi-Language Support
 
 ### Setting Language
 Use the `Accept-Language` header:
-Accept-Language: hy-AM  # Armenian (default) Accept-Language: en-US  # English Accept-Language: ru-RU  # Russian
+
+```http
+Accept-Language: hy-AM  # Armenian (default)
+Accept-Language: en-US  # English
+Accept-Language: ru-RU  # Russian
+```
 
 ### Language Impact
 
@@ -150,20 +181,32 @@ The language setting affects:
 - ✅ Localized field names
 
 ### Example: Armenian Response
-curl -X GET "https://api.armsoft.am/trade/v1/directories/products/INVALID" 
--H "apiKey: your-api-key-here" 
--H "Accept-Language: hy-AM"
+
+```bash
+curl -X GET "https://api.armsoft.am/trade/v1/directories/products/INVALID" \
+  -H "apiKey: your-api-key-here" \
+  -H "Accept-Language: hy-AM"
+```
 
 **Response:**
+
+```json
 { "message": "Ապրանքը չի գտնվել" }
+```
 
 ### Example: English Response
-curl -X GET "https://api.armsoft.am/trade/v1/directories/products/INVALID" 
--H "apiKey: your-api-key-here" 
--H "Accept-Language: en-US"
+
+```bash
+curl -X GET "https://api.armsoft.am/trade/v1/directories/products/INVALID" \
+  -H "apiKey: your-api-key-here" \
+  -H "Accept-Language: en-US"
+```
 
 **Response:**
+
+```json
 { "message": "Product not found" }
+```
 
 ## Obtaining an API Key
 

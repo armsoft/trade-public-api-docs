@@ -1,0 +1,216 @@
+# ArmSoft SME Trade Public API — Full Reference for LLMs
+
+> This file is intended for AI language models and crawlers.
+> It contains the full inline content of this documentation repository.
+> Structured index: ./llms.txt
+
+---
+
+## Overview
+
+The ArmSoft SME Trade Public API is a RESTful API for managing trade operations in the ArmSoft SME Trade ERP system. It is built on ASP.NET Core 10 / C# 13 and supports Armenian, English, and Russian locales.
+
+- **Base URL:** `https://api.armsoft.am/trade/v1`
+- **Swagger UI:** `https://api.armsoft.am/trade/swagger/index.html`
+- **OpenAPI spec:** `./swagger.json` (full), `./openapi/openapi.yaml` (curated)
+- **Authentication:** API Key in `apiKey` request header
+- **Localization:** `Accept-Language` header (`hy-AM`, `en-US`, `ru-RU`)
+
+---
+
+## Authentication
+
+All requests require an `apiKey` header:
+
+```http
+apiKey: your-api-key-here
+Accept-Language: en-US
+```
+
+### API Key Types
+
+**Full Access** — Complete CRUD on all resources. For internal/trusted integrations.
+
+**Limited Access (Online Store)** — Read-only product catalog, create/read/update/delete sale documents. For e-commerce, mobile apps, POS systems.
+
+### Error Responses
+
+| Status | Meaning |
+|--------|---------|
+| 401 (no body) | API key missing |
+| 401 `{ "message": "Public API access is not available for this API Key" }` | Invalid key |
+| 401 `{ "message": "Access denied. This API Key has limited access and cannot perform this operation." }` | Insufficient permissions |
+
+---
+
+## Error Response Format
+
+All errors return:
+
+```json
+{
+  "message": "Human-readable description (localized)",
+  "fieldName": "field-that-caused-error",
+  "errorCode": "MACHINE_READABLE_CODE"
+}
+```
+
+`fieldName` and `errorCode` are optional.
+
+---
+
+## Pagination
+
+List endpoints support optional pagination via `pageSize` in the request body.
+
+- `pageSize: 0` (default) — returns all rows
+- `pageSize: N` — minimum effective value is 5000
+
+Paginated responses include:
+- `id` (UUID) — pagination context identifier
+- `hasMore` (boolean) — whether more pages exist
+
+To fetch the next page, POST to `/list/nextpage`:
+
+```json
+{ "id": "uuid-from-previous-response", "close": false }
+```
+
+To stop paginating early:
+
+```json
+{ "id": "uuid-from-previous-response", "close": true }
+```
+
+---
+
+## HTTP Status Codes
+
+| Code | Description |
+|------|-------------|
+| 200 | OK — successful GET, PUT, DELETE |
+| 201 | Created — resource created (POST) |
+| 400 | Bad Request — validation error |
+| 401 | Unauthorized — missing/invalid API key |
+| 403 | Forbidden — key valid but action not allowed |
+| 404 | Not Found — resource does not exist |
+| 405 | Method Not Allowed |
+| 409 | Conflict — duplicate code or resource in use |
+| 429 | Too Many Requests — rate limit exceeded |
+| 500 | Internal Server Error |
+| 503 | Service Unavailable |
+
+---
+
+## Products Endpoints
+
+### List Products
+`POST /trade/v1/directories/products/list`
+
+Request body (all fields optional except `showMode`):
+```json
+{
+  "showMode": "3",
+  "pageSize": 0
+}
+```
+
+Response:
+```json
+{
+  "id": "uuid",
+  "hasMore": false,
+  "data": [
+    {
+      "id": 100001,
+      "code": "PROD001",
+      "name": "Product Name",
+      "baseUnitMeasure": "PCS",
+      "vat": true,
+      "showInPriceLists": true
+    }
+  ]
+}
+```
+
+### List Products — Next Page
+`POST /trade/v1/directories/products/list/nextpage`
+
+### Get Product by Code
+`GET /trade/v1/directories/products/{code}`
+
+Response:
+```json
+{
+  "id": 12345,
+  "code": "PROD001",
+  "name": "Sample Product",
+  "baseUnitMeasure": "PCS",
+  "vat": true,
+  "showInPriceLists": true
+}
+```
+
+### Create Product
+`POST /trade/v1/directories/products`
+
+### Update Product
+`PUT /trade/v1/directories/products/{code}`
+
+### Delete Product
+`DELETE /trade/v1/directories/products/{code}`
+
+---
+
+## Product Measure Units Endpoints
+
+### List Measure Units
+`POST /trade/v1/directories/products/measureunits/list`
+
+### List Measure Units — Next Page
+`POST /trade/v1/directories/products/measureunits/list/nextpage`
+
+### Get Measure Unit
+`GET /trade/v1/directories/products/{productCode}/measureunits/{unitCode}`
+
+### Create Measure Unit
+`POST /trade/v1/directories/products/measureunits`
+
+### Update Measure Unit
+`PUT /trade/v1/directories/products/{productCode}/measureunits/{unitCode}`
+
+### Delete Measure Unit
+`DELETE /trade/v1/directories/products/{productCode}/measureunits/{unitCode}`
+
+---
+
+## Localization
+
+| Header Value | Language |
+|---|---|
+| `hy-AM` | Armenian (default) |
+| `en-US` | English |
+| `ru-RU` | Russian |
+
+Localization affects error messages, validation messages, and localized display fields (e.g. `typeName`, `groupName`). Code and identifier fields are locale-independent.
+
+---
+
+## C# Example
+
+```csharp
+var client = new HttpClient { BaseAddress = new Uri("https://api.armsoft.am/trade/v1") };
+client.DefaultRequestHeaders.Add("apiKey", "your-api-key-here");
+client.DefaultRequestHeaders.Add("Accept-Language", "en-US");
+
+var response = await client.GetAsync("directories/products/PROD001");
+```
+
+---
+
+## About
+
+ArmSoft (Armenian Software) is a leading ERP provider for businesses in Armenia. The Trade system targets small and medium enterprises for trade operations management.
+
+- Website: https://armsoft.am
+- Support: support@armsoft.am

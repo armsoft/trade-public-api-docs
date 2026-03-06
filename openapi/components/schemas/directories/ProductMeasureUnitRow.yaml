@@ -1,0 +1,17 @@
+﻿type: object
+properties:
+  default:
+    type: boolean
+    nullable: true
+  coefficient:
+    type: number
+    format: double
+    nullable: true
+  code:
+    type: string
+    nullable: true
+  abbreviation:
+    type: string
+    nullable: true
+additionalProperties: false
+

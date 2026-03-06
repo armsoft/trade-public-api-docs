@@ -1,0 +1,109 @@
+﻿type: object
+properties:
+  isn:
+    type: string
+    format: uuid
+  date:
+    type: string
+    format: date
+    nullable: true
+  documentNumber:
+    type: string
+    nullable: true
+  baseDocumentISN:
+    type: string
+    format: uuid
+  state:
+    type: integer
+    format: int32
+  storage:
+    type: string
+    nullable: true
+  cashDesk:
+    type: string
+    nullable: true
+  cashierShiftNumber:
+    type: string
+    nullable: true
+  ecrReturnCheckNumber:
+    type: string
+    nullable: true
+  prepaymentECRCheckNumber:
+    type: string
+    nullable: true
+  customer:
+    type: string
+    nullable: true
+  customerContract:
+    type: string
+    nullable: true
+  seller:
+    type: string
+    nullable: true
+  cashAmount:
+    type: number
+    format: double
+  nonCashAmount:
+    type: number
+    format: double
+  posBank:
+    type: string
+    nullable: true
+  posContract:
+    type: string
+    nullable: true
+  connectedDevice:
+    type: string
+    nullable: true
+  paymentSystem:
+    type: integer
+    format: int32
+  creditAmount:
+    type: number
+    format: double
+  prepaymentAmount:
+    type: number
+    format: double
+  prepaymentCustomer:
+    type: string
+    nullable: true
+  prepaymentContract:
+    type: string
+    nullable: true
+  bonusAmount:
+    type: number
+    format: double
+  usedBonus:
+    type: number
+    format: double
+  accumulatedBonus:
+    type: number
+    format: double
+  changeAmount:
+    type: number
+    format: double
+  vatCalculationType:
+    type: string
+    nullable: true
+  priceType:
+    type: string
+    nullable: true
+  comment:
+    type: string
+    nullable: true
+  owner:
+    type: string
+    nullable: true
+  vatAmount:
+    type: number
+    format: double
+  totalAmount:
+    type: number
+    format: double
+  itemList:
+    type: array
+    items:
+      $ref: "#/components/schemas/SaleReturnSpecificationRow"
+    nullable: true
+additionalProperties: false
+

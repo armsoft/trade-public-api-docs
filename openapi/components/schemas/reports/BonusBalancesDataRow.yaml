@@ -1,0 +1,38 @@
+﻿type: object
+properties:
+  partnerId:
+    type: integer
+    format: int32
+  partnerCode:
+    type: string
+    nullable: true
+  partnerName:
+    type: string
+    nullable: true
+  contractCode:
+    type: string
+    nullable: true
+  contractName:
+    type: string
+    nullable: true
+  contractDate:
+    type: string
+    format: date
+    nullable: true
+  group:
+    type: string
+    nullable: true
+  taxCode:
+    type: string
+    nullable: true
+  legalAddress:
+    type: string
+    nullable: true
+  phoneNumber:
+    type: string
+    nullable: true
+  balance:
+    type: number
+    format: double
+additionalProperties: false
+

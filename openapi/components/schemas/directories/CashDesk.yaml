@@ -1,0 +1,34 @@
+﻿type: object
+properties:
+  code:
+    type: string
+    nullable: true
+  name:
+    type: string
+    nullable: true
+  nextCashInputOrderNumber:
+    type: string
+    nullable: true
+  nextCashOutputOrderNumber:
+    type: string
+    nullable: true
+  nextSaleNumber:
+    type: string
+    nullable: true
+  nextSaleReturnNumber:
+    type: string
+    nullable: true
+  nextShiftNumber:
+    type: string
+    nullable: true
+  default:
+    type: boolean
+    nullable: true
+  ecr:
+    type: boolean
+    nullable: true
+  cashLimit:
+    type: string
+    nullable: true
+additionalProperties: false
+

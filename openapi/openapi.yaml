@@ -1,0 +1,493 @@
+openapi: 3.0.3
+info:
+  title: ArmSoft SME Trade Public API
+  description: REST API for managing products, partners, inventory, and more in the ArmSoft SME Trade system
+  version: "1"
+  contact:
+    name: ArmSoft Support
+    email: support@armsoft.am
+    url: https://armsoft.am
+
+servers:
+  - url: https://api.armsoft.am/trade/v1
+    description: Production
+
+security:
+  - apiKeyAuth: []
+
+tags:
+  - name: Products
+    description: Product management endpoints
+  - name: Measure Units
+    description: Product measurement units
+  - name: Barcodes
+    description: Barcode management endpoints
+  - name: CashDesks
+    description: Cash desk directory endpoints
+  - name: Partners
+    description: Partner management endpoints
+  - name: PartnersGroups
+    description: Partner group directory endpoints
+  - name: PriceListTypes
+    description: Price list type directory endpoints
+  - name: ProductsGroups
+    description: Product group directory endpoints
+  - name: Storages
+    description: Storage directory endpoints
+  - name: Invoice
+    description: Invoice document endpoints
+  - name: Sale
+    description: Sale document endpoints
+  - name: SaleReturn
+    description: Sale return document endpoints
+  - name: StorageInputOrder
+    description: Storage input order document endpoints
+  - name: StorageInputOrderRetail
+    description: Retail storage input order document endpoints
+  - name: TransferInvoice
+    description: Transfer invoice document endpoints
+  - name: ProductsMovement
+    description: Products movement document endpoints
+  - name: Journals
+    description: Document journal endpoints
+  - name: Reports
+    description: Report endpoints
+
+paths:
+  /directories/products/list:
+    $ref: ./paths/directories/products.yaml#/~1directories~1products~1list
+  /directories/products/list/nextpage:
+    $ref: ./paths/directories/products.yaml#/~1directories~1products~1list~1nextpage
+  /directories/products:
+    $ref: ./paths/directories/products.yaml#/~1directories~1products
+  /directories/products/{code}:
+    $ref: ./paths/directories/products_{code}.yaml#/~1directories~1products~1{code}
+  /directories/products/measureunits/list:
+    $ref: ./paths/directories/products_measureunits.yaml#/~1directories~1products~1measureunits~1list
+  /directories/products/measureunits/list/nextpage:
+    $ref: ./paths/directories/products_measureunits.yaml#/~1directories~1products~1measureunits~1list~1nextpage
+  /directories/products/measureunits:
+    $ref: ./paths/directories/products_measureunits.yaml#/~1directories~1products~1measureunits
+  /directories/products/{productCode}/measureunits/{unitCode}:
+    $ref: ./paths/directories/products_{code}_measureunits_{unitCode}.yaml#/~1directories~1products~1{productCode}~1measureunits~1{unitCode}
+  # Barcodes
+  /directories/barcodes:
+    $ref: ./paths/directories/barcodes.yaml#/~1directories~1barcodes
+  /directories/barcodes/list:
+    $ref: ./paths/directories/barcodes.yaml#/~1directories~1barcodes~1list
+  /directories/barcodes/list/nextpage:
+    $ref: ./paths/directories/barcodes.yaml#/~1directories~1barcodes~1list~1nextpage
+  /directories/barcodes/{code}:
+    $ref: ./paths/directories/barcodes_{code}.yaml#/~1directories~1barcodes~1{code}
+  # Cash Desks
+  /directories/cashdesks:
+    $ref: ./paths/directories/cashdesks.yaml#/~1directories~1cashdesks
+  /directories/cashdesks/{code}:
+    $ref: ./paths/directories/cashdesks_{code}.yaml#/~1directories~1cashdesks~1{code}
+  # Partners
+  /directories/partners:
+    $ref: ./paths/directories/partners.yaml#/~1directories~1partners
+  /directories/partners/list:
+    $ref: ./paths/directories/partners.yaml#/~1directories~1partners~1list
+  /directories/partners/list/nextpage:
+    $ref: ./paths/directories/partners.yaml#/~1directories~1partners~1list~1nextpage
+  /directories/partners/{code}:
+    $ref: ./paths/directories/partners_{code}.yaml#/~1directories~1partners~1{code}
+  /directories/partners/contracts:
+    $ref: ./paths/directories/partners_contracts.yaml#/~1directories~1partners~1contracts
+  /directories/partners/contracts/list:
+    $ref: ./paths/directories/partners_contracts.yaml#/~1directories~1partners~1contracts~1list
+  /directories/partners/contracts/list/nextpage:
+    $ref: ./paths/directories/partners_contracts.yaml#/~1directories~1partners~1contracts~1list~1nextpage
+  /directories/partners/{partnerCode}/contracts/{contractCode}:
+    $ref: ./paths/directories/partners_{partnerCode}_contracts_{contractCode}.yaml#/~1directories~1partners~1{partnerCode}~1contracts~1{contractCode}
+  # Partners Groups
+  /directories/partnersgroups:
+    $ref: ./paths/directories/partnersgroups.yaml#/~1directories~1partnersgroups
+  /directories/partnersgroups/{code}:
+    $ref: ./paths/directories/partnersgroups.yaml#/~1directories~1partnersgroups~1{code}
+  # Price List Types
+  /directories/pricelisttypes:
+    $ref: ./paths/directories/pricelisttypes.yaml#/~1directories~1pricelisttypes
+  /directories/pricelisttypes/{code}:
+    $ref: ./paths/directories/pricelisttypes.yaml#/~1directories~1pricelisttypes~1{code}
+  # Products Groups
+  /directories/productsgroups:
+    $ref: ./paths/directories/productsgroups.yaml#/~1directories~1productsgroups
+  /directories/productsgroups/{code}:
+    $ref: ./paths/directories/productsgroups.yaml#/~1directories~1productsgroups~1{code}
+  # Storages
+  /directories/storages:
+    $ref: ./paths/directories/storages.yaml#/~1directories~1storages
+  /directories/storages/{code}:
+    $ref: ./paths/directories/storages.yaml#/~1directories~1storages~1{code}
+  # Documents — Invoice
+  /documents/invoice:
+    $ref: ./paths/documents/invoice.yaml#/~1documents~1invoice
+  /documents/invoice/{isn}:
+    $ref: ./paths/documents/invoice_{isn}.yaml#/~1documents~1invoice~1{isn}
+  # Documents — Sale
+  /documents/sale:
+    $ref: ./paths/documents/sale.yaml#/~1documents~1sale
+  /documents/sale/{isn}:
+    $ref: ./paths/documents/sale_{isn}.yaml#/~1documents~1sale~1{isn}
+  # Documents — Sale Return
+  /documents/salereturn:
+    $ref: ./paths/documents/salereturn.yaml#/~1documents~1salereturn
+  /documents/salereturn/{isn}:
+    $ref: ./paths/documents/salereturn_{isn}.yaml#/~1documents~1salereturn~1{isn}
+  # Documents — Storage Input Order
+  /documents/storageinputorder:
+    $ref: ./paths/documents/storageinputorder.yaml#/~1documents~1storageinputorder
+  /documents/storageinputorder/{isn}:
+    $ref: ./paths/documents/storageinputorder_{isn}.yaml#/~1documents~1storageinputorder~1{isn}
+  # Documents — Storage Input Order Retail
+  /documents/storageinputorderretail:
+    $ref: ./paths/documents/storageinputorderretail.yaml#/~1documents~1storageinputorderretail
+  /documents/storageinputorderretail/{isn}:
+    $ref: ./paths/documents/storageinputorderretail_{isn}.yaml#/~1documents~1storageinputorderretail~1{isn}
+  # Documents — Transfer Invoice
+  /documents/transferinvoice:
+    $ref: ./paths/documents/transferinvoice.yaml#/~1documents~1transferinvoice
+  /documents/transferinvoice/{isn}:
+    $ref: ./paths/documents/transferinvoice_{isn}.yaml#/~1documents~1transferinvoice~1{isn}
+  # Documents — Products Movement
+  /documents/productsmovement:
+    $ref: ./paths/documents/productsmovement.yaml#/~1documents~1productsmovement
+  /documents/productsmovement/{isn}:
+    $ref: ./paths/documents/productsmovement_{isn}.yaml#/~1documents~1productsmovement~1{isn}
+  # Journals
+  /journals/alldocuments:
+    $ref: ./paths/journals/alldocuments.yaml#/~1journals~1alldocuments
+  /journals/alldocuments/nextpage:
+    $ref: ./paths/journals/alldocuments.yaml#/~1journals~1alldocuments~1nextpage
+  /journals/ecrchecks:
+    $ref: ./paths/journals/ecrchecks.yaml#/~1journals~1ecrchecks
+  /journals/ecrchecks/nextpage:
+    $ref: ./paths/journals/ecrchecks.yaml#/~1journals~1ecrchecks~1nextpage
+  # Reports
+  /reports/bonusbalances:
+    $ref: ./paths/reports/bonusbalances.yaml#/~1reports~1bonusbalances
+  /reports/bonusbalances/nextpage:
+    $ref: ./paths/reports/bonusbalances.yaml#/~1reports~1bonusbalances~1nextpage
+  /reports/partnersbalances:
+    $ref: ./paths/reports/partnersbalances.yaml#/~1reports~1partnersbalances
+  /reports/partnersbalances/nextpage:
+    $ref: ./paths/reports/partnersbalances.yaml#/~1reports~1partnersbalances~1nextpage
+  /reports/pricelist:
+    $ref: ./paths/reports/pricelist.yaml#/~1reports~1pricelist
+  /reports/pricelist/nextpage:
+    $ref: ./paths/reports/pricelist.yaml#/~1reports~1pricelist~1nextpage
+  /reports/productsbalances:
+    $ref: ./paths/reports/productsbalances.yaml#/~1reports~1productsbalances
+  /reports/productsbalances/nextpage:
+    $ref: ./paths/reports/productsbalances.yaml#/~1reports~1productsbalances~1nextpage
+  /reports/productsbalances/short:
+    $ref: ./paths/reports/productsbalances_short.yaml#/~1reports~1productsbalances~1short
+  /reports/productsbalances/short/nextpage:
+    $ref: ./paths/reports/productsbalances_short.yaml#/~1reports~1productsbalances~1short~1nextpage
+  /reports/salesanalysis:
+    $ref: ./paths/reports/salesanalysis.yaml#/~1reports~1salesanalysis
+  /reports/salesanalysis/nextpage:
+    $ref: ./paths/reports/salesanalysis.yaml#/~1reports~1salesanalysis~1nextpage
+
+components:
+  securitySchemes:
+    apiKeyAuth:
+      $ref: ./components/securitySchemes/api-key.yaml
+
+  schemas:
+    # Shared
+    ApiResponse:
+      $ref: ./components/schemas/_shared/ApiResponse.yaml
+    NextPageRequest:
+      $ref: ./components/schemas/_shared/NextPageRequest.yaml
+    Error:
+      $ref: ./components/schemas/_shared/Error.yaml
+    # Directories — Barcodes
+    Barcode:
+      $ref: ./components/schemas/directories/Barcode.yaml
+    BarcodeApiResponse:
+      $ref: ./components/schemas/directories/BarcodeApiResponse.yaml
+    BarcodeFilters:
+      $ref: ./components/schemas/directories/BarcodeFilters.yaml
+    # Directories — Cash Desks
+    CashDesk:
+      $ref: ./components/schemas/directories/CashDesk.yaml
+    # Directories — Contracts
+    Contract:
+      $ref: ./components/schemas/directories/Contract.yaml
+    ContractFilters:
+      $ref: ./components/schemas/directories/ContractFilters.yaml
+    ContractRow:
+      $ref: ./components/schemas/directories/ContractRow.yaml
+    ContractRowApiResponse:
+      $ref: ./components/schemas/directories/ContractRowApiResponse.yaml
+    # Directories — Partners
+    Partner:
+      $ref: ./components/schemas/directories/Partner.yaml
+    PartnerBusinessAddressRow:
+      $ref: ./components/schemas/directories/PartnerBusinessAddressRow.yaml
+    PartnerContractRow:
+      $ref: ./components/schemas/directories/PartnerContractRow.yaml
+    PartnerFilters:
+      $ref: ./components/schemas/directories/PartnerFilters.yaml
+    PartnerRow:
+      $ref: ./components/schemas/directories/PartnerRow.yaml
+    PartnerRowApiResponse:
+      $ref: ./components/schemas/directories/PartnerRowApiResponse.yaml
+    PartnerSettlementAccountRow:
+      $ref: ./components/schemas/directories/PartnerSettlementAccountRow.yaml
+    PartnersGroup:
+      $ref: ./components/schemas/directories/PartnersGroup.yaml
+    # Directories — Products
+    Product:
+      $ref: ./components/schemas/directories/Product.yaml
+    ProductRow:
+      $ref: ./components/schemas/directories/ProductRow.yaml
+    ProductRowApiResponse:
+      $ref: ./components/schemas/directories/ProductRowApiResponse.yaml
+    ProductFilters:
+      $ref: ./components/schemas/directories/ProductFilters.yaml
+    ProductMeasureUnit:
+      $ref: ./components/schemas/directories/ProductMeasureUnit.yaml
+    ProductMeasureUnitApiResponse:
+      $ref: ./components/schemas/directories/ProductMeasureUnitApiResponse.yaml
+    MeasureUnitFilters:
+      $ref: ./components/schemas/directories/MeasureUnitFilters.yaml
+    ProductBarcodeRow:
+      $ref: ./components/schemas/directories/ProductBarcodeRow.yaml
+    ProductMeasureUnitRow:
+      $ref: ./components/schemas/directories/ProductMeasureUnitRow.yaml
+    ProductsGroup:
+      $ref: ./components/schemas/directories/ProductsGroup.yaml
+    # Directories — Price List Types
+    PriceListType:
+      $ref: ./components/schemas/directories/PriceListType.yaml
+    # Directories — Storages
+    Storage:
+      $ref: ./components/schemas/directories/Storage.yaml
+    # Documents
+    Invoice:
+      $ref: ./components/schemas/documents/Invoice.yaml
+    InvoiceSpecificationRow:
+      $ref: ./components/schemas/documents/InvoiceSpecificationRow.yaml
+    Sale:
+      $ref: ./components/schemas/documents/Sale.yaml
+    SaleSpecificationRow:
+      $ref: ./components/schemas/documents/SaleSpecificationRow.yaml
+    SaleReturn:
+      $ref: ./components/schemas/documents/SaleReturn.yaml
+    SaleReturnSpecificationRow:
+      $ref: ./components/schemas/documents/SaleReturnSpecificationRow.yaml
+    StorageInputOrder:
+      $ref: ./components/schemas/documents/StorageInputOrder.yaml
+    StorageInputOrderSpecificationRow:
+      $ref: ./components/schemas/documents/StorageInputOrderSpecificationRow.yaml
+    StorageInputOrderRetail:
+      $ref: ./components/schemas/documents/StorageInputOrderRetail.yaml
+    StorageInputOrderRetailSpecificationRow:
+      $ref: ./components/schemas/documents/StorageInputOrderRetailSpecificationRow.yaml
+    TransferInvoice:
+      $ref: ./components/schemas/documents/TransferInvoice.yaml
+    TransferInvoiceSpecificationRow:
+      $ref: ./components/schemas/documents/TransferInvoiceSpecificationRow.yaml
+    ProductsMovement:
+      $ref: ./components/schemas/documents/ProductsMovement.yaml
+    ProductsMovementSpecificationRow:
+      $ref: ./components/schemas/documents/ProductsMovementSpecificationRow.yaml
+    # Reports
+    BonusBalancesDataRow:
+      $ref: ./components/schemas/reports/BonusBalancesDataRow.yaml
+    BonusBalancesDataRowApiResponse:
+      $ref: ./components/schemas/reports/BonusBalancesDataRowApiResponse.yaml
+    BonusBalancesParam:
+      $ref: ./components/schemas/reports/BonusBalancesParam.yaml
+    PartnersBalancesDataRow:
+      $ref: ./components/schemas/reports/PartnersBalancesDataRow.yaml
+    PartnersBalancesDataRowApiResponse:
+      $ref: ./components/schemas/reports/PartnersBalancesDataRowApiResponse.yaml
+    PartnersBalancesParam:
+      $ref: ./components/schemas/reports/PartnersBalancesParam.yaml
+    PriceListDataRow:
+      $ref: ./components/schemas/reports/PriceListDataRow.yaml
+    PriceListDataRowApiResponse:
+      $ref: ./components/schemas/reports/PriceListDataRowApiResponse.yaml
+    PriceListParam:
+      $ref: ./components/schemas/reports/PriceListParam.yaml
+    ProductsBalancesDataRow:
+      $ref: ./components/schemas/reports/ProductsBalancesDataRow.yaml
+    ProductsBalancesDataRowApiResponse:
+      $ref: ./components/schemas/reports/ProductsBalancesDataRowApiResponse.yaml
+    ProductsBalancesParam:
+      $ref: ./components/schemas/reports/ProductsBalancesParam.yaml
+    ProductsBalancesShortDataRow:
+      $ref: ./components/schemas/reports/ProductsBalancesShortDataRow.yaml
+    ProductsBalancesShortDataRowApiResponse:
+      $ref: ./components/schemas/reports/ProductsBalancesShortDataRowApiResponse.yaml
+    ProductsBalancesShortParam:
+      $ref: ./components/schemas/reports/ProductsBalancesShortParam.yaml
+    SalesAnalysisDataRow:
+      $ref: ./components/schemas/reports/SalesAnalysisDataRow.yaml
+    SalesAnalysisDataRowApiResponse:
+      $ref: ./components/schemas/reports/SalesAnalysisDataRowApiResponse.yaml
+    SalesAnalysisParam:
+      $ref: ./components/schemas/reports/SalesAnalysisParam.yaml
+    # Journals
+    DocumentsJournalDataRow:
+      $ref: ./components/schemas/journals/DocumentsJournalDataRow.yaml
+    DocumentsJournalDataRowApiResponse:
+      $ref: ./components/schemas/journals/DocumentsJournalDataRowApiResponse.yaml
+    DocumentsJournalParam:
+      $ref: ./components/schemas/journals/DocumentsJournalParam.yaml
+    ECRChecksJournalDataRow:
+      $ref: ./components/schemas/journals/ECRChecksJournalDataRow.yaml
+    ECRChecksJournalDataRowApiResponse:
+      $ref: ./components/schemas/journals/ECRChecksJournalDataRowApiResponse.yaml
+    ECRChecksJournalParam:
+      $ref: ./components/schemas/journals/ECRChecksJournalParam.yaml
+
+  responses:
+    BadRequest:
+      description: Bad Request - Invalid parameters or validation failure
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+              title:
+                type: string
+              status:
+                type: integer
+              detail:
+                type: string
+
+    Unauthorized:
+      description: Unauthorized - Missing or invalid API key
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+              title:
+                type: string
+              status:
+                type: integer
+              detail:
+                type: string
+
+    Forbidden:
+      description: Forbidden - Insufficient permissions
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+              title:
+                type: string
+              status:
+                type: integer
+              detail:
+                type: string
+
+    MethodNotAllowed:
+      description: Method Not Allowed
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+              title:
+                type: string
+              status:
+                type: integer
+              detail:
+                type: string
+
+    NotFound:
+      description: Not Found - Resource doesn't exist
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+              title:
+                type: string
+              status:
+                type: integer
+              detail:
+                type: string
+
+    Conflict:
+      description: Conflict - Resource conflict (e.g., duplicate code)
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+              title:
+                type: string
+              status:
+                type: integer
+              detail:
+                type: string
+
+    InternalError:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+              title:
+                type: string
+              status:
+                type: integer
+              detail:
+                type: string
+
+    TooManyRequests:
+      description: Too Many Requests - Rate limit exceeded
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+              title:
+                type: string
+              status:
+                type: integer
+              detail:
+                type: string
+
+    ServiceUnavailable:
+      description: Service Unavailable
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+              title:
+                type: string
+              status:
+                type: integer
+              detail:
+                type: string

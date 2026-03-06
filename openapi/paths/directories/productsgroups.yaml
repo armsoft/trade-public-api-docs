@@ -1,0 +1,76 @@
+﻿/directories/productsgroups:
+  get:
+    tags: [ProductsGroups]
+    responses:
+      '200':
+        description: OK
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+  post:
+    tags: [ProductsGroups]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/directories/ProductsGroup.yaml
+    responses:
+      '201':
+        description: Created
+        content:
+          application/json:
+            schema:
+              $ref: ../../components/schemas/directories/ProductsGroup.yaml
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+
+/directories/productsgroups/{code}:
+  get:
+    tags: [ProductsGroups]
+    parameters:
+      - name: code
+        in: path
+        required: true
+        schema:
+          type: string
+    responses:
+      '200':
+        description: OK
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+  put:
+    tags: [ProductsGroups]
+    parameters:
+      - name: code
+        in: path
+        required: true
+        schema:
+          type: string
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/directories/ProductsGroup.yaml
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: ../../components/schemas/directories/ProductsGroup.yaml
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+  delete:
+    tags: [ProductsGroups]
+    parameters:
+      - name: code
+        in: path
+        required: true
+        schema:
+          type: string
+    responses:
+      '200':
+        description: OK
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized

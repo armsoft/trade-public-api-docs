@@ -1,0 +1,9 @@
+﻿type: object
+properties:
+  name:
+    type: string
+    nullable: true
+  default:
+    type: boolean
+additionalProperties: false
+

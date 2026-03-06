@@ -1,0 +1,128 @@
+/directories/products/list:
+  post:
+    tags: [Products]
+    summary: Get products by filters
+    operationId: Products_GetAll
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/directories/ProductFilters.yaml
+          examples:
+            default:
+              value:
+                showMode: '3'
+                group: ""
+                type: ""
+                codes:
+                  - "1001"
+                  - "1002"
+                extended: true
+                priceListTypes:
+                  - "01"
+                lastModifiedDate: null
+                pageSize: 5000
+    responses:
+      '200':
+        description: Products fetched successfully
+        content:
+          application/json:
+            schema:
+              $ref: ../../components/schemas/directories/ProductRowApiResponse.yaml
+            examples:
+              default:
+                value:
+                  id: "550e8400-e29b-41d4-a716-446655440000"
+                  hasMore: true
+                  data:
+                    - id: 100000
+                      code: "1001"
+                      name: "Հեռուստացույց LED Panasonic TX-LR55ET5"
+                      type: "1"
+                      group: "110"
+                      baseUnitMeasure: "001"
+                      vat: true
+                      showInPriceLists: true
+      '400':
+        $ref: ../../openapi.yaml#/components/responses/BadRequest
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+      '403':
+        $ref: ../../openapi.yaml#/components/responses/Forbidden
+      '405':
+        $ref: ../../openapi.yaml#/components/responses/MethodNotAllowed
+      '429':
+        $ref: ../../openapi.yaml#/components/responses/TooManyRequests
+      '500':
+        $ref: ../../openapi.yaml#/components/responses/InternalError
+      '503':
+        $ref: ../../openapi.yaml#/components/responses/ServiceUnavailable
+
+/directories/products/list/nextpage:
+  post:
+    tags: [Products]
+    summary: Get next page of products
+    operationId: Products_GetAllNextPage
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/_shared/NextPageRequest.yaml
+    responses:
+      '200':
+        description: Next page of products fetched successfully
+        content:
+          application/json:
+            schema:
+              $ref: ../../components/schemas/directories/ProductRowApiResponse.yaml
+      '400':
+        $ref: ../../openapi.yaml#/components/responses/BadRequest
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+      '403':
+        $ref: ../../openapi.yaml#/components/responses/Forbidden
+      '405':
+        $ref: ../../openapi.yaml#/components/responses/MethodNotAllowed
+      '429':
+        $ref: ../../openapi.yaml#/components/responses/TooManyRequests
+      '500':
+        $ref: ../../openapi.yaml#/components/responses/InternalError
+      '503':
+        $ref: ../../openapi.yaml#/components/responses/ServiceUnavailable
+
+/directories/products:
+  post:
+    tags: [Products]
+    summary: Create product
+    operationId: Products_Create
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/directories/Product.yaml
+    responses:
+      '201':
+        description: Product created successfully
+        content:
+          application/json:
+            schema:
+              $ref: ../../components/schemas/directories/Product.yaml
+      '400':
+        $ref: ../../openapi.yaml#/components/responses/BadRequest
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+      '403':
+        $ref: ../../openapi.yaml#/components/responses/Forbidden
+      '405':
+        $ref: ../../openapi.yaml#/components/responses/MethodNotAllowed
+      '409':
+        $ref: ../../openapi.yaml#/components/responses/Conflict
+      '429':
+        $ref: ../../openapi.yaml#/components/responses/TooManyRequests
+      '500':
+        $ref: ../../openapi.yaml#/components/responses/InternalError
+      '503':
+        $ref: ../../openapi.yaml#/components/responses/ServiceUnavailable

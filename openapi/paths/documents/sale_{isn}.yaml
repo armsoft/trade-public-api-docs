@@ -1,0 +1,53 @@
+﻿/documents/sale/{isn}:
+  get:
+    tags: [Sale]
+    parameters:
+      - name: isn
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+    responses:
+      '200':
+        description: OK
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+  put:
+    tags: [Sale]
+    parameters:
+      - name: isn
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/documents/Sale.yaml
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: ../../components/schemas/documents/Sale.yaml
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+  delete:
+    tags: [Sale]
+    parameters:
+      - name: isn
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+    responses:
+      '200':
+        description: OK
+      '401':
+        $ref: ../../openapi.yaml#/components/responses/Unauthorized

@@ -88,7 +88,7 @@ POST /v1/directories/products/list/nextpage
 Content-Type: application/json
 
 {
-  "id": "550e8400-e29b-41d4-a716-446655440000",
+  "id": "550e8400-e29b-41d4-a716-446655440001",
   "close": false
 }
 ```
@@ -120,14 +120,14 @@ POST /v1/directories/products/list/nextpage
 Content-Type: application/json
 
 {
-  "id": "550e8400-e29b-41d4-a716-446655440000",
+  "id": "550e8400-e29b-41d4-a716-446655440001",
   "close": true
 }
 ```
 
 This signals the server to release the pagination context and stop maintaining state for this pagination session.
 
-## Best Practicesgit status
+## Best Practices
 
 - **Always check `hasMore`**: Before making a `/nextpage` request, verify that `hasMore` is `true`
 - **Store the pagination ID**: Keep the `id` value from the response to use in subsequent requests
