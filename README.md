@@ -82,6 +82,16 @@ Current version: **v1**
 | PUT | `/directories/products/{code}` | Update product |
 | DELETE | `/directories/products/{code}` | Delete product |
 
+### Product Groups Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/directories/productsgroups/list` | Get all product groups with filters |
+| GET | `/directories/productsgroups/{code}` | Get product group by code |
+| POST | `/directories/productsgroups` | Create new product group |
+| PUT | `/directories/productsgroups/{code}` | Update product group |
+| DELETE | `/directories/productsgroups/{code}` | Delete product group |
+
 ### Product Measure Units Endpoints
 
 | Method | Endpoint | Description |
@@ -91,6 +101,72 @@ Current version: **v1**
 | POST | `/directories/products/measureunits` | Create measure unit |
 | PUT | `/directories/products/{productCode}/measureunits/{unitCode}` | Update measure unit |
 | DELETE | `/directories/products/{productCode}/measureunits/{unitCode}` | Delete measure unit |
+
+### Barcodes Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/directories/barcodes/list` | Get all barcodes with filters |
+| POST | `/directories/barcodes/nextpage` | Get next page of barcodes |
+| GET | `/directories/barcodes/{code}` | Get barcode by code |
+| POST | `/directories/barcodes` | Create new barcode |
+| PUT | `/directories/barcodes/{code}` | Update barcode |
+| DELETE | `/directories/barcodes/{code}` | Delete barcode |
+
+### Cash Desks Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/directories/cashdesks` | List all cash desks |
+| GET | `/directories/cashdesks/{code}` | Get cash desk by code |
+| POST | `/directories/cashdesks` | Create new cash desk |
+| PUT | `/directories/cashdesks/{code}` | Update cash desk |
+| DELETE | `/directories/cashdesks/{code}` | Delete cash desk |
+
+### Partners Groups Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/directories/partnersgroups/list` | Get all partner groups with filters |
+| GET | `/directories/partnersgroups/{code}` | Get partner group by code |
+| POST | `/directories/partnersgroups` | Create new partner group |
+| PUT | `/directories/partnersgroups/{code}` | Update partner group |
+| DELETE | `/directories/partnersgroups/{code}` | Delete partner group |
+
+### Partners Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/directories/partners/list` | Get all partners with filters |
+| GET | `/directories/partners/{code}` | Get partner by code |
+| POST | `/directories/partners` | Create new partner |
+| PUT | `/directories/partners/{code}` | Update partner |
+| DELETE | `/directories/partners/{code}` | Delete partner |
+| POST | `/directories/partners/contracts/list` | Get partner contracts |
+| POST | `/directories/partners/contracts` | Create new contract |
+| GET | `/directories/partners/{partnerCode}/contracts/{contractCode}` | Get contract |
+| PUT | `/directories/partners/{partnerCode}/contracts/{contractCode}` | Update contract |
+| DELETE | `/directories/partners/{partnerCode}/contracts/{contractCode}` | Delete contract |
+
+### Price List Types Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/directories/pricelisttypes` | List all price list types |
+| GET | `/directories/pricelisttypes/{code}` | Get price list type by code |
+| POST | `/directories/pricelisttypes` | Create new price list type |
+| PUT | `/directories/pricelisttypes/{code}` | Update price list type |
+| DELETE | `/directories/pricelisttypes/{code}` | Delete price list type |
+
+### Storages Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/directories/storages/list` | Get all storages with filters |
+| GET | `/directories/storages/{code}` | Get storage by code |
+| POST | `/directories/storages` | Create new storage |
+| PUT | `/directories/storages/{code}` | Update storage |
+| DELETE | `/directories/storages/{code}` | Delete storage |
 
 
 📖 **[Code Examples](examples/README.md)**

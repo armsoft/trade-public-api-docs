@@ -1,5 +1,7 @@
 # Products API
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_producs.htm)
+
 Products endpoints map to `ProductsController` in API version `v1`.
 
 ## Endpoints

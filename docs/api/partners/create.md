@@ -1,0 +1,24 @@
+# Partners - Create
+
+## Description
+
+Creates a partner.
+
+## Endpoint
+
+- **Base URL:** `https://api.armsoft.am/trade/v1`
+- **Method:** `POST`
+- **Route:** `/v1/directories/partners`
+- **Request content type:** `application/json`
+- **Authorization:** API key in header `apiKey`
+
+## Request body
+
+`Partner` object.
+
+## Successful response
+
+- **Status:** `201 Created`
+- **Content type:** `application/json`
+
+Returns the created `Partner` object.
