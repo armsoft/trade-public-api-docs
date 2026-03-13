@@ -4,11 +4,23 @@ This section contains endpoint-level documentation for the ArmSoft SME Trade Pub
 
 ## Directories
 
-- [Products](products/README.md)
-- [Product Groups](productsgroups/README.md)
-- [Barcodes](barcodes/README.md)
-- [Partners](partners/README.md)
-- [Partners Groups](partnersgroups/README.md)
-- [Cash Desks](cashdesks/README.md)
-- [Price List Types](pricelisttypes/README.md)
-- [Storages](storages/README.md)
+- [Products](directories/products/README.md)
+- [Product Groups](directories/productsgroups/README.md)
+- [Barcodes](directories/barcodes/README.md)
+- [Partners](directories/partners/README.md)
+- [Partners Groups](directories/partnersgroups/README.md)
+- [Cash Desks](directories/cashdesks/README.md)
+- [Price List Types](directories/pricelisttypes/README.md)
+- [Storages](directories/storages/README.md)
+
+## Document types
+
+- [Documents](documents/README.md)
+
+## Journals
+
+- [Journals](journals/README.md)
+
+## Reports
+
+- [Reports](reports/README.md)

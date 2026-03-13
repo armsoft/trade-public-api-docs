@@ -6,24 +6,24 @@ Example requests are currently documented directly in endpoint pages and guides.
 
 - [Getting Started Guide](../docs/getting-started.md)
 - [Authentication Guide](../docs/authentication.md)
-- [Products API Reference](../docs/api/products/README.md)
-- [List Products Example](../docs/api/products/list.md)
-- [List Partners Example](../docs/api/partners/list.md)
+- [Products API Reference](../docs/api/directories/products/README.md)
+- [List Products Example](../docs/api/directories/products/list.md)
+- [List Partners Example](../docs/api/directories/partners/list.md)
 - [Error Handling Guide](../docs/error-handling.md)
 
 ## C# Examples
 
-Ready-to-use C# samples are available in the [`csharp/`](csharp/) folder:
+Ready-to-use C# samples are available in the [`csharp/directories/`](csharp/directories/) folder:
 
-- [`ProductsClient.cs`](csharp/ProductsClient.cs) — wrapper for Products endpoints
-- [`ProductMeasureUnitsClient.cs`](csharp/ProductMeasureUnitsClient.cs) — wrapper for Measure Units 
-- [`BarcodesClient.cs`](csharp/BarcodesClient.cs) — wrapper for Barcodes endpoints
-- [`CashDesksClient.cs`](csharp/CashDesksClient.cs) — wrapper for Cash Desks endpoints
-- [`PartnersClient.cs`](csharp/PartnersClient.cs) — wrapper for Partners endpoints
-- [`PartnersGroupsClient.cs`](csharp/PartnersGroupsClient.cs) — wrapper for Partner Groups endpointsendpoints
+- [`ProductsClient.cs`](csharp/directories/ProductsClient.cs) — wrapper for Products endpoints
+- [`ProductMeasureUnitsClient.cs`](csharp/directories/ProductMeasureUnitsClient.cs) — wrapper for Measure Units 
+- [`BarcodesClient.cs`](csharp/directories/BarcodesClient.cs) — wrapper for Barcodes endpoints
+- [`CashDesksClient.cs`](csharp/directories/CashDesksClient.cs) — wrapper for Cash Desks endpoints
+- [`PartnersClient.cs`](csharp/directories/PartnersClient.cs) — wrapper for Partners endpoints
+- [`PartnersGroupsClient.cs`](csharp/directories/PartnersGroupsClient.cs) — wrapper for Partner Groups endpointsendpoints
 
-Individual operation examples are in the per-directory subfolders (e.g. `csharp/products/`,
-`csharp/measure-units/`, `csharp/barcodes/`, etc.)
+Individual operation examples are in the per-directory subfolders (e.g. `csharp/directories/products/`,
+`csharp/directories/measure-units/`, `csharp/directories/barcodes/`, etc.)
 
 ## Planned additions
 

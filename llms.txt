@@ -15,13 +15,13 @@
 - Pagination: ./docs/pagination.md
 - Localization: ./docs/localization.md
 - API reference: ./docs/api/README.md
-- Products API: ./docs/api/products/README.md
-- List Products: ./docs/api/products/list.md
-- Get Product: ./docs/api/products/get.md
-- Create Product: ./docs/api/products/create.md
-- Update Product: ./docs/api/products/update.md
-- Delete Product: ./docs/api/products/delete.md
-- Product Measure Units: ./docs/api/products/measure-units.md
+- Products API: ./docs/api/directories/products/README.md
+- List Products: ./docs/api/directories/products/list.md
+- Get Product: ./docs/api/directories/products/get.md
+- Create Product: ./docs/api/directories/products/create.md
+- Update Product: ./docs/api/directories/products/update.md
+- Delete Product: ./docs/api/directories/products/delete.md
+- Product Measure Units: ./docs/api/directories/products/measure-units.md
 - Changelog: ./CHANGELOG.md
 
 ## OpenAPI Specs

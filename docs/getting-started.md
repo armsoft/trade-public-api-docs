@@ -37,5 +37,5 @@ curl -X POST "https://api.armsoft.am/trade/v1/directories/products/list" \
 
 ## Next Steps
 
-- Read the endpoint docs: [Products API](api/products/README.md)
+- Read the endpoint docs: [Products API](api/directories/products/README.md)
 - Import the OpenAPI file into Postman/Insomnia: [openapi/openapi.yaml](../openapi/openapi.yaml)

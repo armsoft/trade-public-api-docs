@@ -178,8 +178,8 @@ Current version: **v1**
 | [Getting Started](docs/getting-started.md) | Installation and setup guide |
 | [Authentication](docs/authentication.md) | API key authentication details |
 | [API Reference](docs/api/README.md) | Complete endpoint documentation |
-| [Products API](docs/api/products/README.md) | Detailed Products endpoint reference |
-| [Measure Units API](docs/api/products/measure-units.md) | Measure Units endpoint reference |
+| [Products API](docs/api/directories/products/README.md) | Detailed Products endpoint reference |
+| [Measure Units API](docs/api/directories/products/measure-units.md) | Measure Units endpoint reference |
 | [Pagination](docs/pagination.md) | Pagination and filtering guide |
 | [Localization](docs/localization.md) | Multi-language support details |
 | [Error Handling](docs/error-handling.md) | Error codes and responses |

@@ -3,6 +3,7 @@
 All API endpoints require authorization using an API Key. Clients must include a valid `apiKey` in the request header for every request.
  
 ---
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_secretkeygen.htm)
  
 ### Authentication Method
  
