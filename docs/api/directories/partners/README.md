@@ -1,6 +1,6 @@
 # Partners API
 
-🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_partnersdic.htm)
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_partners.htm)
 
 Partners endpoints map to `PartnersController` in API version `v1`.
 
