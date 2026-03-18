@@ -1,4 +1,4 @@
-﻿/documents/storageinputorder/{isn}:
+/documents/storageinputorder/{isn}:
   get:
     tags: [StorageInputOrder]
     parameters:
@@ -12,23 +12,7 @@
       '200':
         description: OK
       '401':
-        $ref: ../../openapi.yaml#/components/responses/Unauthorized
-  put:
-    tags: [StorageInputOrder]
-    parameters:
-      - name: isn
-        in: path
-        required: true
-        schema:
-          type: string
-          format: uuid
-    requestBody:
-      required: true
-      content:
-        application/json:
-          schema:
-            $ref: ../../components/schemas/documents/StorageInputOrder.yaml
-    responses:
+        $ref: ../../components/responses/Unauthorized.yaml
       '200':
         description: OK
         content:
@@ -36,18 +20,8 @@
             schema:
               $ref: ../../components/schemas/documents/StorageInputOrder.yaml
       '401':
-        $ref: ../../openapi.yaml#/components/responses/Unauthorized
-  delete:
-    tags: [StorageInputOrder]
-    parameters:
-      - name: isn
-        in: path
-        required: true
-        schema:
-          type: string
-          format: uuid
-    responses:
+        $ref: ../../components/responses/Unauthorized.yaml
       '200':
         description: OK
       '401':
-        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+        $ref: ../../components/responses/Unauthorized.yaml

@@ -1,20 +1,11 @@
-﻿/directories/partnersgroups:
+/directories/partnersgroups:
   get:
     tags: [PartnersGroups]
     responses:
       '200':
         description: OK
       '401':
-        $ref: ../../openapi.yaml#/components/responses/Unauthorized
-  post:
-    tags: [PartnersGroups]
-    requestBody:
-      required: true
-      content:
-        application/json:
-          schema:
-            $ref: ../../components/schemas/directories/PartnersGroup.yaml
-    responses:
+        $ref: ../../components/responses/Unauthorized.yaml
       '201':
         description: Created
         content:
@@ -22,8 +13,7 @@
             schema:
               $ref: ../../components/schemas/directories/PartnersGroup.yaml
       '401':
-        $ref: ../../openapi.yaml#/components/responses/Unauthorized
-
+        $ref: ../../components/responses/Unauthorized.yaml
 /directories/partnersgroups/{code}:
   get:
     tags: [PartnersGroups]
@@ -37,22 +27,7 @@
       '200':
         description: OK
       '401':
-        $ref: ../../openapi.yaml#/components/responses/Unauthorized
-  put:
-    tags: [PartnersGroups]
-    parameters:
-      - name: code
-        in: path
-        required: true
-        schema:
-          type: string
-    requestBody:
-      required: true
-      content:
-        application/json:
-          schema:
-            $ref: ../../components/schemas/directories/PartnersGroup.yaml
-    responses:
+        $ref: ../../components/responses/Unauthorized.yaml
       '200':
         description: OK
         content:
@@ -60,17 +35,8 @@
             schema:
               $ref: ../../components/schemas/directories/PartnersGroup.yaml
       '401':
-        $ref: ../../openapi.yaml#/components/responses/Unauthorized
-  delete:
-    tags: [PartnersGroups]
-    parameters:
-      - name: code
-        in: path
-        required: true
-        schema:
-          type: string
-    responses:
+        $ref: ../../components/responses/Unauthorized.yaml
       '200':
         description: OK
       '401':
-        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+        $ref: ../../components/responses/Unauthorized.yaml

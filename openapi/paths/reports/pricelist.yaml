@@ -1,4 +1,4 @@
-﻿/reports/pricelist:
+/reports/pricelist:
   post:
     tags: [Reports]
     requestBody:
@@ -15,8 +15,7 @@
             schema:
               $ref: ../../components/schemas/reports/PriceListDataRowApiResponse.yaml
       '401':
-        $ref: ../../openapi.yaml#/components/responses/Unauthorized
-
+        $ref: ../../components/responses/Unauthorized.yaml
 /reports/pricelist/nextpage:
   post:
     tags: [Reports]
@@ -34,4 +33,4 @@
             schema:
               $ref: ../../components/schemas/reports/PriceListDataRowApiResponse.yaml
       '401':
-        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+        $ref: ../../components/responses/Unauthorized.yaml

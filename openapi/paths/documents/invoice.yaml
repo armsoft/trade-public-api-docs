@@ -1,4 +1,4 @@
-﻿/documents/invoice:
+/documents/invoice:
   post:
     tags: [Invoice]
     requestBody:
@@ -15,4 +15,4 @@
             schema:
               $ref: ../../components/schemas/documents/Invoice.yaml
       '401':
-        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+        $ref: ../../components/responses/Unauthorized.yaml

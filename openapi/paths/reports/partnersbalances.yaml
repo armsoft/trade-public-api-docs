@@ -1,4 +1,4 @@
-﻿/reports/partnersbalances:
+/reports/partnersbalances:
   post:
     tags: [Reports]
     requestBody:
@@ -15,8 +15,7 @@
             schema:
               $ref: ../../components/schemas/reports/PartnersBalancesDataRowApiResponse.yaml
       '401':
-        $ref: ../../openapi.yaml#/components/responses/Unauthorized
-
+        $ref: ../../components/responses/Unauthorized.yaml
 /reports/partnersbalances/nextpage:
   post:
     tags: [Reports]
@@ -34,4 +33,4 @@
             schema:
               $ref: ../../components/schemas/reports/PartnersBalancesDataRowApiResponse.yaml
       '401':
-        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+        $ref: ../../components/responses/Unauthorized.yaml

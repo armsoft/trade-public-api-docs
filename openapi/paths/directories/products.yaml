@@ -45,20 +45,19 @@
                       vat: true
                       showInPriceLists: true
       '400':
-        $ref: ../../openapi.yaml#/components/responses/BadRequest
+        $ref: ../../components/responses/BadRequest.yaml
       '401':
-        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+        $ref: ../../components/responses/Unauthorized.yaml
       '403':
-        $ref: ../../openapi.yaml#/components/responses/Forbidden
+        $ref: ../../components/responses/Forbidden.yaml
       '405':
-        $ref: ../../openapi.yaml#/components/responses/MethodNotAllowed
+        $ref: ../../components/responses/MethodNotAllowed.yaml
       '429':
-        $ref: ../../openapi.yaml#/components/responses/TooManyRequests
+        $ref: ../../components/responses/TooManyRequests.yaml
       '500':
-        $ref: ../../openapi.yaml#/components/responses/InternalError
+        $ref: ../../components/responses/InternalError.yaml
       '503':
-        $ref: ../../openapi.yaml#/components/responses/ServiceUnavailable
-
+        $ref: ../../components/responses/ServiceUnavailable.yaml
 /directories/products/list/nextpage:
   post:
     tags: [Products]
@@ -78,20 +77,19 @@
             schema:
               $ref: ../../components/schemas/directories/ProductRowApiResponse.yaml
       '400':
-        $ref: ../../openapi.yaml#/components/responses/BadRequest
+        $ref: ../../components/responses/BadRequest.yaml
       '401':
-        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+        $ref: ../../components/responses/Unauthorized.yaml
       '403':
-        $ref: ../../openapi.yaml#/components/responses/Forbidden
+        $ref: ../../components/responses/Forbidden.yaml
       '405':
-        $ref: ../../openapi.yaml#/components/responses/MethodNotAllowed
+        $ref: ../../components/responses/MethodNotAllowed.yaml
       '429':
-        $ref: ../../openapi.yaml#/components/responses/TooManyRequests
+        $ref: ../../components/responses/TooManyRequests.yaml
       '500':
-        $ref: ../../openapi.yaml#/components/responses/InternalError
+        $ref: ../../components/responses/InternalError.yaml
       '503':
-        $ref: ../../openapi.yaml#/components/responses/ServiceUnavailable
-
+        $ref: ../../components/responses/ServiceUnavailable.yaml
 /directories/products:
   post:
     tags: [Products]
@@ -111,18 +109,18 @@
             schema:
               $ref: ../../components/schemas/directories/Product.yaml
       '400':
-        $ref: ../../openapi.yaml#/components/responses/BadRequest
+        $ref: ../../components/responses/BadRequest.yaml
       '401':
-        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+        $ref: ../../components/responses/Unauthorized.yaml
       '403':
-        $ref: ../../openapi.yaml#/components/responses/Forbidden
+        $ref: ../../components/responses/Forbidden.yaml
       '405':
-        $ref: ../../openapi.yaml#/components/responses/MethodNotAllowed
+        $ref: ../../components/responses/MethodNotAllowed.yaml
       '409':
-        $ref: ../../openapi.yaml#/components/responses/Conflict
+        $ref: ../../components/responses/Conflict.yaml
       '429':
-        $ref: ../../openapi.yaml#/components/responses/TooManyRequests
+        $ref: ../../components/responses/TooManyRequests.yaml
       '500':
-        $ref: ../../openapi.yaml#/components/responses/InternalError
+        $ref: ../../components/responses/InternalError.yaml
       '503':
-        $ref: ../../openapi.yaml#/components/responses/ServiceUnavailable
+        $ref: ../../components/responses/ServiceUnavailable.yaml

@@ -1,4 +1,4 @@
-﻿/directories/barcodes:
+/directories/barcodes:
   post:
     tags: [Barcodes]
     requestBody:
@@ -15,8 +15,7 @@
             schema:
               $ref: ../../components/schemas/directories/Barcode.yaml
       '401':
-        $ref: ../../openapi.yaml#/components/responses/Unauthorized
-
+        $ref: ../../components/responses/Unauthorized.yaml
 /directories/barcodes/list:
   post:
     tags: [Barcodes]
@@ -34,8 +33,7 @@
             schema:
               $ref: ../../components/schemas/directories/BarcodeApiResponse.yaml
       '401':
-        $ref: ../../openapi.yaml#/components/responses/Unauthorized
-
+        $ref: ../../components/responses/Unauthorized.yaml
 /directories/barcodes/list/nextpage:
   post:
     tags: [Barcodes]
@@ -53,4 +51,4 @@
             schema:
               $ref: ../../components/schemas/directories/BarcodeApiResponse.yaml
       '401':
-        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+        $ref: ../../components/responses/Unauthorized.yaml

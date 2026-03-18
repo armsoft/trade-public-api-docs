@@ -1,4 +1,4 @@
-﻿/journals/ecrchecks:
+/journals/ecrchecks:
   post:
     tags: [Journals]
     requestBody:
@@ -15,8 +15,7 @@
             schema:
               $ref: ../../components/schemas/journals/ECRChecksJournalDataRowApiResponse.yaml
       '401':
-        $ref: ../../openapi.yaml#/components/responses/Unauthorized
-
+        $ref: ../../components/responses/Unauthorized.yaml
 /journals/ecrchecks/nextpage:
   post:
     tags: [Journals]
@@ -34,4 +33,4 @@
             schema:
               $ref: ../../components/schemas/journals/ECRChecksJournalDataRowApiResponse.yaml
       '401':
-        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+        $ref: ../../components/responses/Unauthorized.yaml

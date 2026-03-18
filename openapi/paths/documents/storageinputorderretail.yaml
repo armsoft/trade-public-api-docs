@@ -1,4 +1,4 @@
-﻿/documents/storageinputorderretail:
+/documents/storageinputorderretail:
   post:
     tags: [StorageInputOrderRetail]
     requestBody:
@@ -15,4 +15,4 @@
             schema:
               $ref: ../../components/schemas/documents/StorageInputOrderRetail.yaml
       '401':
-        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+        $ref: ../../components/responses/Unauthorized.yaml

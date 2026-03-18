@@ -1,20 +1,11 @@
-﻿/directories/storages:
+/directories/storages:
   get:
     tags: [Storages]
     responses:
       '200':
         description: OK
       '401':
-        $ref: ../../openapi.yaml#/components/responses/Unauthorized
-  post:
-    tags: [Storages]
-    requestBody:
-      required: true
-      content:
-        application/json:
-          schema:
-            $ref: ../../components/schemas/directories/Storage.yaml
-    responses:
+        $ref: ../../components/responses/Unauthorized.yaml
       '201':
         description: Created
         content:
@@ -22,8 +13,7 @@
             schema:
               $ref: ../../components/schemas/directories/Storage.yaml
       '401':
-        $ref: ../../openapi.yaml#/components/responses/Unauthorized
-
+        $ref: ../../components/responses/Unauthorized.yaml
 /directories/storages/{code}:
   get:
     tags: [Storages]
@@ -37,22 +27,7 @@
       '200':
         description: OK
       '401':
-        $ref: ../../openapi.yaml#/components/responses/Unauthorized
-  put:
-    tags: [Storages]
-    parameters:
-      - name: code
-        in: path
-        required: true
-        schema:
-          type: string
-    requestBody:
-      required: true
-      content:
-        application/json:
-          schema:
-            $ref: ../../components/schemas/directories/Storage.yaml
-    responses:
+        $ref: ../../components/responses/Unauthorized.yaml
       '200':
         description: OK
         content:
@@ -60,17 +35,8 @@
             schema:
               $ref: ../../components/schemas/directories/Storage.yaml
       '401':
-        $ref: ../../openapi.yaml#/components/responses/Unauthorized
-  delete:
-    tags: [Storages]
-    parameters:
-      - name: code
-        in: path
-        required: true
-        schema:
-          type: string
-    responses:
+        $ref: ../../components/responses/Unauthorized.yaml
       '200':
         description: OK
       '401':
-        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+        $ref: ../../components/responses/Unauthorized.yaml
