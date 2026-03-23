@@ -16,18 +16,12 @@ public class CashDesksClient
         _http.DefaultRequestHeaders.Add("apiKey", apiKey);
     }
 
-    public async Task<JsonDocument> ListAsync(object filters)
+    public async Task<JsonElement?> GetAllAsync()
     {
-        var response = await _http.PostAsJsonAsync("/directories/cashdesks/list", filters);
+        var response = await _http.GetAsync($"/directories/cashdesks");
+        if (response.StatusCode == HttpStatusCode.NotFound) return null;
         response.EnsureSuccessStatusCode();
-        return await JsonDocument.ParseAsync(await response.Content.ReadAsStreamAsync());
-    }
-
-    public async Task<JsonDocument> ListNextPageAsync(string id)
-    {
-        var response = await _http.PostAsJsonAsync("/directories/cashdesks/list/nextpage", new { id });
-        response.EnsureSuccessStatusCode();
-        return await JsonDocument.ParseAsync(await response.Content.ReadAsStreamAsync());
+        return (await JsonDocument.ParseAsync(await response.Content.ReadAsStreamAsync())).RootElement;
     }
 
     public async Task<JsonElement?> GetAsync(string code)

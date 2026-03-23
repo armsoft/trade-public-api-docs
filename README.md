@@ -86,7 +86,7 @@ Current version: **v1**
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| POST | `/directories/productsgroups/list` | Get all product groups with filters |
+| GET | `/directories/productsgroups` | Get all product groups |
 | GET | `/directories/productsgroups/{code}` | Get product group by code |
 | POST | `/directories/productsgroups` | Create new product group |
 | PUT | `/directories/productsgroups/{code}` | Update product group |
@@ -127,7 +127,7 @@ Current version: **v1**
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| POST | `/directories/partnersgroups/list` | Get all partner groups with filters |
+| GET | `/directories/partnersgroups` | Get all partners groups |
 | GET | `/directories/partnersgroups/{code}` | Get partner group by code |
 | POST | `/directories/partnersgroups` | Create new partner group |
 | PUT | `/directories/partnersgroups/{code}` | Update partner group |
@@ -162,11 +162,37 @@ Current version: **v1**
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| POST | `/directories/storages/list` | Get all storages with filters |
+| GET | `/directories/storages` | Get all storages |
 | GET | `/directories/storages/{code}` | Get storage by code |
 | POST | `/directories/storages` | Create new storage |
 | PUT | `/directories/storages/{code}` | Update storage |
 | DELETE | `/directories/storages/{code}` | Delete storage |
+
+### Journals Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/journals/alldocuments` | Get all documents journal rows |
+| POST | `/journals/alldocuments/nextpage` | Next page for documents journal |
+| POST | `/journals/ecrchecks` | Get ECR checks journal rows |
+| POST | `/journals/ecrchecks/nextpage` | Next page for ECR checks journal |
+
+### Reports Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/reports/partnersbalances` | Partner balances report |
+| POST | `/reports/partnersbalances/nextpage` | Partner balances next page |
+| POST | `/reports/productsbalances` | Product balances report |
+| POST | `/reports/productsbalances/nextpage` | Product balances next page |
+| POST | `/reports/productsbalances/short` | Products balances short report |
+| POST | `/reports/productsbalances/short/nextpage` | Products balances short next page |
+| POST | `/reports/pricelist` | Price list report |
+| POST | `/reports/pricelist/nextpage` | Price list next page |
+| POST | `/reports/salesanalysis` | Sales analysis report |
+| POST | `/reports/salesanalysis/nextpage` | Sales analysis next page |
+| POST | `/reports/bonusbalances` | Bonus balances report |
+| POST | `/reports/bonusbalances/nextpage` | Bonus balances next page |
 
 
 📖 **[Code Examples](examples/README.md)**

@@ -20,10 +20,17 @@ Ready-to-use C# samples are available in the [`csharp/directories/`](csharp/dire
 - [`BarcodesClient.cs`](csharp/directories/BarcodesClient.cs) — wrapper for Barcodes endpoints
 - [`CashDesksClient.cs`](csharp/directories/CashDesksClient.cs) — wrapper for Cash Desks endpoints
 - [`PartnersClient.cs`](csharp/directories/PartnersClient.cs) — wrapper for Partners endpoints
-- [`PartnersGroupsClient.cs`](csharp/directories/PartnersGroupsClient.cs) — wrapper for Partner Groups endpointsendpoints
+- [`PartnersGroupsClient.cs`](csharp/directories/PartnersGroupsClient.cs) — wrapper for Partner Groups endpoints
+- [`JournalsClient.cs`](csharp/directories/JournalsClient.cs) — wrapper for Journals endpoints
+- [`ReportsClient.cs`](csharp/directories/ReportsClient.cs) — wrapper for Reports endpoints
 
 Individual operation examples are in the per-directory subfolders (e.g. `csharp/directories/products/`,
 `csharp/directories/measure-units/`, `csharp/directories/barcodes/`, etc.)
+
+## Journals and Reports Examples
+
+- [C# Journals examples](csharp/journals/README.md)
+- [C# Reports examples](csharp/reports/README.md)
 
 ## Planned additions
 
