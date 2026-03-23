@@ -86,7 +86,7 @@ Current version: **v1**
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| POST | `/directories/productsgroups/list` | Get all product groups with filters |
+| GET | `/directories/productsgroups` | Get all product groups |
 | GET | `/directories/productsgroups/{code}` | Get product group by code |
 | POST | `/directories/productsgroups` | Create new product group |
 | PUT | `/directories/productsgroups/{code}` | Update product group |
@@ -127,7 +127,7 @@ Current version: **v1**
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| POST | `/directories/partnersgroups/list` | Get all partner groups with filters |
+| GET | `/directories/partnersgroups` | Get all partners groups |
 | GET | `/directories/partnersgroups/{code}` | Get partner group by code |
 | POST | `/directories/partnersgroups` | Create new partner group |
 | PUT | `/directories/partnersgroups/{code}` | Update partner group |
@@ -162,7 +162,7 @@ Current version: **v1**
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| POST | `/directories/storages/list` | Get all storages with filters |
+| GET | `/directories/storages` | Get all storages |
 | GET | `/directories/storages/{code}` | Get storage by code |
 | POST | `/directories/storages` | Create new storage |
 | PUT | `/directories/storages/{code}` | Update storage |

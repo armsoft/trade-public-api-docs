@@ -3,10 +3,3 @@
 var client = new CashDesksClient("{your-api-key}");
 var obj = await client.GetAsync("CD001");
 Console.WriteLine(obj);
-
-
-// Example: get all cash desk
-
-var client = new CashDesksClient("{your-api-key}");
-var obj = await client.GetAllAsync();
-Console.WriteLine(obj);
