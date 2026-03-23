@@ -2,29 +2,44 @@
 
 ## Description
 
-Retrieves a single cash desk by its code.
+Retrieves cash desk information.  
+- If **code is provided** → returns a single cash desk  
+- If **code is not provided** → returns all cash desks  
 
-## Endpoint
+---
 
-- **Base URL:** `https://api.armsoft.am/trade/v1`
-- **Method:** `GET`
-- **Route:** `/v1/directories/cashdesks/{code}`
-- **Authorization:** API key in header `apiKey`
+## Endpoints
 
-### Path parameters
+### 1. Get all cash desks
+
+- **Method:** `GET`  
+- **Route:** `/v1/directories/cashdesks`  
+- **Authorization:** API key in header `apiKey`  
+
+---
+
+### 2. Get cash desk by code
+
+- **Method:** `GET`  
+- **Route:** `/v1/directories/cashdesks/{code}`  
+- **Authorization:** API key in header `apiKey`  
+
+---
+
+## Path parameters
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| code | string | Yes | Cash desk code |
+| code | string | No | Cash desk code |
 
-## Successful response
+---
 
-- **Status:** `200 OK`
-- **Content type:** `application/json`
+## Successful responses
 
-Returns the `CashDesk` object.
+### When `code` is provided
 
-### Example
+- **Status:** `200 OK`  
+- **Returns:** single `CashDesk` object  
 
 ```json
 {
@@ -35,4 +50,3 @@ Returns the `CashDesk` object.
   "ecr": false,
   "cashLimit": "500000"
 }
-```

@@ -2,30 +2,50 @@
 
 ## Description
 
-Retrieves a price list type by code.
+Retrieves price list type information.  
+- If **code is provided** → returns a single price list type  
+- If **code is not provided** → returns all price list types  
 
-## Endpoint
+---
 
-- **Base URL:** `https://api.armsoft.am/trade/v1`
-- **Method:** `GET`
-- **Route:** `/v1/directories/pricelisttypes/{code}`
-- **Authorization:** API key in header `apiKey`
+## Endpoints
 
-### Path parameters
+### 1. Get all price list types
+
+- **Method:** `GET`  
+- **Route:** `/v1/directories/pricelisttypes`  
+- **Authorization:** API key in header `apiKey`  
+
+---
+
+### 2. Get price list type by code
+
+- **Method:** `GET`  
+- **Route:** `/v1/directories/pricelisttypes/{code}`  
+- **Authorization:** API key in header `apiKey`  
+
+---
+
+## Path parameters
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| code | string | Yes | Price list type code |
+| code | string | No | Price list type code |
 
-## Successful response
+---
 
-- **Status:** `200 OK`
-- **Content type:** `application/json`
+## Successful responses
 
-Returns the `PriceListType` object.
+### When `code` is provided
 
-### Example
+- **Status:** `200 OK`  
+- **Returns:** single `PriceListType` object  
 
 ```json
-{ "code": "01", "name": "Retail", "currency": "AMD", "roundingDegree": "0.01", "includingVAT": true }
-```
+{
+  "code": "01",
+  "name": "Retail",
+  "currency": "AMD",
+  "roundingDegree": "0.01",
+  "includingVAT": true
+}
