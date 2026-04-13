@@ -1,0 +1,10 @@
+type: object
+properties:
+  id:
+    type: string
+    format: uuid
+    description: Pagination identifier returned from the previous list response
+  close:
+    type: boolean
+    description: If true, closes the pagination session
+additionalProperties: false

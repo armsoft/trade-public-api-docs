@@ -1,4 +1,4 @@
-﻿/documents/sale:
+/documents/sale:
   post:
     tags: [Sale]
     requestBody:
@@ -15,4 +15,4 @@
             schema:
               $ref: ../../components/schemas/documents/Sale.yaml
       '401':
-        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+        $ref: ../../components/responses/Unauthorized.yaml

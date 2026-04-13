@@ -1,4 +1,4 @@
-﻿/documents/salereturn/{isn}:
+/documents/salereturn/{isn}:
   get:
     tags: [SaleReturn]
     parameters:
@@ -12,23 +12,7 @@
       '200':
         description: OK
       '401':
-        $ref: ../../openapi.yaml#/components/responses/Unauthorized
-  put:
-    tags: [SaleReturn]
-    parameters:
-      - name: isn
-        in: path
-        required: true
-        schema:
-          type: string
-          format: uuid
-    requestBody:
-      required: true
-      content:
-        application/json:
-          schema:
-            $ref: ../../components/schemas/documents/SaleReturn.yaml
-    responses:
+        $ref: ../../components/responses/Unauthorized.yaml
       '200':
         description: OK
         content:
@@ -36,18 +20,8 @@
             schema:
               $ref: ../../components/schemas/documents/SaleReturn.yaml
       '401':
-        $ref: ../../openapi.yaml#/components/responses/Unauthorized
-  delete:
-    tags: [SaleReturn]
-    parameters:
-      - name: isn
-        in: path
-        required: true
-        schema:
-          type: string
-          format: uuid
-    responses:
+        $ref: ../../components/responses/Unauthorized.yaml
       '200':
         description: OK
       '401':
-        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+        $ref: ../../components/responses/Unauthorized.yaml

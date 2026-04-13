@@ -1,4 +1,4 @@
-﻿/documents/productsmovement:
+/documents/productsmovement:
   post:
     tags: [ProductsMovement]
     requestBody:
@@ -15,4 +15,4 @@
             schema:
               $ref: ../../components/schemas/documents/ProductsMovement.yaml
       '401':
-        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+        $ref: ../../components/responses/Unauthorized.yaml

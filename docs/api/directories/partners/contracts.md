@@ -25,7 +25,7 @@ Example request body:
 
 Successful response returns a `ContractRowApiResponse` object with paging metadata.
 
-Pagination is supported via `pageSize`; see [Pagination](../../pagination.md).
+Pagination is supported via `pageSize`; see [Pagination](../../../pagination.md).
 
 ---
 

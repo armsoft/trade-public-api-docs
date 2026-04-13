@@ -26,7 +26,7 @@ Returns a list of barcodes using simple filters.
 - `itemCodes` filters by product codes associated with each barcode.
 - `pageSize` (optional) controls pagination:
   - `0` or omitted – all rows in one response
-  - `> 0` – return specified number per page; see [Pagination](../../pagination.md)
+  - `> 0` – return specified number per page; see [Pagination](../../../pagination.md)
 
 ## Successful response
 
@@ -57,7 +57,7 @@ Returns a `BarcodeApiResponse` object containing paging metadata and an array of
 
 ## Pagination
 
-This endpoint supports pagination via the `pageSize` parameter. See [Pagination](../../pagination.md) for details.
+This endpoint supports pagination via the `pageSize` parameter. See [Pagination](../../../pagination.md) for details.
 
 ### Pagination example
 

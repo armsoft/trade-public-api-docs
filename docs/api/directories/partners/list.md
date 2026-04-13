@@ -32,7 +32,7 @@ Returns a list of partners using complex filters.
 - `lastModifiedDate` returns records changed after the given timestamp.
 - `pageSize` (optional) controls pagination:
   - `0` or omitted – all rows in one response
-  - `> 0` – return specified number per page; see [Pagination](../../pagination.md)
+  - `> 0` – return specified number per page; see [Pagination](../../../pagination.md)
 
 ## Successful response
 
@@ -54,7 +54,7 @@ curl -X POST "https://api.armsoft.am/trade/v1/directories/partners/list" \
 
 ## Pagination
 
-This endpoint supports pagination via the `pageSize` parameter. See [Pagination](../../pagination.md) for details.
+This endpoint supports pagination via the `pageSize` parameter. See [Pagination](../../../pagination.md) for details.
 
 ### Pagination example
 

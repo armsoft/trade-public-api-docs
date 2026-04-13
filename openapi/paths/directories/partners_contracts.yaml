@@ -1,4 +1,4 @@
-﻿/directories/partners/contracts:
+/directories/partners/contracts:
   post:
     tags: [Partners]
     requestBody:
@@ -15,8 +15,7 @@
             schema:
               $ref: ../../components/schemas/directories/Contract.yaml
       '401':
-        $ref: ../../openapi.yaml#/components/responses/Unauthorized
-
+        $ref: ../../components/responses/Unauthorized.yaml
 /directories/partners/contracts/list:
   post:
     tags: [Partners]
@@ -34,8 +33,7 @@
             schema:
               $ref: ../../components/schemas/directories/ContractRowApiResponse.yaml
       '401':
-        $ref: ../../openapi.yaml#/components/responses/Unauthorized
-
+        $ref: ../../components/responses/Unauthorized.yaml
 /directories/partners/contracts/list/nextpage:
   post:
     tags: [Partners]
@@ -53,4 +51,4 @@
             schema:
               $ref: ../../components/schemas/directories/ContractRowApiResponse.yaml
       '401':
-        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+        $ref: ../../components/responses/Unauthorized.yaml

@@ -1,4 +1,4 @@
-﻿/reports/productsbalances/short:
+/reports/productsbalances/short:
   post:
     tags: [Reports]
     requestBody:
@@ -15,8 +15,7 @@
             schema:
               $ref: ../../components/schemas/reports/ProductsBalancesShortDataRowApiResponse.yaml
       '401':
-        $ref: ../../openapi.yaml#/components/responses/Unauthorized
-
+        $ref: ../../components/responses/Unauthorized.yaml
 /reports/productsbalances/short/nextpage:
   post:
     tags: [Reports]
@@ -34,4 +33,4 @@
             schema:
               $ref: ../../components/schemas/reports/ProductsBalancesShortDataRowApiResponse.yaml
       '401':
-        $ref: ../../openapi.yaml#/components/responses/Unauthorized
+        $ref: ../../components/responses/Unauthorized.yaml
