@@ -6,7 +6,6 @@ PartnersGroups endpoints map to `PartnersGroupsController` in API version `v1`.
 
 ## Endpoints
 
-- [List Partner Groups](list.md)
 - [Get Partner Group](get.md)
 - [Create Partner Group](create.md)
 - [Update Partner Group](update.md)

@@ -44,7 +44,7 @@ Returns a list of products using complex filters.
 - `pageSize` (optional) controls pagination:
   - `0` or omitted - Returns all products in a single response
   - `> 0` - Returns specified number of products per page; use pagination to access additional pages
-  - See [Pagination](../../pagination.md) for detailed pagination workflow
+  - See [Pagination](../../../pagination.md) for detailed pagination workflow
 
 ## Successful response
 
@@ -181,7 +181,7 @@ curl -X POST "https://api.armsoft.am/trade/v1/directories/products/list" \
 
 ## Pagination
 
-This endpoint supports pagination through the `pageSize` parameter. See [Pagination](../../pagination.md) for complete documentation on handling paginated responses.
+This endpoint supports pagination through the `pageSize` parameter. See [Pagination](../../../pagination.md) for complete documentation on handling paginated responses.
 
 ### Pagination example
 

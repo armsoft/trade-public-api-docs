@@ -6,7 +6,6 @@ CashDesks endpoints map to `CashDesksController` in API version `v1`.
 
 ## Endpoints
 
-- [List Cash Desks](list.md)
 - [Get Cash Desk](get.md)
 - [Create Cash Desk](create.md)
 - [Update Cash Desk](update.md)

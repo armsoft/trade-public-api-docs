@@ -3,6 +3,7 @@
 [![API Version](https://img.shields.io/badge/version-1.0-blue.svg)](https://github.com/armsoft/trade-public-api-docs)
 [![.NET](https://img.shields.io/badge/.NET-10.0-512BD4)](https://dotnet.microsoft.com/)
 [![OpenAPI](https://img.shields.io/badge/OpenAPI-3.0-green.svg)](./openapi/openapi.yaml)
+[![Sync Swagger](https://github.com/armsoft/trade-public-api-docs/actions/workflows/sync-swagger.yml/badge.svg)](https://github.com/armsoft/trade-public-api-docs/actions/workflows/sync-swagger.yml)
 
 Official documentation for the ArmSoft Trade Public API.
 
@@ -222,6 +223,35 @@ Import the OpenAPI specification into:
 - Postman
 - SwaggerHub
 - Any OpenAPI-compatible tool
+
+## 🤖 Auto-Generated Documentation
+
+This repository maintains automatically synchronized API documentation:
+
+- **`swagger.json`** — Live OpenAPI specification fetched from `https://api.armsoft.am/trade/swagger/v1/swagger.json`
+- **`docs/api-reference.md`** — Auto-generated Markdown reference documentation
+
+### How it works
+
+A GitHub Actions workflow ([`.github/workflows/sync-swagger.yml`](.github/workflows/sync-swagger.yml)) runs every hour to:
+
+1. Fetch the latest `swagger.json` from the live API
+2. Compare it with the committed version
+3. If changes are detected:
+   - Update `swagger.json`
+   - Regenerate `docs/api-reference.md` using [widdershins](https://github.com/Mermade/widdershins)
+   - Commit and push the changes automatically
+
+### Manual sync
+
+To manually trigger a documentation sync:
+
+1. Go to the [Actions tab](https://github.com/armsoft/trade-public-api-docs/actions/workflows/sync-swagger.yml)
+2. Click "Run workflow" → "Run workflow"
+
+The workflow runs in ~30 seconds and updates the docs if changes are detected.
+
+**Note:** If the API endpoint ever requires authentication, add an `API_TOKEN` secret to the repository settings. The workflow includes commented placeholders for this.
 
 ## 🌍 Multi-Language Support
 
