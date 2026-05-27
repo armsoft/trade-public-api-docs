@@ -11,6 +11,9 @@ Partners endpoints map to `PartnersController` in API version `v1`.
 - [Create Partner](create.md)
 - [Update Partner](update.md)
 - [Delete Partner](delete.md)
+- [Partner Contracts](contracts.md)
+- [Partner Additional Addresses](additionaladdresses/README.md)
+- [Partner Settlement Accounts](settlementaccounts/README.md)
 
 ## Base Path
 

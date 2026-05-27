@@ -24,3 +24,7 @@ This section contains endpoint-level documentation for the ArmSoft SME Trade Pub
 ## Reports
 
 - [Reports](reports/README.md)
+
+## System
+
+- [Version](version.md)

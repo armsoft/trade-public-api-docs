@@ -29,6 +29,33 @@ Pagination is supported via `pageSize`; see [Pagination](../../../pagination.md)
 
 ---
 
+### Next page
+
+Use the `id` token returned by `/list` to retrieve the next page of contracts.
+
+- **Method:** `POST`
+- **Route:** `/v1/directories/partners/contracts/list/nextpage`
+- **Request content type:** `application/json`
+- **Authorization:** API key in header `apiKey`
+
+#### Request body (example)
+
+```json
+{
+  "id": "550e8400-e29b-41d4-a716-446655440000",
+  "close": false
+}
+```
+
+#### Successful response
+
+- **Status:** `200 OK`
+- **Content type:** `application/json`
+
+Returns the same `ContractRowApiResponse` format as `/list`.
+
+---
+
 ### Get single contract
 
 - **Method:** `GET`
