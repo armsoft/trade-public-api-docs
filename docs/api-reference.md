@@ -464,6 +464,7 @@ API Key
 ```shell
 # You can also use wget
 curl -X GET /trade/v1/directories/barcodes/{code} \
+  -H 'Accept: text/plain' \
   -H 'Accept-Language: hy-AM' \
   -H 'apiKey: API_KEY'
 
@@ -472,6 +473,7 @@ curl -X GET /trade/v1/directories/barcodes/{code} \
 ```http
 GET /trade/v1/directories/barcodes/{code} HTTP/1.1
 
+Accept: text/plain
 Accept-Language: hy-AM
 
 ```
@@ -479,6 +481,7 @@ Accept-Language: hy-AM
 ```javascript
 
 const headers = {
+  'Accept':'text/plain',
   'Accept-Language':'hy-AM',
   'apiKey':'API_KEY'
 };
@@ -502,6 +505,7 @@ require 'rest-client'
 require 'json'
 
 headers = {
+  'Accept' => 'text/plain',
   'Accept-Language' => 'hy-AM',
   'apiKey' => 'API_KEY'
 }
@@ -517,6 +521,7 @@ p JSON.parse(result)
 ```python
 import requests
 headers = {
+  'Accept': 'text/plain',
   'Accept-Language': 'hy-AM',
   'apiKey': 'API_KEY'
 }
@@ -533,6 +538,7 @@ print(r.json())
 require 'vendor/autoload.php';
 
 $headers = array(
+    'Accept' => 'text/plain',
     'Accept-Language' => 'hy-AM',
     'apiKey' => 'API_KEY',
 );
@@ -587,6 +593,7 @@ import (
 func main() {
 
     headers := map[string][]string{
+        "Accept": []string{"text/plain"},
         "Accept-Language": []string{"hy-AM"},
         "apiKey": []string{"API_KEY"},
     }
@@ -611,11 +618,31 @@ func main() {
 |code|path|string|true|none|
 |Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
 
+> Example responses
+
+> 200 Response
+
+```
+{"code":"string","itemId":0,"itemCode":"string","itemName":"string","unitMeasure":"string","unitMeasureAbbreviation":"string","weightItem":true}
+```
+
+```json
+{
+  "code": "string",
+  "itemId": 0,
+  "itemCode": "string",
+  "itemName": "string",
+  "unitMeasure": "string",
+  "unitMeasureAbbreviation": "string",
+  "weightItem": true
+}
+```
+
 <h3 id="get__v1_directories_barcodes_{code}-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[Barcode](#schemabarcode)|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="warning">
@@ -1435,16 +1462,16 @@ Status Code **200**
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
 |*anonymous*|[[CashDesk](#schemacashdesk)]|false|none|none|
-|» code|string¦null|false|none|none|
-|» name|string¦null|false|none|none|
-|» nextCashInputOrderNumber|string¦null|false|none|none|
-|» nextCashOutputOrderNumber|string¦null|false|none|none|
-|» nextSaleNumber|string¦null|false|none|none|
-|» nextSaleReturnNumber|string¦null|false|none|none|
-|» nextShiftNumber|string¦null|false|none|none|
-|» default|boolean¦null|false|none|none|
+|» code|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|» name|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|» nextCashInputOrderNumber|string¦null|false|none|hy-AM: ԴՄՕ-ի հերթական համար | en-US: Next number of cash Input order | ru-RU: Порядковый номер ПКО|
+|» nextCashOutputOrderNumber|string¦null|false|none|hy-AM: ԴԵՕ-ի հերթական համար | en-US: Next number of cash output order | ru-RU: Порядковый номер РКО|
+|» nextSaleNumber|string¦null|false|none|hy-AM: Վաճառք (Կտրոն) հերթական համար | en-US: Sale (Bill) serial number | ru-RU: Порядковый номер Реализации (Чек)|
+|» nextSaleReturnNumber|string¦null|false|none|hy-AM: Վերադարձ (Կտրոն) հերթական համար | en-US: Return (Bill) serial number | ru-RU: Порядковый номер Возврата (Чек)|
+|» nextShiftNumber|string¦null|false|none|hy-AM: Հերթափոխի հերթական համար | en-US: Shift number | ru-RU: Порядковый номер смены|
+|» default|boolean¦null|false|none|hy-AM: Հիմնական | en-US: Default | ru-RU: Основной|
 |» ecr|boolean¦null|false|none|none|
-|» cashLimit|string¦null|false|none|none|
+|» cashLimit|string¦null|false|none|hy-AM: Կանխիկի սահմանաչափ | en-US: Cash limit | ru-RU: Лимит наличных|
 
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
@@ -1689,6 +1716,7 @@ API Key
 ```shell
 # You can also use wget
 curl -X GET /trade/v1/directories/cashdesks/{code} \
+  -H 'Accept: text/plain' \
   -H 'Accept-Language: hy-AM' \
   -H 'apiKey: API_KEY'
 
@@ -1697,6 +1725,7 @@ curl -X GET /trade/v1/directories/cashdesks/{code} \
 ```http
 GET /trade/v1/directories/cashdesks/{code} HTTP/1.1
 
+Accept: text/plain
 Accept-Language: hy-AM
 
 ```
@@ -1704,6 +1733,7 @@ Accept-Language: hy-AM
 ```javascript
 
 const headers = {
+  'Accept':'text/plain',
   'Accept-Language':'hy-AM',
   'apiKey':'API_KEY'
 };
@@ -1727,6 +1757,7 @@ require 'rest-client'
 require 'json'
 
 headers = {
+  'Accept' => 'text/plain',
   'Accept-Language' => 'hy-AM',
   'apiKey' => 'API_KEY'
 }
@@ -1742,6 +1773,7 @@ p JSON.parse(result)
 ```python
 import requests
 headers = {
+  'Accept': 'text/plain',
   'Accept-Language': 'hy-AM',
   'apiKey': 'API_KEY'
 }
@@ -1758,6 +1790,7 @@ print(r.json())
 require 'vendor/autoload.php';
 
 $headers = array(
+    'Accept' => 'text/plain',
     'Accept-Language' => 'hy-AM',
     'apiKey' => 'API_KEY',
 );
@@ -1812,6 +1845,7 @@ import (
 func main() {
 
     headers := map[string][]string{
+        "Accept": []string{"text/plain"},
         "Accept-Language": []string{"hy-AM"},
         "apiKey": []string{"API_KEY"},
     }
@@ -1836,11 +1870,34 @@ func main() {
 |code|path|string|true|none|
 |Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
 
+> Example responses
+
+> 200 Response
+
+```
+{"code":"string","name":"string","nextCashInputOrderNumber":"string","nextCashOutputOrderNumber":"string","nextSaleNumber":"string","nextSaleReturnNumber":"string","nextShiftNumber":"string","default":true,"ecr":true,"cashLimit":"string"}
+```
+
+```json
+{
+  "code": "string",
+  "name": "string",
+  "nextCashInputOrderNumber": "string",
+  "nextCashOutputOrderNumber": "string",
+  "nextSaleNumber": "string",
+  "nextSaleReturnNumber": "string",
+  "nextShiftNumber": "string",
+  "default": true,
+  "ecr": true,
+  "cashLimit": "string"
+}
+```
+
 <h3 id="get__v1_directories_cashdesks_{code}-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[CashDesk](#schemacashdesk)|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="warning">
@@ -2255,6 +2312,7 @@ API Key
 ```shell
 # You can also use wget
 curl -X GET /trade/v1/documents/invoice/{isn} \
+  -H 'Accept: text/plain' \
   -H 'Accept-Language: hy-AM' \
   -H 'apiKey: API_KEY'
 
@@ -2263,6 +2321,7 @@ curl -X GET /trade/v1/documents/invoice/{isn} \
 ```http
 GET /trade/v1/documents/invoice/{isn} HTTP/1.1
 
+Accept: text/plain
 Accept-Language: hy-AM
 
 ```
@@ -2270,6 +2329,7 @@ Accept-Language: hy-AM
 ```javascript
 
 const headers = {
+  'Accept':'text/plain',
   'Accept-Language':'hy-AM',
   'apiKey':'API_KEY'
 };
@@ -2293,6 +2353,7 @@ require 'rest-client'
 require 'json'
 
 headers = {
+  'Accept' => 'text/plain',
   'Accept-Language' => 'hy-AM',
   'apiKey' => 'API_KEY'
 }
@@ -2308,6 +2369,7 @@ p JSON.parse(result)
 ```python
 import requests
 headers = {
+  'Accept': 'text/plain',
   'Accept-Language': 'hy-AM',
   'apiKey': 'API_KEY'
 }
@@ -2324,6 +2386,7 @@ print(r.json())
 require 'vendor/autoload.php';
 
 $headers = array(
+    'Accept' => 'text/plain',
     'Accept-Language' => 'hy-AM',
     'apiKey' => 'API_KEY',
 );
@@ -2378,6 +2441,7 @@ import (
 func main() {
 
     headers := map[string][]string{
+        "Accept": []string{"text/plain"},
         "Accept-Language": []string{"hy-AM"},
         "apiKey": []string{"API_KEY"},
     }
@@ -2402,11 +2466,106 @@ func main() {
 |isn|path|string(uuid)|true|none|
 |Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
 
+> Example responses
+
+> 200 Response
+
+```
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"baseDocumentISN":"e3cf3357-51e7-469a-a6c4-77dfddcb9255","customer":"string","customerContract":"string","bookNumber":"string","bookPage":0,"bookLine":0,"taxExportType":"string","taxInvoiceSeries":"string","taxInvoiceNumber":"string","submissionDate":"2019-08-24","seller":"string","comment":"string","owner":"string","currency":"string","currencyExchangeRate":0.1,"currencyExchangeBase":0.1,"vatCalculationType":"string","dealType":"string","priceType":"string","storage":"string","discountPercent":0.1,"vatAmount":0.1,"totalAmount":0.1,"supplierName":"string","supplierLegalAddress":"string","supplierBusinessAddress":"string","supplierSettlementAccount":"string","supplierTaxCode":"string","supplierManagerPosition":"string","supplierManagerName":"string","supplierAccountantPosition":"string","supplierAccountantName":"string","supplierAdditionalData":"string","customerName":"string","customerLegalAddress":"string","customerBusinessAddress":"string","customerSettlementAccount":"string","customerTaxCode":"string","customerManagerPosition":"string","customerManagerName":"string","customerAccountantPosition":"string","customerAccountantName":"string","stateRegisterNumber":"string","idDocumentType":"string","passportNumber":"string","customerAdditionalData":"string","shippingMethod":"string","additionalFullName":"string","credentialNumber":"string","credentialDate":"2019-08-24","itemList":[{"type":"string","storage":"string","id":0,"code":"string","name":"string","unit":"string","unitAbbreviation":"string","quantity":0.1,"salePrice":0.1,"discountPercent":0.1,"discountedPrice":0.1,"discountedAmount":0.1,"discountAmount":0.1,"environmentalFeePercent":0.1,"environmentalFeeAmount":0.1,"vat":true,"dealType":"string","description":"string","markingList":["string"],"cpaClassifier":"string","rowNumber":0,"rowId":0}]}
+```
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "baseDocumentISN": "e3cf3357-51e7-469a-a6c4-77dfddcb9255",
+  "customer": "string",
+  "customerContract": "string",
+  "bookNumber": "string",
+  "bookPage": 0,
+  "bookLine": 0,
+  "taxExportType": "string",
+  "taxInvoiceSeries": "string",
+  "taxInvoiceNumber": "string",
+  "submissionDate": "2019-08-24",
+  "seller": "string",
+  "comment": "string",
+  "owner": "string",
+  "currency": "string",
+  "currencyExchangeRate": 0.1,
+  "currencyExchangeBase": 0.1,
+  "vatCalculationType": "string",
+  "dealType": "string",
+  "priceType": "string",
+  "storage": "string",
+  "discountPercent": 0.1,
+  "vatAmount": 0.1,
+  "totalAmount": 0.1,
+  "supplierName": "string",
+  "supplierLegalAddress": "string",
+  "supplierBusinessAddress": "string",
+  "supplierSettlementAccount": "string",
+  "supplierTaxCode": "string",
+  "supplierManagerPosition": "string",
+  "supplierManagerName": "string",
+  "supplierAccountantPosition": "string",
+  "supplierAccountantName": "string",
+  "supplierAdditionalData": "string",
+  "customerName": "string",
+  "customerLegalAddress": "string",
+  "customerBusinessAddress": "string",
+  "customerSettlementAccount": "string",
+  "customerTaxCode": "string",
+  "customerManagerPosition": "string",
+  "customerManagerName": "string",
+  "customerAccountantPosition": "string",
+  "customerAccountantName": "string",
+  "stateRegisterNumber": "string",
+  "idDocumentType": "string",
+  "passportNumber": "string",
+  "customerAdditionalData": "string",
+  "shippingMethod": "string",
+  "additionalFullName": "string",
+  "credentialNumber": "string",
+  "credentialDate": "2019-08-24",
+  "itemList": [
+    {
+      "type": "string",
+      "storage": "string",
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unit": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "salePrice": 0.1,
+      "discountPercent": 0.1,
+      "discountedPrice": 0.1,
+      "discountedAmount": 0.1,
+      "discountAmount": 0.1,
+      "environmentalFeePercent": 0.1,
+      "environmentalFeeAmount": 0.1,
+      "vat": true,
+      "dealType": "string",
+      "description": "string",
+      "markingList": [
+        "string"
+      ],
+      "cpaClassifier": "string",
+      "rowNumber": 0,
+      "rowId": 0
+    }
+  ]
+}
+```
+
 <h3 id="get__v1_documents_invoice_{isn}-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[Invoice](#schemainvoice)|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="warning">
@@ -4982,6 +5141,7 @@ API Key
 ```shell
 # You can also use wget
 curl -X GET /trade/v1/directories/partners/{code} \
+  -H 'Accept: text/plain' \
   -H 'Accept-Language: hy-AM' \
   -H 'apiKey: API_KEY'
 
@@ -4990,6 +5150,7 @@ curl -X GET /trade/v1/directories/partners/{code} \
 ```http
 GET /trade/v1/directories/partners/{code} HTTP/1.1
 
+Accept: text/plain
 Accept-Language: hy-AM
 
 ```
@@ -4997,6 +5158,7 @@ Accept-Language: hy-AM
 ```javascript
 
 const headers = {
+  'Accept':'text/plain',
   'Accept-Language':'hy-AM',
   'apiKey':'API_KEY'
 };
@@ -5020,6 +5182,7 @@ require 'rest-client'
 require 'json'
 
 headers = {
+  'Accept' => 'text/plain',
   'Accept-Language' => 'hy-AM',
   'apiKey' => 'API_KEY'
 }
@@ -5035,6 +5198,7 @@ p JSON.parse(result)
 ```python
 import requests
 headers = {
+  'Accept': 'text/plain',
   'Accept-Language': 'hy-AM',
   'apiKey': 'API_KEY'
 }
@@ -5051,6 +5215,7 @@ print(r.json())
 require 'vendor/autoload.php';
 
 $headers = array(
+    'Accept' => 'text/plain',
     'Accept-Language' => 'hy-AM',
     'apiKey' => 'API_KEY',
 );
@@ -5105,6 +5270,7 @@ import (
 func main() {
 
     headers := map[string][]string{
+        "Accept": []string{"text/plain"},
         "Accept-Language": []string{"hy-AM"},
         "apiKey": []string{"API_KEY"},
     }
@@ -5129,11 +5295,82 @@ func main() {
 |code|path|string|true|none|
 |Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
 
+> Example responses
+
+> 200 Response
+
+```
+{"id":0,"code":"string","name":"string","fullName":"string","taxCode":"string","group":"string","supplier":true,"customer":true,"legalAddress":"string","businessAddress":"string","managerName":"string","managerPosition":"string","accountantName":"string","accountantPosition":"string","paymentMainAim":"string","phoneNumber":"string","email":"string","stateRegisterNumber":"string","passportNumber":"string","gender":"string","birthDate":"2019-08-24","idDocumentType":"string","status":"string","defaultContractCode":"string","contracts":[{"code":"string","name":"string","currency":"string","priceType":"string","date":"2019-08-24","description":"string","discountPercent":0.1,"cardCode":"string","bonusCard":true,"bonusPercent":0.1,"bonusPoint":0.1,"validationPeriodStart":"2019-08-24","validationPeriodEnd":"2019-08-24","canceled":true,"receivablesControl":true,"receivablesLimit":0.1,"default":true}],"settlementAccounts":[{"account":"string","name":"string","default":true}],"additionalAddresses":[{"name":"string","default":true}]}
+```
+
+```json
+{
+  "id": 0,
+  "code": "string",
+  "name": "string",
+  "fullName": "string",
+  "taxCode": "string",
+  "group": "string",
+  "supplier": true,
+  "customer": true,
+  "legalAddress": "string",
+  "businessAddress": "string",
+  "managerName": "string",
+  "managerPosition": "string",
+  "accountantName": "string",
+  "accountantPosition": "string",
+  "paymentMainAim": "string",
+  "phoneNumber": "string",
+  "email": "string",
+  "stateRegisterNumber": "string",
+  "passportNumber": "string",
+  "gender": "string",
+  "birthDate": "2019-08-24",
+  "idDocumentType": "string",
+  "status": "string",
+  "defaultContractCode": "string",
+  "contracts": [
+    {
+      "code": "string",
+      "name": "string",
+      "currency": "string",
+      "priceType": "string",
+      "date": "2019-08-24",
+      "description": "string",
+      "discountPercent": 0.1,
+      "cardCode": "string",
+      "bonusCard": true,
+      "bonusPercent": 0.1,
+      "bonusPoint": 0.1,
+      "validationPeriodStart": "2019-08-24",
+      "validationPeriodEnd": "2019-08-24",
+      "canceled": true,
+      "receivablesControl": true,
+      "receivablesLimit": 0.1,
+      "default": true
+    }
+  ],
+  "settlementAccounts": [
+    {
+      "account": "string",
+      "name": "string",
+      "default": true
+    }
+  ],
+  "additionalAddresses": [
+    {
+      "name": "string",
+      "default": true
+    }
+  ]
+}
+```
+
 <h3 id="get__v1_directories_partners_{code}-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[Partner](#schemapartner)|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="warning">
@@ -6551,6 +6788,7 @@ API Key
 ```shell
 # You can also use wget
 curl -X GET /trade/v1/directories/partners/{partnerCode}/contracts/{contractCode} \
+  -H 'Accept: text/plain' \
   -H 'Accept-Language: hy-AM' \
   -H 'apiKey: API_KEY'
 
@@ -6559,6 +6797,7 @@ curl -X GET /trade/v1/directories/partners/{partnerCode}/contracts/{contractCode
 ```http
 GET /trade/v1/directories/partners/{partnerCode}/contracts/{contractCode} HTTP/1.1
 
+Accept: text/plain
 Accept-Language: hy-AM
 
 ```
@@ -6566,6 +6805,7 @@ Accept-Language: hy-AM
 ```javascript
 
 const headers = {
+  'Accept':'text/plain',
   'Accept-Language':'hy-AM',
   'apiKey':'API_KEY'
 };
@@ -6589,6 +6829,7 @@ require 'rest-client'
 require 'json'
 
 headers = {
+  'Accept' => 'text/plain',
   'Accept-Language' => 'hy-AM',
   'apiKey' => 'API_KEY'
 }
@@ -6604,6 +6845,7 @@ p JSON.parse(result)
 ```python
 import requests
 headers = {
+  'Accept': 'text/plain',
   'Accept-Language': 'hy-AM',
   'apiKey': 'API_KEY'
 }
@@ -6620,6 +6862,7 @@ print(r.json())
 require 'vendor/autoload.php';
 
 $headers = array(
+    'Accept' => 'text/plain',
     'Accept-Language' => 'hy-AM',
     'apiKey' => 'API_KEY',
 );
@@ -6674,6 +6917,7 @@ import (
 func main() {
 
     headers := map[string][]string{
+        "Accept": []string{"text/plain"},
         "Accept-Language": []string{"hy-AM"},
         "apiKey": []string{"API_KEY"},
     }
@@ -6699,11 +6943,45 @@ func main() {
 |contractCode|path|string|true|none|
 |Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
 
+> Example responses
+
+> 200 Response
+
+```
+{"partnerId":0,"partnerCode":"string","partnerName":"string","contractCode":"string","contractName":"string","currency":"string","priceType":"string","priceTypeName":"string","date":"2019-08-24","description":"string","discountPercent":0.1,"cardCode":"string","bonusCard":true,"bonusPercent":0.1,"bonusPoint":0.1,"validationPeriodStart":"2019-08-24","validationPeriodEnd":"2019-08-24","canceled":true,"receivablesControl":true,"receivablesLimit":0.1,"default":true}
+```
+
+```json
+{
+  "partnerId": 0,
+  "partnerCode": "string",
+  "partnerName": "string",
+  "contractCode": "string",
+  "contractName": "string",
+  "currency": "string",
+  "priceType": "string",
+  "priceTypeName": "string",
+  "date": "2019-08-24",
+  "description": "string",
+  "discountPercent": 0.1,
+  "cardCode": "string",
+  "bonusCard": true,
+  "bonusPercent": 0.1,
+  "bonusPoint": 0.1,
+  "validationPeriodStart": "2019-08-24",
+  "validationPeriodEnd": "2019-08-24",
+  "canceled": true,
+  "receivablesControl": true,
+  "receivablesLimit": 0.1,
+  "default": true
+}
+```
+
 <h3 id="get__v1_directories_partners_{partnercode}_contracts_{contractcode}-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[Contract](#schemacontract)|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="warning">
@@ -7408,6 +7686,880 @@ To perform this operation, you must be authenticated by means of one of the foll
 API Key
 </aside>
 
+## post__v1_directories_partners_settlementaccounts_list
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X POST /trade/v1/directories/partners/settlementaccounts/list \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+POST /trade/v1/directories/partners/settlementaccounts/list HTTP/1.1
+
+Content-Type: application/json
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+const inputBody = '{
+  "pageSize": 0,
+  "partnerCodes": [
+    "string"
+  ]
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/trade/v1/directories/partners/settlementaccounts/list',
+{
+  method: 'POST',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.post '/trade/v1/directories/partners/settlementaccounts/list',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.post('/trade/v1/directories/partners/settlementaccounts/list', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('POST','/trade/v1/directories/partners/settlementaccounts/list', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/trade/v1/directories/partners/settlementaccounts/list");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("POST");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Content-Type": []string{"application/json"},
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("POST", "/trade/v1/directories/partners/settlementaccounts/list", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`POST /v1/directories/partners/settlementaccounts/list`
+
+> Body parameter
+
+```json
+{
+  "pageSize": 0,
+  "partnerCodes": [
+    "string"
+  ]
+}
+```
+
+<h3 id="post__v1_directories_partners_settlementaccounts_list-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+|body|body|[PartnersSettlementAccountFilters](#schemapartnerssettlementaccountfilters)|false|none|
+
+> Example responses
+
+> 200 Response
+
+```
+{"id":"497f6eca-6276-4993-bfeb-53cbbbba6f08","hasMore":true,"data":[{"partnerId":0,"partnerCode":"string","partnerName":"string","settlementAccount":"string","name":"string","default":true}]}
+```
+
+```json
+{
+  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+  "hasMore": true,
+  "data": [
+    {
+      "partnerId": 0,
+      "partnerCode": "string",
+      "partnerName": "string",
+      "settlementAccount": "string",
+      "name": "string",
+      "default": true
+    }
+  ]
+}
+```
+
+<h3 id="post__v1_directories_partners_settlementaccounts_list-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[PartnersSettlementAccountRowApiResponse](#schemapartnerssettlementaccountrowapiresponse)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## post__v1_directories_partners_settlementaccounts_list_nextpage
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X POST /trade/v1/directories/partners/settlementaccounts/list/nextpage \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+POST /trade/v1/directories/partners/settlementaccounts/list/nextpage HTTP/1.1
+
+Content-Type: application/json
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+const inputBody = '{
+  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+  "close": true
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/trade/v1/directories/partners/settlementaccounts/list/nextpage',
+{
+  method: 'POST',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.post '/trade/v1/directories/partners/settlementaccounts/list/nextpage',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.post('/trade/v1/directories/partners/settlementaccounts/list/nextpage', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('POST','/trade/v1/directories/partners/settlementaccounts/list/nextpage', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/trade/v1/directories/partners/settlementaccounts/list/nextpage");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("POST");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Content-Type": []string{"application/json"},
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("POST", "/trade/v1/directories/partners/settlementaccounts/list/nextpage", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`POST /v1/directories/partners/settlementaccounts/list/nextpage`
+
+> Body parameter
+
+```json
+{
+  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+  "close": true
+}
+```
+
+<h3 id="post__v1_directories_partners_settlementaccounts_list_nextpage-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+|body|body|[NextPageRequest](#schemanextpagerequest)|false|none|
+
+> Example responses
+
+> 200 Response
+
+```
+{"id":"497f6eca-6276-4993-bfeb-53cbbbba6f08","hasMore":true,"data":[{"partnerId":0,"partnerCode":"string","partnerName":"string","settlementAccount":"string","name":"string","default":true}]}
+```
+
+```json
+{
+  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+  "hasMore": true,
+  "data": [
+    {
+      "partnerId": 0,
+      "partnerCode": "string",
+      "partnerName": "string",
+      "settlementAccount": "string",
+      "name": "string",
+      "default": true
+    }
+  ]
+}
+```
+
+<h3 id="post__v1_directories_partners_settlementaccounts_list_nextpage-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[PartnersSettlementAccountRowApiResponse](#schemapartnerssettlementaccountrowapiresponse)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## post__v1_directories_partners_additionaladdresses_list
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X POST /trade/v1/directories/partners/additionaladdresses/list \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+POST /trade/v1/directories/partners/additionaladdresses/list HTTP/1.1
+
+Content-Type: application/json
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+const inputBody = '{
+  "pageSize": 0,
+  "partnerCodes": [
+    "string"
+  ]
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/trade/v1/directories/partners/additionaladdresses/list',
+{
+  method: 'POST',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.post '/trade/v1/directories/partners/additionaladdresses/list',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.post('/trade/v1/directories/partners/additionaladdresses/list', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('POST','/trade/v1/directories/partners/additionaladdresses/list', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/trade/v1/directories/partners/additionaladdresses/list");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("POST");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Content-Type": []string{"application/json"},
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("POST", "/trade/v1/directories/partners/additionaladdresses/list", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`POST /v1/directories/partners/additionaladdresses/list`
+
+> Body parameter
+
+```json
+{
+  "pageSize": 0,
+  "partnerCodes": [
+    "string"
+  ]
+}
+```
+
+<h3 id="post__v1_directories_partners_additionaladdresses_list-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+|body|body|[PartnersSettlementAccountFilters](#schemapartnerssettlementaccountfilters)|false|none|
+
+> Example responses
+
+> 200 Response
+
+```
+{"id":"497f6eca-6276-4993-bfeb-53cbbbba6f08","hasMore":true,"data":[{"partnerId":0,"partnerCode":"string","partnerName":"string","businessAddress":"string","default":true}]}
+```
+
+```json
+{
+  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+  "hasMore": true,
+  "data": [
+    {
+      "partnerId": 0,
+      "partnerCode": "string",
+      "partnerName": "string",
+      "businessAddress": "string",
+      "default": true
+    }
+  ]
+}
+```
+
+<h3 id="post__v1_directories_partners_additionaladdresses_list-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[PartnersAdditionalAddressesRowApiResponse](#schemapartnersadditionaladdressesrowapiresponse)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## post__v1_directories_partners_additionaladdresses_list_nextpage
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X POST /trade/v1/directories/partners/additionaladdresses/list/nextpage \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+POST /trade/v1/directories/partners/additionaladdresses/list/nextpage HTTP/1.1
+
+Content-Type: application/json
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+const inputBody = '{
+  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+  "close": true
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/trade/v1/directories/partners/additionaladdresses/list/nextpage',
+{
+  method: 'POST',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.post '/trade/v1/directories/partners/additionaladdresses/list/nextpage',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.post('/trade/v1/directories/partners/additionaladdresses/list/nextpage', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('POST','/trade/v1/directories/partners/additionaladdresses/list/nextpage', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/trade/v1/directories/partners/additionaladdresses/list/nextpage");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("POST");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Content-Type": []string{"application/json"},
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("POST", "/trade/v1/directories/partners/additionaladdresses/list/nextpage", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`POST /v1/directories/partners/additionaladdresses/list/nextpage`
+
+> Body parameter
+
+```json
+{
+  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+  "close": true
+}
+```
+
+<h3 id="post__v1_directories_partners_additionaladdresses_list_nextpage-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+|body|body|[NextPageRequest](#schemanextpagerequest)|false|none|
+
+> Example responses
+
+> 200 Response
+
+```
+{"id":"497f6eca-6276-4993-bfeb-53cbbbba6f08","hasMore":true,"data":[{"partnerId":0,"partnerCode":"string","partnerName":"string","businessAddress":"string","default":true}]}
+```
+
+```json
+{
+  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+  "hasMore": true,
+  "data": [
+    {
+      "partnerId": 0,
+      "partnerCode": "string",
+      "partnerName": "string",
+      "businessAddress": "string",
+      "default": true
+    }
+  ]
+}
+```
+
+<h3 id="post__v1_directories_partners_additionaladdresses_list_nextpage-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[PartnersAdditionalAddressesRowApiResponse](#schemapartnersadditionaladdressesrowapiresponse)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
 <h1 id="trade-public-api-partnersgroups">PartnersGroups</h1>
 
 ## get__v1_directories_partnersgroups
@@ -7603,10 +8755,10 @@ Status Code **200**
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
 |*anonymous*|[[PartnersGroup](#schemapartnersgroup)]|false|none|none|
-|» code|string¦null|false|none|none|
-|» name|string¦null|false|none|none|
-|» parent|string¦null|false|none|none|
-|» path|string¦null|false|none|none|
+|» code|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|» name|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|» parent|string¦null|false|none|hy-AM: Կուտակիչ | en-US: Parent | ru-RU: Родитель|
+|» path|string¦null|false|none|hy-AM: Խումբ | en-US: Group | ru-RU: Группа|
 
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
@@ -7833,6 +8985,7 @@ API Key
 ```shell
 # You can also use wget
 curl -X GET /trade/v1/directories/partnersgroups/{code} \
+  -H 'Accept: text/plain' \
   -H 'Accept-Language: hy-AM' \
   -H 'apiKey: API_KEY'
 
@@ -7841,6 +8994,7 @@ curl -X GET /trade/v1/directories/partnersgroups/{code} \
 ```http
 GET /trade/v1/directories/partnersgroups/{code} HTTP/1.1
 
+Accept: text/plain
 Accept-Language: hy-AM
 
 ```
@@ -7848,6 +9002,7 @@ Accept-Language: hy-AM
 ```javascript
 
 const headers = {
+  'Accept':'text/plain',
   'Accept-Language':'hy-AM',
   'apiKey':'API_KEY'
 };
@@ -7871,6 +9026,7 @@ require 'rest-client'
 require 'json'
 
 headers = {
+  'Accept' => 'text/plain',
   'Accept-Language' => 'hy-AM',
   'apiKey' => 'API_KEY'
 }
@@ -7886,6 +9042,7 @@ p JSON.parse(result)
 ```python
 import requests
 headers = {
+  'Accept': 'text/plain',
   'Accept-Language': 'hy-AM',
   'apiKey': 'API_KEY'
 }
@@ -7902,6 +9059,7 @@ print(r.json())
 require 'vendor/autoload.php';
 
 $headers = array(
+    'Accept' => 'text/plain',
     'Accept-Language' => 'hy-AM',
     'apiKey' => 'API_KEY',
 );
@@ -7956,6 +9114,7 @@ import (
 func main() {
 
     headers := map[string][]string{
+        "Accept": []string{"text/plain"},
         "Accept-Language": []string{"hy-AM"},
         "apiKey": []string{"API_KEY"},
     }
@@ -7980,11 +9139,28 @@ func main() {
 |code|path|string|true|none|
 |Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
 
+> Example responses
+
+> 200 Response
+
+```
+{"code":"string","name":"string","parent":"string","path":"string"}
+```
+
+```json
+{
+  "code": "string",
+  "name": "string",
+  "parent": "string",
+  "path": "string"
+}
+```
+
 <h3 id="get__v1_directories_partnersgroups_{code}-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[PartnersGroup](#schemapartnersgroup)|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="warning">
@@ -8568,11 +9744,11 @@ Status Code **200**
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
 |*anonymous*|[[PriceListType](#schemapricelisttype)]|false|none|none|
-|» code|string¦null|false|none|none|
-|» name|string¦null|false|none|none|
-|» currency|string¦null|false|none|none|
-|» roundingDegree|string¦null|false|none|none|
-|» includingVAT|boolean¦null|false|none|none|
+|» code|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|» name|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|» currency|string¦null|false|none|hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта|
+|» roundingDegree|string¦null|false|none|hy-AM: Կլորացման աստիճան | en-US: Rounding degree | ru-RU: Точность округления|
+|» includingVAT|boolean¦null|false|none|hy-AM: ԱԱՀ-ն այդ թվում | en-US: Including VAT | ru-RU: НДС в том числе|
 
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
@@ -8802,6 +9978,7 @@ API Key
 ```shell
 # You can also use wget
 curl -X GET /trade/v1/directories/pricelisttypes/{code} \
+  -H 'Accept: text/plain' \
   -H 'Accept-Language: hy-AM' \
   -H 'apiKey: API_KEY'
 
@@ -8810,6 +9987,7 @@ curl -X GET /trade/v1/directories/pricelisttypes/{code} \
 ```http
 GET /trade/v1/directories/pricelisttypes/{code} HTTP/1.1
 
+Accept: text/plain
 Accept-Language: hy-AM
 
 ```
@@ -8817,6 +9995,7 @@ Accept-Language: hy-AM
 ```javascript
 
 const headers = {
+  'Accept':'text/plain',
   'Accept-Language':'hy-AM',
   'apiKey':'API_KEY'
 };
@@ -8840,6 +10019,7 @@ require 'rest-client'
 require 'json'
 
 headers = {
+  'Accept' => 'text/plain',
   'Accept-Language' => 'hy-AM',
   'apiKey' => 'API_KEY'
 }
@@ -8855,6 +10035,7 @@ p JSON.parse(result)
 ```python
 import requests
 headers = {
+  'Accept': 'text/plain',
   'Accept-Language': 'hy-AM',
   'apiKey': 'API_KEY'
 }
@@ -8871,6 +10052,7 @@ print(r.json())
 require 'vendor/autoload.php';
 
 $headers = array(
+    'Accept' => 'text/plain',
     'Accept-Language' => 'hy-AM',
     'apiKey' => 'API_KEY',
 );
@@ -8925,6 +10107,7 @@ import (
 func main() {
 
     headers := map[string][]string{
+        "Accept": []string{"text/plain"},
         "Accept-Language": []string{"hy-AM"},
         "apiKey": []string{"API_KEY"},
     }
@@ -8949,11 +10132,29 @@ func main() {
 |code|path|string|true|none|
 |Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
 
+> Example responses
+
+> 200 Response
+
+```
+{"code":"string","name":"string","currency":"string","roundingDegree":"string","includingVAT":true}
+```
+
+```json
+{
+  "code": "string",
+  "name": "string",
+  "currency": "string",
+  "roundingDegree": "string",
+  "includingVAT": true
+}
+```
+
 <h3 id="get__v1_directories_pricelisttypes_{code}-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[PriceListType](#schemapricelisttype)|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="warning">
@@ -9909,6 +11110,7 @@ API Key
 ```shell
 # You can also use wget
 curl -X GET /trade/v1/directories/products/{code} \
+  -H 'Accept: text/plain' \
   -H 'Accept-Language: hy-AM' \
   -H 'apiKey: API_KEY'
 
@@ -9917,6 +11119,7 @@ curl -X GET /trade/v1/directories/products/{code} \
 ```http
 GET /trade/v1/directories/products/{code} HTTP/1.1
 
+Accept: text/plain
 Accept-Language: hy-AM
 
 ```
@@ -9924,6 +11127,7 @@ Accept-Language: hy-AM
 ```javascript
 
 const headers = {
+  'Accept':'text/plain',
   'Accept-Language':'hy-AM',
   'apiKey':'API_KEY'
 };
@@ -9947,6 +11151,7 @@ require 'rest-client'
 require 'json'
 
 headers = {
+  'Accept' => 'text/plain',
   'Accept-Language' => 'hy-AM',
   'apiKey' => 'API_KEY'
 }
@@ -9962,6 +11167,7 @@ p JSON.parse(result)
 ```python
 import requests
 headers = {
+  'Accept': 'text/plain',
   'Accept-Language': 'hy-AM',
   'apiKey': 'API_KEY'
 }
@@ -9978,6 +11184,7 @@ print(r.json())
 require 'vendor/autoload.php';
 
 $headers = array(
+    'Accept' => 'text/plain',
     'Accept-Language' => 'hy-AM',
     'apiKey' => 'API_KEY',
 );
@@ -10032,6 +11239,7 @@ import (
 func main() {
 
     headers := map[string][]string{
+        "Accept": []string{"text/plain"},
         "Accept-Language": []string{"hy-AM"},
         "apiKey": []string{"API_KEY"},
     }
@@ -10056,11 +11264,82 @@ func main() {
 |code|path|string|true|none|
 |Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
 
+> Example responses
+
+> 200 Response
+
+```
+{"id":0,"code":"string","name":"string","fullName":"string","type":"string","cpaClassifier":"string","group":"string","baseUnitMeasure":"string","baseUnitMeasureName":"string","baseUnitMeasureAbbreviation":"string","alternativeUnitMeasure":"string","alternativeUnitMeasureName":"string","alternativeUnitMeasureAbbreviation":"string","barcode":"string","specification":"string","externalCode":"string","costingMethod":"string","vat":true,"checkMarking":true,"weight":true,"pluCode":0,"showInPriceLists":true,"environmentalFeePercent":0.1,"labelUnitMeasure":"string","labelUnitMeasureCoefficient":0.1,"country":"string","producer":"string","property1":"string","property2":"string","minimumQuantity":0.1,"maximumQuantity":0.1,"addedValuePercent":0.1,"aoeCoefficient":0.1,"bonusPercent":0.1,"bonusPoint":0.1,"discountPercent":0.1,"mainSupplierId":0,"mainSupplierCode":"string","substituteItemsGroup":"string","nameEN":"string","nameRU":"string","additionalSpecification1":"string","additionalSpecification2":"string","measureUnits":[{"code":"string","abbreviation":"string","coefficient":0.1,"default":true}],"barcodes":[{"unitMeasure":"string","abbreviation":"string","barcode":"string"}]}
+```
+
+```json
+{
+  "id": 0,
+  "code": "string",
+  "name": "string",
+  "fullName": "string",
+  "type": "string",
+  "cpaClassifier": "string",
+  "group": "string",
+  "baseUnitMeasure": "string",
+  "baseUnitMeasureName": "string",
+  "baseUnitMeasureAbbreviation": "string",
+  "alternativeUnitMeasure": "string",
+  "alternativeUnitMeasureName": "string",
+  "alternativeUnitMeasureAbbreviation": "string",
+  "barcode": "string",
+  "specification": "string",
+  "externalCode": "string",
+  "costingMethod": "string",
+  "vat": true,
+  "checkMarking": true,
+  "weight": true,
+  "pluCode": 0,
+  "showInPriceLists": true,
+  "environmentalFeePercent": 0.1,
+  "labelUnitMeasure": "string",
+  "labelUnitMeasureCoefficient": 0.1,
+  "country": "string",
+  "producer": "string",
+  "property1": "string",
+  "property2": "string",
+  "minimumQuantity": 0.1,
+  "maximumQuantity": 0.1,
+  "addedValuePercent": 0.1,
+  "aoeCoefficient": 0.1,
+  "bonusPercent": 0.1,
+  "bonusPoint": 0.1,
+  "discountPercent": 0.1,
+  "mainSupplierId": 0,
+  "mainSupplierCode": "string",
+  "substituteItemsGroup": "string",
+  "nameEN": "string",
+  "nameRU": "string",
+  "additionalSpecification1": "string",
+  "additionalSpecification2": "string",
+  "measureUnits": [
+    {
+      "code": "string",
+      "abbreviation": "string",
+      "coefficient": 0.1,
+      "default": true
+    }
+  ],
+  "barcodes": [
+    {
+      "unitMeasure": "string",
+      "abbreviation": "string",
+      "barcode": "string"
+    }
+  ]
+}
+```
+
 <h3 id="get__v1_directories_products_{code}-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[Product](#schemaproduct)|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="warning">
@@ -11434,6 +12713,7 @@ API Key
 ```shell
 # You can also use wget
 curl -X GET /trade/v1/directories/products/{productCode}/measureunits/{unitCode} \
+  -H 'Accept: text/plain' \
   -H 'Accept-Language: hy-AM' \
   -H 'apiKey: API_KEY'
 
@@ -11442,6 +12722,7 @@ curl -X GET /trade/v1/directories/products/{productCode}/measureunits/{unitCode}
 ```http
 GET /trade/v1/directories/products/{productCode}/measureunits/{unitCode} HTTP/1.1
 
+Accept: text/plain
 Accept-Language: hy-AM
 
 ```
@@ -11449,6 +12730,7 @@ Accept-Language: hy-AM
 ```javascript
 
 const headers = {
+  'Accept':'text/plain',
   'Accept-Language':'hy-AM',
   'apiKey':'API_KEY'
 };
@@ -11472,6 +12754,7 @@ require 'rest-client'
 require 'json'
 
 headers = {
+  'Accept' => 'text/plain',
   'Accept-Language' => 'hy-AM',
   'apiKey' => 'API_KEY'
 }
@@ -11487,6 +12770,7 @@ p JSON.parse(result)
 ```python
 import requests
 headers = {
+  'Accept': 'text/plain',
   'Accept-Language': 'hy-AM',
   'apiKey': 'API_KEY'
 }
@@ -11503,6 +12787,7 @@ print(r.json())
 require 'vendor/autoload.php';
 
 $headers = array(
+    'Accept' => 'text/plain',
     'Accept-Language' => 'hy-AM',
     'apiKey' => 'API_KEY',
 );
@@ -11557,6 +12842,7 @@ import (
 func main() {
 
     headers := map[string][]string{
+        "Accept": []string{"text/plain"},
         "Accept-Language": []string{"hy-AM"},
         "apiKey": []string{"API_KEY"},
     }
@@ -11582,11 +12868,32 @@ func main() {
 |unitCode|path|string|true|none|
 |Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
 
+> Example responses
+
+> 200 Response
+
+```
+{"itemId":0,"itemCode":"string","itemName":"string","unitMeasure":"string","unitMeasureName":"string","unitMeasureAbbreviation":"string","coefficient":0.1,"default":true}
+```
+
+```json
+{
+  "itemId": 0,
+  "itemCode": "string",
+  "itemName": "string",
+  "unitMeasure": "string",
+  "unitMeasureName": "string",
+  "unitMeasureAbbreviation": "string",
+  "coefficient": 0.1,
+  "default": true
+}
+```
+
 <h3 id="get__v1_directories_products_{productcode}_measureunits_{unitcode}-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[ProductMeasureUnit](#schemaproductmeasureunit)|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="warning">
@@ -12410,12 +13717,12 @@ Status Code **200**
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
 |*anonymous*|[[ProductsGroup](#schemaproductsgroup)]|false|none|none|
-|» code|string¦null|false|none|none|
-|» name|string¦null|false|none|none|
-|» parent|string¦null|false|none|none|
-|» path|string¦null|false|none|none|
-|» nameEN|string¦null|false|none|none|
-|» nameRU|string¦null|false|none|none|
+|» code|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|» name|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|» parent|string¦null|false|none|hy-AM: Կուտակիչ | en-US: Parent | ru-RU: Родитель|
+|» path|string¦null|false|none|hy-AM: Խումբ | en-US: Group | ru-RU: Группа|
+|» nameEN|string¦null|false|none|hy-AM: Անվանում (անգլերեն) | en-US: Name (english) | ru-RU: Наименование (английский)|
+|» nameRU|string¦null|false|none|hy-AM: Անվանում (ռուսերեն) | en-US: Name (russian) | ru-RU: Наименование (русский)|
 
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
@@ -12648,6 +13955,7 @@ API Key
 ```shell
 # You can also use wget
 curl -X GET /trade/v1/directories/productsgroups/{code} \
+  -H 'Accept: text/plain' \
   -H 'Accept-Language: hy-AM' \
   -H 'apiKey: API_KEY'
 
@@ -12656,6 +13964,7 @@ curl -X GET /trade/v1/directories/productsgroups/{code} \
 ```http
 GET /trade/v1/directories/productsgroups/{code} HTTP/1.1
 
+Accept: text/plain
 Accept-Language: hy-AM
 
 ```
@@ -12663,6 +13972,7 @@ Accept-Language: hy-AM
 ```javascript
 
 const headers = {
+  'Accept':'text/plain',
   'Accept-Language':'hy-AM',
   'apiKey':'API_KEY'
 };
@@ -12686,6 +13996,7 @@ require 'rest-client'
 require 'json'
 
 headers = {
+  'Accept' => 'text/plain',
   'Accept-Language' => 'hy-AM',
   'apiKey' => 'API_KEY'
 }
@@ -12701,6 +14012,7 @@ p JSON.parse(result)
 ```python
 import requests
 headers = {
+  'Accept': 'text/plain',
   'Accept-Language': 'hy-AM',
   'apiKey': 'API_KEY'
 }
@@ -12717,6 +14029,7 @@ print(r.json())
 require 'vendor/autoload.php';
 
 $headers = array(
+    'Accept' => 'text/plain',
     'Accept-Language' => 'hy-AM',
     'apiKey' => 'API_KEY',
 );
@@ -12771,6 +14084,7 @@ import (
 func main() {
 
     headers := map[string][]string{
+        "Accept": []string{"text/plain"},
         "Accept-Language": []string{"hy-AM"},
         "apiKey": []string{"API_KEY"},
     }
@@ -12795,11 +14109,30 @@ func main() {
 |code|path|string|true|none|
 |Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
 
+> Example responses
+
+> 200 Response
+
+```
+{"code":"string","name":"string","parent":"string","path":"string","nameEN":"string","nameRU":"string"}
+```
+
+```json
+{
+  "code": "string",
+  "name": "string",
+  "parent": "string",
+  "path": "string",
+  "nameEN": "string",
+  "nameRU": "string"
+}
+```
+
 <h3 id="get__v1_directories_productsgroups_{code}-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[ProductsGroup](#schemaproductsgroup)|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="warning">
@@ -13202,6 +14535,7 @@ API Key
 ```shell
 # You can also use wget
 curl -X GET /trade/v1/documents/productsmovement/{isn} \
+  -H 'Accept: text/plain' \
   -H 'Accept-Language: hy-AM' \
   -H 'apiKey: API_KEY'
 
@@ -13210,6 +14544,7 @@ curl -X GET /trade/v1/documents/productsmovement/{isn} \
 ```http
 GET /trade/v1/documents/productsmovement/{isn} HTTP/1.1
 
+Accept: text/plain
 Accept-Language: hy-AM
 
 ```
@@ -13217,6 +14552,7 @@ Accept-Language: hy-AM
 ```javascript
 
 const headers = {
+  'Accept':'text/plain',
   'Accept-Language':'hy-AM',
   'apiKey':'API_KEY'
 };
@@ -13240,6 +14576,7 @@ require 'rest-client'
 require 'json'
 
 headers = {
+  'Accept' => 'text/plain',
   'Accept-Language' => 'hy-AM',
   'apiKey' => 'API_KEY'
 }
@@ -13255,6 +14592,7 @@ p JSON.parse(result)
 ```python
 import requests
 headers = {
+  'Accept': 'text/plain',
   'Accept-Language': 'hy-AM',
   'apiKey': 'API_KEY'
 }
@@ -13271,6 +14609,7 @@ print(r.json())
 require 'vendor/autoload.php';
 
 $headers = array(
+    'Accept' => 'text/plain',
     'Accept-Language' => 'hy-AM',
     'apiKey' => 'API_KEY',
 );
@@ -13325,6 +14664,7 @@ import (
 func main() {
 
     headers := map[string][]string{
+        "Accept": []string{"text/plain"},
         "Accept-Language": []string{"hy-AM"},
         "apiKey": []string{"API_KEY"},
     }
@@ -13349,11 +14689,64 @@ func main() {
 |isn|path|string(uuid)|true|none|
 |Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
 
+> Example responses
+
+> 200 Response
+
+```
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"storageOutput":"string","storageInput":"string","priceType":"string","comment":"string","owner":"string","mediator":"string","chiefAccountant":"string","allowed":"string","bookNumber":"string","bookPage":0,"bookLine":0,"taxExportType":"string","taxInvoiceSeries":"string","taxInvoiceNumber":"string","submissionDate":"2019-08-24","transportationMethod":"string","vehicle":true,"brand":"string","licensePlate":"string","baseDocumentISN":"e3cf3357-51e7-469a-a6c4-77dfddcb9255","productsList":[{"id":0,"code":"string","name":"string","fullName":"string","unit":"string","unitAbbreviation":"string","quantity":0.1,"salePrice":0.1,"saleAmount":0.1,"description":"string","rowNumber":0,"rowId":0}]}
+```
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "storageOutput": "string",
+  "storageInput": "string",
+  "priceType": "string",
+  "comment": "string",
+  "owner": "string",
+  "mediator": "string",
+  "chiefAccountant": "string",
+  "allowed": "string",
+  "bookNumber": "string",
+  "bookPage": 0,
+  "bookLine": 0,
+  "taxExportType": "string",
+  "taxInvoiceSeries": "string",
+  "taxInvoiceNumber": "string",
+  "submissionDate": "2019-08-24",
+  "transportationMethod": "string",
+  "vehicle": true,
+  "brand": "string",
+  "licensePlate": "string",
+  "baseDocumentISN": "e3cf3357-51e7-469a-a6c4-77dfddcb9255",
+  "productsList": [
+    {
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "fullName": "string",
+      "unit": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "salePrice": 0.1,
+      "saleAmount": 0.1,
+      "description": "string",
+      "rowNumber": 0,
+      "rowId": 0
+    }
+  ]
+}
+```
+
 <h3 id="get__v1_documents_productsmovement_{isn}-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[ProductsMovement](#schemaproductsmovement)|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="warning">
@@ -13396,7 +14789,7 @@ const inputBody = '{
   "comment": "string",
   "owner": "string",
   "mediator": "string",
-  "chiefAccount": "string",
+  "chiefAccountant": "string",
   "allowed": "string",
   "bookNumber": "string",
   "bookPage": 0,
@@ -13577,7 +14970,7 @@ func main() {
   "comment": "string",
   "owner": "string",
   "mediator": "string",
-  "chiefAccount": "string",
+  "chiefAccountant": "string",
   "allowed": "string",
   "bookNumber": "string",
   "bookPage": 0,
@@ -13623,7 +15016,7 @@ func main() {
 > 200 Response
 
 ```
-{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"storageOutput":"string","storageInput":"string","priceType":"string","comment":"string","owner":"string","mediator":"string","chiefAccount":"string","allowed":"string","bookNumber":"string","bookPage":0,"bookLine":0,"taxExportType":"string","taxInvoiceSeries":"string","taxInvoiceNumber":"string","submissionDate":"2019-08-24","transportationMethod":"string","vehicle":true,"brand":"string","licensePlate":"string","baseDocumentISN":"e3cf3357-51e7-469a-a6c4-77dfddcb9255","productsList":[{"id":0,"code":"string","name":"string","fullName":"string","unit":"string","unitAbbreviation":"string","quantity":0.1,"salePrice":0.1,"saleAmount":0.1,"description":"string","rowNumber":0,"rowId":0}]}
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"storageOutput":"string","storageInput":"string","priceType":"string","comment":"string","owner":"string","mediator":"string","chiefAccountant":"string","allowed":"string","bookNumber":"string","bookPage":0,"bookLine":0,"taxExportType":"string","taxInvoiceSeries":"string","taxInvoiceNumber":"string","submissionDate":"2019-08-24","transportationMethod":"string","vehicle":true,"brand":"string","licensePlate":"string","baseDocumentISN":"e3cf3357-51e7-469a-a6c4-77dfddcb9255","productsList":[{"id":0,"code":"string","name":"string","fullName":"string","unit":"string","unitAbbreviation":"string","quantity":0.1,"salePrice":0.1,"saleAmount":0.1,"description":"string","rowNumber":0,"rowId":0}]}
 ```
 
 ```json
@@ -13638,7 +15031,7 @@ func main() {
   "comment": "string",
   "owner": "string",
   "mediator": "string",
-  "chiefAccount": "string",
+  "chiefAccountant": "string",
   "allowed": "string",
   "bookNumber": "string",
   "bookPage": 0,
@@ -13884,7 +15277,7 @@ const inputBody = '{
   "comment": "string",
   "owner": "string",
   "mediator": "string",
-  "chiefAccount": "string",
+  "chiefAccountant": "string",
   "allowed": "string",
   "bookNumber": "string",
   "bookPage": 0,
@@ -14065,7 +15458,7 @@ func main() {
   "comment": "string",
   "owner": "string",
   "mediator": "string",
-  "chiefAccount": "string",
+  "chiefAccountant": "string",
   "allowed": "string",
   "bookNumber": "string",
   "bookPage": 0,
@@ -14110,7 +15503,7 @@ func main() {
 > 201 Response
 
 ```
-{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"storageOutput":"string","storageInput":"string","priceType":"string","comment":"string","owner":"string","mediator":"string","chiefAccount":"string","allowed":"string","bookNumber":"string","bookPage":0,"bookLine":0,"taxExportType":"string","taxInvoiceSeries":"string","taxInvoiceNumber":"string","submissionDate":"2019-08-24","transportationMethod":"string","vehicle":true,"brand":"string","licensePlate":"string","baseDocumentISN":"e3cf3357-51e7-469a-a6c4-77dfddcb9255","productsList":[{"id":0,"code":"string","name":"string","fullName":"string","unit":"string","unitAbbreviation":"string","quantity":0.1,"salePrice":0.1,"saleAmount":0.1,"description":"string","rowNumber":0,"rowId":0}]}
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"storageOutput":"string","storageInput":"string","priceType":"string","comment":"string","owner":"string","mediator":"string","chiefAccountant":"string","allowed":"string","bookNumber":"string","bookPage":0,"bookLine":0,"taxExportType":"string","taxInvoiceSeries":"string","taxInvoiceNumber":"string","submissionDate":"2019-08-24","transportationMethod":"string","vehicle":true,"brand":"string","licensePlate":"string","baseDocumentISN":"e3cf3357-51e7-469a-a6c4-77dfddcb9255","productsList":[{"id":0,"code":"string","name":"string","fullName":"string","unit":"string","unitAbbreviation":"string","quantity":0.1,"salePrice":0.1,"saleAmount":0.1,"description":"string","rowNumber":0,"rowId":0}]}
 ```
 
 ```json
@@ -14125,7 +15518,7 @@ func main() {
   "comment": "string",
   "owner": "string",
   "mediator": "string",
-  "chiefAccount": "string",
+  "chiefAccountant": "string",
   "allowed": "string",
   "bookNumber": "string",
   "bookPage": 0,
@@ -17209,6 +18602,7 @@ API Key
 ```shell
 # You can also use wget
 curl -X GET /trade/v1/documents/sale/{isn} \
+  -H 'Accept: text/plain' \
   -H 'Accept-Language: hy-AM' \
   -H 'apiKey: API_KEY'
 
@@ -17217,6 +18611,7 @@ curl -X GET /trade/v1/documents/sale/{isn} \
 ```http
 GET /trade/v1/documents/sale/{isn} HTTP/1.1
 
+Accept: text/plain
 Accept-Language: hy-AM
 
 ```
@@ -17224,6 +18619,7 @@ Accept-Language: hy-AM
 ```javascript
 
 const headers = {
+  'Accept':'text/plain',
   'Accept-Language':'hy-AM',
   'apiKey':'API_KEY'
 };
@@ -17247,6 +18643,7 @@ require 'rest-client'
 require 'json'
 
 headers = {
+  'Accept' => 'text/plain',
   'Accept-Language' => 'hy-AM',
   'apiKey' => 'API_KEY'
 }
@@ -17262,6 +18659,7 @@ p JSON.parse(result)
 ```python
 import requests
 headers = {
+  'Accept': 'text/plain',
   'Accept-Language': 'hy-AM',
   'apiKey': 'API_KEY'
 }
@@ -17278,6 +18676,7 @@ print(r.json())
 require 'vendor/autoload.php';
 
 $headers = array(
+    'Accept' => 'text/plain',
     'Accept-Language' => 'hy-AM',
     'apiKey' => 'API_KEY',
 );
@@ -17332,6 +18731,7 @@ import (
 func main() {
 
     headers := map[string][]string{
+        "Accept": []string{"text/plain"},
         "Accept-Language": []string{"hy-AM"},
         "apiKey": []string{"API_KEY"},
     }
@@ -17356,11 +18756,89 @@ func main() {
 |isn|path|string(uuid)|true|none|
 |Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
 
+> Example responses
+
+> 200 Response
+
+```
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"storage":"string","cashDesk":"string","cashierShiftNumber":"string","ecrCheckNumber":"string","prepaymentECRCheckNumber":"string","customer":"string","customerContract":"string","seller":"string","printExpenseConfirmingCheck":true,"cashAmount":0.1,"nonCashAmount":0.1,"posBank":"string","posContract":"string","connectedDevice":"string","paymentSystem":0,"creditAmount":0.1,"prepaymentAmount":0.1,"prepaymentCustomer":"string","prepaymentContract":"string","changeAmount":0.1,"bonusAmount":0.1,"addedBonus":0.1,"accumulatedBonus":0.1,"vatCalculationType":"string","priceType":"string","discountPriceType":"string","comment":"string","owner":"string","discountPercent":0.1,"vatAmount":0.1,"totalAmount":0.1,"itemList":[{"type":"string","storage":"string","barcode":"string","id":0,"code":"string","name":"string","unit":"string","unitAbbreviation":"string","quantity":0.1,"salePrice":0.1,"discountPercent":0.1,"discountedPrice":0.1,"discountedAmount":0.1,"discountAmount":0.1,"usedBonus":0.1,"accumulatedBonus":0.1,"vat":true,"description":"string","deleted":true,"gift":true,"rowNumber":0,"rowId":0,"cpaClassifier":"string","markingList":["string"]}]}
+```
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "storage": "string",
+  "cashDesk": "string",
+  "cashierShiftNumber": "string",
+  "ecrCheckNumber": "string",
+  "prepaymentECRCheckNumber": "string",
+  "customer": "string",
+  "customerContract": "string",
+  "seller": "string",
+  "printExpenseConfirmingCheck": true,
+  "cashAmount": 0.1,
+  "nonCashAmount": 0.1,
+  "posBank": "string",
+  "posContract": "string",
+  "connectedDevice": "string",
+  "paymentSystem": 0,
+  "creditAmount": 0.1,
+  "prepaymentAmount": 0.1,
+  "prepaymentCustomer": "string",
+  "prepaymentContract": "string",
+  "changeAmount": 0.1,
+  "bonusAmount": 0.1,
+  "addedBonus": 0.1,
+  "accumulatedBonus": 0.1,
+  "vatCalculationType": "string",
+  "priceType": "string",
+  "discountPriceType": "string",
+  "comment": "string",
+  "owner": "string",
+  "discountPercent": 0.1,
+  "vatAmount": 0.1,
+  "totalAmount": 0.1,
+  "itemList": [
+    {
+      "type": "string",
+      "storage": "string",
+      "barcode": "string",
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unit": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "salePrice": 0.1,
+      "discountPercent": 0.1,
+      "discountedPrice": 0.1,
+      "discountedAmount": 0.1,
+      "discountAmount": 0.1,
+      "usedBonus": 0.1,
+      "accumulatedBonus": 0.1,
+      "vat": true,
+      "description": "string",
+      "deleted": true,
+      "gift": true,
+      "rowNumber": 0,
+      "rowId": 0,
+      "cpaClassifier": "string",
+      "markingList": [
+        "string"
+      ]
+    }
+  ]
+}
+```
+
 <h3 id="get__v1_documents_sale_{isn}-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[Sale](#schemasale)|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="warning">
@@ -18336,6 +19814,7 @@ API Key
 ```shell
 # You can also use wget
 curl -X GET /trade/v1/documents/salereturn/{isn} \
+  -H 'Accept: text/plain' \
   -H 'Accept-Language: hy-AM' \
   -H 'apiKey: API_KEY'
 
@@ -18344,6 +19823,7 @@ curl -X GET /trade/v1/documents/salereturn/{isn} \
 ```http
 GET /trade/v1/documents/salereturn/{isn} HTTP/1.1
 
+Accept: text/plain
 Accept-Language: hy-AM
 
 ```
@@ -18351,6 +19831,7 @@ Accept-Language: hy-AM
 ```javascript
 
 const headers = {
+  'Accept':'text/plain',
   'Accept-Language':'hy-AM',
   'apiKey':'API_KEY'
 };
@@ -18374,6 +19855,7 @@ require 'rest-client'
 require 'json'
 
 headers = {
+  'Accept' => 'text/plain',
   'Accept-Language' => 'hy-AM',
   'apiKey' => 'API_KEY'
 }
@@ -18389,6 +19871,7 @@ p JSON.parse(result)
 ```python
 import requests
 headers = {
+  'Accept': 'text/plain',
   'Accept-Language': 'hy-AM',
   'apiKey': 'API_KEY'
 }
@@ -18405,6 +19888,7 @@ print(r.json())
 require 'vendor/autoload.php';
 
 $headers = array(
+    'Accept' => 'text/plain',
     'Accept-Language' => 'hy-AM',
     'apiKey' => 'API_KEY',
 );
@@ -18459,6 +19943,7 @@ import (
 func main() {
 
     headers := map[string][]string{
+        "Accept": []string{"text/plain"},
         "Accept-Language": []string{"hy-AM"},
         "apiKey": []string{"API_KEY"},
     }
@@ -18483,11 +19968,88 @@ func main() {
 |isn|path|string(uuid)|true|none|
 |Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
 
+> Example responses
+
+> 200 Response
+
+```
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","baseDocumentISN":"e3cf3357-51e7-469a-a6c4-77dfddcb9255","state":0,"storage":"string","cashDesk":"string","cashierShiftNumber":"string","ecrReturnCheckNumber":"string","prepaymentECRCheckNumber":"string","customer":"string","customerContract":"string","seller":"string","cashAmount":0.1,"nonCashAmount":0.1,"posBank":"string","posContract":"string","connectedDevice":"string","paymentSystem":0,"creditAmount":0.1,"prepaymentAmount":0.1,"prepaymentCustomer":"string","prepaymentContract":"string","bonusAmount":0.1,"usedBonus":0.1,"accumulatedBonus":0.1,"changeAmount":0.1,"vatCalculationType":"string","priceType":"string","comment":"string","owner":"string","vatAmount":0.1,"totalAmount":0.1,"itemList":[{"type":"string","storage":"string","barcode":"string","id":0,"code":"string","name":"string","unit":"string","unitAbbreviation":"string","quantity":0.1,"salePrice":0.1,"discountPercent":0.1,"discountedPrice":0.1,"discountedAmount":0.1,"discountAmount":0.1,"usedBonus":0.1,"accumulatedBonus":0.1,"vat":true,"description":"string","deleted":true,"gift":true,"rowNumber":0,"rowId":0,"baseRowId":0,"cpaClassifier":"string","markingList":["string"]}]}
+```
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "baseDocumentISN": "e3cf3357-51e7-469a-a6c4-77dfddcb9255",
+  "state": 0,
+  "storage": "string",
+  "cashDesk": "string",
+  "cashierShiftNumber": "string",
+  "ecrReturnCheckNumber": "string",
+  "prepaymentECRCheckNumber": "string",
+  "customer": "string",
+  "customerContract": "string",
+  "seller": "string",
+  "cashAmount": 0.1,
+  "nonCashAmount": 0.1,
+  "posBank": "string",
+  "posContract": "string",
+  "connectedDevice": "string",
+  "paymentSystem": 0,
+  "creditAmount": 0.1,
+  "prepaymentAmount": 0.1,
+  "prepaymentCustomer": "string",
+  "prepaymentContract": "string",
+  "bonusAmount": 0.1,
+  "usedBonus": 0.1,
+  "accumulatedBonus": 0.1,
+  "changeAmount": 0.1,
+  "vatCalculationType": "string",
+  "priceType": "string",
+  "comment": "string",
+  "owner": "string",
+  "vatAmount": 0.1,
+  "totalAmount": 0.1,
+  "itemList": [
+    {
+      "type": "string",
+      "storage": "string",
+      "barcode": "string",
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unit": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "salePrice": 0.1,
+      "discountPercent": 0.1,
+      "discountedPrice": 0.1,
+      "discountedAmount": 0.1,
+      "discountAmount": 0.1,
+      "usedBonus": 0.1,
+      "accumulatedBonus": 0.1,
+      "vat": true,
+      "description": "string",
+      "deleted": true,
+      "gift": true,
+      "rowNumber": 0,
+      "rowId": 0,
+      "baseRowId": 0,
+      "cpaClassifier": "string",
+      "markingList": [
+        "string"
+      ]
+    }
+  ]
+}
+```
+
 <h3 id="get__v1_documents_salereturn_{isn}-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[SaleReturn](#schemasalereturn)|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="warning">
@@ -19457,6 +21019,7 @@ API Key
 ```shell
 # You can also use wget
 curl -X GET /trade/v1/documents/storageinputorder/{isn} \
+  -H 'Accept: text/plain' \
   -H 'Accept-Language: hy-AM' \
   -H 'apiKey: API_KEY'
 
@@ -19465,6 +21028,7 @@ curl -X GET /trade/v1/documents/storageinputorder/{isn} \
 ```http
 GET /trade/v1/documents/storageinputorder/{isn} HTTP/1.1
 
+Accept: text/plain
 Accept-Language: hy-AM
 
 ```
@@ -19472,6 +21036,7 @@ Accept-Language: hy-AM
 ```javascript
 
 const headers = {
+  'Accept':'text/plain',
   'Accept-Language':'hy-AM',
   'apiKey':'API_KEY'
 };
@@ -19495,6 +21060,7 @@ require 'rest-client'
 require 'json'
 
 headers = {
+  'Accept' => 'text/plain',
   'Accept-Language' => 'hy-AM',
   'apiKey' => 'API_KEY'
 }
@@ -19510,6 +21076,7 @@ p JSON.parse(result)
 ```python
 import requests
 headers = {
+  'Accept': 'text/plain',
   'Accept-Language': 'hy-AM',
   'apiKey': 'API_KEY'
 }
@@ -19526,6 +21093,7 @@ print(r.json())
 require 'vendor/autoload.php';
 
 $headers = array(
+    'Accept' => 'text/plain',
     'Accept-Language' => 'hy-AM',
     'apiKey' => 'API_KEY',
 );
@@ -19580,6 +21148,7 @@ import (
 func main() {
 
     headers := map[string][]string{
+        "Accept": []string{"text/plain"},
         "Accept-Language": []string{"hy-AM"},
         "apiKey": []string{"API_KEY"},
     }
@@ -19604,11 +21173,75 @@ func main() {
 |isn|path|string(uuid)|true|none|
 |Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
 
+> Example responses
+
+> 200 Response
+
+```
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"baseDocumentISN":"e3cf3357-51e7-469a-a6c4-77dfddcb9255","storage":"string","supplierCode":"string","supplierContract":"string","purchaseDocumentNumber":"string","purchaseDocumentDate":"2019-08-24","comment":"string","owner":"string","currency":"string","currencyExchangeRate":0.1,"currencyExchangeBase":0.1,"vatCalculationType":"string","includeVATInCost":true,"priceType":"string","discountPercent":0.1,"vatAmount":0.1,"totalAmount":0.1,"letterOfAttorney":"string","mediator":"string","vehicle":"string","chiefAccountant":"string","allowed":"string","accepted":"string","productsList":[{"id":0,"code":"string","name":"string","fullName":"string","unit":"string","unitAbbreviation":"string","quantity":0.1,"price":0.1,"discountPercent":0.1,"discountedPrice":0.1,"amount":0.1,"description":"string","vat":true,"expirationDate":"2019-08-24","country":"string","producer":"string","property1":"string","property2":"string","rowNumber":0,"rowId":0}]}
+```
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "baseDocumentISN": "e3cf3357-51e7-469a-a6c4-77dfddcb9255",
+  "storage": "string",
+  "supplierCode": "string",
+  "supplierContract": "string",
+  "purchaseDocumentNumber": "string",
+  "purchaseDocumentDate": "2019-08-24",
+  "comment": "string",
+  "owner": "string",
+  "currency": "string",
+  "currencyExchangeRate": 0.1,
+  "currencyExchangeBase": 0.1,
+  "vatCalculationType": "string",
+  "includeVATInCost": true,
+  "priceType": "string",
+  "discountPercent": 0.1,
+  "vatAmount": 0.1,
+  "totalAmount": 0.1,
+  "letterOfAttorney": "string",
+  "mediator": "string",
+  "vehicle": "string",
+  "chiefAccountant": "string",
+  "allowed": "string",
+  "accepted": "string",
+  "productsList": [
+    {
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "fullName": "string",
+      "unit": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "price": 0.1,
+      "discountPercent": 0.1,
+      "discountedPrice": 0.1,
+      "amount": 0.1,
+      "description": "string",
+      "vat": true,
+      "expirationDate": "2019-08-24",
+      "country": "string",
+      "producer": "string",
+      "property1": "string",
+      "property2": "string",
+      "rowNumber": 0,
+      "rowId": 0
+    }
+  ]
+}
+```
+
 <h3 id="get__v1_documents_storageinputorder_{isn}-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[StorageInputOrder](#schemastorageinputorder)|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="warning">
@@ -19665,7 +21298,7 @@ const inputBody = '{
   "letterOfAttorney": "string",
   "mediator": "string",
   "vehicle": "string",
-  "chiefAccount": "string",
+  "chiefAccountant": "string",
   "allowed": "string",
   "accepted": "string",
   "productsList": [
@@ -19857,7 +21490,7 @@ func main() {
   "letterOfAttorney": "string",
   "mediator": "string",
   "vehicle": "string",
-  "chiefAccount": "string",
+  "chiefAccountant": "string",
   "allowed": "string",
   "accepted": "string",
   "productsList": [
@@ -19900,7 +21533,7 @@ func main() {
 > 200 Response
 
 ```
-{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"baseDocumentISN":"e3cf3357-51e7-469a-a6c4-77dfddcb9255","storage":"string","supplierCode":"string","supplierContract":"string","purchaseDocumentNumber":"string","purchaseDocumentDate":"2019-08-24","comment":"string","owner":"string","currency":"string","currencyExchangeRate":0.1,"currencyExchangeBase":0.1,"vatCalculationType":"string","includeVATInCost":true,"priceType":"string","discountPercent":0.1,"vatAmount":0.1,"totalAmount":0.1,"letterOfAttorney":"string","mediator":"string","vehicle":"string","chiefAccount":"string","allowed":"string","accepted":"string","productsList":[{"id":0,"code":"string","name":"string","fullName":"string","unit":"string","unitAbbreviation":"string","quantity":0.1,"price":0.1,"discountPercent":0.1,"discountedPrice":0.1,"amount":0.1,"description":"string","vat":true,"expirationDate":"2019-08-24","country":"string","producer":"string","property1":"string","property2":"string","rowNumber":0,"rowId":0}]}
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"baseDocumentISN":"e3cf3357-51e7-469a-a6c4-77dfddcb9255","storage":"string","supplierCode":"string","supplierContract":"string","purchaseDocumentNumber":"string","purchaseDocumentDate":"2019-08-24","comment":"string","owner":"string","currency":"string","currencyExchangeRate":0.1,"currencyExchangeBase":0.1,"vatCalculationType":"string","includeVATInCost":true,"priceType":"string","discountPercent":0.1,"vatAmount":0.1,"totalAmount":0.1,"letterOfAttorney":"string","mediator":"string","vehicle":"string","chiefAccountant":"string","allowed":"string","accepted":"string","productsList":[{"id":0,"code":"string","name":"string","fullName":"string","unit":"string","unitAbbreviation":"string","quantity":0.1,"price":0.1,"discountPercent":0.1,"discountedPrice":0.1,"amount":0.1,"description":"string","vat":true,"expirationDate":"2019-08-24","country":"string","producer":"string","property1":"string","property2":"string","rowNumber":0,"rowId":0}]}
 ```
 
 ```json
@@ -19929,7 +21562,7 @@ func main() {
   "letterOfAttorney": "string",
   "mediator": "string",
   "vehicle": "string",
-  "chiefAccount": "string",
+  "chiefAccountant": "string",
   "allowed": "string",
   "accepted": "string",
   "productsList": [
@@ -20186,7 +21819,7 @@ const inputBody = '{
   "letterOfAttorney": "string",
   "mediator": "string",
   "vehicle": "string",
-  "chiefAccount": "string",
+  "chiefAccountant": "string",
   "allowed": "string",
   "accepted": "string",
   "productsList": [
@@ -20378,7 +22011,7 @@ func main() {
   "letterOfAttorney": "string",
   "mediator": "string",
   "vehicle": "string",
-  "chiefAccount": "string",
+  "chiefAccountant": "string",
   "allowed": "string",
   "accepted": "string",
   "productsList": [
@@ -20420,7 +22053,7 @@ func main() {
 > 201 Response
 
 ```
-{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"baseDocumentISN":"e3cf3357-51e7-469a-a6c4-77dfddcb9255","storage":"string","supplierCode":"string","supplierContract":"string","purchaseDocumentNumber":"string","purchaseDocumentDate":"2019-08-24","comment":"string","owner":"string","currency":"string","currencyExchangeRate":0.1,"currencyExchangeBase":0.1,"vatCalculationType":"string","includeVATInCost":true,"priceType":"string","discountPercent":0.1,"vatAmount":0.1,"totalAmount":0.1,"letterOfAttorney":"string","mediator":"string","vehicle":"string","chiefAccount":"string","allowed":"string","accepted":"string","productsList":[{"id":0,"code":"string","name":"string","fullName":"string","unit":"string","unitAbbreviation":"string","quantity":0.1,"price":0.1,"discountPercent":0.1,"discountedPrice":0.1,"amount":0.1,"description":"string","vat":true,"expirationDate":"2019-08-24","country":"string","producer":"string","property1":"string","property2":"string","rowNumber":0,"rowId":0}]}
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"baseDocumentISN":"e3cf3357-51e7-469a-a6c4-77dfddcb9255","storage":"string","supplierCode":"string","supplierContract":"string","purchaseDocumentNumber":"string","purchaseDocumentDate":"2019-08-24","comment":"string","owner":"string","currency":"string","currencyExchangeRate":0.1,"currencyExchangeBase":0.1,"vatCalculationType":"string","includeVATInCost":true,"priceType":"string","discountPercent":0.1,"vatAmount":0.1,"totalAmount":0.1,"letterOfAttorney":"string","mediator":"string","vehicle":"string","chiefAccountant":"string","allowed":"string","accepted":"string","productsList":[{"id":0,"code":"string","name":"string","fullName":"string","unit":"string","unitAbbreviation":"string","quantity":0.1,"price":0.1,"discountPercent":0.1,"discountedPrice":0.1,"amount":0.1,"description":"string","vat":true,"expirationDate":"2019-08-24","country":"string","producer":"string","property1":"string","property2":"string","rowNumber":0,"rowId":0}]}
 ```
 
 ```json
@@ -20449,7 +22082,7 @@ func main() {
   "letterOfAttorney": "string",
   "mediator": "string",
   "vehicle": "string",
-  "chiefAccount": "string",
+  "chiefAccountant": "string",
   "allowed": "string",
   "accepted": "string",
   "productsList": [
@@ -20500,6 +22133,7 @@ API Key
 ```shell
 # You can also use wget
 curl -X GET /trade/v1/documents/storageinputorderretail/{isn} \
+  -H 'Accept: text/plain' \
   -H 'Accept-Language: hy-AM' \
   -H 'apiKey: API_KEY'
 
@@ -20508,6 +22142,7 @@ curl -X GET /trade/v1/documents/storageinputorderretail/{isn} \
 ```http
 GET /trade/v1/documents/storageinputorderretail/{isn} HTTP/1.1
 
+Accept: text/plain
 Accept-Language: hy-AM
 
 ```
@@ -20515,6 +22150,7 @@ Accept-Language: hy-AM
 ```javascript
 
 const headers = {
+  'Accept':'text/plain',
   'Accept-Language':'hy-AM',
   'apiKey':'API_KEY'
 };
@@ -20538,6 +22174,7 @@ require 'rest-client'
 require 'json'
 
 headers = {
+  'Accept' => 'text/plain',
   'Accept-Language' => 'hy-AM',
   'apiKey' => 'API_KEY'
 }
@@ -20553,6 +22190,7 @@ p JSON.parse(result)
 ```python
 import requests
 headers = {
+  'Accept': 'text/plain',
   'Accept-Language': 'hy-AM',
   'apiKey': 'API_KEY'
 }
@@ -20569,6 +22207,7 @@ print(r.json())
 require 'vendor/autoload.php';
 
 $headers = array(
+    'Accept' => 'text/plain',
     'Accept-Language' => 'hy-AM',
     'apiKey' => 'API_KEY',
 );
@@ -20623,6 +22262,7 @@ import (
 func main() {
 
     headers := map[string][]string{
+        "Accept": []string{"text/plain"},
         "Accept-Language": []string{"hy-AM"},
         "apiKey": []string{"API_KEY"},
     }
@@ -20647,11 +22287,78 @@ func main() {
 |isn|path|string(uuid)|true|none|
 |Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
 
+> Example responses
+
+> 200 Response
+
+```
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"baseDocumentISN":"e3cf3357-51e7-469a-a6c4-77dfddcb9255","storage":"string","supplierCode":"string","supplierContract":"string","purchaseDocumentNumber":"string","purchaseDocumentDate":"2019-08-24","comment":"string","owner":"string","currency":"string","currencyExchangeRate":0.1,"currencyExchangeBase":0.1,"vatCalculationType":"string","includeVATInCost":true,"priceType":"string","discountPercent":0.1,"vatAmount":0.1,"totalAmount":0.1,"letterOfAttorney":"string","mediator":"string","vehicle":"string","chiefAccountant":"string","allowed":"string","accepted":"string","productsList":[{"id":0,"code":"string","name":"string","fullName":"string","unit":"string","unitAbbreviation":"string","quantity":0.1,"price":0.1,"discountPercent":0.1,"discountedPrice":0.1,"amount":0.1,"addedValuePercent":0.1,"salePrice":0.1,"saleAmount":0.1,"description":"string","vat":true,"expirationDate":"2019-08-24","country":"string","producer":"string","property1":"string","property2":"string","rowNumber":0,"rowId":0}]}
+```
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "baseDocumentISN": "e3cf3357-51e7-469a-a6c4-77dfddcb9255",
+  "storage": "string",
+  "supplierCode": "string",
+  "supplierContract": "string",
+  "purchaseDocumentNumber": "string",
+  "purchaseDocumentDate": "2019-08-24",
+  "comment": "string",
+  "owner": "string",
+  "currency": "string",
+  "currencyExchangeRate": 0.1,
+  "currencyExchangeBase": 0.1,
+  "vatCalculationType": "string",
+  "includeVATInCost": true,
+  "priceType": "string",
+  "discountPercent": 0.1,
+  "vatAmount": 0.1,
+  "totalAmount": 0.1,
+  "letterOfAttorney": "string",
+  "mediator": "string",
+  "vehicle": "string",
+  "chiefAccountant": "string",
+  "allowed": "string",
+  "accepted": "string",
+  "productsList": [
+    {
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "fullName": "string",
+      "unit": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "price": 0.1,
+      "discountPercent": 0.1,
+      "discountedPrice": 0.1,
+      "amount": 0.1,
+      "addedValuePercent": 0.1,
+      "salePrice": 0.1,
+      "saleAmount": 0.1,
+      "description": "string",
+      "vat": true,
+      "expirationDate": "2019-08-24",
+      "country": "string",
+      "producer": "string",
+      "property1": "string",
+      "property2": "string",
+      "rowNumber": 0,
+      "rowId": 0
+    }
+  ]
+}
+```
+
 <h3 id="get__v1_documents_storageinputorderretail_{isn}-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[StorageInputOrderRetail](#schemastorageinputorderretail)|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="warning">
@@ -20708,7 +22415,7 @@ const inputBody = '{
   "letterOfAttorney": "string",
   "mediator": "string",
   "vehicle": "string",
-  "chiefAccount": "string",
+  "chiefAccountant": "string",
   "allowed": "string",
   "accepted": "string",
   "productsList": [
@@ -20903,7 +22610,7 @@ func main() {
   "letterOfAttorney": "string",
   "mediator": "string",
   "vehicle": "string",
-  "chiefAccount": "string",
+  "chiefAccountant": "string",
   "allowed": "string",
   "accepted": "string",
   "productsList": [
@@ -20949,7 +22656,7 @@ func main() {
 > 200 Response
 
 ```
-{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"baseDocumentISN":"e3cf3357-51e7-469a-a6c4-77dfddcb9255","storage":"string","supplierCode":"string","supplierContract":"string","purchaseDocumentNumber":"string","purchaseDocumentDate":"2019-08-24","comment":"string","owner":"string","currency":"string","currencyExchangeRate":0.1,"currencyExchangeBase":0.1,"vatCalculationType":"string","includeVATInCost":true,"priceType":"string","discountPercent":0.1,"vatAmount":0.1,"totalAmount":0.1,"letterOfAttorney":"string","mediator":"string","vehicle":"string","chiefAccount":"string","allowed":"string","accepted":"string","productsList":[{"id":0,"code":"string","name":"string","fullName":"string","unit":"string","unitAbbreviation":"string","quantity":0.1,"price":0.1,"discountPercent":0.1,"discountedPrice":0.1,"amount":0.1,"addedValuePercent":0.1,"salePrice":0.1,"saleAmount":0.1,"description":"string","vat":true,"expirationDate":"2019-08-24","country":"string","producer":"string","property1":"string","property2":"string","rowNumber":0,"rowId":0}]}
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"baseDocumentISN":"e3cf3357-51e7-469a-a6c4-77dfddcb9255","storage":"string","supplierCode":"string","supplierContract":"string","purchaseDocumentNumber":"string","purchaseDocumentDate":"2019-08-24","comment":"string","owner":"string","currency":"string","currencyExchangeRate":0.1,"currencyExchangeBase":0.1,"vatCalculationType":"string","includeVATInCost":true,"priceType":"string","discountPercent":0.1,"vatAmount":0.1,"totalAmount":0.1,"letterOfAttorney":"string","mediator":"string","vehicle":"string","chiefAccountant":"string","allowed":"string","accepted":"string","productsList":[{"id":0,"code":"string","name":"string","fullName":"string","unit":"string","unitAbbreviation":"string","quantity":0.1,"price":0.1,"discountPercent":0.1,"discountedPrice":0.1,"amount":0.1,"addedValuePercent":0.1,"salePrice":0.1,"saleAmount":0.1,"description":"string","vat":true,"expirationDate":"2019-08-24","country":"string","producer":"string","property1":"string","property2":"string","rowNumber":0,"rowId":0}]}
 ```
 
 ```json
@@ -20978,7 +22685,7 @@ func main() {
   "letterOfAttorney": "string",
   "mediator": "string",
   "vehicle": "string",
-  "chiefAccount": "string",
+  "chiefAccountant": "string",
   "allowed": "string",
   "accepted": "string",
   "productsList": [
@@ -21238,7 +22945,7 @@ const inputBody = '{
   "letterOfAttorney": "string",
   "mediator": "string",
   "vehicle": "string",
-  "chiefAccount": "string",
+  "chiefAccountant": "string",
   "allowed": "string",
   "accepted": "string",
   "productsList": [
@@ -21433,7 +23140,7 @@ func main() {
   "letterOfAttorney": "string",
   "mediator": "string",
   "vehicle": "string",
-  "chiefAccount": "string",
+  "chiefAccountant": "string",
   "allowed": "string",
   "accepted": "string",
   "productsList": [
@@ -21478,7 +23185,7 @@ func main() {
 > 201 Response
 
 ```
-{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"baseDocumentISN":"e3cf3357-51e7-469a-a6c4-77dfddcb9255","storage":"string","supplierCode":"string","supplierContract":"string","purchaseDocumentNumber":"string","purchaseDocumentDate":"2019-08-24","comment":"string","owner":"string","currency":"string","currencyExchangeRate":0.1,"currencyExchangeBase":0.1,"vatCalculationType":"string","includeVATInCost":true,"priceType":"string","discountPercent":0.1,"vatAmount":0.1,"totalAmount":0.1,"letterOfAttorney":"string","mediator":"string","vehicle":"string","chiefAccount":"string","allowed":"string","accepted":"string","productsList":[{"id":0,"code":"string","name":"string","fullName":"string","unit":"string","unitAbbreviation":"string","quantity":0.1,"price":0.1,"discountPercent":0.1,"discountedPrice":0.1,"amount":0.1,"addedValuePercent":0.1,"salePrice":0.1,"saleAmount":0.1,"description":"string","vat":true,"expirationDate":"2019-08-24","country":"string","producer":"string","property1":"string","property2":"string","rowNumber":0,"rowId":0}]}
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"baseDocumentISN":"e3cf3357-51e7-469a-a6c4-77dfddcb9255","storage":"string","supplierCode":"string","supplierContract":"string","purchaseDocumentNumber":"string","purchaseDocumentDate":"2019-08-24","comment":"string","owner":"string","currency":"string","currencyExchangeRate":0.1,"currencyExchangeBase":0.1,"vatCalculationType":"string","includeVATInCost":true,"priceType":"string","discountPercent":0.1,"vatAmount":0.1,"totalAmount":0.1,"letterOfAttorney":"string","mediator":"string","vehicle":"string","chiefAccountant":"string","allowed":"string","accepted":"string","productsList":[{"id":0,"code":"string","name":"string","fullName":"string","unit":"string","unitAbbreviation":"string","quantity":0.1,"price":0.1,"discountPercent":0.1,"discountedPrice":0.1,"amount":0.1,"addedValuePercent":0.1,"salePrice":0.1,"saleAmount":0.1,"description":"string","vat":true,"expirationDate":"2019-08-24","country":"string","producer":"string","property1":"string","property2":"string","rowNumber":0,"rowId":0}]}
 ```
 
 ```json
@@ -21507,7 +23214,7 @@ func main() {
   "letterOfAttorney": "string",
   "mediator": "string",
   "vehicle": "string",
-  "chiefAccount": "string",
+  "chiefAccountant": "string",
   "allowed": "string",
   "accepted": "string",
   "productsList": [
@@ -21748,11 +23455,11 @@ Status Code **200**
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
 |*anonymous*|[[Storage](#schemastorage)]|false|none|none|
-|» code|string¦null|false|none|none|
-|» name|string¦null|false|none|none|
-|» stockkeeper|string¦null|false|none|none|
-|» address|string¦null|false|none|none|
-|» retail|boolean¦null|false|none|none|
+|» code|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|» name|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|» stockkeeper|string¦null|false|none|hy-AM: Պահեստապետ | en-US: Stockkeeper | ru-RU: Заведующий складом|
+|» address|string¦null|false|none|hy-AM: Հասցե | en-US: Address | ru-RU: Адрес|
+|» retail|boolean¦null|false|none|hy-AM: Մանրածախ | en-US: Retail | ru-RU: Розничный|
 
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
@@ -21982,6 +23689,7 @@ API Key
 ```shell
 # You can also use wget
 curl -X GET /trade/v1/directories/storages/{code} \
+  -H 'Accept: text/plain' \
   -H 'Accept-Language: hy-AM' \
   -H 'apiKey: API_KEY'
 
@@ -21990,6 +23698,7 @@ curl -X GET /trade/v1/directories/storages/{code} \
 ```http
 GET /trade/v1/directories/storages/{code} HTTP/1.1
 
+Accept: text/plain
 Accept-Language: hy-AM
 
 ```
@@ -21997,6 +23706,7 @@ Accept-Language: hy-AM
 ```javascript
 
 const headers = {
+  'Accept':'text/plain',
   'Accept-Language':'hy-AM',
   'apiKey':'API_KEY'
 };
@@ -22020,6 +23730,7 @@ require 'rest-client'
 require 'json'
 
 headers = {
+  'Accept' => 'text/plain',
   'Accept-Language' => 'hy-AM',
   'apiKey' => 'API_KEY'
 }
@@ -22035,6 +23746,7 @@ p JSON.parse(result)
 ```python
 import requests
 headers = {
+  'Accept': 'text/plain',
   'Accept-Language': 'hy-AM',
   'apiKey': 'API_KEY'
 }
@@ -22051,6 +23763,7 @@ print(r.json())
 require 'vendor/autoload.php';
 
 $headers = array(
+    'Accept' => 'text/plain',
     'Accept-Language' => 'hy-AM',
     'apiKey' => 'API_KEY',
 );
@@ -22105,6 +23818,7 @@ import (
 func main() {
 
     headers := map[string][]string{
+        "Accept": []string{"text/plain"},
         "Accept-Language": []string{"hy-AM"},
         "apiKey": []string{"API_KEY"},
     }
@@ -22129,11 +23843,29 @@ func main() {
 |code|path|string|true|none|
 |Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
 
+> Example responses
+
+> 200 Response
+
+```
+{"code":"string","name":"string","stockkeeper":"string","address":"string","retail":true}
+```
+
+```json
+{
+  "code": "string",
+  "name": "string",
+  "stockkeeper": "string",
+  "address": "string",
+  "retail": true
+}
+```
+
 <h3 id="get__v1_directories_storages_{code}-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[Storage](#schemastorage)|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="warning">
@@ -22533,6 +24265,7 @@ API Key
 ```shell
 # You can also use wget
 curl -X GET /trade/v1/documents/transferinvoice/{isn} \
+  -H 'Accept: text/plain' \
   -H 'Accept-Language: hy-AM' \
   -H 'apiKey: API_KEY'
 
@@ -22541,6 +24274,7 @@ curl -X GET /trade/v1/documents/transferinvoice/{isn} \
 ```http
 GET /trade/v1/documents/transferinvoice/{isn} HTTP/1.1
 
+Accept: text/plain
 Accept-Language: hy-AM
 
 ```
@@ -22548,6 +24282,7 @@ Accept-Language: hy-AM
 ```javascript
 
 const headers = {
+  'Accept':'text/plain',
   'Accept-Language':'hy-AM',
   'apiKey':'API_KEY'
 };
@@ -22571,6 +24306,7 @@ require 'rest-client'
 require 'json'
 
 headers = {
+  'Accept' => 'text/plain',
   'Accept-Language' => 'hy-AM',
   'apiKey' => 'API_KEY'
 }
@@ -22586,6 +24322,7 @@ p JSON.parse(result)
 ```python
 import requests
 headers = {
+  'Accept': 'text/plain',
   'Accept-Language': 'hy-AM',
   'apiKey': 'API_KEY'
 }
@@ -22602,6 +24339,7 @@ print(r.json())
 require 'vendor/autoload.php';
 
 $headers = array(
+    'Accept' => 'text/plain',
     'Accept-Language' => 'hy-AM',
     'apiKey' => 'API_KEY',
 );
@@ -22656,6 +24394,7 @@ import (
 func main() {
 
     headers := map[string][]string{
+        "Accept": []string{"text/plain"},
         "Accept-Language": []string{"hy-AM"},
         "apiKey": []string{"API_KEY"},
     }
@@ -22680,11 +24419,81 @@ func main() {
 |isn|path|string(uuid)|true|none|
 |Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
 
+> Example responses
+
+> 200 Response
+
+```
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"customer":"string","currency":"string","currencyExchangeRate":0.1,"currencyExchangeBase":0.1,"contract":"string","contractDate":"2019-08-24","comment":"string","owner":"string","vatCalculationType":"string","priceType":"string","storage":"string","discountPercent":0.1,"vatAmount":0.1,"totalAmount":0.1,"supplierName":"string","supplierLegalAddress":"string","supplierBusinessAddress":"string","supplierSettlementAccount":"string","supplierTaxCode":"string","supplierManagerPosition":"string","supplierManagerName":"string","supplierAccountantPosition":"string","supplierAccountantName":"string","customerName":"string","customerLegalAddress":"string","customerBusinessAddress":"string","customerSettlementAccount":"string","customerTaxCode":"string","customerManagerPosition":"string","customerManagerName":"string","customerAccountantPosition":"string","customerAccountantName":"string","stateRegisterNumber":"string","passportNumber":"string","itemList":[{"type":"string","storage":"string","id":0,"code":"string","name":"string","unit":"string","unitAbbreviation":"string","quantity":0.1,"price":0.1,"discountPercent":0.1,"discountedPrice":0.1,"amount":0.1,"vat":true,"rowNumber":0,"rowId":0}]}
+```
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "customer": "string",
+  "currency": "string",
+  "currencyExchangeRate": 0.1,
+  "currencyExchangeBase": 0.1,
+  "contract": "string",
+  "contractDate": "2019-08-24",
+  "comment": "string",
+  "owner": "string",
+  "vatCalculationType": "string",
+  "priceType": "string",
+  "storage": "string",
+  "discountPercent": 0.1,
+  "vatAmount": 0.1,
+  "totalAmount": 0.1,
+  "supplierName": "string",
+  "supplierLegalAddress": "string",
+  "supplierBusinessAddress": "string",
+  "supplierSettlementAccount": "string",
+  "supplierTaxCode": "string",
+  "supplierManagerPosition": "string",
+  "supplierManagerName": "string",
+  "supplierAccountantPosition": "string",
+  "supplierAccountantName": "string",
+  "customerName": "string",
+  "customerLegalAddress": "string",
+  "customerBusinessAddress": "string",
+  "customerSettlementAccount": "string",
+  "customerTaxCode": "string",
+  "customerManagerPosition": "string",
+  "customerManagerName": "string",
+  "customerAccountantPosition": "string",
+  "customerAccountantName": "string",
+  "stateRegisterNumber": "string",
+  "passportNumber": "string",
+  "itemList": [
+    {
+      "type": "string",
+      "storage": "string",
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unit": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "price": 0.1,
+      "discountPercent": 0.1,
+      "discountedPrice": 0.1,
+      "amount": 0.1,
+      "vat": true,
+      "rowNumber": 0,
+      "rowId": 0
+    }
+  ]
+}
+```
+
 <h3 id="get__v1_documents_transferinvoice_{isn}-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[TransferInvoice](#schematransferinvoice)|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="warning">
@@ -23612,7 +25421,8 @@ API Key
 ```shell
 # You can also use wget
 curl -X GET /trade/api/Version \
-  -H 'Accept: text/plain'
+  -H 'Accept: text/plain' \
+  -H 'apiKey: API_KEY'
 
 ```
 
@@ -23626,7 +25436,8 @@ Accept: text/plain
 ```javascript
 
 const headers = {
-  'Accept':'text/plain'
+  'Accept':'text/plain',
+  'apiKey':'API_KEY'
 };
 
 fetch('/trade/api/Version',
@@ -23648,7 +25459,8 @@ require 'rest-client'
 require 'json'
 
 headers = {
-  'Accept' => 'text/plain'
+  'Accept' => 'text/plain',
+  'apiKey' => 'API_KEY'
 }
 
 result = RestClient.get '/trade/api/Version',
@@ -23662,7 +25474,8 @@ p JSON.parse(result)
 ```python
 import requests
 headers = {
-  'Accept': 'text/plain'
+  'Accept': 'text/plain',
+  'apiKey': 'API_KEY'
 }
 
 r = requests.get('/trade/api/Version', headers = headers)
@@ -23678,6 +25491,7 @@ require 'vendor/autoload.php';
 
 $headers = array(
     'Accept' => 'text/plain',
+    'apiKey' => 'API_KEY',
 );
 
 $client = new \GuzzleHttp\Client();
@@ -23731,6 +25545,7 @@ func main() {
 
     headers := map[string][]string{
         "Accept": []string{"text/plain"},
+        "apiKey": []string{"API_KEY"},
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
@@ -23764,8 +25579,9 @@ func main() {
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|string|
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
 </aside>
 
 # Schemas
@@ -23794,13 +25610,13 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|code|string¦null|false|none|none|
-|itemId|integer(int32)|false|none|none|
-|itemCode|string¦null|false|none|none|
-|itemName|string¦null|false|none|none|
-|unitMeasure|string¦null|false|none|none|
-|unitMeasureAbbreviation|string¦null|false|none|none|
-|weightItem|boolean|false|none|none|
+|code|string¦null|false|none|hy-AM: Գծիկավոր կոդ | en-US: Barcode | ru-RU: Штрихкод|
+|itemId|integer(int32)|false|none|hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер|
+|itemCode|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|itemName|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|unitMeasure|string¦null|false|none|hy-AM: Չափման միավոր | en-US: Measure unit | ru-RU: Единица измерения|
+|unitMeasureAbbreviation|string¦null|false|none|hy-AM: Հապավում | en-US: Abbreviation | ru-RU: Сокращение|
+|weightItem|boolean|false|none|hy-AM: Քաշային | en-US: Weight | ru-RU: Весовой|
 
 <h2 id="tocS_BarcodeApiResponse">BarcodeApiResponse</h2>
 <!-- backwards compatibility -->
@@ -23857,8 +25673,8 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|pageSize|integer(int32)¦null|false|none|none|
-|itemCodes|[string]¦null|false|none|none|
+|pageSize|integer(int32)¦null|false|none|hy-AM:  էջ  | en-US:  page | ru-RU: страница|
+|itemCodes|[string]¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
 
 <h2 id="tocS_BonusBalancesDataRow">BonusBalancesDataRow</h2>
 <!-- backwards compatibility -->
@@ -23888,17 +25704,17 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|partnerId|integer(int32)|false|none|none|
-|partnerCode|string¦null|false|none|none|
-|partnerName|string¦null|false|none|none|
-|contractCode|string¦null|false|none|none|
-|contractName|string¦null|false|none|none|
-|contractDate|string(date)¦null|false|none|none|
-|group|string¦null|false|none|none|
-|taxCode|string¦null|false|none|none|
-|legalAddress|string¦null|false|none|none|
-|phoneNumber|string¦null|false|none|none|
-|balance|number(double)|false|none|none|
+|partnerId|integer(int32)|false|none|hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер|
+|partnerCode|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|partnerName|string¦null|false|none|hy-AM: Գործընկեր | en-US: Partner | ru-RU: Партнер|
+|contractCode|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|contractName|string¦null|false|none|hy-AM: Պայմանագիր | en-US: Contract | ru-RU: Договор|
+|contractDate|string(date)¦null|false|none|hy-AM: Պայմանագրի ամսաթիվը | en-US: Contract date | ru-RU: Дата договора|
+|group|string¦null|false|none|hy-AM: Խումբ | en-US: Group | ru-RU: Группа|
+|taxCode|string¦null|false|none|hy-AM: ՀՎՀՀ | en-US: Taxpayer’s ID | ru-RU: ИНН код|
+|legalAddress|string¦null|false|none|hy-AM: Իրավ. հասցե | en-US: Legal address | ru-RU: Юридический адрес|
+|phoneNumber|string¦null|false|none|hy-AM: Հեռախոսահամար | en-US: Phone number | ru-RU: Номер телефона|
+|balance|number(double)|false|none|hy-AM: Միավորների մնացորդ | en-US: Points balance | ru-RU: Остаток единиц|
 
 <h2 id="tocS_BonusBalancesDataRowApiResponse">BonusBalancesDataRowApiResponse</h2>
 <!-- backwards compatibility -->
@@ -23961,12 +25777,12 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|pageSize|integer(int32)¦null|false|none|none|
-|date|string(date)|true|none|none|
-|partnerGroup|string¦null|false|none|none|
-|partner|string¦null|false|none|none|
-|contract|string¦null|false|none|none|
-|openedByContracts|boolean|false|none|none|
+|pageSize|integer(int32)¦null|false|none|hy-AM:  էջ  | en-US:  page | ru-RU: страница|
+|date|string(date)|false|none|hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата|
+|partnerGroup|string¦null|false|none|hy-AM: Խումբ | en-US: Group | ru-RU: Группа|
+|partner|string¦null|false|none|hy-AM: Գործընկեր | en-US: Partner | ru-RU: Партнер|
+|contract|string¦null|false|none|hy-AM: Պայմանագրեր | en-US: Contracts | ru-RU: Договоры партнеров|
+|openedByContracts|boolean|false|none|hy-AM: Բացված ըստ պայմանագրերի | en-US: Opened by contracts | ru-RU: Детализировать по договорам|
 
 <h2 id="tocS_CashDesk">CashDesk</h2>
 <!-- backwards compatibility -->
@@ -23995,16 +25811,16 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|code|string¦null|false|none|none|
-|name|string¦null|false|none|none|
-|nextCashInputOrderNumber|string¦null|false|none|none|
-|nextCashOutputOrderNumber|string¦null|false|none|none|
-|nextSaleNumber|string¦null|false|none|none|
-|nextSaleReturnNumber|string¦null|false|none|none|
-|nextShiftNumber|string¦null|false|none|none|
-|default|boolean¦null|false|none|none|
+|code|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|name|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|nextCashInputOrderNumber|string¦null|false|none|hy-AM: ԴՄՕ-ի հերթական համար | en-US: Next number of cash Input order | ru-RU: Порядковый номер ПКО|
+|nextCashOutputOrderNumber|string¦null|false|none|hy-AM: ԴԵՕ-ի հերթական համար | en-US: Next number of cash output order | ru-RU: Порядковый номер РКО|
+|nextSaleNumber|string¦null|false|none|hy-AM: Վաճառք (Կտրոն) հերթական համար | en-US: Sale (Bill) serial number | ru-RU: Порядковый номер Реализации (Чек)|
+|nextSaleReturnNumber|string¦null|false|none|hy-AM: Վերադարձ (Կտրոն) հերթական համար | en-US: Return (Bill) serial number | ru-RU: Порядковый номер Возврата (Чек)|
+|nextShiftNumber|string¦null|false|none|hy-AM: Հերթափոխի հերթական համար | en-US: Shift number | ru-RU: Порядковый номер смены|
+|default|boolean¦null|false|none|hy-AM: Հիմնական | en-US: Default | ru-RU: Основной|
 |ecr|boolean¦null|false|none|none|
-|cashLimit|string¦null|false|none|none|
+|cashLimit|string¦null|false|none|hy-AM: Կանխիկի սահմանաչափ | en-US: Cash limit | ru-RU: Лимит наличных|
 
 <h2 id="tocS_Contract">Contract</h2>
 <!-- backwards compatibility -->
@@ -24044,27 +25860,27 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|partnerId|integer(int32)|false|none|none|
-|partnerCode|string¦null|false|none|none|
-|partnerName|string¦null|false|none|none|
-|contractCode|string¦null|false|none|none|
-|contractName|string¦null|false|none|none|
-|currency|string¦null|false|none|none|
-|priceType|string¦null|false|none|none|
-|priceTypeName|string¦null|false|none|none|
-|date|string(date)¦null|false|none|none|
-|description|string¦null|false|none|none|
-|discountPercent|number(double)¦null|false|none|none|
-|cardCode|string¦null|false|none|none|
-|bonusCard|boolean¦null|false|none|none|
-|bonusPercent|number(double)¦null|false|none|none|
-|bonusPoint|number(double)¦null|false|none|none|
-|validationPeriodStart|string(date)¦null|false|none|none|
-|validationPeriodEnd|string(date)¦null|false|none|none|
-|canceled|boolean¦null|false|none|none|
-|receivablesControl|boolean¦null|false|none|none|
-|receivablesLimit|number(double)¦null|false|none|none|
-|default|boolean¦null|false|none|none|
+|partnerId|integer(int32)|false|none|hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер|
+|partnerCode|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|partnerName|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|contractCode|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|contractName|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|currency|string¦null|false|none|hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта|
+|priceType|string¦null|false|none|hy-AM: Գնի տեսակ | en-US: Price type | ru-RU: Тип цены|
+|priceTypeName|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|date|string(date)¦null|false|none|hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата|
+|description|string¦null|false|none|hy-AM: Նկարագրություն | en-US: Description | ru-RU: Описание|
+|discountPercent|number(double)¦null|false|none|hy-AM: Զեղչի տոկոս | en-US: Discount percent | ru-RU: Процент скидки|
+|cardCode|string¦null|false|none|hy-AM: Քարտի կոդ | en-US: Discount card code | ru-RU: Код карты|
+|bonusCard|boolean¦null|false|none|hy-AM: Բոնուսային քարտ | en-US: Bonus card | ru-RU: Бонусная карта|
+|bonusPercent|number(double)¦null|false|none|hy-AM: Բոնուս ({0}) | en-US: Bonus ({0}) | ru-RU: Бонус ({0})|
+|bonusPoint|number(double)¦null|false|none|hy-AM: Բոնուս ({0}) | en-US: Bonus ({0}) | ru-RU: Бонус ({0})|
+|validationPeriodStart|string(date)¦null|false|none|hy-AM: Վավերականության ժամկետ | en-US: Validation Period | ru-RU: Период действия|
+|validationPeriodEnd|string(date)¦null|false|none|hy-AM: Վավերականության ժամկետ | en-US: Validation Period | ru-RU: Период действия|
+|canceled|boolean¦null|false|none|hy-AM: Կասեցված | en-US: Canceled | ru-RU: Аннулирована|
+|receivablesControl|boolean¦null|false|none|hy-AM: Դեբիտորական պարտքի հսկողություն | en-US: Receivables control | ru-RU: Контроль дебиторской задолженности|
+|receivablesLimit|number(double)¦null|false|none|hy-AM: Դեբիտորական պարտքի սահմանաչափ | en-US: Receivables limit | ru-RU: Лимит дебиторской задолженности|
+|default|boolean¦null|false|none|hy-AM: Հիմնական | en-US: Default | ru-RU: Основной|
 
 <h2 id="tocS_ContractFilters">ContractFilters</h2>
 <!-- backwards compatibility -->
@@ -24091,14 +25907,14 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|pageSize|integer(int32)¦null|false|none|none|
-|partnerCode|string¦null|false|none|none|
-|currency|string¦null|false|none|none|
-|exceptNCC|boolean|false|none|none|
-|onlyCustomers|boolean|false|none|none|
-|onlySuppliers|boolean|false|none|none|
-|onlyBonusCards|boolean|false|none|none|
-|lastModifiedDate|string(date-time)¦null|false|none|none|
+|pageSize|integer(int32)¦null|false|none|hy-AM:  էջ  | en-US:  page | ru-RU: страница|
+|partnerCode|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|currency|string¦null|false|none|hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта|
+|exceptNCC|boolean|false|none|hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта|
+|onlyCustomers|boolean|false|none|hy-AM: Գնորդ | en-US: Customer | ru-RU: Покупатель|
+|onlySuppliers|boolean|false|none|hy-AM: Մատակարար | en-US: Supplier | ru-RU: Поставщик|
+|onlyBonusCards|boolean|false|none|hy-AM: Բոնուսային քարտ | en-US: Bonus card | ru-RU: Бонусная карта|
+|lastModifiedDate|string(date-time)¦null|false|none|hy-AM: Վերջին փոփոխություն | en-US: Last change | ru-RU: Последнее изменение|
 
 <h2 id="tocS_ContractRow">ContractRow</h2>
 <!-- backwards compatibility -->
@@ -24143,32 +25959,32 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|partnerId|integer(int32)|false|none|none|
-|partnerCode|string¦null|false|none|none|
-|partnerName|string¦null|false|none|none|
-|partnerTaxCode|string¦null|false|none|none|
-|partnerPhone|string¦null|false|none|none|
-|partnerGroup|string¦null|false|none|none|
-|partnerGroupName|string¦null|false|none|none|
-|customer|boolean|false|none|none|
-|supplier|boolean|false|none|none|
-|contractCode|string¦null|false|none|none|
-|contractName|string¦null|false|none|none|
-|currency|string¦null|false|none|none|
-|priceType|string¦null|false|none|none|
-|date|string(date)¦null|false|none|none|
-|description|string¦null|false|none|none|
-|discountPercent|number(double)¦null|false|none|none|
-|cardCode|string¦null|false|none|none|
-|bonusCard|boolean¦null|false|none|none|
-|bonusPercent|number(double)¦null|false|none|none|
-|bonusPoint|number(double)¦null|false|none|none|
-|validationPeriodStart|string(date)¦null|false|none|none|
-|validationPeriodEnd|string(date)¦null|false|none|none|
-|canceled|boolean¦null|false|none|none|
-|receivablesControl|boolean¦null|false|none|none|
-|receivablesLimit|number(double)¦null|false|none|none|
-|default|boolean¦null|false|none|none|
+|partnerId|integer(int32)|false|none|hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер|
+|partnerCode|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|partnerName|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|partnerTaxCode|string¦null|false|none|hy-AM: ՀՎՀՀ | en-US: Taxpayer’s ID | ru-RU: ИНН код|
+|partnerPhone|string¦null|false|none|hy-AM: Հեռախոսահամար | en-US: Phone number | ru-RU: Номер телефона|
+|partnerGroup|string¦null|false|none|hy-AM: Խումբ | en-US: Group | ru-RU: Группа|
+|partnerGroupName|string¦null|false|none|hy-AM: Խմբի անվանում | en-US: Group name | ru-RU: Наименование группы|
+|customer|boolean|false|none|hy-AM: Գնորդ | en-US: Customer | ru-RU: Покупатель|
+|supplier|boolean|false|none|hy-AM: Մատակարար | en-US: Supplier | ru-RU: Поставщик|
+|contractCode|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|contractName|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|currency|string¦null|false|none|hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта|
+|priceType|string¦null|false|none|hy-AM: Գնի տեսակ | en-US: Price type | ru-RU: Тип цены|
+|date|string(date)¦null|false|none|hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата|
+|description|string¦null|false|none|hy-AM: Նկարագրություն | en-US: Description | ru-RU: Описание|
+|discountPercent|number(double)¦null|false|none|hy-AM: Զեղչի տոկոս | en-US: Discount percent | ru-RU: Процент скидки|
+|cardCode|string¦null|false|none|hy-AM: Քարտի կոդ | en-US: Discount card code | ru-RU: Код карты|
+|bonusCard|boolean¦null|false|none|hy-AM: Բոնուսային քարտ | en-US: Bonus card | ru-RU: Бонусная карта|
+|bonusPercent|number(double)¦null|false|none|hy-AM: Բոնուս ({0}) | en-US: Bonus ({0}) | ru-RU: Бонус ({0})|
+|bonusPoint|number(double)¦null|false|none|hy-AM: Բոնուս ({0}) | en-US: Bonus ({0}) | ru-RU: Бонус ({0})|
+|validationPeriodStart|string(date)¦null|false|none|hy-AM: Վավերականության ժամկետ | en-US: Validation Period | ru-RU: Период действия|
+|validationPeriodEnd|string(date)¦null|false|none|hy-AM: Վավերականության ժամկետ | en-US: Validation Period | ru-RU: Период действия|
+|canceled|boolean¦null|false|none|hy-AM: Կասեցված | en-US: Canceled | ru-RU: Аннулирована|
+|receivablesControl|boolean¦null|false|none|hy-AM: Դեբիտորական պարտքի հսկողություն | en-US: Receivables control | ru-RU: Контроль дебиторской задолженности|
+|receivablesLimit|number(double)¦null|false|none|hy-AM: Դեբիտորական պարտքի սահմանաչափ | en-US: Receivables limit | ru-RU: Лимит дебиторской задолженности|
+|default|boolean¦null|false|none|hy-AM: Հիմնական | en-US: Default | ru-RU: Основной|
 
 <h2 id="tocS_ContractRowApiResponse">ContractRowApiResponse</h2>
 <!-- backwards compatibility -->
@@ -24264,28 +26080,28 @@ This operation does not require authentication
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
 |isn|string(uuid)|false|none|none|
-|date|string(date)|false|none|none|
-|dayOrderNumber|integer(int32)|false|none|none|
-|documentNumber|string¦null|false|none|none|
-|type|integer(int32)|false|none|none|
-|typeName|string¦null|false|none|none|
-|currency|string¦null|false|none|none|
-|amount|number(double)|false|none|none|
-|state|integer(int32)|false|none|none|
-|stateName|string¦null|false|none|none|
-|storageCode|string¦null|false|none|none|
-|storageName|string¦null|false|none|none|
-|information|string¦null|false|none|none|
-|comment|string¦null|false|none|none|
-|partnerId|integer(int32)|false|none|none|
-|partnerCode|string¦null|false|none|none|
-|partnerName|string¦null|false|none|none|
-|partnerTaxCode|string¦null|false|none|none|
-|employeeCode|string¦null|false|none|none|
-|employeeName|string¦null|false|none|none|
-|userName|string¦null|false|none|none|
-|lastChange|string(date-time)|false|none|none|
-|owner|string¦null|false|none|none|
+|date|string(date)|false|none|hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата|
+|dayOrderNumber|integer(int32)|false|none|hy-AM: Օրվա հ/հ | en-US: Day order number  | ru-RU: п/н дня|
+|documentNumber|string¦null|false|none|hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док.|
+|type|integer(int32)|false|none|hy-AM: Փաստաթղթի տեսակ | en-US: Document type | ru-RU: Вид документа|
+|typeName|string¦null|false|none|hy-AM: Փաստաթղթի տեսակ | en-US: Document type | ru-RU: Вид документа|
+|currency|string¦null|false|none|hy-AM: Արժույթի կոդը | en-US: Currency ISO code | ru-RU: Код валюты|
+|amount|number(double)|false|none|hy-AM: Գումար | en-US: Amount | ru-RU: Сумма|
+|state|integer(int32)|false|none|hy-AM: Փաստաթղթի վիճակ | en-US: Document state | ru-RU: Статус документа|
+|stateName|string¦null|false|none|hy-AM: Փաստաթղթի վիճակ | en-US: Document state | ru-RU: Статус документа|
+|storageCode|string¦null|false|none|hy-AM: Պահեստ | en-US: Storage | ru-RU: Склад|
+|storageName|string¦null|false|none|hy-AM: Պահեստի անվանում | en-US: Storage name | ru-RU: Название склада|
+|information|string¦null|false|none|hy-AM: Տեղեկություն | en-US: Information | ru-RU: Информация|
+|comment|string¦null|false|none|hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий|
+|partnerId|integer(int32)|false|none|hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер|
+|partnerCode|string¦null|false|none|hy-AM: Գործընկերոջ կոդ | en-US: Partner code | ru-RU: Код партнера|
+|partnerName|string¦null|false|none|hy-AM: Գործընկերոջ անվանում | en-US: Partner name | ru-RU: Наименование партнера|
+|partnerTaxCode|string¦null|false|none|hy-AM: ՀՎՀՀ | en-US: Taxpayer’s ID | ru-RU: ИНН код|
+|employeeCode|string¦null|false|none|hy-AM: Աշխատակից | en-US: Employee | ru-RU: Сотрудник|
+|employeeName|string¦null|false|none|hy-AM: Աշխատակցի անվանում | en-US: Employee name | ru-RU: Наименование сотрудника|
+|userName|string¦null|false|none|hy-AM: Օգտագործող | en-US: User name | ru-RU: Пользователь|
+|lastChange|string(date-time)|false|none|hy-AM: Վերջին խմբագրման ամսաթիվ | en-US: Last modification date | ru-RU: Дата последнего изменения|
+|owner|string¦null|false|none|hy-AM: Հեղինակ | en-US: Owner | ru-RU: Автор|
 
 <h2 id="tocS_DocumentsJournalDataRowApiResponse">DocumentsJournalDataRowApiResponse</h2>
 <!-- backwards compatibility -->
@@ -24366,16 +26182,16 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|pageSize|integer(int32)¦null|false|none|none|
-|startDate|string(date)|true|none|none|
-|endDate|string(date)|true|none|none|
-|documentTypes|[string]¦null|false|none|none|
-|currency|string¦null|false|none|none|
-|partnerCode|string¦null|false|none|none|
-|itemCode|string¦null|false|none|none|
-|employeeCode|string¦null|false|none|none|
-|documentState|string¦null|false|none|none|
-|owner|string¦null|false|none|none|
+|pageSize|integer(int32)¦null|false|none|hy-AM:  էջ  | en-US:  page | ru-RU: страница|
+|startDate|string(date)|false|none|hy-AM: Ժամանակահատվածի սկիզբ | en-US: Period begin | ru-RU: Начало периода|
+|endDate|string(date)|false|none|hy-AM: Ժամանակահատվածի վերջ | en-US: Period end | ru-RU: Конец периода|
+|documentTypes|[string]¦null|false|none|hy-AM: Փաստաթղթի տեսակ | en-US: Document type | ru-RU: Вид документа|
+|currency|string¦null|false|none|hy-AM: Արժույթի կոդը | en-US: Currency ISO code | ru-RU: Код валюты|
+|partnerCode|string¦null|false|none|hy-AM: Գործընկեր | en-US: Partner | ru-RU: Партнер|
+|itemCode|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|employeeCode|string¦null|false|none|hy-AM: Աշխատակից | en-US: Employee | ru-RU: Сотрудник|
+|documentState|string¦null|false|none|hy-AM: Փաստաթղթի վիճակ | en-US: Document state | ru-RU: Статус документа|
+|owner|string¦null|false|none|hy-AM: Հեղինակ | en-US: Owner | ru-RU: Автор|
 
 <h2 id="tocS_ECRChecksJournalDataRow">ECRChecksJournalDataRow</h2>
 <!-- backwards compatibility -->
@@ -24431,41 +26247,41 @@ This operation does not require authentication
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
 |isn|string(uuid)|false|none|none|
-|date|string(date)|false|none|none|
-|documentNumber|string¦null|false|none|none|
+|date|string(date)|false|none|hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата|
+|documentNumber|string¦null|false|none|hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док.|
 |ecrCheckNumber|string¦null|false|none|none|
-|type|integer(int32)|false|none|none|
-|typeName|string¦null|false|none|none|
-|currency|string¦null|false|none|none|
-|amount|number(double)|false|none|none|
-|cashAmount|number(double)|false|none|none|
-|nonCashAmount|number(double)|false|none|none|
-|prepaymentAmount|number(double)|false|none|none|
-|bonusAmount|number(double)|false|none|none|
-|creditAmount|number(double)|false|none|none|
-|state|integer(int32)|false|none|none|
-|stateName|string¦null|false|none|none|
-|storageCode|string¦null|false|none|none|
-|storageName|string¦null|false|none|none|
-|cashDeskCode|string¦null|false|none|none|
-|cashDeskName|string¦null|false|none|none|
-|cashierShiftNumber|string¦null|false|none|none|
+|type|integer(int32)|false|none|hy-AM: Փաստաթղթի տեսակ | en-US: Document type | ru-RU: Вид документа|
+|typeName|string¦null|false|none|hy-AM: Փաստաթղթի տեսակ | en-US: Document type | ru-RU: Вид документа|
+|currency|string¦null|false|none|hy-AM: Արժույթի կոդը | en-US: Currency ISO code | ru-RU: Код валюты|
+|amount|number(double)|false|none|hy-AM: Գումար | en-US: Amount | ru-RU: Сумма|
+|cashAmount|number(double)|false|none|hy-AM: Կանխիկ | en-US: Cash | ru-RU: Наличные|
+|nonCashAmount|number(double)|false|none|hy-AM: Անկանխիկ | en-US: Non-cash | ru-RU: Безналичные|
+|prepaymentAmount|number(double)|false|none|hy-AM: Կանխավճարով մարում | en-US: Prepayment | ru-RU: Оплата авансом|
+|bonusAmount|number(double)|false|none|hy-AM: Բոնուսով մարում | en-US: Payment by bonus | ru-RU: Оплата бонусом|
+|creditAmount|number(double)|false|none|hy-AM: Ապառիկ | en-US: Credit | ru-RU: Кредит|
+|state|integer(int32)|false|none|hy-AM: Փաստաթղթի վիճակ | en-US: Document state | ru-RU: Статус документа|
+|stateName|string¦null|false|none|hy-AM: Փաստաթղթի վիճակ | en-US: Document state | ru-RU: Статус документа|
+|storageCode|string¦null|false|none|hy-AM: Պահեստ | en-US: Storage | ru-RU: Склад|
+|storageName|string¦null|false|none|hy-AM: Պահեստի անվանում | en-US: Storage name | ru-RU: Название склада|
+|cashDeskCode|string¦null|false|none|hy-AM: Դրամարկղ | en-US: Cash | ru-RU: Касса|
+|cashDeskName|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|cashierShiftNumber|string¦null|false|none|hy-AM: Հերթափոխի N | en-US: Cashier shift N | ru-RU: Смена N|
 |posPartnerName|string¦null|false|none|none|
 |posPartnerContractName|string¦null|false|none|none|
-|paymentSystem|string¦null|false|none|none|
-|paymentNumber|string¦null|false|none|none|
-|paymentAccepted|boolean|false|none|none|
-|information|string¦null|false|none|none|
-|comment|string¦null|false|none|none|
-|partnerId|integer(int32)|false|none|none|
-|partnerCode|string¦null|false|none|none|
-|partnerName|string¦null|false|none|none|
-|partnerTaxCode|string¦null|false|none|none|
-|employeeCode|string¦null|false|none|none|
-|employeeName|string¦null|false|none|none|
-|lastUser|string¦null|false|none|none|
-|lastChange|string(date-time)|false|none|none|
-|owner|string¦null|false|none|none|
+|paymentSystem|string¦null|false|none|hy-AM: Վճարային համակարգ | en-US: Payment system | ru-RU: Платежная система|
+|paymentNumber|string¦null|false|none|hy-AM: Համար | en-US: Number | ru-RU: Номер|
+|paymentAccepted|boolean|false|none|hy-AM: ՎՀ։ Վճարված է | en-US: PS։ Paid | ru-RU: ПС: Оплачено|
+|information|string¦null|false|none|hy-AM: Տեղեկություն | en-US: Information | ru-RU: Информация|
+|comment|string¦null|false|none|hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий|
+|partnerId|integer(int32)|false|none|hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер|
+|partnerCode|string¦null|false|none|hy-AM: Գործընկերոջ կոդ | en-US: Partner code | ru-RU: Код партнера|
+|partnerName|string¦null|false|none|hy-AM: Գործընկերոջ անվանում | en-US: Partner name | ru-RU: Наименование партнера|
+|partnerTaxCode|string¦null|false|none|hy-AM: ՀՎՀՀ | en-US: Taxpayer’s ID | ru-RU: ИНН код|
+|employeeCode|string¦null|false|none|hy-AM: Աշխատակից | en-US: Employee | ru-RU: Сотрудник|
+|employeeName|string¦null|false|none|hy-AM: Աշխատակցի անվանում | en-US: Employee name | ru-RU: Наименование сотрудника|
+|lastUser|string¦null|false|none|hy-AM: Օգտագործող | en-US: User name | ru-RU: Пользователь|
+|lastChange|string(date-time)|false|none|hy-AM: Վերջին խմբագրման ամսաթիվ | en-US: Last modification date | ru-RU: Дата последнего изменения|
+|owner|string¦null|false|none|hy-AM: Հեղինակ | en-US: Owner | ru-RU: Автор|
 
 <h2 id="tocS_ECRChecksJournalDataRowApiResponse">ECRChecksJournalDataRowApiResponse</h2>
 <!-- backwards compatibility -->
@@ -24562,19 +26378,19 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|pageSize|integer(int32)¦null|false|none|none|
-|startDate|string(date)|true|none|none|
-|endDate|string(date)|true|none|none|
-|documentTypes|[string]¦null|false|none|none|
-|partnerCode|string¦null|false|none|none|
-|itemCode|string¦null|false|none|none|
-|storageCode|string¦null|false|none|none|
-|cashDeskCode|string¦null|false|none|none|
-|employeeCode|string¦null|false|none|none|
-|showPayments|boolean|false|none|none|
-|showOutputAmountsAsNegatives|boolean|false|none|none|
-|documentState|string¦null|false|none|none|
-|owner|string¦null|false|none|none|
+|pageSize|integer(int32)¦null|false|none|hy-AM:  էջ  | en-US:  page | ru-RU: страница|
+|startDate|string(date)|false|none|hy-AM: Ժամանակահատվածի սկիզբ | en-US: Period begin | ru-RU: Начало периода|
+|endDate|string(date)|false|none|hy-AM: Ժամանակահատվածի վերջ | en-US: Period end | ru-RU: Конец периода|
+|documentTypes|[string]¦null|false|none|hy-AM: Փաստաթղթի տեսակ | en-US: Document type | ru-RU: Вид документа|
+|partnerCode|string¦null|false|none|hy-AM: Գործընկեր | en-US: Partner | ru-RU: Партнер|
+|itemCode|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|storageCode|string¦null|false|none|hy-AM: Պահեստ | en-US: Storage | ru-RU: Склад|
+|cashDeskCode|string¦null|false|none|hy-AM: Դրամարկղ | en-US: Cash | ru-RU: Касса|
+|employeeCode|string¦null|false|none|hy-AM: Աշխատակից | en-US: Employee | ru-RU: Сотрудник|
+|showPayments|boolean|false|none|hy-AM: Ցույց տալ գումարի բացվածքը | en-US: Display payments by types | ru-RU: Показать детализацию суммы|
+|showOutputAmountsAsNegatives|boolean|false|none|hy-AM: Գումար | en-US: Amount | ru-RU: Сумма|
+|documentState|string¦null|false|none|hy-AM: Փաստաթղթի վիճակ | en-US: Document state | ru-RU: Статус документа|
+|owner|string¦null|false|none|hy-AM: Հեղինակ | en-US: Owner | ru-RU: Автор|
 
 <h2 id="tocS_Invoice">Invoice</h2>
 <!-- backwards compatibility -->
@@ -24676,60 +26492,60 @@ This operation does not require authentication
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
 |isn|string(uuid)|false|none|none|
-|date|string(date)¦null|false|none|none|
-|documentNumber|string¦null|false|none|none|
-|state|integer(int32)|false|none|none|
-|baseDocumentISN|string(uuid)|false|none|none|
-|customer|string¦null|false|none|none|
-|customerContract|string¦null|false|none|none|
-|bookNumber|string¦null|false|none|none|
-|bookPage|integer(int32)|false|none|none|
-|bookLine|integer(int32)|false|none|none|
-|taxExportType|string¦null|false|none|none|
-|taxInvoiceSeries|string¦null|false|none|none|
-|taxInvoiceNumber|string¦null|false|none|none|
-|submissionDate|string(date)¦null|false|none|none|
-|seller|string¦null|false|none|none|
-|comment|string¦null|false|none|none|
-|owner|string¦null|false|none|none|
-|currency|string¦null|false|none|none|
-|currencyExchangeRate|number(double)|false|none|none|
-|currencyExchangeBase|number(double)|false|none|none|
+|date|string(date)¦null|false|none|hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата|
+|documentNumber|string¦null|false|none|hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док.|
+|state|integer(int32)|false|none|hy-AM: Վիճակ | en-US: State | ru-RU: Состояние|
+|baseDocumentISN|string(uuid)|false|none|hy-AM: Հիմք փաստաթուղթ | en-US: Base document | ru-RU: Документ основания|
+|customer|string¦null|false|none|hy-AM: Գնորդ | en-US: Customer | ru-RU: Покупатель|
+|customerContract|string¦null|false|none|hy-AM: Պայմանագիր | en-US: Contract | ru-RU: Договор|
+|bookNumber|string¦null|false|none|hy-AM: Առաքողի գրանցման գրքի N | en-US: Distributor entries book N | ru-RU: N книги регистрации отправителя|
+|bookPage|integer(int32)|false|none|hy-AM: էջի N | en-US: page N | ru-RU: N страницы|
+|bookLine|integer(int32)|false|none|hy-AM: Տողի N | en-US: line N | ru-RU: N строки|
+|taxExportType|string¦null|false|none|hy-AM: Դուրս գրման եղանակ | en-US: Electronic/Paper | ru-RU: Метод выписки|
+|taxInvoiceSeries|string¦null|false|none|hy-AM: Սերիա | en-US: Serial | ru-RU: Серия|
+|taxInvoiceNumber|string¦null|false|none|hy-AM: Համար | en-US: Number | ru-RU: Номер|
+|submissionDate|string(date)¦null|false|none|hy-AM: Դուրս գրման ամսաթիվ | en-US: Submission date | ru-RU: От|
+|seller|string¦null|false|none|hy-AM: Վաճառող | en-US: Seller | ru-RU: Продавец|
+|comment|string¦null|false|none|hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий|
+|owner|string¦null|false|none|hy-AM: Հեղինակ | en-US: Owner | ru-RU: Автор|
+|currency|string¦null|false|none|hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта|
+|currencyExchangeRate|number(double)|false|none|hy-AM: Արտարժույթի փոխարժեք | en-US: Currency exchange rate | ru-RU: Курс валюты|
+|currencyExchangeBase|number(double)|false|none|hy-AM: Արտարժույթի փոխարժեք | en-US: Currency exchange rate | ru-RU: Курс валюты|
 |vatCalculationType|string¦null|false|none|none|
-|dealType|string¦null|false|none|none|
-|priceType|string¦null|false|none|none|
-|storage|string¦null|false|none|none|
-|discountPercent|number(double)|false|none|none|
+|dealType|string¦null|false|none|hy-AM: Գործարքի տեսակ | en-US: Deal type | ru-RU: Тип сделки|
+|priceType|string¦null|false|none|hy-AM: Գնի տեսակ | en-US: Price type | ru-RU: Тип цены|
+|storage|string¦null|false|none|hy-AM: Պահեստ | en-US: Storage | ru-RU: Склад|
+|discountPercent|number(double)|false|none|hy-AM: Զեղչի % | en-US: Discount % | ru-RU: % скидки|
 |vatAmount|number(double)|false|none|none|
-|totalAmount|number(double)|false|none|none|
-|supplierName|string¦null|false|none|none|
-|supplierLegalAddress|string¦null|false|none|none|
-|supplierBusinessAddress|string¦null|false|none|none|
-|supplierSettlementAccount|string¦null|false|none|none|
-|supplierTaxCode|string¦null|false|none|none|
-|supplierManagerPosition|string¦null|false|none|none|
-|supplierManagerName|string¦null|false|none|none|
-|supplierAccountantPosition|string¦null|false|none|none|
-|supplierAccountantName|string¦null|false|none|none|
-|supplierAdditionalData|string¦null|false|none|none|
-|customerName|string¦null|false|none|none|
-|customerLegalAddress|string¦null|false|none|none|
-|customerBusinessAddress|string¦null|false|none|none|
-|customerSettlementAccount|string¦null|false|none|none|
-|customerTaxCode|string¦null|false|none|none|
-|customerManagerPosition|string¦null|false|none|none|
-|customerManagerName|string¦null|false|none|none|
-|customerAccountantPosition|string¦null|false|none|none|
-|customerAccountantName|string¦null|false|none|none|
-|stateRegisterNumber|string¦null|false|none|none|
-|idDocumentType|string¦null|false|none|none|
-|passportNumber|string¦null|false|none|none|
-|customerAdditionalData|string¦null|false|none|none|
-|shippingMethod|string¦null|false|none|none|
-|additionalFullName|string¦null|false|none|none|
-|credentialNumber|string¦null|false|none|none|
-|credentialDate|string(date)¦null|false|none|none|
-|itemList|[[InvoiceSpecificationRow](#schemainvoicespecificationrow)]¦null|false|none|none|
+|totalAmount|number(double)|false|none|hy-AM: Ընդհանուր գումար | en-US: Total amount | ru-RU: Общая сумма|
+|supplierName|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|supplierLegalAddress|string¦null|false|none|hy-AM: Իրավ. հասցե | en-US: Legal address | ru-RU: Юридический адрес|
+|supplierBusinessAddress|string¦null|false|none|hy-AM: Գործ. հասցե | en-US: Bus. address | ru-RU: Фактический адрес|
+|supplierSettlementAccount|string¦null|false|none|hy-AM: Հաշվարկային հաշիվ | en-US: Settlement account | ru-RU: Банковский счет|
+|supplierTaxCode|string¦null|false|none|hy-AM: ՀՎՀՀ | en-US: Taxpayer’s ID | ru-RU: ИНН код|
+|supplierManagerPosition|string¦null|false|none|hy-AM: Ղեկավարի պաշտոն | en-US: Manager position | ru-RU: Должность руководителя|
+|supplierManagerName|string¦null|false|none|hy-AM: Ղեկավարի Ա.Ա.Հ. | en-US: Manager first name, last name | ru-RU: ФИО руководителя|
+|supplierAccountantPosition|string¦null|false|none|hy-AM: Հաշվապահի պաշտոն | en-US: Accountant position | ru-RU: Должность главного бухгалтера|
+|supplierAccountantName|string¦null|false|none|hy-AM: Հաշվապահի Ա.Ա.Հ. | en-US: Accountant first name, last name | ru-RU: ФИО главного бухгалтера|
+|supplierAdditionalData|string¦null|false|none|hy-AM: Լրացուցիչ տվյալներ | en-US: Additional data | ru-RU: Дополнительная информация|
+|customerName|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|customerLegalAddress|string¦null|false|none|hy-AM: Իրավ. հասցե | en-US: Legal address | ru-RU: Юридический адрес|
+|customerBusinessAddress|string¦null|false|none|hy-AM: Գործ. հասցե | en-US: Bus. address | ru-RU: Фактический адрес|
+|customerSettlementAccount|string¦null|false|none|hy-AM: Հաշվարկային հաշիվ | en-US: Settlement account | ru-RU: Банковский счет|
+|customerTaxCode|string¦null|false|none|hy-AM: ՀՎՀՀ | en-US: Taxpayer’s ID | ru-RU: ИНН код|
+|customerManagerPosition|string¦null|false|none|hy-AM: Ղեկավարի պաշտոն | en-US: Manager position | ru-RU: Должность руководителя|
+|customerManagerName|string¦null|false|none|hy-AM: Ղեկավարի Ա.Ա.Հ. | en-US: Manager first name, last name | ru-RU: ФИО руководителя|
+|customerAccountantPosition|string¦null|false|none|hy-AM: Հաշվապահի պաշտոն | en-US: Accountant position | ru-RU: Должность главного бухгалтера|
+|customerAccountantName|string¦null|false|none|hy-AM: Հաշվապահի Ա.Ա.Հ. | en-US: Accountant first name, last name | ru-RU: ФИО главного бухгалтера|
+|stateRegisterNumber|string¦null|false|none|hy-AM: Ա/Ձ-ի պետ. գրանց. վկ. N | en-US: S/P state regist. N | ru-RU: Гос. рег. номер ИП|
+|idDocumentType|string¦null|false|none|hy-AM: Անձը հաստատող փաստաթղթի տեսակ | en-US: ID document type | ru-RU: Документ, удостоверяющий личность|
+|passportNumber|string¦null|false|none|hy-AM: Անձնագրի համար | en-US: Passport N | ru-RU: Номер паспорта|
+|customerAdditionalData|string¦null|false|none|hy-AM: Լրացուցիչ տվյալներ | en-US: Additional data | ru-RU: Дополнительная информация|
+|shippingMethod|string¦null|false|none|hy-AM: Ապր. առաքման եղանակը | en-US: Shipping method | ru-RU: Способ доставки товаров|
+|additionalFullName|string¦null|false|none|hy-AM: Ազգանուն, անուն, հայրանուն | en-US: Full name | ru-RU: Фамилия, имя, отчество|
+|credentialNumber|string¦null|false|none|hy-AM: Լիազորագրի համար | en-US: Credential number | ru-RU: Номер доверенности|
+|credentialDate|string(date)¦null|false|none|hy-AM: Լիազորագրի ամսաթիվ | en-US: Credential date | ru-RU: Дата доверенности|
+|itemList|[[InvoiceSpecificationRow](#schemainvoicespecificationrow)]¦null|false|none|hy-AM: Անվանացուցակ | en-US: Items list | ru-RU: Список товаров и услуг|
 
 <h2 id="tocS_InvoiceSpecificationRow">InvoiceSpecificationRow</h2>
 <!-- backwards compatibility -->
@@ -24772,28 +26588,28 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|type|string¦null|false|none|none|
-|storage|string¦null|false|none|none|
-|id|integer(int32)|false|none|none|
-|code|string¦null|false|none|none|
-|name|string¦null|false|none|none|
-|unit|string¦null|false|none|none|
-|unitAbbreviation|string¦null|false|none|none|
-|quantity|number(double)|false|none|none|
-|salePrice|number(double)|false|none|none|
-|discountPercent|number(double)¦null|false|none|none|
-|discountedPrice|number(double)¦null|false|none|none|
-|discountedAmount|number(double)¦null|false|none|none|
-|discountAmount|number(double)¦null|false|none|none|
-|environmentalFeePercent|number(double)|false|none|none|
-|environmentalFeeAmount|number(double)|false|none|none|
+|type|string¦null|false|none|hy-AM: Տեսակ | en-US: Type | ru-RU: Вид|
+|storage|string¦null|false|none|hy-AM: Պահեստ | en-US: Storage | ru-RU: Склад|
+|id|integer(int32)|false|none|hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер|
+|code|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|name|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|unit|string¦null|false|none|hy-AM: Միավոր | en-US: Unit | ru-RU: Единица|
+|unitAbbreviation|string¦null|false|none|hy-AM: Հապավում | en-US: Abbreviation | ru-RU: Сокращение|
+|quantity|number(double)|false|none|hy-AM: Քանակ | en-US: Quantity | ru-RU: Количество|
+|salePrice|number(double)|false|none|hy-AM: Գին | en-US: Price | ru-RU: Цена|
+|discountPercent|number(double)¦null|false|none|hy-AM: Զեղչի տոկոս | en-US: Discount percent | ru-RU: Процент скидки|
+|discountedPrice|number(double)¦null|false|none|hy-AM: Զեղչված գին | en-US: Discounted price | ru-RU: Цена со скидкой|
+|discountedAmount|number(double)¦null|false|none|hy-AM: Գումար | en-US: Amount | ru-RU: Сумма|
+|discountAmount|number(double)¦null|false|none|hy-AM: Զեղչի գումար | en-US: Discount amount | ru-RU: Сумма скидки|
+|environmentalFeePercent|number(double)|false|none|hy-AM: Այդ թվում բն. հրկ. (%) | en-US: Env. fee (%) | ru-RU: Включая % эко. налога|
+|environmentalFeeAmount|number(double)|false|none|hy-AM: Այդ թվում բն. հրկ. գումար | en-US: Env. fee amount | ru-RU: Включая сумму эко. налога|
 |vat|boolean¦null|false|none|none|
-|dealType|string¦null|false|none|none|
-|description|string¦null|false|none|none|
-|markingList|[string]¦null|false|none|none|
+|dealType|string¦null|false|none|hy-AM: Գործարքի տեսակ | en-US: Deal type | ru-RU: Тип сделки|
+|description|string¦null|false|none|hy-AM: Նկարագրություն | en-US: Description | ru-RU: Описание|
+|markingList|[string]¦null|false|none|hy-AM: Դրոշմավորում | en-US: Marking | ru-RU: Маркировка|
 |cpaClassifier|string¦null|false|none|none|
-|rowNumber|integer(int32)|false|none|none|
-|rowId|integer(int32)|false|none|none|
+|rowNumber|integer(int32)|false|none|hy-AM: Տողի N | en-US: line N | ru-RU: N строки|
+|rowId|integer(int32)|false|none|hy-AM: Տողերի ID | en-US: Lines ID | ru-RU: ID линий|
 
 <h2 id="tocS_MeasureUnitFilters">MeasureUnitFilters</h2>
 <!-- backwards compatibility -->
@@ -24816,8 +26632,8 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|pageSize|integer(int32)¦null|false|none|none|
-|itemCodes|[string]¦null|false|none|none|
+|pageSize|integer(int32)¦null|false|none|hy-AM:  էջ  | en-US:  page | ru-RU: страница|
+|itemCodes|[string]¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
 
 <h2 id="tocS_NextPageRequest">NextPageRequest</h2>
 <!-- backwards compatibility -->
@@ -24916,33 +26732,33 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|id|integer(int32)|false|none|none|
-|code|string¦null|false|none|none|
-|name|string¦null|false|none|none|
-|fullName|string¦null|false|none|none|
-|taxCode|string¦null|false|none|none|
-|group|string¦null|false|none|none|
-|supplier|boolean¦null|false|none|none|
-|customer|boolean¦null|false|none|none|
-|legalAddress|string¦null|false|none|none|
-|businessAddress|string¦null|false|none|none|
-|managerName|string¦null|false|none|none|
-|managerPosition|string¦null|false|none|none|
-|accountantName|string¦null|false|none|none|
-|accountantPosition|string¦null|false|none|none|
-|paymentMainAim|string¦null|false|none|none|
-|phoneNumber|string¦null|false|none|none|
-|email|string¦null|false|none|none|
-|stateRegisterNumber|string¦null|false|none|none|
-|passportNumber|string¦null|false|none|none|
-|gender|string¦null|false|none|none|
-|birthDate|string(date)¦null|false|none|none|
-|idDocumentType|string¦null|false|none|none|
-|status|string¦null|false|none|none|
-|defaultContractCode|string¦null|false|none|none|
-|contracts|[[PartnerContractRow](#schemapartnercontractrow)]¦null|false|none|none|
-|settlementAccounts|[[PartnerSettlementAccountRow](#schemapartnersettlementaccountrow)]¦null|false|none|none|
-|additionalAddresses|[[PartnerBusinessAddressRow](#schemapartnerbusinessaddressrow)]¦null|false|none|none|
+|id|integer(int32)|false|none|hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер|
+|code|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|name|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|fullName|string¦null|false|none|hy-AM: Լրիվ անվանում | en-US: Full name | ru-RU: Полное наименование|
+|taxCode|string¦null|false|none|hy-AM: ՀՎՀՀ | en-US: Taxpayer’s ID | ru-RU: ИНН код|
+|group|string¦null|false|none|hy-AM: Խումբ | en-US: Group | ru-RU: Группа|
+|supplier|boolean¦null|false|none|hy-AM: Մատակարար | en-US: Supplier | ru-RU: Поставщик|
+|customer|boolean¦null|false|none|hy-AM: Գնորդ | en-US: Customer | ru-RU: Покупатель|
+|legalAddress|string¦null|false|none|hy-AM: Իրավ. հասցե | en-US: Legal address | ru-RU: Юридический адрес|
+|businessAddress|string¦null|false|none|hy-AM: Գործ. հասցե | en-US: Bus. address | ru-RU: Фактический адрес|
+|managerName|string¦null|false|none|hy-AM: Ղեկավարի Ա.Ա.Հ. | en-US: Manager first name, last name | ru-RU: ФИО руководителя|
+|managerPosition|string¦null|false|none|hy-AM: Ղեկավարի պաշտոն | en-US: Manager position | ru-RU: Должность руководителя|
+|accountantName|string¦null|false|none|hy-AM: Հաշվապահի Ա.Ա.Հ. | en-US: Accountant first name, last name | ru-RU: ФИО главного бухгалтера|
+|accountantPosition|string¦null|false|none|hy-AM: Հաշվապահի պաշտոն | en-US: Accountant position | ru-RU: Должность главного бухгалтера|
+|paymentMainAim|string¦null|false|none|hy-AM: Վճարման հիմնական նպատակ | en-US: Payment main aim | ru-RU: Основное назначение платежа|
+|phoneNumber|string¦null|false|none|hy-AM: Հեռախոսահամար | en-US: Phone number | ru-RU: Номер телефона|
+|email|string¦null|false|none|hy-AM: Էլ. փոստ | en-US: E-Mail | ru-RU: Эл. почта|
+|stateRegisterNumber|string¦null|false|none|hy-AM: Ա/Ձ-ի պետ. գրանց. վկ. N | en-US: S/P state regist. N | ru-RU: Гос. рег. номер ИП|
+|passportNumber|string¦null|false|none|hy-AM: Անձնագրի համար | en-US: Passport N | ru-RU: Номер паспорта|
+|gender|string¦null|false|none|hy-AM: Սեռ | en-US: Gender | ru-RU: Пол|
+|birthDate|string(date)¦null|false|none|hy-AM: Ծննդյան ամսաթիվ | en-US: Birth date | ru-RU: Дата рождения|
+|idDocumentType|string¦null|false|none|hy-AM: Անձը հաստատող փաստաթղթի տեսակ | en-US: ID document type | ru-RU: Документ, удостоверяющий личность|
+|status|string¦null|false|none|hy-AM: Կարգավիճակ | en-US: Status | ru-RU: Статус|
+|defaultContractCode|string¦null|false|none|hy-AM: Հիմնական | en-US: Default | ru-RU: Основной|
+|contracts|[[PartnerContractRow](#schemapartnercontractrow)]¦null|false|none|hy-AM: Պայմանագրեր | en-US: Contracts | ru-RU: Договоры партнеров|
+|settlementAccounts|[[PartnerSettlementAccountRow](#schemapartnersettlementaccountrow)]¦null|false|none|hy-AM: Հաշվարկային հաշիվներ | en-US: Settlement accounts | ru-RU: Банковские счета|
+|additionalAddresses|[[PartnerBusinessAddressRow](#schemapartnerbusinessaddressrow)]¦null|false|none|hy-AM: Լրացուցիչ հասցեներ | en-US: Additional addresses | ru-RU: Дополнительные адреса|
 
 <h2 id="tocS_PartnerBusinessAddressRow">PartnerBusinessAddressRow</h2>
 <!-- backwards compatibility -->
@@ -24963,8 +26779,8 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|name|string¦null|false|none|none|
-|default|boolean|false|none|none|
+|name|string¦null|false|none|hy-AM: Գործ. հասցե | en-US: Bus. address | ru-RU: Фактический адрес|
+|default|boolean|false|none|hy-AM: Հիմնական | en-US: Default | ru-RU: Основной|
 
 <h2 id="tocS_PartnerContractRow">PartnerContractRow</h2>
 <!-- backwards compatibility -->
@@ -25000,23 +26816,23 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|code|string¦null|false|none|none|
-|name|string¦null|false|none|none|
-|currency|string¦null|false|none|none|
-|priceType|string¦null|false|none|none|
-|date|string(date)¦null|false|none|none|
-|description|string¦null|false|none|none|
-|discountPercent|number(double)¦null|false|none|none|
-|cardCode|string¦null|false|none|none|
-|bonusCard|boolean¦null|false|none|none|
-|bonusPercent|number(double)¦null|false|none|none|
-|bonusPoint|number(double)¦null|false|none|none|
-|validationPeriodStart|string(date)¦null|false|none|none|
-|validationPeriodEnd|string(date)¦null|false|none|none|
-|canceled|boolean¦null|false|none|none|
-|receivablesControl|boolean¦null|false|none|none|
-|receivablesLimit|number(double)¦null|false|none|none|
-|default|boolean¦null|false|none|none|
+|code|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|name|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|currency|string¦null|false|none|hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта|
+|priceType|string¦null|false|none|hy-AM: Գնի տեսակ | en-US: Price type | ru-RU: Тип цены|
+|date|string(date)¦null|false|none|hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата|
+|description|string¦null|false|none|hy-AM: Նկարագրություն | en-US: Description | ru-RU: Описание|
+|discountPercent|number(double)¦null|false|none|hy-AM: Զեղչի տոկոս | en-US: Discount percent | ru-RU: Процент скидки|
+|cardCode|string¦null|false|none|hy-AM: Քարտի կոդ | en-US: Discount card code | ru-RU: Код карты|
+|bonusCard|boolean¦null|false|none|hy-AM: Բոնուսային քարտ | en-US: Bonus card | ru-RU: Бонусная карта|
+|bonusPercent|number(double)¦null|false|none|hy-AM: Բոնուս ({0}) | en-US: Bonus ({0}) | ru-RU: Бонус ({0})|
+|bonusPoint|number(double)¦null|false|none|hy-AM: Բոնուս ({0}) | en-US: Bonus ({0}) | ru-RU: Бонус ({0})|
+|validationPeriodStart|string(date)¦null|false|none|hy-AM: Վավերականության ժամկետ | en-US: Validation Period | ru-RU: Период действия|
+|validationPeriodEnd|string(date)¦null|false|none|hy-AM: Վավերականության ժամկետ | en-US: Validation Period | ru-RU: Период действия|
+|canceled|boolean¦null|false|none|hy-AM: Կասեցված | en-US: Canceled | ru-RU: Аннулирована|
+|receivablesControl|boolean¦null|false|none|hy-AM: Դեբիտորական պարտքի հսկողություն | en-US: Receivables control | ru-RU: Контроль дебиторской задолженности|
+|receivablesLimit|number(double)¦null|false|none|hy-AM: Դեբիտորական պարտքի սահմանաչափ | en-US: Receivables limit | ru-RU: Лимит дебиторской задолженности|
+|default|boolean¦null|false|none|hy-AM: Հիմնական | en-US: Default | ru-RU: Основной|
 
 <h2 id="tocS_PartnerFilters">PartnerFilters</h2>
 <!-- backwards compatibility -->
@@ -25042,11 +26858,11 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|pageSize|integer(int32)¦null|false|none|none|
-|codes|[string]¦null|false|none|none|
-|group|string¦null|false|none|none|
-|extended|boolean|false|none|none|
-|lastModifiedDate|string(date-time)¦null|false|none|none|
+|pageSize|integer(int32)¦null|false|none|hy-AM:  էջ  | en-US:  page | ru-RU: страница|
+|codes|[string]¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|group|string¦null|false|none|hy-AM: Խումբ | en-US: Group | ru-RU: Группа|
+|extended|boolean|false|none|hy-AM: Ընդլայնված | en-US: Extended | ru-RU: Расширенный|
+|lastModifiedDate|string(date-time)¦null|false|none|hy-AM: Վերջին փոփոխություն | en-US: Last change | ru-RU: Последнее изменение|
 
 <h2 id="tocS_PartnerRow">PartnerRow</h2>
 <!-- backwards compatibility -->
@@ -25093,34 +26909,34 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|id|integer(int32)|false|none|none|
-|code|string¦null|false|none|none|
-|name|string¦null|false|none|none|
-|fullName|string¦null|false|none|none|
-|taxCode|string¦null|false|none|none|
-|group|string¦null|false|none|none|
-|groupName|string¦null|false|none|none|
-|supplier|boolean¦null|false|none|none|
-|customer|boolean¦null|false|none|none|
-|legalAddress|string¦null|false|none|none|
-|businessAddress|string¦null|false|none|none|
-|managerName|string¦null|false|none|none|
-|managerPosition|string¦null|false|none|none|
-|accountantName|string¦null|false|none|none|
-|accountantPosition|string¦null|false|none|none|
-|paymentMainAim|string¦null|false|none|none|
-|phoneNumber|string¦null|false|none|none|
-|email|string¦null|false|none|none|
-|stateRegisterNumber|string¦null|false|none|none|
-|passportNumber|string¦null|false|none|none|
-|gender|string¦null|false|none|none|
-|birthDate|string(date)¦null|false|none|none|
-|idDocumentType|string¦null|false|none|none|
-|status|string¦null|false|none|none|
-|settlementAccount|string¦null|false|none|none|
-|userName|string¦null|false|none|none|
-|creationDate|string(date-time)¦null|false|none|none|
-|lastChange|string(date-time)¦null|false|none|none|
+|id|integer(int32)|false|none|hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер|
+|code|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|name|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|fullName|string¦null|false|none|hy-AM: Լրիվ անվանում | en-US: Full name | ru-RU: Полное наименование|
+|taxCode|string¦null|false|none|hy-AM: ՀՎՀՀ | en-US: Taxpayer’s ID | ru-RU: ИНН код|
+|group|string¦null|false|none|hy-AM: Խումբ | en-US: Group | ru-RU: Группа|
+|groupName|string¦null|false|none|hy-AM: Խմբի անվանում | en-US: Group name | ru-RU: Наименование группы|
+|supplier|boolean|false|none|hy-AM: Մատակարար | en-US: Supplier | ru-RU: Поставщик|
+|customer|boolean|false|none|hy-AM: Գնորդ | en-US: Customer | ru-RU: Покупатель|
+|legalAddress|string¦null|false|none|hy-AM: Իրավ. հասցե | en-US: Legal address | ru-RU: Юридический адрес|
+|businessAddress|string¦null|false|none|hy-AM: Գործ. հասցե | en-US: Bus. address | ru-RU: Фактический адрес|
+|managerName|string¦null|false|none|hy-AM: Ղեկավարի Ա.Ա.Հ. | en-US: Manager first name, last name | ru-RU: ФИО руководителя|
+|managerPosition|string¦null|false|none|hy-AM: Ղեկավարի պաշտոն | en-US: Manager position | ru-RU: Должность руководителя|
+|accountantName|string¦null|false|none|hy-AM: Հաշվապահի Ա.Ա.Հ. | en-US: Accountant first name, last name | ru-RU: ФИО главного бухгалтера|
+|accountantPosition|string¦null|false|none|hy-AM: Հաշվապահի պաշտոն | en-US: Accountant position | ru-RU: Должность главного бухгалтера|
+|paymentMainAim|string¦null|false|none|hy-AM: Վճարման հիմնական նպատակ | en-US: Payment main aim | ru-RU: Основное назначение платежа|
+|phoneNumber|string¦null|false|none|hy-AM: Հեռախոսահամար | en-US: Phone number | ru-RU: Номер телефона|
+|email|string¦null|false|none|hy-AM: Էլ. փոստ | en-US: E-Mail | ru-RU: Эл. почта|
+|stateRegisterNumber|string¦null|false|none|hy-AM: Ա/Ձ-ի պետ. գրանց. վկ. N | en-US: S/P state regist. N | ru-RU: Гос. рег. номер ИП|
+|passportNumber|string¦null|false|none|hy-AM: Անձնագրի համար | en-US: Passport N | ru-RU: Номер паспорта|
+|gender|string¦null|false|none|hy-AM: Սեռ | en-US: Gender | ru-RU: Пол|
+|birthDate|string(date)¦null|false|none|hy-AM: Ծննդյան ամսաթիվ | en-US: Birth date | ru-RU: Дата рождения|
+|idDocumentType|string¦null|false|none|hy-AM: Անձը հաստատող փաստաթղթի տեսակ | en-US: ID document type | ru-RU: Документ, удостоверяющий личность|
+|status|string¦null|false|none|hy-AM: Կարգավիճակ | en-US: Status | ru-RU: Статус|
+|settlementAccount|string¦null|false|none|hy-AM: Հաշվարկային հաշիվ | en-US: Settlement account | ru-RU: Банковский счет|
+|userName|string¦null|false|none|hy-AM: Ստեղծող | en-US: Creator | ru-RU: Creator|
+|creationDate|string(date-time)¦null|false|none|hy-AM: Ստեղծման ամսաթիվ | en-US: Creation date | ru-RU: Дата создания|
+|lastChange|string(date-time)¦null|false|none|hy-AM: Վերջին փոփոխություն | en-US: Last change | ru-RU: Последнее изменение|
 
 <h2 id="tocS_PartnerRowApiResponse">PartnerRowApiResponse</h2>
 <!-- backwards compatibility -->
@@ -25197,9 +27013,69 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|account|string¦null|false|none|none|
-|name|string¦null|false|none|none|
-|default|boolean|false|none|none|
+|account|string¦null|false|none|hy-AM: Հաշիվ | en-US: Account | ru-RU: Счет|
+|name|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|default|boolean|false|none|hy-AM: Հիմնական | en-US: Default | ru-RU: Основной|
+
+<h2 id="tocS_PartnersAdditionalAddressesRow">PartnersAdditionalAddressesRow</h2>
+<!-- backwards compatibility -->
+<a id="schemapartnersadditionaladdressesrow"></a>
+<a id="schema_PartnersAdditionalAddressesRow"></a>
+<a id="tocSpartnersadditionaladdressesrow"></a>
+<a id="tocspartnersadditionaladdressesrow"></a>
+
+```json
+{
+  "partnerId": 0,
+  "partnerCode": "string",
+  "partnerName": "string",
+  "businessAddress": "string",
+  "default": true
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|partnerId|integer(int32)|false|none|hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер|
+|partnerCode|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|partnerName|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|businessAddress|string¦null|false|none|hy-AM: Գործ. հասցե | en-US: Bus. address | ru-RU: Фактический адрес|
+|default|boolean|false|none|hy-AM: Հիմնական | en-US: Default | ru-RU: Основной|
+
+<h2 id="tocS_PartnersAdditionalAddressesRowApiResponse">PartnersAdditionalAddressesRowApiResponse</h2>
+<!-- backwards compatibility -->
+<a id="schemapartnersadditionaladdressesrowapiresponse"></a>
+<a id="schema_PartnersAdditionalAddressesRowApiResponse"></a>
+<a id="tocSpartnersadditionaladdressesrowapiresponse"></a>
+<a id="tocspartnersadditionaladdressesrowapiresponse"></a>
+
+```json
+{
+  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+  "hasMore": true,
+  "data": [
+    {
+      "partnerId": 0,
+      "partnerCode": "string",
+      "partnerName": "string",
+      "businessAddress": "string",
+      "default": true
+    }
+  ]
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|id|string(uuid)|false|none|none|
+|hasMore|boolean|false|none|none|
+|data|[[PartnersAdditionalAddressesRow](#schemapartnersadditionaladdressesrow)]¦null|false|none|none|
 
 <h2 id="tocS_PartnersBalancesDataRow">PartnersBalancesDataRow</h2>
 <!-- backwards compatibility -->
@@ -25228,16 +27104,16 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|id|integer(int32)|false|none|none|
-|code|string¦null|false|none|none|
-|name|string¦null|false|none|none|
-|status|string¦null|false|none|none|
-|contractCode|string¦null|false|none|none|
-|contractName|string¦null|false|none|none|
-|contractDate|string(date)¦null|false|none|none|
-|currency|string¦null|false|none|none|
-|balance|number(double)|false|none|none|
-|balanceCurrency|number(double)|false|none|none|
+|id|integer(int32)|false|none|hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер|
+|code|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|name|string¦null|false|none|hy-AM: Գործընկեր | en-US: Partner | ru-RU: Партнер|
+|status|string¦null|false|none|hy-AM: Կարգավիճակ | en-US: Status | ru-RU: Статус|
+|contractCode|string¦null|false|none|hy-AM: Պայմանագիր | en-US: Contract | ru-RU: Договор|
+|contractName|string¦null|false|none|hy-AM: Պայմանագիր | en-US: Contract | ru-RU: Договор|
+|contractDate|string(date)¦null|false|none|hy-AM: Պայմանագրի ամսաթիվը | en-US: Contract date | ru-RU: Дата договора|
+|currency|string¦null|false|none|hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта|
+|balance|number(double)|false|none|hy-AM: Մնացորդ դրամով | en-US: Balance in AMD | ru-RU: Остаток в драмах|
+|balanceCurrency|number(double)|false|none|hy-AM: Մնացորդ արժույթով | en-US: Balance in currency | ru-RU: Остаток в валюте|
 
 <h2 id="tocS_PartnersBalancesDataRowApiResponse">PartnersBalancesDataRowApiResponse</h2>
 <!-- backwards compatibility -->
@@ -25301,14 +27177,14 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|pageSize|integer(int32)¦null|false|none|none|
-|date|string(date)|true|none|none|
-|partnerGroup|string¦null|false|none|none|
-|partner|string¦null|false|none|none|
-|contract|string¦null|false|none|none|
-|currency|string¦null|false|none|none|
-|reportCurrency|string|true|none|none|
-|openedByContracts|boolean|false|none|none|
+|pageSize|integer(int32)¦null|false|none|hy-AM:  էջ  | en-US:  page | ru-RU: страница|
+|date|string(date)|false|none|hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата|
+|partnerGroup|string¦null|false|none|hy-AM: Խումբ | en-US: Group | ru-RU: Группа|
+|partner|string¦null|false|none|hy-AM: Գործընկեր | en-US: Partner | ru-RU: Партнер|
+|contract|string¦null|false|none|hy-AM: Պայմանագրեր | en-US: Contracts | ru-RU: Договоры партнеров|
+|currency|string¦null|false|none|hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта|
+|reportCurrency|string¦null|false|none|hy-AM: Հաշվետվության արժույթ | en-US: Report currency | ru-RU: Валюта отчета|
+|openedByContracts|boolean|false|none|hy-AM: Բացված ըստ պայմանագրերի | en-US: Opened by contracts | ru-RU: Детализировать по договорам|
 
 <h2 id="tocS_PartnersGroup">PartnersGroup</h2>
 <!-- backwards compatibility -->
@@ -25331,10 +27207,97 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|code|string¦null|false|none|none|
-|name|string¦null|false|none|none|
-|parent|string¦null|false|none|none|
-|path|string¦null|false|none|none|
+|code|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|name|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|parent|string¦null|false|none|hy-AM: Կուտակիչ | en-US: Parent | ru-RU: Родитель|
+|path|string¦null|false|none|hy-AM: Խումբ | en-US: Group | ru-RU: Группа|
+
+<h2 id="tocS_PartnersSettlementAccountFilters">PartnersSettlementAccountFilters</h2>
+<!-- backwards compatibility -->
+<a id="schemapartnerssettlementaccountfilters"></a>
+<a id="schema_PartnersSettlementAccountFilters"></a>
+<a id="tocSpartnerssettlementaccountfilters"></a>
+<a id="tocspartnerssettlementaccountfilters"></a>
+
+```json
+{
+  "pageSize": 0,
+  "partnerCodes": [
+    "string"
+  ]
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|pageSize|integer(int32)¦null|false|none|hy-AM:  էջ  | en-US:  page | ru-RU: страница|
+|partnerCodes|[string]¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+
+<h2 id="tocS_PartnersSettlementAccountRow">PartnersSettlementAccountRow</h2>
+<!-- backwards compatibility -->
+<a id="schemapartnerssettlementaccountrow"></a>
+<a id="schema_PartnersSettlementAccountRow"></a>
+<a id="tocSpartnerssettlementaccountrow"></a>
+<a id="tocspartnerssettlementaccountrow"></a>
+
+```json
+{
+  "partnerId": 0,
+  "partnerCode": "string",
+  "partnerName": "string",
+  "settlementAccount": "string",
+  "name": "string",
+  "default": true
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|partnerId|integer(int32)|false|none|hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер|
+|partnerCode|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|partnerName|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|settlementAccount|string¦null|false|none|hy-AM: Հաշիվ | en-US: Account | ru-RU: Счет|
+|name|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|default|boolean|false|none|hy-AM: Հիմնական | en-US: Default | ru-RU: Основной|
+
+<h2 id="tocS_PartnersSettlementAccountRowApiResponse">PartnersSettlementAccountRowApiResponse</h2>
+<!-- backwards compatibility -->
+<a id="schemapartnerssettlementaccountrowapiresponse"></a>
+<a id="schema_PartnersSettlementAccountRowApiResponse"></a>
+<a id="tocSpartnerssettlementaccountrowapiresponse"></a>
+<a id="tocspartnerssettlementaccountrowapiresponse"></a>
+
+```json
+{
+  "id": "497f6eca-6276-4993-bfeb-53cbbbba6f08",
+  "hasMore": true,
+  "data": [
+    {
+      "partnerId": 0,
+      "partnerCode": "string",
+      "partnerName": "string",
+      "settlementAccount": "string",
+      "name": "string",
+      "default": true
+    }
+  ]
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|id|string(uuid)|false|none|none|
+|hasMore|boolean|false|none|none|
+|data|[[PartnersSettlementAccountRow](#schemapartnerssettlementaccountrow)]¦null|false|none|none|
 
 <h2 id="tocS_PriceListDataRow">PriceListDataRow</h2>
 <!-- backwards compatibility -->
@@ -25365,15 +27328,15 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|itemId|integer(int32)|false|none|none|
-|itemCode|string¦null|false|none|none|
-|itemName|string¦null|false|none|none|
-|unitMeasure|string¦null|false|none|none|
-|unitMeasureAbbreviation|string¦null|false|none|none|
-|group|string¦null|false|none|none|
-|groupName|string¦null|false|none|none|
-|specification|string¦null|false|none|none|
-|prices|object¦null|false|none|none|
+|itemId|integer(int32)|false|none|hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер|
+|itemCode|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|itemName|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|unitMeasure|string¦null|false|none|hy-AM: Միավոր | en-US: Unit | ru-RU: Единица|
+|unitMeasureAbbreviation|string¦null|false|none|hy-AM: Միավոր | en-US: Unit | ru-RU: Единица|
+|group|string¦null|false|none|hy-AM: Խումբ | en-US: Group | ru-RU: Группа|
+|groupName|string¦null|false|none|hy-AM: Խմբի անվանում | en-US: Group name | ru-RU: Наименование группы|
+|specification|string¦null|false|none|hy-AM: Բնութագիր | en-US: Specification | ru-RU: Характеристика|
+|prices|object¦null|false|none|hy-AM: Գին | en-US: Price | ru-RU: Цена|
 |» **additionalProperties**|number(double)|false|none|none|
 
 <h2 id="tocS_PriceListDataRowApiResponse">PriceListDataRowApiResponse</h2>
@@ -25444,14 +27407,14 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|pageSize|integer(int32)¦null|false|none|none|
-|date|string(date)|true|none|none|
-|priceListTypes|[string]|true|none|none|
-|itemType|string¦null|false|none|none|
-|group|string¦null|false|none|none|
-|itemCodes|[string]¦null|false|none|none|
-|itemsShowMode|string|true|none|none|
-|showAvailables|boolean|false|none|none|
+|pageSize|integer(int32)¦null|false|none|hy-AM:  էջ  | en-US:  page | ru-RU: страница|
+|date|string(date)|false|none|hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата|
+|priceListTypes|[string]|true|none|hy-AM: Գնի տեսակ | en-US: Price type | ru-RU: Тип цены|
+|itemType|string¦null|false|none|hy-AM: Տեսակ | en-US: Type | ru-RU: Вид|
+|group|string¦null|false|none|hy-AM: Խումբ | en-US: Group | ru-RU: Группа|
+|itemCodes|[string]¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|itemsShowMode|string¦null|false|none|hy-AM: Ցույց տալ | en-US: Show | ru-RU: Показать|
+|showAvailables|boolean|false|none|hy-AM: Ցույց տալ առկաները | en-US: Show availables | ru-RU: Включить товары, которые в наличии|
 
 <h2 id="tocS_PriceListType">PriceListType</h2>
 <!-- backwards compatibility -->
@@ -25475,11 +27438,11 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|code|string¦null|false|none|none|
-|name|string¦null|false|none|none|
-|currency|string¦null|false|none|none|
-|roundingDegree|string¦null|false|none|none|
-|includingVAT|boolean¦null|false|none|none|
+|code|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|name|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|currency|string¦null|false|none|hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта|
+|roundingDegree|string¦null|false|none|hy-AM: Կլորացման աստիճան | en-US: Rounding degree | ru-RU: Точность округления|
+|includingVAT|boolean¦null|false|none|hy-AM: ԱԱՀ-ն այդ թվում | en-US: Including VAT | ru-RU: НДС в том числе|
 
 <h2 id="tocS_Product">Product</h2>
 <!-- backwards compatibility -->
@@ -25556,51 +27519,51 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|id|integer(int32)|false|none|none|
-|code|string¦null|false|none|none|
-|name|string¦null|false|none|none|
-|fullName|string¦null|false|none|none|
-|type|string¦null|false|none|none|
+|id|integer(int32)|false|none|hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер|
+|code|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|name|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|fullName|string¦null|false|none|hy-AM: Լրիվ անվանում | en-US: Full name | ru-RU: Полное наименование|
+|type|string¦null|false|none|hy-AM: Տեսակ | en-US: Type | ru-RU: Вид|
 |cpaClassifier|string¦null|false|none|none|
-|group|string¦null|false|none|none|
-|baseUnitMeasure|string¦null|false|none|none|
-|baseUnitMeasureName|string¦null|false|none|none|
-|baseUnitMeasureAbbreviation|string¦null|false|none|none|
-|alternativeUnitMeasure|string¦null|false|none|none|
-|alternativeUnitMeasureName|string¦null|false|none|none|
-|alternativeUnitMeasureAbbreviation|string¦null|false|none|none|
-|barcode|string¦null|false|none|none|
-|specification|string¦null|false|none|none|
-|externalCode|string¦null|false|none|none|
-|costingMethod|string¦null|false|none|none|
+|group|string¦null|false|none|hy-AM: Խումբ | en-US: Group | ru-RU: Группа|
+|baseUnitMeasure|string¦null|false|none|hy-AM: Հիմնական չափման միավոր | en-US: Base unit of measure | ru-RU: Основная единица измерения|
+|baseUnitMeasureName|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|baseUnitMeasureAbbreviation|string¦null|false|none|hy-AM: Հապավում | en-US: Abbreviation | ru-RU: Сокращение|
+|alternativeUnitMeasure|string¦null|false|none|hy-AM: Լրացուցիչ չափման միավոր | en-US: Alternative unit of measure | ru-RU: Дополнительная единица измерения|
+|alternativeUnitMeasureName|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|alternativeUnitMeasureAbbreviation|string¦null|false|none|hy-AM: Հապավում | en-US: Abbreviation | ru-RU: Сокращение|
+|barcode|string¦null|false|none|hy-AM: Գծիկավոր կոդ | en-US: Barcode | ru-RU: Штрихкод|
+|specification|string¦null|false|none|hy-AM: Բնութագիր | en-US: Specification | ru-RU: Характеристика|
+|externalCode|string¦null|false|none|hy-AM: Արտաքին կոդ | en-US: External code | ru-RU: Внешний код|
+|costingMethod|string¦null|false|none|hy-AM: Հաշվառման մեթոդ | en-US: Costing  method | ru-RU: Метод списания|
 |vat|boolean¦null|false|none|none|
-|checkMarking|boolean¦null|false|none|none|
-|weight|boolean¦null|false|none|none|
+|checkMarking|boolean¦null|false|none|hy-AM: Ստուգել դրոշմանիշերի լրացումը | en-US: Check Marking | ru-RU: Проверять заполнение маркировки|
+|weight|boolean¦null|false|none|hy-AM: Քաշային | en-US: Weight | ru-RU: Весовой|
 |pluCode|integer(int32)¦null|false|none|none|
-|showInPriceLists|boolean¦null|false|none|none|
-|environmentalFeePercent|number(double)¦null|false|none|none|
-|labelUnitMeasure|string¦null|false|none|none|
-|labelUnitMeasureCoefficient|number(double)¦null|false|none|none|
-|country|string¦null|false|none|none|
-|producer|string¦null|false|none|none|
-|property1|string¦null|false|none|none|
-|property2|string¦null|false|none|none|
-|minimumQuantity|number(double)¦null|false|none|none|
-|maximumQuantity|number(double)¦null|false|none|none|
-|addedValuePercent|number(double)¦null|false|none|none|
+|showInPriceLists|boolean¦null|false|none|hy-AM: Ցույց տալ գնացուցակներում | en-US: Show in price lists | ru-RU: Включить в прайс-лист|
+|environmentalFeePercent|number(double)¦null|false|none|hy-AM: Բնապահպանական հարկի % | en-US: Environmental fee (%) | ru-RU: % экологического налога|
+|labelUnitMeasure|string¦null|false|none|hy-AM: Գնապիտակի չափման միավոր | en-US: Unit of measure of label | ru-RU: Единица измерения ценника|
+|labelUnitMeasureCoefficient|number(double)¦null|false|none|hy-AM: Վերահաշվարկի գործակից | en-US: Recalculation coefficient | ru-RU: Коэффициент пересчета|
+|country|string¦null|false|none|hy-AM: Երկիր | en-US: Country | ru-RU: Страна|
+|producer|string¦null|false|none|hy-AM: Արտադրող | en-US: Producer | ru-RU: Производитель|
+|property1|string¦null|false|none|hy-AM: Հատկություն 1 | en-US: Property 1 | ru-RU: Свойство 1|
+|property2|string¦null|false|none|hy-AM: Հատկություն 2 | en-US: Property 2 | ru-RU: Свойство 2|
+|minimumQuantity|number(double)¦null|false|none|hy-AM: Նվազագույն քանակ (min) | en-US: Minimum quantity | ru-RU: Минимальное количество (min)|
+|maximumQuantity|number(double)¦null|false|none|hy-AM: Առավելագույն քանակ (max) | en-US: Maximal quantity (max) | ru-RU: Максимальное количество (max)|
+|addedValuePercent|number(double)¦null|false|none|hy-AM: Հավելագին % | en-US: Added value % | ru-RU: % розничной наценки|
 |aoeCoefficient|number(double)¦null|false|none|none|
-|bonusPercent|number(double)¦null|false|none|none|
-|bonusPoint|number(double)¦null|false|none|none|
-|discountPercent|number(double)¦null|false|none|none|
-|mainSupplierId|integer(int32)¦null|false|none|none|
-|mainSupplierCode|string¦null|false|none|none|
-|substituteItemsGroup|string¦null|false|none|none|
-|nameEN|string¦null|false|none|none|
-|nameRU|string¦null|false|none|none|
-|additionalSpecification1|string¦null|false|none|none|
-|additionalSpecification2|string¦null|false|none|none|
-|measureUnits|[[ProductMeasureUnitRow](#schemaproductmeasureunitrow)]¦null|false|none|none|
-|barcodes|[[ProductBarcodeRow](#schemaproductbarcoderow)]¦null|false|none|none|
+|bonusPercent|number(double)¦null|false|none|hy-AM: Բոնուս ({0}) | en-US: Bonus ({0}) | ru-RU: Бонус ({0})|
+|bonusPoint|number(double)¦null|false|none|hy-AM: Միավոր | en-US: Point | ru-RU: Единица|
+|discountPercent|number(double)¦null|false|none|hy-AM: Զեղչ | en-US: Discount | ru-RU: Скидка|
+|mainSupplierId|integer(int32)¦null|false|none|hy-AM: Հիմնական մատակարար | en-US: Main provider | ru-RU: Основной поставщик|
+|mainSupplierCode|string¦null|false|none|hy-AM: Հիմնական մատակարար | en-US: Main provider | ru-RU: Основной поставщик|
+|substituteItemsGroup|string¦null|false|none|hy-AM: Փոխարինվող ապրանքների խումբ | en-US: Substitute items group | ru-RU: Группы заменяемых товаров|
+|nameEN|string¦null|false|none|hy-AM: Անվանում (անգլերեն) | en-US: Name (English) | ru-RU: Наименование (английский)|
+|nameRU|string¦null|false|none|hy-AM: Անվանում (ռուսերեն) | en-US: Name (Russian) | ru-RU: Наименование (русский)|
+|additionalSpecification1|string¦null|false|none|hy-AM: Լրացուցիչ բնութագիր | en-US: Additional specification | ru-RU: Дополнительная характеристика|
+|additionalSpecification2|string¦null|false|none|hy-AM: Լրացուցիչ բնութագիր | en-US: Additional specification | ru-RU: Дополнительная характеристика|
+|measureUnits|[[ProductMeasureUnitRow](#schemaproductmeasureunitrow)]¦null|false|none|hy-AM: Չափման միավոր | en-US: Measure unit | ru-RU: Единица измерения|
+|barcodes|[[ProductBarcodeRow](#schemaproductbarcoderow)]¦null|false|none|hy-AM: Գծիկավոր կոդեր | en-US: BarCodes | ru-RU: Штрихкоды|
 
 <h2 id="tocS_ProductBarcodeRow">ProductBarcodeRow</h2>
 <!-- backwards compatibility -->
@@ -25622,9 +27585,9 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|unitMeasure|string¦null|false|none|none|
-|abbreviation|string¦null|false|none|none|
-|barcode|string¦null|false|none|none|
+|unitMeasure|string¦null|false|none|hy-AM: Չ/մ | en-US: Unit | ru-RU: ед.|
+|abbreviation|string¦null|false|none|hy-AM: Հապավում | en-US: Abbreviation | ru-RU: Сокращение|
+|barcode|string¦null|false|none|hy-AM: Գծիկավոր կոդ | en-US: Barcode | ru-RU: Штрихкод|
 
 <h2 id="tocS_ProductFilters">ProductFilters</h2>
 <!-- backwards compatibility -->
@@ -25655,14 +27618,14 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|pageSize|integer(int32)¦null|false|none|none|
-|group|string¦null|false|none|none|
-|type|string¦null|false|none|none|
-|codes|[string]¦null|false|none|none|
-|showMode|string|true|none|none|
-|priceListTypes|[string]¦null|false|none|none|
-|extended|boolean|false|none|none|
-|lastModifiedDate|string(date-time)¦null|false|none|none|
+|pageSize|integer(int32)¦null|false|none|hy-AM:  էջ  | en-US:  page | ru-RU: страница|
+|group|string¦null|false|none|hy-AM: Խումբ | en-US: Group | ru-RU: Группа|
+|type|string¦null|false|none|hy-AM: Տիպ | en-US: Type | ru-RU: Вид|
+|codes|[string]¦null|false|none|hy-AM: Ապրանքներ | en-US: Products | ru-RU: Товары|
+|showMode|string¦null|false|none|hy-AM: Ցույց տալ ՀԾ համակարգի անվանումը | en-US: Show AS-system name | ru-RU: Показать наименование AS программы|
+|priceListTypes|[string]¦null|false|none|hy-AM: Գնի տեսակ | en-US: Pricelist type | ru-RU: Тип цены|
+|extended|boolean|false|none|hy-AM: Ընդլայնված | en-US: Extended | ru-RU: Расширенный|
+|lastModifiedDate|string(date-time)¦null|false|none|hy-AM: Վերջին փոփոխություն | en-US: Last change | ru-RU: Последнее изменение|
 
 <h2 id="tocS_ProductMeasureUnit">ProductMeasureUnit</h2>
 <!-- backwards compatibility -->
@@ -25689,14 +27652,14 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|itemId|integer(int32)|false|none|none|
-|itemCode|string¦null|false|none|none|
-|itemName|string¦null|false|none|none|
-|unitMeasure|string¦null|false|none|none|
-|unitMeasureName|string¦null|false|none|none|
-|unitMeasureAbbreviation|string¦null|false|none|none|
-|coefficient|number(double)¦null|false|none|none|
-|default|boolean¦null|false|none|none|
+|itemId|integer(int32)|false|none|hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер|
+|itemCode|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|itemName|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|unitMeasure|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|unitMeasureName|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|unitMeasureAbbreviation|string¦null|false|none|hy-AM: Հապավում | en-US: Abbreviation | ru-RU: Сокращение|
+|coefficient|number(double)¦null|false|none|hy-AM: Գործակից | en-US: Coefficient | ru-RU: Коэффициент|
+|default|boolean¦null|false|none|hy-AM: Հիմնական | en-US: Main | ru-RU: Основной|
 
 <h2 id="tocS_ProductMeasureUnitApiResponse">ProductMeasureUnitApiResponse</h2>
 <!-- backwards compatibility -->
@@ -25754,10 +27717,10 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|code|string¦null|false|none|none|
-|abbreviation|string¦null|false|none|none|
-|coefficient|number(double)¦null|false|none|none|
-|default|boolean¦null|false|none|none|
+|code|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|abbreviation|string¦null|false|none|hy-AM: Հապավում | en-US: Abbreviation | ru-RU: Сокращение|
+|coefficient|number(double)¦null|false|none|hy-AM: Գործակից | en-US: Coefficient | ru-RU: Коэффициент|
+|default|boolean¦null|false|none|hy-AM: Հիմնական | en-US: Main | ru-RU: Основной|
 
 <h2 id="tocS_ProductRow">ProductRow</h2>
 <!-- backwards compatibility -->
@@ -25833,60 +27796,60 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|id|integer(int32)|false|none|none|
-|code|string¦null|false|none|none|
-|name|string¦null|false|none|none|
-|fullName|string¦null|false|none|none|
-|type|string¦null|false|none|none|
-|typeName|string¦null|false|none|none|
+|id|integer(int32)|false|none|hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер|
+|code|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|name|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|fullName|string¦null|false|none|hy-AM: Լրիվ անվանում | en-US: Full name | ru-RU: Полное наименование|
+|type|string¦null|false|none|hy-AM: Տիպ | en-US: Type | ru-RU: Вид|
+|typeName|string¦null|false|none|hy-AM: Տեսակ | en-US: Type | ru-RU: Вид|
 |cpaClassifier|string¦null|false|none|none|
-|group|string¦null|false|none|none|
-|groupName|string¦null|false|none|none|
-|groupPath|string¦null|false|none|none|
-|baseUnitMeasure|string¦null|false|none|none|
-|baseUnitMeasureAbbreviation|string¦null|false|none|none|
-|alternativeUnitMeasure|string¦null|false|none|none|
-|alternativeUnitMeasureAbbreviation|string¦null|false|none|none|
-|barcode|string¦null|false|none|none|
-|specification|string¦null|false|none|none|
-|externalCode|string¦null|false|none|none|
-|costingMethod|string¦null|false|none|none|
-|costingMethodName|string¦null|false|none|none|
-|vat|boolean¦null|false|none|none|
-|checkMarking|boolean¦null|false|none|none|
-|weight|boolean¦null|false|none|none|
+|group|string¦null|false|none|hy-AM: Խումբ | en-US: Group | ru-RU: Группа|
+|groupName|string¦null|false|none|hy-AM: Խմբի անվանում | en-US: Group name | ru-RU: Наименование группы|
+|groupPath|string¦null|false|none|hy-AM: Խումբ | en-US: Group | ru-RU: Группа|
+|baseUnitMeasure|string¦null|false|none|hy-AM: Չափման միավոր | en-US: Measure unit | ru-RU: Единица измерения|
+|baseUnitMeasureAbbreviation|string¦null|false|none|hy-AM: Հիմնական չ/մ | en-US: Base U/M | ru-RU: Основная ед. изм.|
+|alternativeUnitMeasure|string¦null|false|none|hy-AM: Լրացուցիչ չափման միավոր | en-US: Alternative unit of measure | ru-RU: Дополнительная единица измерения|
+|alternativeUnitMeasureAbbreviation|string¦null|false|none|hy-AM: Լրացուցիչ չ/մ | en-US: Alternative U/M | ru-RU: Дополнительная ед. изм.|
+|barcode|string¦null|false|none|hy-AM: Գծիկավոր կոդ | en-US: Barcode | ru-RU: Штрихкод|
+|specification|string¦null|false|none|hy-AM: Բնութագիր | en-US: Specification | ru-RU: Характеристика|
+|externalCode|string¦null|false|none|hy-AM: Արտաքին կոդ | en-US: External code | ru-RU: Внешний код|
+|costingMethod|string¦null|false|none|hy-AM: Հաշվառման մեթոդ | en-US: Costing  method | ru-RU: Метод списания|
+|costingMethodName|string¦null|false|none|hy-AM: Հաշվառման մեթոդ | en-US: Costing  method | ru-RU: Метод списания|
+|vat|boolean|false|none|none|
+|checkMarking|boolean|false|none|hy-AM: Ստուգել դրոշմանիշերի լրացումը | en-US: Check Marking | ru-RU: Проверять заполнение маркировки|
+|weight|boolean|false|none|hy-AM: Քաշային | en-US:  | ru-RU: Весовой|
 |pluCode|integer(int32)¦null|false|none|none|
-|showInPriceLists|boolean¦null|false|none|none|
-|environmentalFeePercent|number(double)¦null|false|none|none|
-|labelUnitMeasure|string¦null|false|none|none|
-|labelUnitMeasureAbbreviation|string¦null|false|none|none|
-|labelUnitMeasureCoefficient|number(double)¦null|false|none|none|
-|country|string¦null|false|none|none|
-|countryName|string¦null|false|none|none|
-|producer|string¦null|false|none|none|
-|producerName|string¦null|false|none|none|
-|property1|string¦null|false|none|none|
-|property2|string¦null|false|none|none|
-|minimumQuantity|number(double)¦null|false|none|none|
-|maximumQuantity|number(double)¦null|false|none|none|
-|addedValuePercent|number(double)¦null|false|none|none|
-|aoeCoefficient|number(double)¦null|false|none|none|
-|bonusPercent|number(double)¦null|false|none|none|
-|bonusPoint|number(double)¦null|false|none|none|
-|discountPercent|number(double)¦null|false|none|none|
-|mainSupplierId|integer(int32)¦null|false|none|none|
-|mainSupplierName|string¦null|false|none|none|
-|substituteItemsGroup|string¦null|false|none|none|
-|substituteItemsGroupName|string¦null|false|none|none|
-|nameEN|string¦null|false|none|none|
-|nameRU|string¦null|false|none|none|
-|additionalSpecification1|string¦null|false|none|none|
-|additionalSpecification2|string¦null|false|none|none|
-|lastModifierName|string¦null|false|none|none|
-|lastModifyDate|string(date-time)¦null|false|none|none|
-|creatorName|string¦null|false|none|none|
-|creationDate|string(date-time)¦null|false|none|none|
-|prices|object¦null|false|none|none|
+|showInPriceLists|boolean|false|none|hy-AM: Ցույց տալ գնացուցակներում | en-US: Show in price lists | ru-RU: Включить в прайс-лист|
+|environmentalFeePercent|number(double)|false|none|hy-AM: Բնապահպանական հարկի % | en-US: Environmental fee (%) | ru-RU: % экологического налога|
+|labelUnitMeasure|string¦null|false|none|hy-AM: Գնապիտակի չափման միավոր | en-US: Unit of measure of label | ru-RU: Единица измерения ценника|
+|labelUnitMeasureAbbreviation|string¦null|false|none|hy-AM: Գնապիտակի չափման միավոր | en-US: Unit of measure of label | ru-RU: Единица измерения ценника|
+|labelUnitMeasureCoefficient|number(double)|false|none|hy-AM: Վերահաշվարկի գործակից | en-US: Recalculation coefficient | ru-RU: Коэффициент пересчета|
+|country|string¦null|false|none|hy-AM: Երկիր | en-US: Country | ru-RU: Страна|
+|countryName|string¦null|false|none|hy-AM: Երկիր | en-US: Country | ru-RU: Страна|
+|producer|string¦null|false|none|hy-AM: Արտադրող | en-US: Producer | ru-RU: Производитель|
+|producerName|string¦null|false|none|hy-AM: Արտադրող | en-US: Producer | ru-RU: Производитель|
+|property1|string¦null|false|none|hy-AM: Հատկություն 1 | en-US: Property 1 | ru-RU: Свойство 1|
+|property2|string¦null|false|none|hy-AM: Հատկություն 2 | en-US: Property 2 | ru-RU: Свойство 2|
+|minimumQuantity|number(double)|false|none|hy-AM: Նվազագույն քանակ (min) | en-US: Minimum quantity | ru-RU: Минимальное количество (min)|
+|maximumQuantity|number(double)|false|none|hy-AM: Առավելագույն քանակ (max) | en-US: Maximal quantity (max) | ru-RU: Максимальное количество (max)|
+|addedValuePercent|number(double)|false|none|hy-AM: Հավելագին % | en-US: Added value % | ru-RU: % розничной наценки|
+|aoeCoefficient|number(double)|false|none|none|
+|bonusPercent|number(double)|false|none|hy-AM: Բոնուս ({0}) | en-US: Bonus ({0}) | ru-RU: Бонус ({0})|
+|bonusPoint|number(double)|false|none|hy-AM: Միավոր | en-US: Point | ru-RU: Единица|
+|discountPercent|number(double)|false|none|hy-AM: Զեղչ | en-US: Discount | ru-RU: Скидка|
+|mainSupplierId|integer(int32)¦null|false|none|hy-AM: Հիմնական մատակարար | en-US: Main provider | ru-RU: Основной поставщик|
+|mainSupplierName|string¦null|false|none|hy-AM: Հիմնական մատակարար | en-US: Main provider | ru-RU: Основной поставщик|
+|substituteItemsGroup|string¦null|false|none|hy-AM: Փոխ. ապր. խումբ | en-US: Sub. item. group | ru-RU: Груп. замен. тов.|
+|substituteItemsGroupName|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|nameEN|string¦null|false|none|hy-AM: Անվանում (անգլերեն) | en-US: Name (English) | ru-RU: Наименование (английский)|
+|nameRU|string¦null|false|none|hy-AM: Անվանում (ռուսերեն) | en-US: Name (Russian) | ru-RU: Наименование (русский)|
+|additionalSpecification1|string¦null|false|none|hy-AM: Լրացուցիչ բնութագիր | en-US: Additional specification | ru-RU: Дополнительная характеристика|
+|additionalSpecification2|string¦null|false|none|hy-AM: Լրացուցիչ բնութագիր | en-US: Additional specification | ru-RU: Дополнительная характеристика|
+|lastModifierName|string¦null|false|none|hy-AM: Վերջին խմբագրող | en-US: Last modifier | ru-RU: Last modifier|
+|lastModifyDate|string(date-time)¦null|false|none|hy-AM: Վերջին փոփոխություն | en-US: Last change | ru-RU: Последнее изменение|
+|creatorName|string¦null|false|none|hy-AM: Ստեղծող | en-US: Creator | ru-RU: Creator|
+|creationDate|string(date-time)¦null|false|none|hy-AM: Ստեղծման ամսաթիվ | en-US: Creation date | ru-RU: Дата создания|
+|prices|object¦null|false|none|hy-AM: Գին | en-US: Price | ru-RU: Цена|
 |» **additionalProperties**|number(double)|false|none|none|
 
 <h2 id="tocS_ProductRowApiResponse">ProductRowApiResponse</h2>
@@ -26040,53 +28003,53 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|id|integer(int32)|false|none|none|
-|code|string¦null|false|none|none|
-|name|string¦null|false|none|none|
-|fullName|string¦null|false|none|none|
-|unitMeasure|string¦null|false|none|none|
-|unitMeasureAbbreviation|string¦null|false|none|none|
-|specification|string¦null|false|none|none|
-|group|string¦null|false|none|none|
-|groupName|string¦null|false|none|none|
-|storage|string¦null|false|none|none|
-|storageName|string¦null|false|none|none|
-|quantity|number(double)|false|none|none|
-|costAmountWithoutVAT|number(double)|false|none|none|
-|costAmountWithVAT|number(double)|false|none|none|
-|costAmountCurrency|number(double)|false|none|none|
-|costPriceWithoutVAT|number(double)¦null|false|none|none|
-|costPriceWithVAT|number(double)¦null|false|none|none|
-|costPriceCurrency|number(double)¦null|false|none|none|
-|minimumQuantity|number(double)|false|none|none|
-|variance|number(double)|false|none|none|
-|maximumQuantity|number(double)|false|none|none|
-|orderQuantity|number(double)|false|none|none|
-|orderComment|string¦null|false|none|none|
-|incomeDate|string(date)|false|none|none|
-|partySupplierId|integer(int32)|false|none|none|
-|partySupplierName|string¦null|false|none|none|
-|partySupplierTaxCode|string¦null|false|none|none|
-|partyContractCode|string¦null|false|none|none|
-|partyContractName|string¦null|false|none|none|
-|partyDocumentNumber|string¦null|false|none|none|
-|partyDocumentType|string¦null|false|none|none|
-|partyExpirationDate|string(date)¦null|false|none|none|
-|partyCountryCode|string¦null|false|none|none|
-|partyCountryName|string¦null|false|none|none|
-|partyProducerCode|string¦null|false|none|none|
-|partyProducerName|string¦null|false|none|none|
-|partyPropertyType1Code|string¦null|false|none|none|
-|partyPropertyType1Name|string¦null|false|none|none|
-|partyPropertyValue1Code|string¦null|false|none|none|
-|partyPropertyValue1Name|string¦null|false|none|none|
-|partyPropertyType2Code|string¦null|false|none|none|
-|partyPropertyType2Name|string¦null|false|none|none|
-|partyPropertyValue2Code|string¦null|false|none|none|
-|partyPropertyValue2Name|string¦null|false|none|none|
-|partyBase|string(uuid)|false|none|none|
-|partyRow|integer(int32)|false|none|none|
-|prices|object¦null|false|none|none|
+|id|integer(int32)|false|none|hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер|
+|code|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|name|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|fullName|string¦null|false|none|hy-AM: Լրիվ անվանում | en-US: Full name | ru-RU: Полное наименование|
+|unitMeasure|string¦null|false|none|hy-AM: Չափման միավոր | en-US: Measure unit | ru-RU: Единица измерения|
+|unitMeasureAbbreviation|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|specification|string¦null|false|none|hy-AM: Նկարագրություն | en-US: Description | ru-RU: Описание|
+|group|string¦null|false|none|hy-AM: Խումբ | en-US: Group | ru-RU: Группа|
+|groupName|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|storage|string¦null|false|none|hy-AM: Պահեստ | en-US: Storage | ru-RU: Склад|
+|storageName|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|quantity|number(double)|false|none|hy-AM: Մնացորդ | en-US: Balance | ru-RU: Остаток|
+|costAmountWithoutVAT|number(double)|false|none|hy-AM: Ինք․ Գումար դրամով | en-US: Cost․ Amount in AMD | ru-RU: Себ: Сумма в драмах|
+|costAmountWithVAT|number(double)|false|none|hy-AM: Ինք․ Գումար դրամով | en-US: Cost․ Amount in AMD | ru-RU: Себ: Сумма в драмах|
+|costAmountCurrency|number(double)|false|none|hy-AM: Ինք․ Գումար {0}-ով | en-US: Cost․ Amount in {0} | ru-RU: Себ: Сумма в {0}|
+|costPriceWithoutVAT|number(double)¦null|false|none|hy-AM: Ինք․ Գին դրամով | en-US: Cost․ Price in AMD | ru-RU: Себ: Цена в драмах|
+|costPriceWithVAT|number(double)¦null|false|none|hy-AM: Ինք․ Գին դրամով | en-US: Cost․ Price in AMD | ru-RU: Себ: Цена в драмах|
+|costPriceCurrency|number(double)¦null|false|none|hy-AM: Ինք․ Գին {0}-ով | en-US: Cost․ Price in {0} | ru-RU: Себ: Цена в {0}|
+|minimumQuantity|number(double)|false|none|hy-AM: Նվազագույն քանակ (min) | en-US: Minimum quantity | ru-RU: Минимальное количество (min)|
+|variance|number(double)|false|none|hy-AM: Շեղում | en-US: Variance | ru-RU: Отклонение|
+|maximumQuantity|number(double)|false|none|hy-AM: Առավելագույն քանակ (max) | en-US: Maximal quantity (max) | ru-RU: Максимальное количество (max)|
+|orderQuantity|number(double)|false|none|hy-AM: Պատվիրման քանակ | en-US: Order quantity | ru-RU: Количество заказа|
+|orderComment|string¦null|false|none|hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий|
+|incomeDate|string(date)|false|none|hy-AM: Մուտքի ա/թ | en-US: Income date | ru-RU: Дата прихода|
+|partySupplierId|integer(int32)|false|none|hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер|
+|partySupplierName|string¦null|false|none|hy-AM: Մատակարար | en-US: Supplier | ru-RU: Поставщик|
+|partySupplierTaxCode|string¦null|false|none|hy-AM: Մատակարարի ՀՎՀՀ | en-US: Supplier tax code | ru-RU: ИНН код поставщика|
+|partyContractCode|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|partyContractName|string¦null|false|none|hy-AM: Պայմանագիր | en-US: Contract | ru-RU: Договор|
+|partyDocumentNumber|string¦null|false|none|hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док.|
+|partyDocumentType|string¦null|false|none|hy-AM: Փաստաթղթի տեսակ | en-US: Document type | ru-RU: Вид документа|
+|partyExpirationDate|string(date)¦null|false|none|hy-AM: Օգտ.ժամկետ | en-US: Exp. date | ru-RU: Срок годн.|
+|partyCountryCode|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|partyCountryName|string¦null|false|none|hy-AM: Երկիր | en-US: Country | ru-RU: Страна|
+|partyProducerCode|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|partyProducerName|string¦null|false|none|hy-AM: Արտադրող | en-US: Producer | ru-RU: Производитель|
+|partyPropertyType1Code|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|partyPropertyType1Name|string¦null|false|none|hy-AM: Հատկության տեսակ 1 | en-US: Property type 1 | ru-RU: Тип свойства 1|
+|partyPropertyValue1Code|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|partyPropertyValue1Name|string¦null|false|none|hy-AM: Հատկության արժեք | en-US: Property value | ru-RU: Значение свойства|
+|partyPropertyType2Code|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|partyPropertyType2Name|string¦null|false|none|hy-AM: Հատկության տեսակ 2 | en-US: Property type 2 | ru-RU: Тип свойства 2|
+|partyPropertyValue2Code|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|partyPropertyValue2Name|string¦null|false|none|hy-AM: Հատկության արժեք | en-US: Property value | ru-RU: Значение свойства|
+|partyBase|string(uuid)|false|none|hy-AM: Հիմք փաստաթուղթ | en-US: Base document | ru-RU: Документ основания|
+|partyRow|integer(int32)|false|none|hy-AM: Տողի N | en-US: line N | ru-RU: N строки|
+|prices|object¦null|false|none|hy-AM: Գին | en-US: Price | ru-RU: Цена|
 |» **additionalProperties**|number(double)|false|none|none|
 
 <h2 id="tocS_ProductsBalancesDataRowApiResponse">ProductsBalancesDataRowApiResponse</h2>
@@ -26203,20 +28166,20 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|pageSize|integer(int32)¦null|false|none|none|
-|date|string(date)|true|none|none|
-|storages|[string]¦null|false|none|none|
-|group|string¦null|false|none|none|
-|codes|[string]¦null|false|none|none|
-|showQuantitiesWithAdditionalUnits|boolean|false|none|none|
-|showSumsWithoutVAT|boolean|false|none|none|
-|showSumsWithVAT|boolean|false|none|none|
-|showCurrencySums|boolean|false|none|none|
-|showByDifferentParties|boolean|false|none|none|
-|openedByStorages|boolean|false|none|none|
-|minimumQuantities|string¦null|false|none|none|
-|subtotalType|string¦null|false|none|none|
-|priceListTypes|[string]¦null|false|none|none|
+|pageSize|integer(int32)¦null|false|none|hy-AM:  էջ  | en-US:  page | ru-RU: страница|
+|date|string(date)|false|none|hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата|
+|storages|[string]¦null|false|none|hy-AM: Պահեստ | en-US: Storage | ru-RU: Склад|
+|group|string¦null|false|none|hy-AM: Ապրանքների խումբ | en-US: Product's group | ru-RU: Группа товаров|
+|codes|[string]¦null|false|none|hy-AM: Ապրանք | en-US: Product | ru-RU: Товар|
+|showQuantitiesWithAdditionalUnits|boolean|false|none|hy-AM: Քանակները ցույց տալ լրացուցիչ չափման միավորով | en-US: Show quantities with additional units | ru-RU: Показать количество в доп. единице|
+|showSumsWithoutVAT|boolean|false|none|hy-AM: Ցույց տալ գումարները դրամով (Առանց ԱԱՀ) | en-US: Show sums in drams without VAT | ru-RU: Показать суммы в драмах (без НДС)|
+|showSumsWithVAT|boolean|false|none|hy-AM: Ցույց տալ գումարները դրամով (Ներառյալ ԱԱՀ) | en-US: Show sums in drams with VAT | ru-RU: Показать суммы в драмах (включая НДС)|
+|showCurrencySums|boolean|false|none|hy-AM: Ցույց տալ գումարները {0}-ով | en-US: Show sums in {0} | ru-RU: Показать суммы в {0}|
+|showByDifferentParties|boolean|false|none|hy-AM: Ըստ տարբեր խմբաքանակների | en-US: By different batches | ru-RU: Детализировать по партиям|
+|openedByStorages|boolean|false|none|hy-AM: Բացված ըստ պահեստների | en-US: Opened by storages | ru-RU: Детализировать по складам|
+|minimumQuantities|string¦null|false|none|hy-AM: Նվազագույն քանակներ | en-US: Minimum quantities | ru-RU: Минимальные количества|
+|subtotalType|string¦null|false|none|hy-AM: Ենթագումարներ | en-US: Subtotals | ru-RU: Итоги по группам|
+|priceListTypes|[string]¦null|false|none|hy-AM: Գնի տեսակ | en-US: Price type | ru-RU: Тип цены|
 
 <h2 id="tocS_ProductsBalancesShortDataRow">ProductsBalancesShortDataRow</h2>
 <!-- backwards compatibility -->
@@ -26248,19 +28211,19 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|id|integer(int32)|false|none|none|
-|code|string¦null|false|none|none|
-|name|string¦null|false|none|none|
-|fullName|string¦null|false|none|none|
-|specification|string¦null|false|none|none|
-|unitMeasure|string¦null|false|none|none|
-|unitMeasureAbbreviation|string¦null|false|none|none|
-|quantity|number(double)|false|none|none|
-|costAmountWithoutVAT|number(double)|false|none|none|
-|costAmountWithVAT|number(double)|false|none|none|
-|costAmountCurrency|number(double)|false|none|none|
-|salePrice|number(double)|false|none|none|
-|salePriceAmount|number(double)|false|none|none|
+|id|integer(int32)|false|none|hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер|
+|code|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|name|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|fullName|string¦null|false|none|hy-AM: Լրիվ անվանում | en-US: Full name | ru-RU: Полное наименование|
+|specification|string¦null|false|none|hy-AM: Բնութագիր | en-US: Specification | ru-RU: Характеристика|
+|unitMeasure|string¦null|false|none|hy-AM: Չափման միավոր | en-US: Measure unit | ru-RU: Единица измерения|
+|unitMeasureAbbreviation|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|quantity|number(double)|false|none|hy-AM: Քանակ | en-US: Quantity | ru-RU: Количество|
+|costAmountWithoutVAT|number(double)|false|none|hy-AM: Ինք․ Գումար դրամով | en-US: Cost․ Amount in AMD | ru-RU: Себ: Сумма в драмах|
+|costAmountWithVAT|number(double)|false|none|hy-AM: Ինք․ Գումար դրամով | en-US: Cost․ Amount in AMD | ru-RU: Себ: Сумма в драмах|
+|costAmountCurrency|number(double)|false|none|hy-AM: Ինք․ Գումար {0}-ով | en-US: Cost․ Amount in {0} | ru-RU: Себ: Сумма в {0}|
+|salePrice|number(double)|false|none|hy-AM: Վաճառքի գին | en-US: Sale price | ru-RU: Цена продажи|
+|salePriceAmount|number(double)|false|none|hy-AM: Գումար | en-US: Amount | ru-RU: Сумма|
 
 <h2 id="tocS_ProductsBalancesShortDataRowApiResponse">ProductsBalancesShortDataRowApiResponse</h2>
 <!-- backwards compatibility -->
@@ -26331,14 +28294,14 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|pageSize|integer(int32)¦null|false|none|none|
-|date|string(date)|true|none|none|
-|storages|[string]¦null|false|none|none|
-|group|string¦null|false|none|none|
-|codes|[string]¦null|false|none|none|
-|showQuantitiesWithAdditionalUnits|boolean|false|none|none|
-|priceType|string¦null|false|none|none|
-|showZeroRows|boolean|false|none|none|
+|pageSize|integer(int32)¦null|false|none|hy-AM:  էջ  | en-US:  page | ru-RU: страница|
+|date|string(date)|false|none|hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата|
+|storages|[string]¦null|false|none|hy-AM: Պահեստ | en-US: Storage | ru-RU: Склад|
+|group|string¦null|false|none|hy-AM: Խումբ | en-US: Group | ru-RU: Группа|
+|codes|[string]¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|showQuantitiesWithAdditionalUnits|boolean|false|none|hy-AM: Քանակները ցույց տալ լրացուցիչ չափման միավորով | en-US: Show quantities with additional units | ru-RU: Показать количество в доп. единице|
+|priceType|string¦null|false|none|hy-AM: Գնի տեսակ | en-US: Price type | ru-RU: Тип цены|
+|showZeroRows|boolean|false|none|hy-AM: Քանակ | en-US: Quantity | ru-RU: Количество|
 
 <h2 id="tocS_ProductsGroup">ProductsGroup</h2>
 <!-- backwards compatibility -->
@@ -26363,12 +28326,12 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|code|string¦null|false|none|none|
-|name|string¦null|false|none|none|
-|parent|string¦null|false|none|none|
-|path|string¦null|false|none|none|
-|nameEN|string¦null|false|none|none|
-|nameRU|string¦null|false|none|none|
+|code|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|name|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|parent|string¦null|false|none|hy-AM: Կուտակիչ | en-US: Parent | ru-RU: Родитель|
+|path|string¦null|false|none|hy-AM: Խումբ | en-US: Group | ru-RU: Группа|
+|nameEN|string¦null|false|none|hy-AM: Անվանում (անգլերեն) | en-US: Name (english) | ru-RU: Наименование (английский)|
+|nameRU|string¦null|false|none|hy-AM: Անվանում (ռուսերեն) | en-US: Name (russian) | ru-RU: Наименование (русский)|
 
 <h2 id="tocS_ProductsMovement">ProductsMovement</h2>
 <!-- backwards compatibility -->
@@ -26389,7 +28352,7 @@ This operation does not require authentication
   "comment": "string",
   "owner": "string",
   "mediator": "string",
-  "chiefAccount": "string",
+  "chiefAccountant": "string",
   "allowed": "string",
   "bookNumber": "string",
   "bookPage": 0,
@@ -26428,30 +28391,30 @@ This operation does not require authentication
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
 |isn|string(uuid)|false|none|none|
-|date|string(date)¦null|false|none|none|
-|documentNumber|string¦null|false|none|none|
-|state|integer(int32)|false|none|none|
-|storageOutput|string¦null|false|none|none|
-|storageInput|string¦null|false|none|none|
-|priceType|string¦null|false|none|none|
-|comment|string¦null|false|none|none|
-|owner|string¦null|false|none|none|
-|mediator|string¦null|false|none|none|
-|chiefAccount|string¦null|false|none|none|
-|allowed|string¦null|false|none|none|
-|bookNumber|string¦null|false|none|none|
-|bookPage|integer(int32)|false|none|none|
-|bookLine|integer(int32)|false|none|none|
-|taxExportType|string¦null|false|none|none|
-|taxInvoiceSeries|string¦null|false|none|none|
-|taxInvoiceNumber|string¦null|false|none|none|
-|submissionDate|string(date)¦null|false|none|none|
-|transportationMethod|string¦null|false|none|none|
-|vehicle|boolean|false|none|none|
-|brand|string¦null|false|none|none|
-|licensePlate|string¦null|false|none|none|
-|baseDocumentISN|string(uuid)|false|none|none|
-|productsList|[[ProductsMovementSpecificationRow](#schemaproductsmovementspecificationrow)]¦null|false|none|none|
+|date|string(date)¦null|false|none|hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата|
+|documentNumber|string¦null|false|none|hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док.|
+|state|integer(int32)|false|none|hy-AM: Վիճակ | en-US: State | ru-RU: Состояние|
+|storageOutput|string¦null|false|none|hy-AM: Պահեստ ելքի | en-US: Storage output | ru-RU: Из склада|
+|storageInput|string¦null|false|none|hy-AM: Պահեստ մուտքի | en-US: Storage input | ru-RU: В склад|
+|priceType|string¦null|false|none|hy-AM: Գնի տեսակ | en-US: Price type | ru-RU: Тип цены|
+|comment|string¦null|false|none|hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий|
+|owner|string¦null|false|none|hy-AM: Հեղինակ | en-US: Owner | ru-RU: Автор|
+|mediator|string¦null|false|none|hy-AM: Միջնորդ | en-US: Mediator | ru-RU: Посредник|
+|chiefAccountant|string¦null|false|none|hy-AM: Գլխավոր հաշվապահ | en-US: Chief accountant | ru-RU: Главный бухгалтер|
+|allowed|string¦null|false|none|hy-AM: Թույլատրեց | en-US: Allowed | ru-RU: Разрешил|
+|bookNumber|string¦null|false|none|hy-AM: Առաքողի գրանցման գրքի N | en-US: Distributor entries book N | ru-RU: N книги регистрации отправителя|
+|bookPage|integer(int32)|false|none|hy-AM: էջի N | en-US: page N | ru-RU: N страницы|
+|bookLine|integer(int32)|false|none|hy-AM: Տողի N | en-US: line N | ru-RU: N строки|
+|taxExportType|string¦null|false|none|hy-AM: Դուրս գրման եղանակ | en-US: Electronic/Paper | ru-RU: Метод выписки|
+|taxInvoiceSeries|string¦null|false|none|hy-AM: Սերիա | en-US: Serial | ru-RU: Серия|
+|taxInvoiceNumber|string¦null|false|none|hy-AM: Համար | en-US: Number | ru-RU: Номер|
+|submissionDate|string(date)¦null|false|none|hy-AM: Դուրս գրման ամսաթիվ | en-US: Submission date | ru-RU: От|
+|transportationMethod|string¦null|false|none|hy-AM: Տեղափոխման եղանակ | en-US: Transportation method | ru-RU: Метод переноса|
+|vehicle|boolean|false|none|hy-AM: Ավտոտրանսպորտային միջոց | en-US: Vehicle | ru-RU: Транспортное средство|
+|brand|string¦null|false|none|hy-AM: Մակնիշ | en-US: Brand | ru-RU: Марка|
+|licensePlate|string¦null|false|none|hy-AM: Պետհամարանիշ | en-US: License plate | ru-RU: Гос номер|
+|baseDocumentISN|string(uuid)|false|none|hy-AM: Հիմք փաստաթուղթ | en-US: Base document | ru-RU: Документ основания|
+|productsList|[[ProductsMovementSpecificationRow](#schemaproductsmovementspecificationrow)]¦null|false|none|hy-AM: Ապրանքների ցուցակ | en-US: Products list | ru-RU: Список товаров|
 
 <h2 id="tocS_ProductsMovementSpecificationRow">ProductsMovementSpecificationRow</h2>
 <!-- backwards compatibility -->
@@ -26482,18 +28445,18 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|id|integer(int32)|false|none|none|
-|code|string¦null|false|none|none|
-|name|string¦null|false|none|none|
-|fullName|string¦null|false|none|none|
-|unit|string¦null|false|none|none|
-|unitAbbreviation|string¦null|false|none|none|
-|quantity|number(double)|false|none|none|
-|salePrice|number(double)¦null|false|none|none|
-|saleAmount|number(double)¦null|false|none|none|
-|description|string¦null|false|none|none|
-|rowNumber|integer(int32)|false|none|none|
-|rowId|integer(int32)|false|none|none|
+|id|integer(int32)|false|none|hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер|
+|code|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|name|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|fullName|string¦null|false|none|hy-AM: Լրիվ անվանում | en-US: Full name | ru-RU: Полное наименование|
+|unit|string¦null|false|none|hy-AM: Միավոր | en-US: Unit | ru-RU: Единица|
+|unitAbbreviation|string¦null|false|none|hy-AM: Հապավում | en-US: Abbreviation | ru-RU: Сокращение|
+|quantity|number(double)|false|none|hy-AM: Քանակ | en-US: Quantity | ru-RU: Количество|
+|salePrice|number(double)¦null|false|none|hy-AM: Վաճառքի գին | en-US: Sale price | ru-RU: Цена продажи|
+|saleAmount|number(double)¦null|false|none|hy-AM: Վաճառքի գումար | en-US: Sale amount | ru-RU: Сумма продажи|
+|description|string¦null|false|none|hy-AM: Նկարագրություն | en-US: Description | ru-RU: Описание|
+|rowNumber|integer(int32)|false|none|hy-AM: Տողի N | en-US: line N | ru-RU: N строки|
+|rowId|integer(int32)|false|none|hy-AM: Տողերի ID | en-US: Lines ID | ru-RU: ID линий|
 
 <h2 id="tocS_Sale">Sale</h2>
 <!-- backwards compatibility -->
@@ -26578,41 +28541,41 @@ This operation does not require authentication
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
 |isn|string(uuid)|false|none|none|
-|date|string(date)¦null|false|none|none|
-|documentNumber|string¦null|false|none|none|
-|state|integer(int32)|false|none|none|
-|storage|string¦null|false|none|none|
-|cashDesk|string¦null|false|none|none|
-|cashierShiftNumber|string¦null|false|none|none|
+|date|string(date)¦null|false|none|hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата|
+|documentNumber|string¦null|false|none|hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док.|
+|state|integer(int32)|false|none|hy-AM: Վիճակ | en-US: State | ru-RU: Состояние|
+|storage|string¦null|false|none|hy-AM: Պահեստ | en-US: Storage | ru-RU: Склад|
+|cashDesk|string¦null|false|none|hy-AM: Դրամարկղ | en-US: Cash | ru-RU: Касса|
+|cashierShiftNumber|string¦null|false|none|hy-AM: Հերթափոխի N | en-US: Cashier shift N | ru-RU: Смена N|
 |ecrCheckNumber|string¦null|false|none|none|
-|prepaymentECRCheckNumber|string¦null|false|none|none|
-|customer|string¦null|false|none|none|
-|customerContract|string¦null|false|none|none|
-|seller|string¦null|false|none|none|
-|printExpenseConfirmingCheck|boolean¦null|false|none|none|
-|cashAmount|number(double)¦null|false|none|none|
-|nonCashAmount|number(double)¦null|false|none|none|
+|prepaymentECRCheckNumber|string¦null|false|none|hy-AM: Կանխավճարի ՀԴՄԿ N | en-US: Prepayment ECRC N | ru-RU: Номер чека предоплаты ККМ|
+|customer|string¦null|false|none|hy-AM: Գնորդ | en-US: Customer | ru-RU: Покупатель|
+|customerContract|string¦null|false|none|hy-AM: Պայմանագիր | en-US: Contract | ru-RU: Договор|
+|seller|string¦null|false|none|hy-AM: Վաճառող | en-US: Seller | ru-RU: Продавец|
+|printExpenseConfirmingCheck|boolean¦null|false|none|hy-AM: Տպել ծախս հիմնավորող ՀԴՄԿ | en-US: Print expense confirming check | ru-RU: Печать чека ККМ подтвер. расходы|
+|cashAmount|number(double)¦null|false|none|hy-AM: Կանխիկ | en-US: Cash | ru-RU: Наличные|
+|nonCashAmount|number(double)¦null|false|none|hy-AM: Անկանխիկ | en-US: Non-cash | ru-RU: Безналичные|
 |posBank|string¦null|false|none|none|
 |posContract|string¦null|false|none|none|
-|connectedDevice|string¦null|false|none|none|
-|paymentSystem|integer(int32)|false|none|none|
-|creditAmount|number(double)¦null|false|none|none|
-|prepaymentAmount|number(double)¦null|false|none|none|
-|prepaymentCustomer|string¦null|false|none|none|
-|prepaymentContract|string¦null|false|none|none|
-|changeAmount|number(double)¦null|false|none|none|
-|bonusAmount|number(double)¦null|false|none|none|
-|addedBonus|number(double)¦null|false|none|none|
-|accumulatedBonus|number(double)¦null|false|none|none|
+|connectedDevice|string¦null|false|none|hy-AM: Միացված սարք | en-US: Connected device | ru-RU: Подключенное устройство|
+|paymentSystem|integer(int32)|false|none|hy-AM: Վճարային համակարգ | en-US: Payment system | ru-RU: Платежная система|
+|creditAmount|number(double)¦null|false|none|hy-AM: Ապառիկ | en-US: Credit | ru-RU: Кредит|
+|prepaymentAmount|number(double)¦null|false|none|hy-AM: Կանխավճար | en-US: Prepayment | ru-RU: Аванс|
+|prepaymentCustomer|string¦null|false|none|hy-AM: Գնորդ | en-US: Customer | ru-RU: Покупатель|
+|prepaymentContract|string¦null|false|none|hy-AM: Պայմանագիր | en-US: Contract | ru-RU: Договор|
+|changeAmount|number(double)¦null|false|none|hy-AM: Մանր | en-US: Cash change | ru-RU: Сдача|
+|bonusAmount|number(double)¦null|false|none|hy-AM: Բոնուսով | en-US: With bonus | ru-RU: Бонус|
+|addedBonus|number(double)¦null|false|none|hy-AM: Բոն. ավելացում | en-US: Add. to bonus | ru-RU: Зачисл. на бонус|
+|accumulatedBonus|number(double)¦null|false|none|hy-AM: Կուտ. բոն. | en-US: Acc. bon. | ru-RU: Накоп. бон.|
 |vatCalculationType|string¦null|false|none|none|
-|priceType|string¦null|false|none|none|
-|discountPriceType|string¦null|false|none|none|
-|comment|string¦null|false|none|none|
-|owner|string¦null|false|none|none|
-|discountPercent|number(double)¦null|false|none|none|
+|priceType|string¦null|false|none|hy-AM: Գնի տեսակ | en-US: Price type | ru-RU: Тип цены|
+|discountPriceType|string¦null|false|none|hy-AM: Զեղչի գնի տեսակ | en-US: Discount price type | ru-RU: Тип скидочной цены|
+|comment|string¦null|false|none|hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий|
+|owner|string¦null|false|none|hy-AM: Հեղինակ | en-US: Owner | ru-RU: Автор|
+|discountPercent|number(double)¦null|false|none|hy-AM: Զեղչի % | en-US: Discount % | ru-RU: % скидки|
 |vatAmount|number(double)|false|none|none|
-|totalAmount|number(double)|false|none|none|
-|itemList|[[SaleSpecificationRow](#schemasalespecificationrow)]¦null|false|none|none|
+|totalAmount|number(double)|false|none|hy-AM: Ընդամենը | en-US: Total | ru-RU: Итого|
+|itemList|[[SaleSpecificationRow](#schemasalespecificationrow)]¦null|false|none|hy-AM: Անվանացուցակ | en-US: Items list | ru-RU: Список товаров и услуг|
 
 <h2 id="tocS_SaleReturn">SaleReturn</h2>
 <!-- backwards compatibility -->
@@ -26696,39 +28659,39 @@ This operation does not require authentication
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
 |isn|string(uuid)|false|none|none|
-|date|string(date)¦null|false|none|none|
-|documentNumber|string¦null|false|none|none|
-|baseDocumentISN|string(uuid)|false|none|none|
-|state|integer(int32)|false|none|none|
-|storage|string¦null|false|none|none|
-|cashDesk|string¦null|false|none|none|
-|cashierShiftNumber|string¦null|false|none|none|
+|date|string(date)¦null|false|none|hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата|
+|documentNumber|string¦null|false|none|hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док.|
+|baseDocumentISN|string(uuid)|false|none|hy-AM: Հիմք փաստաթուղթ | en-US: Base document | ru-RU: Документ основания|
+|state|integer(int32)|false|none|hy-AM: Վիճակ | en-US: State | ru-RU: Состояние|
+|storage|string¦null|false|none|hy-AM: Պահեստ | en-US: Storage | ru-RU: Склад|
+|cashDesk|string¦null|false|none|hy-AM: Դրամարկղ | en-US: Cash | ru-RU: Касса|
+|cashierShiftNumber|string¦null|false|none|hy-AM: Հերթափոխի N | en-US: Cashier shift N | ru-RU: Смена N|
 |ecrReturnCheckNumber|string¦null|false|none|none|
-|prepaymentECRCheckNumber|string¦null|false|none|none|
-|customer|string¦null|false|none|none|
-|customerContract|string¦null|false|none|none|
-|seller|string¦null|false|none|none|
-|cashAmount|number(double)|false|none|none|
-|nonCashAmount|number(double)|false|none|none|
+|prepaymentECRCheckNumber|string¦null|false|none|hy-AM: Կանխավճարի ՀԴՄԿ N | en-US: Prepayment ECRC N | ru-RU: Номер чека предоплаты ККМ|
+|customer|string¦null|false|none|hy-AM: Գնորդ | en-US: Customer | ru-RU: Покупатель|
+|customerContract|string¦null|false|none|hy-AM: Պայմանագիր | en-US: Contract | ru-RU: Договор|
+|seller|string¦null|false|none|hy-AM: Վաճառող | en-US: Seller | ru-RU: Продавец|
+|cashAmount|number(double)|false|none|hy-AM: Կանխիկ | en-US: Cash | ru-RU: Наличные|
+|nonCashAmount|number(double)|false|none|hy-AM: Անկանխիկ | en-US: Non-cash | ru-RU: Безналичные|
 |posBank|string¦null|false|none|none|
 |posContract|string¦null|false|none|none|
-|connectedDevice|string¦null|false|none|none|
-|paymentSystem|integer(int32)|false|none|none|
-|creditAmount|number(double)|false|none|none|
-|prepaymentAmount|number(double)|false|none|none|
-|prepaymentCustomer|string¦null|false|none|none|
-|prepaymentContract|string¦null|false|none|none|
-|bonusAmount|number(double)|false|none|none|
-|usedBonus|number(double)|false|none|none|
-|accumulatedBonus|number(double)|false|none|none|
-|changeAmount|number(double)|false|none|none|
+|connectedDevice|string¦null|false|none|hy-AM: Միացված սարք | en-US: Connected device | ru-RU: Подключенное устройство|
+|paymentSystem|integer(int32)|false|none|hy-AM: Վճարային համակարգ | en-US: Payment system | ru-RU: Платежная система|
+|creditAmount|number(double)|false|none|hy-AM: Ապառիկ | en-US: Credit | ru-RU: Кредит|
+|prepaymentAmount|number(double)|false|none|hy-AM: Կանխավճար | en-US: Prepayment | ru-RU: Аванс|
+|prepaymentCustomer|string¦null|false|none|hy-AM: Գնորդ | en-US: Customer | ru-RU: Покупатель|
+|prepaymentContract|string¦null|false|none|hy-AM: Պայմանագիր | en-US: Contract | ru-RU: Договор|
+|bonusAmount|number(double)|false|none|hy-AM: Բոնուսով | en-US: With bonus | ru-RU: Бонус|
+|usedBonus|number(double)|false|none|hy-AM: Բոնուսի մարում | en-US: Bonus redemption | ru-RU: Погашение бонуса|
+|accumulatedBonus|number(double)|false|none|hy-AM: Հաշվարկված բոնուսներ | en-US: Accumulated bonus | ru-RU: Начисления бонуса|
+|changeAmount|number(double)|false|none|hy-AM: Մանր | en-US: Cash change | ru-RU: Сдача|
 |vatCalculationType|string¦null|false|none|none|
-|priceType|string¦null|false|none|none|
-|comment|string¦null|false|none|none|
-|owner|string¦null|false|none|none|
+|priceType|string¦null|false|none|hy-AM: Գնի տեսակ | en-US: Price type | ru-RU: Тип цены|
+|comment|string¦null|false|none|hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий|
+|owner|string¦null|false|none|hy-AM: Հեղինակ | en-US: Owner | ru-RU: Автор|
 |vatAmount|number(double)|false|none|none|
-|totalAmount|number(double)|false|none|none|
-|itemList|[[SaleReturnSpecificationRow](#schemasalereturnspecificationrow)]¦null|false|none|none|
+|totalAmount|number(double)|false|none|hy-AM: Ընդամենը | en-US: Total | ru-RU: Итого|
+|itemList|[[SaleReturnSpecificationRow](#schemasalereturnspecificationrow)]¦null|false|none|hy-AM: Անվանացուցակ | en-US: Items list | ru-RU: Список товаров и услуг|
 
 <h2 id="tocS_SaleReturnSpecificationRow">SaleReturnSpecificationRow</h2>
 <!-- backwards compatibility -->
@@ -26774,31 +28737,31 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|type|string¦null|false|none|none|
-|storage|string¦null|false|none|none|
-|barcode|string¦null|false|none|none|
-|id|integer(int32)|false|none|none|
-|code|string¦null|false|none|none|
-|name|string¦null|false|none|none|
-|unit|string¦null|false|none|none|
-|unitAbbreviation|string¦null|false|none|none|
-|quantity|number(double)|false|none|none|
-|salePrice|number(double)|false|none|none|
-|discountPercent|number(double)¦null|false|none|none|
-|discountedPrice|number(double)¦null|false|none|none|
-|discountedAmount|number(double)¦null|false|none|none|
-|discountAmount|number(double)¦null|false|none|none|
-|usedBonus|number(double)¦null|false|none|none|
-|accumulatedBonus|number(double)|false|none|none|
+|type|string¦null|false|none|hy-AM: Տեսակ | en-US: Type | ru-RU: Вид|
+|storage|string¦null|false|none|hy-AM: Պահեստ | en-US: Storage | ru-RU: Склад|
+|barcode|string¦null|false|none|hy-AM: Գծիկավոր կոդ | en-US: Barcode | ru-RU: Штрихкод|
+|id|integer(int32)|false|none|hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер|
+|code|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|name|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|unit|string¦null|false|none|hy-AM: Միավոր | en-US: Unit | ru-RU: Единица|
+|unitAbbreviation|string¦null|false|none|hy-AM: Հապավում | en-US: Abbreviation | ru-RU: Сокращение|
+|quantity|number(double)|false|none|hy-AM: Քանակ | en-US: Quantity | ru-RU: Количество|
+|salePrice|number(double)|false|none|hy-AM: Վաճառքի գին | en-US: Sale price | ru-RU: Цена продажи|
+|discountPercent|number(double)¦null|false|none|hy-AM: Զեղչի տոկոս | en-US: Discount percent | ru-RU: Процент скидки|
+|discountedPrice|number(double)¦null|false|none|hy-AM: Զեղչված գին | en-US: Discounted price | ru-RU: Цена со скидкой|
+|discountedAmount|number(double)¦null|false|none|hy-AM: Գումար | en-US: Amount | ru-RU: Сумма|
+|discountAmount|number(double)¦null|false|none|hy-AM: Զեղչի գումար | en-US: Discount amount | ru-RU: Сумма скидки|
+|usedBonus|number(double)¦null|false|none|hy-AM: Բոնուսի մարում | en-US: Bonus redemption | ru-RU: Погашение бонуса|
+|accumulatedBonus|number(double)|false|none|hy-AM: Հաշվարկված բոնուսներ | en-US: Accumulated bonus | ru-RU: Начисления бонуса|
 |vat|boolean¦null|false|none|none|
-|description|string¦null|false|none|none|
-|deleted|boolean¦null|false|none|none|
-|gift|boolean¦null|false|none|none|
-|rowNumber|integer(int32)|false|none|none|
-|rowId|integer(int32)|false|none|none|
-|baseRowId|integer(int32)|false|none|none|
+|description|string¦null|false|none|hy-AM: Նկարագրություն | en-US: Description | ru-RU: Описание|
+|deleted|boolean¦null|false|none|hy-AM: Հ. | en-US: D | ru-RU: У.|
+|gift|boolean¦null|false|none|hy-AM: Նվեր | en-US: Gift | ru-RU: Подарок|
+|rowNumber|integer(int32)|false|none|hy-AM: Տողի N | en-US: line N | ru-RU: N строки|
+|rowId|integer(int32)|false|none|hy-AM: Տողերի ID | en-US: Lines ID | ru-RU: ID линий|
+|baseRowId|integer(int32)|false|none|hy-AM: Տողերի ID | en-US: Lines ID | ru-RU: ID линий|
 |cpaClassifier|string¦null|false|none|none|
-|markingList|[string]¦null|false|none|none|
+|markingList|[string]¦null|false|none|hy-AM: Դրոշմավորում | en-US: Marking | ru-RU: Маркировка|
 
 <h2 id="tocS_SaleSpecificationRow">SaleSpecificationRow</h2>
 <!-- backwards compatibility -->
@@ -26843,30 +28806,30 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|type|string¦null|false|none|none|
-|storage|string¦null|false|none|none|
-|barcode|string¦null|false|none|none|
-|id|integer(int32)|false|none|none|
-|code|string¦null|false|none|none|
-|name|string¦null|false|none|none|
-|unit|string¦null|false|none|none|
-|unitAbbreviation|string¦null|false|none|none|
-|quantity|number(double)|false|none|none|
-|salePrice|number(double)|false|none|none|
-|discountPercent|number(double)¦null|false|none|none|
-|discountedPrice|number(double)¦null|false|none|none|
-|discountedAmount|number(double)¦null|false|none|none|
-|discountAmount|number(double)¦null|false|none|none|
-|usedBonus|number(double)¦null|false|none|none|
-|accumulatedBonus|number(double)|false|none|none|
+|type|string¦null|false|none|hy-AM: Տեսակ | en-US: Type | ru-RU: Вид|
+|storage|string¦null|false|none|hy-AM: Պահեստ | en-US: Storage | ru-RU: Склад|
+|barcode|string¦null|false|none|hy-AM: Գծիկավոր կոդ | en-US: Barcode | ru-RU: Штрихкод|
+|id|integer(int32)|false|none|hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер|
+|code|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|name|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|unit|string¦null|false|none|hy-AM: Միավոր | en-US: Unit | ru-RU: Единица|
+|unitAbbreviation|string¦null|false|none|hy-AM: Հապավում | en-US: Abbreviation | ru-RU: Сокращение|
+|quantity|number(double)|false|none|hy-AM: Քանակ | en-US: Quantity | ru-RU: Количество|
+|salePrice|number(double)|false|none|hy-AM: Գին | en-US: Price | ru-RU: Цена|
+|discountPercent|number(double)¦null|false|none|hy-AM: Զեղչի տոկոս | en-US: Discount percent | ru-RU: Процент скидки|
+|discountedPrice|number(double)¦null|false|none|hy-AM: Զեղչված գին | en-US: Discounted price | ru-RU: Цена со скидкой|
+|discountedAmount|number(double)¦null|false|none|hy-AM: Գումար | en-US: Amount | ru-RU: Сумма|
+|discountAmount|number(double)¦null|false|none|hy-AM: Զեղչի գումար | en-US: Discount amount | ru-RU: Сумма скидки|
+|usedBonus|number(double)¦null|false|none|hy-AM: Բոնուսի մարում | en-US: Bonus redemption | ru-RU: Погашение бонуса|
+|accumulatedBonus|number(double)|false|none|hy-AM: Հաշվարկված բոնուսներ | en-US: Accumulated bonus | ru-RU: Начисления бонуса|
 |vat|boolean¦null|false|none|none|
-|description|string¦null|false|none|none|
-|deleted|boolean¦null|false|none|none|
-|gift|boolean¦null|false|none|none|
-|rowNumber|integer(int32)|false|none|none|
-|rowId|integer(int32)|false|none|none|
+|description|string¦null|false|none|hy-AM: Նկարագրություն | en-US: Description | ru-RU: Описание|
+|deleted|boolean¦null|false|none|hy-AM: Հ. | en-US: D | ru-RU: У.|
+|gift|boolean¦null|false|none|hy-AM: Նվեր | en-US: Gift | ru-RU: Подарок|
+|rowNumber|integer(int32)|false|none|hy-AM: Տողի N | en-US: line N | ru-RU: N строки|
+|rowId|integer(int32)|false|none|hy-AM: Տողերի ID | en-US: Lines ID | ru-RU: ID линий|
 |cpaClassifier|string¦null|false|none|none|
-|markingList|[string]¦null|false|none|none|
+|markingList|[string]¦null|false|none|hy-AM: Դրոշմավորում | en-US: Marking | ru-RU: Маркировка|
 
 <h2 id="tocS_SalesAnalysisDataRow">SalesAnalysisDataRow</h2>
 <!-- backwards compatibility -->
@@ -26970,91 +28933,91 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|documentNumber|string¦null|false|none|none|
-|date|string(date)¦null|false|none|none|
+|documentNumber|string¦null|false|none|hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док.|
+|date|string(date)¦null|false|none|hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата|
 |isn|string(uuid)|false|none|none|
-|operationType|string¦null|false|none|none|
-|documentCurrency|string¦null|false|none|none|
-|documentVATType|string¦null|false|none|none|
-|documentVATTypeName|string¦null|false|none|none|
+|operationType|string¦null|false|none|hy-AM: Գործողության տեսակ | en-US: Operation type | ru-RU: Вид операции|
+|documentCurrency|string¦null|false|none|hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта|
+|documentVATType|string¦null|false|none|hy-AM: ԱԱՀ-ի տեսակ | en-US: VAT type | ru-RU: Тип расчета НДС|
+|documentVATTypeName|string¦null|false|none|hy-AM: ԱԱՀ-ի տեսակ | en-US: VAT type | ru-RU: Тип расчета НДС|
 |ecrCheckNumber|string¦null|false|none|none|
-|itemType|string¦null|false|none|none|
-|itemTypeName|string¦null|false|none|none|
-|itemId|integer(int32)|false|none|none|
-|itemCode|string¦null|false|none|none|
-|itemName|string¦null|false|none|none|
-|unitMeasure|string¦null|false|none|none|
-|unitMeasureAbbreviation|string¦null|false|none|none|
-|storage|string¦null|false|none|none|
-|storageName|string¦null|false|none|none|
-|cashDesk|string¦null|false|none|none|
-|cashDeskName|string¦null|false|none|none|
-|customer|string¦null|false|none|none|
-|customerName|string¦null|false|none|none|
-|customerContractName|string¦null|false|none|none|
-|quantity|number(double)|false|none|none|
-|costAmountWithoutVAT|number(double)|false|none|none|
-|costPriceWithoutVAT|number(double)|false|none|none|
-|salePriceWithoutVAT|number(double)|false|none|none|
-|saleAmountWithoutVAT|number(double)|false|none|none|
-|profitWithoutVAT|number(double)|false|none|none|
-|profitPercentBySaleWithoutVAT|number(double)|false|none|none|
-|profitPercentByCostWithoutVAT|number(double)|false|none|none|
-|initialPriceWithoutVAT|number(double)|false|none|none|
-|initialAmountWithoutVAT|number(double)|false|none|none|
-|discountPercentWithoutVAT|number(double)|false|none|none|
-|discountAmountWithoutVAT|number(double)|false|none|none|
-|costAmountWithVAT|number(double)|false|none|none|
-|costPriceWithVAT|number(double)|false|none|none|
-|salePriceWithVAT|number(double)|false|none|none|
-|saleAmountWithVAT|number(double)|false|none|none|
-|profitWithVAT|number(double)|false|none|none|
-|profitPercentBySaleWithVAT|number(double)|false|none|none|
-|profitPercentByCostWithVAT|number(double)|false|none|none|
-|initialPriceWithVAT|number(double)|false|none|none|
-|initialAmountWithVAT|number(double)|false|none|none|
-|discountPercentWithVAT|number(double)|false|none|none|
-|discountAmountWithVAT|number(double)|false|none|none|
-|costVATAmount|number(double)|false|none|none|
-|costVATPrice|number(double)|false|none|none|
-|saleVATAmount|number(double)|false|none|none|
-|discountVATAmount|number(double)|false|none|none|
-|costAmountCurrency|number(double)|false|none|none|
-|costPriceCurrency|number(double)|false|none|none|
-|salePriceCurrency|number(double)|false|none|none|
-|saleAmountCurrency|number(double)|false|none|none|
-|profitCurrency|number(double)|false|none|none|
-|profitPercentBySaleCurrency|number(double)|false|none|none|
-|profitPercentByCostCurrency|number(double)|false|none|none|
-|initialPriceCurrency|number(double)|false|none|none|
-|initialAmountCurrency|number(double)|false|none|none|
-|discountPercentCurrency|number(double)|false|none|none|
-|discountAmountCurrency|number(double)|false|none|none|
-|usedBonus|number(double)|false|none|none|
-|accumulatedBonus|number(double)|false|none|none|
-|description|string¦null|false|none|none|
-|seller|string¦null|false|none|none|
-|sellerName|string¦null|false|none|none|
-|comment|string¦null|false|none|none|
-|itemGroup|string¦null|false|none|none|
-|itemSpecification|string¦null|false|none|none|
-|businessAddress|string¦null|false|none|none|
-|incomeDate|string(date)¦null|false|none|none|
-|partySupplierId|integer(int32)|false|none|none|
-|partySupplierName|string¦null|false|none|none|
-|partySupplierTaxCode|string¦null|false|none|none|
-|partyContractName|string¦null|false|none|none|
-|partyDocumentTypeName|string¦null|false|none|none|
-|partyDocumentNumber|string¦null|false|none|none|
-|partyExpirationDate|string(date)¦null|false|none|none|
-|partyCountryName|string¦null|false|none|none|
-|partyProducerName|string¦null|false|none|none|
-|partyPropertyType1Name|string¦null|false|none|none|
-|partyPropertyValue1Name|string¦null|false|none|none|
-|partyPropertyType2Name|string¦null|false|none|none|
-|partyPropertyValue2Name|string¦null|false|none|none|
-|partyBase|string(uuid)|false|none|none|
-|partyRow|integer(int32)|false|none|none|
+|itemType|string¦null|false|none|hy-AM: Տիպ | en-US: Type | ru-RU: Вид|
+|itemTypeName|string¦null|false|none|hy-AM: Տիպ | en-US: Type | ru-RU: Вид|
+|itemId|integer(int32)|false|none|hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер|
+|itemCode|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|itemName|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|unitMeasure|string¦null|false|none|hy-AM: Չափման միավոր | en-US: Unit of measure | ru-RU: Единица измерения|
+|unitMeasureAbbreviation|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|storage|string¦null|false|none|hy-AM: Պահեստ | en-US: Storage | ru-RU: Склад|
+|storageName|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|cashDesk|string¦null|false|none|hy-AM: Դրամարկղ | en-US: Cash | ru-RU: Касса|
+|cashDeskName|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|customer|string¦null|false|none|hy-AM: Գնորդ | en-US: Customer | ru-RU: Покупатель|
+|customerName|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|customerContractName|string¦null|false|none|hy-AM: Պայմանագիր | en-US: Contract | ru-RU: Договор|
+|quantity|number(double)|false|none|hy-AM: Քանակ | en-US: Quantity | ru-RU: Количество|
+|costAmountWithoutVAT|number(double)|false|none|hy-AM: Ինք․ Գումար դրամով | en-US: Cost․ Amount in AMD | ru-RU: Себ: Сумма в драмах|
+|costPriceWithoutVAT|number(double)|false|none|hy-AM: Ինք․ Գին դրամով | en-US: Cost․ Price in AMD | ru-RU: Себ: Цена в драмах|
+|salePriceWithoutVAT|number(double)|false|none|hy-AM: Վաճառքի գին | en-US: Sale price | ru-RU: Цена продажи|
+|saleAmountWithoutVAT|number(double)|false|none|hy-AM: Վաճառքի գումար դրամով | en-US: Sale amount | ru-RU: Сумма продажи в драмах|
+|profitWithoutVAT|number(double)|false|none|hy-AM: Շահույթը դրամով | en-US: Profit in AMD | ru-RU: Прибыль в драмах|
+|profitPercentBySaleWithoutVAT|number(double)|false|none|hy-AM: Վաճառքի շահութաբերություն (%) | en-US: Profit percent by sale | ru-RU: Прибыль от продажи (%)|
+|profitPercentByCostWithoutVAT|number(double)|false|none|hy-AM: Վաճառքի արդյունավետություն (%) | en-US: Profit percent by cost | ru-RU: Прибыль от стоимости (%)|
+|initialPriceWithoutVAT|number(double)|false|none|hy-AM: Սկզբնական գին | en-US: Original price | ru-RU: Начальная цена|
+|initialAmountWithoutVAT|number(double)|false|none|hy-AM: Սկզբնական գումար | en-US: Original amount | ru-RU: Начальная сумма|
+|discountPercentWithoutVAT|number(double)|false|none|hy-AM: Զեղչի գումար | en-US: Discount amount | ru-RU: Сумма скидки|
+|discountAmountWithoutVAT|number(double)|false|none|hy-AM: Զեղչի գումար | en-US: Discount amount | ru-RU: Сумма скидки|
+|costAmountWithVAT|number(double)|false|none|hy-AM: Ինք․ Գումար դրամով | en-US: Cost․ Amount in AMD | ru-RU: Себ: Сумма в драмах|
+|costPriceWithVAT|number(double)|false|none|hy-AM: Ինք․ Գին դրամով | en-US: Cost․ Price in AMD | ru-RU: Себ: Цена в драмах|
+|salePriceWithVAT|number(double)|false|none|hy-AM: Վաճառքի գին | en-US: Sale price | ru-RU: Цена продажи|
+|saleAmountWithVAT|number(double)|false|none|hy-AM: Վաճառքի գումար դրամով | en-US: Sale amount | ru-RU: Сумма продажи в драмах|
+|profitWithVAT|number(double)|false|none|hy-AM: Շահույթը դրամով | en-US: Profit in AMD | ru-RU: Прибыль в драмах|
+|profitPercentBySaleWithVAT|number(double)|false|none|hy-AM: Վաճառքի շահութաբերություն (%) | en-US: Profit percent by sale | ru-RU: Прибыль от продажи (%)|
+|profitPercentByCostWithVAT|number(double)|false|none|hy-AM: Վաճառքի արդյունավետություն (%) | en-US: Profit percent by cost | ru-RU: Прибыль от стоимости (%)|
+|initialPriceWithVAT|number(double)|false|none|hy-AM: Սկզբնական գին | en-US: Original price | ru-RU: Начальная цена|
+|initialAmountWithVAT|number(double)|false|none|hy-AM: Սկզբնական գումար | en-US: Original amount | ru-RU: Начальная сумма|
+|discountPercentWithVAT|number(double)|false|none|hy-AM: Զեղչի գումար | en-US: Discount amount | ru-RU: Сумма скидки|
+|discountAmountWithVAT|number(double)|false|none|hy-AM: Զեղչի գումար | en-US: Discount amount | ru-RU: Сумма скидки|
+|costVATAmount|number(double)|false|none|hy-AM: Ինք․ Գումարի ԱԱՀ | en-US: Cost․ Amount VAT | ru-RU: Себ: НДС суммы|
+|costVATPrice|number(double)|false|none|hy-AM: Ինք․ Գնի ԱԱՀ | en-US: Cost․ Price VAT | ru-RU: Себ: НДС цены|
+|saleVATAmount|number(double)|false|none|hy-AM: Վաճառքի գումարի ԱԱՀ | en-US: VAT of sale’s amount | ru-RU: НДС продажи|
+|discountVATAmount|number(double)|false|none|hy-AM: Զեղչի գումարի ԱԱՀ | en-US: VAT of discount’s amount | ru-RU: НДС скидки|
+|costAmountCurrency|number(double)|false|none|hy-AM: Ինք․ Գումար {0}-ով | en-US: Cost․ Amount in {0} | ru-RU: Себ: Сумма в {0}|
+|costPriceCurrency|number(double)|false|none|hy-AM: Ինք․ Գին {0}-ով | en-US: Cost․ Price in {0} | ru-RU: Себ: Цена в {0}|
+|salePriceCurrency|number(double)|false|none|hy-AM: Վաճառքի գինը {0}-ով | en-US: Sale price {0} | ru-RU: Цена продажи в {0}|
+|saleAmountCurrency|number(double)|false|none|hy-AM: Վաճառքի գումար {0}-ով | en-US: Sale amount in {0} | ru-RU: Сумма продажи в {0}|
+|profitCurrency|number(double)|false|none|hy-AM: Շահույթը {0}-ով | en-US: Profit in {0} | ru-RU: Прибыль в {0}|
+|profitPercentBySaleCurrency|number(double)|false|none|hy-AM: Շահույթը վաճառք. (%) {0}-ով | en-US: Profit (%) by sale in {0} | ru-RU: Прибыль от продажи (%) в {0}|
+|profitPercentByCostCurrency|number(double)|false|none|hy-AM: Շահույթը ինքնարժեք. (%) {0}-ով | en-US: Profit (%) by cost in {0} | ru-RU: Прибыль от стоимости (%) в {0}|
+|initialPriceCurrency|number(double)|false|none|hy-AM: Սկզբնական գին {0}-ով | en-US: Original price with {0} | ru-RU: Начальная цена с {0}|
+|initialAmountCurrency|number(double)|false|none|hy-AM: Սկզբնական գումար {0}-ով | en-US: Original amount with {0} | ru-RU: Начальная сумма с  {0}|
+|discountPercentCurrency|number(double)|false|none|hy-AM: Զեղչ | en-US: Discount | ru-RU: Скидка|
+|discountAmountCurrency|number(double)|false|none|hy-AM: Զեղչի գումար {0}-ով | en-US: Discount amount in {0} | ru-RU: Сумма со скидкой {0}|
+|usedBonus|number(double)|false|none|hy-AM: Բոնուսի մարում | en-US: Bonus redemption | ru-RU: Погашение бонуса|
+|accumulatedBonus|number(double)|false|none|hy-AM: Հաշվարկված բոնուսներ | en-US: Accumulated bonus | ru-RU: Начисления бонуса|
+|description|string¦null|false|none|hy-AM: Նկարագրություն | en-US: Description | ru-RU: Описание|
+|seller|string¦null|false|none|hy-AM: Վաճառող | en-US: Seller | ru-RU: Продавец|
+|sellerName|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|comment|string¦null|false|none|hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий|
+|itemGroup|string¦null|false|none|hy-AM: Խումբ | en-US: Group | ru-RU: Группа|
+|itemSpecification|string¦null|false|none|hy-AM: Բնութագիր | en-US: Specification | ru-RU: Характеристика|
+|businessAddress|string¦null|false|none|hy-AM: Գործունեության հասցե | en-US: Business address | ru-RU: Адрес места деятельности|
+|incomeDate|string(date)¦null|false|none|hy-AM: Մուտքի ա/թ | en-US: Income date | ru-RU: Дата прихода|
+|partySupplierId|integer(int32)|false|none|hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер|
+|partySupplierName|string¦null|false|none|hy-AM: Մատակարար | en-US: Supplier | ru-RU: Поставщик|
+|partySupplierTaxCode|string¦null|false|none|hy-AM: Մատակարարի ՀՎՀՀ | en-US: Supplier tax code | ru-RU: ИНН код поставщика|
+|partyContractName|string¦null|false|none|hy-AM: Պայմանագիր | en-US: Contract | ru-RU: Договор|
+|partyDocumentTypeName|string¦null|false|none|hy-AM: Փաստաթղթի տեսակ | en-US: Document type | ru-RU: Вид документа|
+|partyDocumentNumber|string¦null|false|none|hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док.|
+|partyExpirationDate|string(date)¦null|false|none|hy-AM: Օգտ.ժամկետ | en-US: Exp. date | ru-RU: Срок годн.|
+|partyCountryName|string¦null|false|none|hy-AM: Երկիր | en-US: Country | ru-RU: Страна|
+|partyProducerName|string¦null|false|none|hy-AM: Արտադրող | en-US: Producer | ru-RU: Производитель|
+|partyPropertyType1Name|string¦null|false|none|hy-AM: Հատկության տեսակ 1 | en-US: Property type 1 | ru-RU: Тип свойства 1|
+|partyPropertyValue1Name|string¦null|false|none|hy-AM: Հատկության արժեք | en-US: Property value | ru-RU: Значение свойства|
+|partyPropertyType2Name|string¦null|false|none|hy-AM: Հատկության տեսակ 2 | en-US: Property type 2 | ru-RU: Тип свойства 2|
+|partyPropertyValue2Name|string¦null|false|none|hy-AM: Հատկության արժեք | en-US: Property value | ru-RU: Значение свойства|
+|partyBase|string(uuid)|false|none|hy-AM: Հիմք փաստաթուղթ | en-US: Base document | ru-RU: Документ основания|
+|partyRow|integer(int32)|false|none|hy-AM: Տողի N | en-US: line N | ru-RU: N строки|
 
 <h2 id="tocS_SalesAnalysisDataRowApiResponse">SalesAnalysisDataRowApiResponse</h2>
 <!-- backwards compatibility -->
@@ -27206,25 +29169,25 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|pageSize|integer(int32)¦null|false|none|none|
-|startDate|string(date)|true|none|none|
-|endDate|string(date)|true|none|none|
-|storages|[string]¦null|false|none|none|
-|itemType|string¦null|false|none|none|
-|itemsGroup|string¦null|false|none|none|
-|itemCode|string¦null|false|none|none|
-|partnersGroup|string¦null|false|none|none|
-|partnerCode|string¦null|false|none|none|
-|showQuantitiesWithAdditionalUnits|boolean|false|none|none|
-|showSumsWithoutVAT|boolean|false|none|none|
-|showSumsWithVAT|boolean|false|none|none|
-|showCurrencySums|boolean|false|none|none|
-|showParties|boolean|false|none|none|
-|showCostAndSalePrices|boolean|false|none|none|
-|showDiscounts|boolean|false|none|none|
-|showBonusPoints|boolean|false|none|none|
-|showVATAmounts|boolean|false|none|none|
-|groupBy|string¦null|false|none|none|
+|pageSize|integer(int32)¦null|false|none|hy-AM:  էջ  | en-US:  page | ru-RU: страница|
+|startDate|string(date)|false|none|hy-AM: Ժամանակահատվածի սկիզբ | en-US: Period begin | ru-RU: Начало периода|
+|endDate|string(date)|false|none|hy-AM: Ժամանակահատվածի վերջ | en-US: Period end | ru-RU: Конец периода|
+|storages|[string]¦null|false|none|hy-AM: Պահեստ | en-US: Storage | ru-RU: Склад|
+|itemType|string¦null|false|none|hy-AM: Տիպ | en-US: Type | ru-RU: Вид|
+|itemsGroup|string¦null|false|none|hy-AM: Խումբ | en-US: Group | ru-RU: Группа|
+|itemCode|string¦null|false|none|hy-AM: Ապրանք կամ ծառայություն | en-US: Product or service | ru-RU: Товар или услуга|
+|partnersGroup|string¦null|false|none|hy-AM: Գործընկերների խումբ | en-US: Partners group | ru-RU: Группа партнеров|
+|partnerCode|string¦null|false|none|hy-AM: Գնորդ | en-US: Customer | ru-RU: Покупатель|
+|showQuantitiesWithAdditionalUnits|boolean|false|none|hy-AM: Քանակները ցույց տալ լրացուցիչ չափման միավորով | en-US: Show quantities with additional units | ru-RU: Показать количество в доп. единице|
+|showSumsWithoutVAT|boolean|false|none|hy-AM: Ցույց տալ գումարները դրամով (Առանց ԱԱՀ) | en-US: Show sums in drams without VAT | ru-RU: Показать суммы в драмах (без НДС)|
+|showSumsWithVAT|boolean|false|none|hy-AM: Ցույց տալ գումարները դրամով (Ներառյալ ԱԱՀ) | en-US: Show sums in drams with VAT | ru-RU: Показать суммы в драмах (включая НДС)|
+|showCurrencySums|boolean|false|none|hy-AM: Ցույց տալ գումարները {0}-ով | en-US: Show sums in {0} | ru-RU: Показать суммы в {0}|
+|showParties|boolean|false|none|hy-AM: Ըստ տարբեր խմբաքանակների | en-US: By different batches | ru-RU: Детализировать по партиям|
+|showCostAndSalePrices|boolean|false|none|hy-AM: Ցույց տալ վաճառքի գները | en-US: Show sale price | ru-RU: Показать цены продаж|
+|showDiscounts|boolean|false|none|hy-AM: Ցույց տալ զեղչերը | en-US: Show discounts | ru-RU: Показать скидки|
+|showBonusPoints|boolean|false|none|hy-AM: Ցույց տալ բոնուսային միավորները | en-US: Show bonus points | ru-RU: Показать бонусные баллы|
+|showVATAmounts|boolean|false|none|hy-AM: Ցույց տալ ԱԱՀ գումարները | en-US: Show VAT amounts | ru-RU: Показать суммы НДС|
+|groupBy|string¦null|false|none|hy-AM: Խմբավորել ըստ | en-US: Group by | ru-RU: Группировать по|
 
 <h2 id="tocS_Storage">Storage</h2>
 <!-- backwards compatibility -->
@@ -27248,11 +29211,11 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|code|string¦null|false|none|none|
-|name|string¦null|false|none|none|
-|stockkeeper|string¦null|false|none|none|
-|address|string¦null|false|none|none|
-|retail|boolean¦null|false|none|none|
+|code|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|name|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|stockkeeper|string¦null|false|none|hy-AM: Պահեստապետ | en-US: Stockkeeper | ru-RU: Заведующий складом|
+|address|string¦null|false|none|hy-AM: Հասցե | en-US: Address | ru-RU: Адрес|
+|retail|boolean¦null|false|none|hy-AM: Մանրածախ | en-US: Retail | ru-RU: Розничный|
 
 <h2 id="tocS_StorageInputOrder">StorageInputOrder</h2>
 <!-- backwards compatibility -->
@@ -27287,7 +29250,7 @@ This operation does not require authentication
   "letterOfAttorney": "string",
   "mediator": "string",
   "vehicle": "string",
-  "chiefAccount": "string",
+  "chiefAccountant": "string",
   "allowed": "string",
   "accepted": "string",
   "productsList": [
@@ -27323,33 +29286,33 @@ This operation does not require authentication
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
 |isn|string(uuid)|false|none|none|
-|date|string(date)¦null|false|none|none|
-|documentNumber|string¦null|false|none|none|
-|state|integer(int32)|false|none|none|
-|baseDocumentISN|string(uuid)|false|none|none|
-|storage|string¦null|false|none|none|
-|supplierCode|string¦null|false|none|none|
-|supplierContract|string¦null|false|none|none|
-|purchaseDocumentNumber|string¦null|false|none|none|
-|purchaseDocumentDate|string(date)¦null|false|none|none|
-|comment|string¦null|false|none|none|
-|owner|string¦null|false|none|none|
-|currency|string¦null|false|none|none|
-|currencyExchangeRate|number(double)¦null|false|none|none|
-|currencyExchangeBase|number(double)¦null|false|none|none|
+|date|string(date)¦null|false|none|hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата|
+|documentNumber|string¦null|false|none|hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док.|
+|state|integer(int32)|false|none|hy-AM: Վիճակ | en-US: State | ru-RU: Состояние|
+|baseDocumentISN|string(uuid)|false|none|hy-AM: Հիմք փաստաթուղթ | en-US: Base document | ru-RU: Документ основания|
+|storage|string¦null|false|none|hy-AM: Պահեստ | en-US: Storage | ru-RU: Склад|
+|supplierCode|string¦null|false|none|hy-AM: Մատակարար | en-US: Supplier | ru-RU: Поставщик|
+|supplierContract|string¦null|false|none|hy-AM: Պայմանագիր | en-US: Contract | ru-RU: Договор|
+|purchaseDocumentNumber|string¦null|false|none|hy-AM: Հ/Ա-ի համար | en-US: Purchase document N | ru-RU: Номер С/Ф|
+|purchaseDocumentDate|string(date)¦null|false|none|hy-AM: ա/թ. | en-US: Date | ru-RU: Дата|
+|comment|string¦null|false|none|hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий|
+|owner|string¦null|false|none|hy-AM: Հեղինակ | en-US: Owner | ru-RU: Автор|
+|currency|string¦null|false|none|hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта|
+|currencyExchangeRate|number(double)¦null|false|none|hy-AM: Արտարժույթի փոխարժեք | en-US: Currency exchange rate | ru-RU: Курс валюты|
+|currencyExchangeBase|number(double)¦null|false|none|hy-AM: Արտարժույթի փոխարժեք | en-US: Currency exchange rate | ru-RU: Курс валюты|
 |vatCalculationType|string¦null|false|none|none|
-|includeVATInCost|boolean|false|none|none|
-|priceType|string¦null|false|none|none|
-|discountPercent|number(double)¦null|false|none|none|
+|includeVATInCost|boolean|false|none|hy-AM: Ներառել ԱԱՀ-ն ինքնարժեքի մեջ | en-US: Include VAT in cost | ru-RU: НДС включить в себестоимость|
+|priceType|string¦null|false|none|hy-AM: Գնի տեսակ | en-US: Pricelist type | ru-RU: Тип цены|
+|discountPercent|number(double)|false|none|hy-AM: Զեղչի տոկոս | en-US: Discount percent | ru-RU: Процент скидки|
 |vatAmount|number(double)|false|none|none|
-|totalAmount|number(double)|false|none|none|
-|letterOfAttorney|string¦null|false|none|none|
-|mediator|string¦null|false|none|none|
-|vehicle|string¦null|false|none|none|
-|chiefAccount|string¦null|false|none|none|
-|allowed|string¦null|false|none|none|
-|accepted|string¦null|false|none|none|
-|productsList|[[StorageInputOrderSpecificationRow](#schemastorageinputorderspecificationrow)]¦null|false|none|none|
+|totalAmount|number(double)|false|none|hy-AM: Ընդհանուր գումար | en-US: Total amount | ru-RU: Общая сумма|
+|letterOfAttorney|string¦null|false|none|hy-AM: Լիազորագիր | en-US: Letter of attorney | ru-RU: Доверенность|
+|mediator|string¦null|false|none|hy-AM: Միջնորդ | en-US: Mediator | ru-RU: Посредник|
+|vehicle|string¦null|false|none|hy-AM: Ավտ/Բեռնարկղ | en-US: Vehicle | ru-RU: Авт/Контейнер|
+|chiefAccountant|string¦null|false|none|hy-AM: Գլխավոր հաշվապահ | en-US: Chief accountant | ru-RU: Главный бухгалтер|
+|allowed|string¦null|false|none|hy-AM: Թույլատրեց | en-US: Allowed | ru-RU: Разрешил|
+|accepted|string¦null|false|none|hy-AM: Ընդունեց | en-US: Accepted | ru-RU: Принял|
+|productsList|[[StorageInputOrderSpecificationRow](#schemastorageinputorderspecificationrow)]¦null|false|none|hy-AM: Ապրանքների ցուցակ | en-US: Products list | ru-RU: Список товаров|
 
 <h2 id="tocS_StorageInputOrderRetail">StorageInputOrderRetail</h2>
 <!-- backwards compatibility -->
@@ -27384,7 +29347,7 @@ This operation does not require authentication
   "letterOfAttorney": "string",
   "mediator": "string",
   "vehicle": "string",
-  "chiefAccount": "string",
+  "chiefAccountant": "string",
   "allowed": "string",
   "accepted": "string",
   "productsList": [
@@ -27423,33 +29386,33 @@ This operation does not require authentication
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
 |isn|string(uuid)|false|none|none|
-|date|string(date)¦null|false|none|none|
-|documentNumber|string¦null|false|none|none|
-|state|integer(int32)|false|none|none|
-|baseDocumentISN|string(uuid)|false|none|none|
-|storage|string¦null|false|none|none|
-|supplierCode|string¦null|false|none|none|
-|supplierContract|string¦null|false|none|none|
-|purchaseDocumentNumber|string¦null|false|none|none|
-|purchaseDocumentDate|string(date)¦null|false|none|none|
-|comment|string¦null|false|none|none|
-|owner|string¦null|false|none|none|
-|currency|string¦null|false|none|none|
-|currencyExchangeRate|number(double)¦null|false|none|none|
-|currencyExchangeBase|number(double)¦null|false|none|none|
+|date|string(date)¦null|false|none|hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата|
+|documentNumber|string¦null|false|none|hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док.|
+|state|integer(int32)|false|none|hy-AM: Վիճակ | en-US: State | ru-RU: Состояние|
+|baseDocumentISN|string(uuid)|false|none|hy-AM: Հիմք փաստաթուղթ | en-US: Base document | ru-RU: Документ основания|
+|storage|string¦null|false|none|hy-AM: Պահեստ | en-US: Storage | ru-RU: Склад|
+|supplierCode|string¦null|false|none|hy-AM: Մատակարար | en-US: Supplier | ru-RU: Поставщик|
+|supplierContract|string¦null|false|none|hy-AM: Պայմանագիր | en-US: Contract | ru-RU: Договор|
+|purchaseDocumentNumber|string¦null|false|none|hy-AM: Հ/Ա-ի համար | en-US: Purchase document N | ru-RU: Номер С/Ф|
+|purchaseDocumentDate|string(date)¦null|false|none|hy-AM: ա/թ. | en-US: Date | ru-RU: Дата|
+|comment|string¦null|false|none|hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий|
+|owner|string¦null|false|none|hy-AM: Հեղինակ | en-US: Owner | ru-RU: Автор|
+|currency|string¦null|false|none|hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта|
+|currencyExchangeRate|number(double)¦null|false|none|hy-AM: Արտարժույթի փոխարժեք | en-US: Currency exchange rate | ru-RU: Курс валюты|
+|currencyExchangeBase|number(double)¦null|false|none|hy-AM: Արտարժույթի փոխարժեք | en-US: Currency exchange rate | ru-RU: Курс валюты|
 |vatCalculationType|string¦null|false|none|none|
-|includeVATInCost|boolean|false|none|none|
-|priceType|string¦null|false|none|none|
-|discountPercent|number(double)¦null|false|none|none|
+|includeVATInCost|boolean|false|none|hy-AM: Ներառել ԱԱՀ-ն ինքնարժեքի մեջ | en-US: Include VAT in cost | ru-RU: НДС включить в себестоимость|
+|priceType|string¦null|false|none|hy-AM: Գնի տեսակ | en-US: Pricelist type | ru-RU: Тип цены|
+|discountPercent|number(double)¦null|false|none|hy-AM: Զեղչի տոկոս | en-US: Discount percent | ru-RU: Процент скидки|
 |vatAmount|number(double)|false|none|none|
-|totalAmount|number(double)|false|none|none|
-|letterOfAttorney|string¦null|false|none|none|
-|mediator|string¦null|false|none|none|
-|vehicle|string¦null|false|none|none|
-|chiefAccount|string¦null|false|none|none|
-|allowed|string¦null|false|none|none|
-|accepted|string¦null|false|none|none|
-|productsList|[[StorageInputOrderRetailSpecificationRow](#schemastorageinputorderretailspecificationrow)]¦null|false|none|none|
+|totalAmount|number(double)|false|none|hy-AM: Ընդհանուր գումար | en-US: Total amount | ru-RU: Общая сумма|
+|letterOfAttorney|string¦null|false|none|hy-AM: Լիազորագիր | en-US: Letter of attorney | ru-RU: Доверенность|
+|mediator|string¦null|false|none|hy-AM: Միջնորդ | en-US: Mediator | ru-RU: Посредник|
+|vehicle|string¦null|false|none|hy-AM: Ավտ/Բեռնարկղ | en-US: Vehicle | ru-RU: Авт/Контейнер|
+|chiefAccountant|string¦null|false|none|hy-AM: Գլխավոր հաշվապահ | en-US: Chief accountant | ru-RU: Главный бухгалтер|
+|allowed|string¦null|false|none|hy-AM: Թույլատրեց | en-US: Allowed | ru-RU: Разрешил|
+|accepted|string¦null|false|none|hy-AM: Ընդունեց | en-US: Accepted | ru-RU: Принял|
+|productsList|[[StorageInputOrderRetailSpecificationRow](#schemastorageinputorderretailspecificationrow)]¦null|false|none|hy-AM: Ապրանքների ցուցակ | en-US: Products list | ru-RU: Список товаров|
 
 <h2 id="tocS_StorageInputOrderRetailSpecificationRow">StorageInputOrderRetailSpecificationRow</h2>
 <!-- backwards compatibility -->
@@ -27491,29 +29454,29 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|id|integer(int32)|false|none|none|
-|code|string¦null|false|none|none|
-|name|string¦null|false|none|none|
-|fullName|string¦null|false|none|none|
-|unit|string¦null|false|none|none|
-|unitAbbreviation|string¦null|false|none|none|
-|quantity|number(double)|false|none|none|
-|price|number(double)|false|none|none|
-|discountPercent|number(double)¦null|false|none|none|
-|discountedPrice|number(double)¦null|false|none|none|
-|amount|number(double)¦null|false|none|none|
-|addedValuePercent|number(double)|false|none|none|
-|salePrice|number(double)|false|none|none|
-|saleAmount|number(double)|false|none|none|
-|description|string¦null|false|none|none|
+|id|integer(int32)|false|none|hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер|
+|code|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|name|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|fullName|string¦null|false|none|hy-AM: Լրիվ անվանում | en-US: Full name | ru-RU: Полное наименование|
+|unit|string¦null|false|none|hy-AM: Միավոր | en-US: Unit | ru-RU: Единица|
+|unitAbbreviation|string¦null|false|none|hy-AM: Հապավում | en-US: Abbreviation | ru-RU: Сокращение|
+|quantity|number(double)|false|none|hy-AM: Քանակ | en-US: Quantity | ru-RU: Количество|
+|price|number(double)|false|none|hy-AM: Գին | en-US: Price | ru-RU: Цена|
+|discountPercent|number(double)¦null|false|none|hy-AM: Զեղչի տոկոս | en-US: Discount percent | ru-RU: Процент скидки|
+|discountedPrice|number(double)¦null|false|none|hy-AM: Զեղչված գին | en-US: Discounted price | ru-RU: Цена со скидкой|
+|amount|number(double)¦null|false|none|hy-AM: Գումար | en-US: Amount | ru-RU: Сумма|
+|addedValuePercent|number(double)|false|none|hy-AM: Հավելագին % | en-US: Added value % | ru-RU: % розничной наценки|
+|salePrice|number(double)|false|none|hy-AM: Վաճառքի գին | en-US: Sale price | ru-RU: Цена продажи|
+|saleAmount|number(double)|false|none|hy-AM: Վաճառքի գումար | en-US: Sale amount | ru-RU: Сумма продажи|
+|description|string¦null|false|none|hy-AM: Նկարագրություն | en-US: Description | ru-RU: Описание|
 |vat|boolean¦null|false|none|none|
-|expirationDate|string(date)¦null|false|none|none|
-|country|string¦null|false|none|none|
-|producer|string¦null|false|none|none|
-|property1|string¦null|false|none|none|
-|property2|string¦null|false|none|none|
-|rowNumber|integer(int32)|false|none|none|
-|rowId|integer(int32)|false|none|none|
+|expirationDate|string(date)¦null|false|none|hy-AM: Օգտ.ժամկետ | en-US: Exp. date | ru-RU: Срок годн.|
+|country|string¦null|false|none|hy-AM: Երկիր | en-US: Country | ru-RU: Страна|
+|producer|string¦null|false|none|hy-AM: Արտադրող | en-US: Producer | ru-RU: Производитель|
+|property1|string¦null|false|none|hy-AM: Հատկություն 1 | en-US: Property 1 | ru-RU: Свойство 1|
+|property2|string¦null|false|none|hy-AM: Հատկություն 2 | en-US: Property 2 | ru-RU: Свойство 2|
+|rowNumber|integer(int32)|false|none|hy-AM: Տողի N | en-US: line N | ru-RU: N строки|
+|rowId|integer(int32)|false|none|hy-AM: Տողերի ID | en-US: Lines ID | ru-RU: ID линий|
 
 <h2 id="tocS_StorageInputOrderSpecificationRow">StorageInputOrderSpecificationRow</h2>
 <!-- backwards compatibility -->
@@ -27552,26 +29515,26 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|id|integer(int32)|false|none|none|
-|code|string¦null|false|none|none|
-|name|string¦null|false|none|none|
-|fullName|string¦null|false|none|none|
-|unit|string¦null|false|none|none|
-|unitAbbreviation|string¦null|false|none|none|
-|quantity|number(double)|false|none|none|
-|price|number(double)|false|none|none|
-|discountPercent|number(double)¦null|false|none|none|
-|discountedPrice|number(double)¦null|false|none|none|
-|amount|number(double)¦null|false|none|none|
-|description|string¦null|false|none|none|
+|id|integer(int32)|false|none|hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер|
+|code|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|name|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|fullName|string¦null|false|none|hy-AM: Լրիվ անվանում | en-US: Full name | ru-RU: Полное наименование|
+|unit|string¦null|false|none|hy-AM: Միավոր | en-US: Unit | ru-RU: Единица|
+|unitAbbreviation|string¦null|false|none|hy-AM: Հապավում | en-US: Abbreviation | ru-RU: Сокращение|
+|quantity|number(double)|false|none|hy-AM: Քանակ | en-US: Quantity | ru-RU: Количество|
+|price|number(double)|false|none|hy-AM: Գին | en-US: Price | ru-RU: Цена|
+|discountPercent|number(double)¦null|false|none|hy-AM: Զեղչի տոկոս | en-US: Discount percent | ru-RU: Процент скидки|
+|discountedPrice|number(double)¦null|false|none|hy-AM: Զեղչված գին | en-US: Discounted price | ru-RU: Цена со скидкой|
+|amount|number(double)¦null|false|none|hy-AM: Գումար | en-US: Amount | ru-RU: Сумма|
+|description|string¦null|false|none|hy-AM: Նկարագրություն | en-US: Description | ru-RU: Описание|
 |vat|boolean¦null|false|none|none|
-|expirationDate|string(date)¦null|false|none|none|
-|country|string¦null|false|none|none|
-|producer|string¦null|false|none|none|
-|property1|string¦null|false|none|none|
-|property2|string¦null|false|none|none|
-|rowNumber|integer(int32)|false|none|none|
-|rowId|integer(int32)|false|none|none|
+|expirationDate|string(date)¦null|false|none|hy-AM: Օգտ.ժամկետ | en-US: Exp. date | ru-RU: Срок годн.|
+|country|string¦null|false|none|hy-AM: Երկիր | en-US: Country | ru-RU: Страна|
+|producer|string¦null|false|none|hy-AM: Արտադրող | en-US: Producer | ru-RU: Производитель|
+|property1|string¦null|false|none|hy-AM: Հատկություն 1 | en-US: Property 1 | ru-RU: Свойство 1|
+|property2|string¦null|false|none|hy-AM: Հատկություն 2 | en-US: Property 2 | ru-RU: Свойство 2|
+|rowNumber|integer(int32)|false|none|hy-AM: Տողի N | en-US: line N | ru-RU: N строки|
+|rowId|integer(int32)|false|none|hy-AM: Տողերի ID | en-US: Lines ID | ru-RU: ID линий|
 
 <h2 id="tocS_TransferInvoice">TransferInvoice</h2>
 <!-- backwards compatibility -->
@@ -27648,44 +29611,44 @@ This operation does not require authentication
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
 |isn|string(uuid)|false|none|none|
-|date|string(date)¦null|false|none|none|
-|documentNumber|string¦null|false|none|none|
-|state|integer(int32)|false|none|none|
-|customer|string¦null|false|none|none|
-|currency|string¦null|false|none|none|
-|currencyExchangeRate|number(double)|false|none|none|
-|currencyExchangeBase|number(double)|false|none|none|
-|contract|string¦null|false|none|none|
-|contractDate|string(date)¦null|false|none|none|
-|comment|string¦null|false|none|none|
-|owner|string¦null|false|none|none|
+|date|string(date)¦null|false|none|hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата|
+|documentNumber|string¦null|false|none|hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док.|
+|state|integer(int32)|false|none|hy-AM: Վիճակ | en-US: State | ru-RU: Состояние|
+|customer|string¦null|false|none|hy-AM: Գնորդ | en-US: Customer | ru-RU: Покупатель|
+|currency|string¦null|false|none|hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта|
+|currencyExchangeRate|number(double)|false|none|hy-AM: Արտարժույթի փոխարժեք | en-US: Currency exchange rate | ru-RU: Курс валюты|
+|currencyExchangeBase|number(double)|false|none|hy-AM: Արտարժույթի փոխարժեք | en-US: Currency exchange rate | ru-RU: Курс валюты|
+|contract|string¦null|false|none|hy-AM: Պայմանագիր | en-US: Contract | ru-RU: Договор|
+|contractDate|string(date)¦null|false|none|hy-AM: Պայմանագրի ամսաթիվը | en-US: Contract date | ru-RU: Дата договора|
+|comment|string¦null|false|none|hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий|
+|owner|string¦null|false|none|hy-AM: Հեղինակ | en-US: Owner | ru-RU: Автор|
 |vatCalculationType|string¦null|false|none|none|
-|priceType|string¦null|false|none|none|
-|storage|string¦null|false|none|none|
-|discountPercent|number(double)|false|none|none|
+|priceType|string¦null|false|none|hy-AM: Գնի տեսակ | en-US: Price type | ru-RU: Тип цены|
+|storage|string¦null|false|none|hy-AM: Պահեստ | en-US: Storage | ru-RU: Склад|
+|discountPercent|number(double)|false|none|hy-AM: Զեղչի % | en-US: Discount % | ru-RU: % скидки|
 |vatAmount|number(double)|false|none|none|
-|totalAmount|number(double)|false|none|none|
-|supplierName|string¦null|false|none|none|
-|supplierLegalAddress|string¦null|false|none|none|
-|supplierBusinessAddress|string¦null|false|none|none|
-|supplierSettlementAccount|string¦null|false|none|none|
-|supplierTaxCode|string¦null|false|none|none|
-|supplierManagerPosition|string¦null|false|none|none|
-|supplierManagerName|string¦null|false|none|none|
-|supplierAccountantPosition|string¦null|false|none|none|
-|supplierAccountantName|string¦null|false|none|none|
-|customerName|string¦null|false|none|none|
-|customerLegalAddress|string¦null|false|none|none|
-|customerBusinessAddress|string¦null|false|none|none|
-|customerSettlementAccount|string¦null|false|none|none|
-|customerTaxCode|string¦null|false|none|none|
-|customerManagerPosition|string¦null|false|none|none|
-|customerManagerName|string¦null|false|none|none|
-|customerAccountantPosition|string¦null|false|none|none|
-|customerAccountantName|string¦null|false|none|none|
-|stateRegisterNumber|string¦null|false|none|none|
-|passportNumber|string¦null|false|none|none|
-|itemList|[[TransferInvoiceSpecificationRow](#schematransferinvoicespecificationrow)]¦null|false|none|none|
+|totalAmount|number(double)|false|none|hy-AM: Ընդհանուր գումար | en-US: Total amount | ru-RU: Общая сумма|
+|supplierName|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|supplierLegalAddress|string¦null|false|none|hy-AM: Իրավ. հասցե | en-US: Legal address | ru-RU: Юридический адрес|
+|supplierBusinessAddress|string¦null|false|none|hy-AM: Գործ. հասցե | en-US: Bus. address | ru-RU: Фактический адрес|
+|supplierSettlementAccount|string¦null|false|none|hy-AM: Հաշվարկային հաշիվ | en-US: Settlement account | ru-RU: Банковский счет|
+|supplierTaxCode|string¦null|false|none|hy-AM: ՀՎՀՀ | en-US: Taxpayer’s ID | ru-RU: ИНН код|
+|supplierManagerPosition|string¦null|false|none|hy-AM: Ղեկավարի պաշտոն | en-US: Manager position | ru-RU: Должность руководителя|
+|supplierManagerName|string¦null|false|none|hy-AM: Ղեկավարի Ա.Ա.Հ. | en-US: Manager first name, last name | ru-RU: ФИО руководителя|
+|supplierAccountantPosition|string¦null|false|none|hy-AM: Հաշվապահի պաշտոն | en-US: Accountant position | ru-RU: Должность главного бухгалтера|
+|supplierAccountantName|string¦null|false|none|hy-AM: Հաշվապահի Ա.Ա.Հ. | en-US: Accountant first name, last name | ru-RU: ФИО главного бухгалтера|
+|customerName|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|customerLegalAddress|string¦null|false|none|hy-AM: Իրավ. հասցե | en-US: Legal address | ru-RU: Юридический адрес|
+|customerBusinessAddress|string¦null|false|none|hy-AM: Գործ. հասցե | en-US: Bus. address | ru-RU: Фактический адрес|
+|customerSettlementAccount|string¦null|false|none|hy-AM: Հաշվարկային հաշիվ | en-US: Settlement account | ru-RU: Банковский счет|
+|customerTaxCode|string¦null|false|none|hy-AM: ՀՎՀՀ | en-US: Taxpayer’s ID | ru-RU: ИНН код|
+|customerManagerPosition|string¦null|false|none|hy-AM: Ղեկավարի պաշտոն | en-US: Manager position | ru-RU: Должность руководителя|
+|customerManagerName|string¦null|false|none|hy-AM: Ղեկավարի Ա.Ա.Հ. | en-US: Manager first name, last name | ru-RU: ФИО руководителя|
+|customerAccountantPosition|string¦null|false|none|hy-AM: Հաշվապահի պաշտոն | en-US: Accountant position | ru-RU: Должность главного бухгалтера|
+|customerAccountantName|string¦null|false|none|hy-AM: Հաշվապահի Ա.Ա.Հ. | en-US: Accountant first name, last name | ru-RU: ФИО главного бухгалтера|
+|stateRegisterNumber|string¦null|false|none|hy-AM: Ա/Ձ-ի պետ. գրանց. վկ. N | en-US: S/P state regist. N | ru-RU: Гос. рег. номер ИП|
+|passportNumber|string¦null|false|none|hy-AM: Անձնագրի համար | en-US: Passport N | ru-RU: Номер паспорта|
+|itemList|[[TransferInvoiceSpecificationRow](#schematransferinvoicespecificationrow)]¦null|false|none|hy-AM: Անվանացուցակ | en-US: Items list | ru-RU: Список товаров и услуг|
 
 <h2 id="tocS_TransferInvoiceSpecificationRow">TransferInvoiceSpecificationRow</h2>
 <!-- backwards compatibility -->
@@ -27719,19 +29682,19 @@ This operation does not require authentication
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|type|string¦null|false|none|none|
-|storage|string¦null|false|none|none|
-|id|integer(int32)|false|none|none|
-|code|string¦null|false|none|none|
-|name|string¦null|false|none|none|
-|unit|string¦null|false|none|none|
-|unitAbbreviation|string¦null|false|none|none|
-|quantity|number(double)|false|none|none|
-|price|number(double)|false|none|none|
-|discountPercent|number(double)¦null|false|none|none|
-|discountedPrice|number(double)¦null|false|none|none|
-|amount|number(double)¦null|false|none|none|
+|type|string¦null|false|none|hy-AM: Տեսակ | en-US: Type | ru-RU: Вид|
+|storage|string¦null|false|none|hy-AM: Պահեստ | en-US: Storage | ru-RU: Склад|
+|id|integer(int32)|false|none|hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер|
+|code|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|name|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|unit|string¦null|false|none|hy-AM: Միավոր | en-US: Unit | ru-RU: Единица|
+|unitAbbreviation|string¦null|false|none|hy-AM: Հապավում | en-US: Abbreviation | ru-RU: Сокращение|
+|quantity|number(double)|false|none|hy-AM: Քանակ | en-US: Quantity | ru-RU: Количество|
+|price|number(double)|false|none|hy-AM: Գին | en-US: Price | ru-RU: Цена|
+|discountPercent|number(double)¦null|false|none|hy-AM: Զեղչի տոկոս | en-US: Discount percent | ru-RU: Процент скидки|
+|discountedPrice|number(double)¦null|false|none|hy-AM: Զեղչված գին | en-US: Discounted price | ru-RU: Цена со скидкой|
+|amount|number(double)¦null|false|none|hy-AM: Գումար | en-US: Amount | ru-RU: Сумма|
 |vat|boolean¦null|false|none|none|
-|rowNumber|integer(int32)|false|none|none|
-|rowId|integer(int32)|false|none|none|
+|rowNumber|integer(int32)|false|none|hy-AM: Տողի N | en-US: line N | ru-RU: N строки|
+|rowId|integer(int32)|false|none|hy-AM: Տողերի ID | en-US: Lines ID | ru-RU: ID линий|
 
