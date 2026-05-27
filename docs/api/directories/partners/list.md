@@ -1,5 +1,7 @@
 # Partners - GetAll
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_partnerslist.htm)
+
 ## Description
 
 Returns a list of partners using complex filters.

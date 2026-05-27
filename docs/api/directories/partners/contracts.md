@@ -1,5 +1,5 @@
 # Partners - Contracts
-🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_partners.htm)
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_partnerscontracts.htm)
 
 ## Description
 
@@ -7,7 +7,9 @@ Endpoints for managing contracts attached to partners.
 
 ---
 
-### List contracts
+# List contracts
+
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_partnerscontractslist.htm)
 
 Returns a list of partner contracts using filters.
 

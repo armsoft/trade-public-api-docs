@@ -2,7 +2,7 @@
 
 Returns the next page for additional addresses.
 
-🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_partners.htm)
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_partnerssadditionaladdresseslist.htm)
 
 ## Endpoint
 

@@ -2,7 +2,7 @@
 
 Returns the next page for settlement accounts.
 
-🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_partners.htm)
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_partnerssettlementaaccountslist.htm)
 
 ## Endpoint
 
