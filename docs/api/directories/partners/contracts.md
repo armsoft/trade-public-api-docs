@@ -1,4 +1,5 @@
 # Partners - Contracts
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_partners.htm)
 
 ## Description
 

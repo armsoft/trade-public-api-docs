@@ -2,6 +2,8 @@
 
 Returns partner additional business addresses and supports pagination.
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_partners.htm)
+
 ## Endpoints
 
 - [List Additional Addresses](list.md)

@@ -2,6 +2,8 @@
 
 Returns partner settlement account details and supports pagination.
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_partners.htm)
+
 ## Endpoints
 
 - [List Settlement Accounts](list.md)

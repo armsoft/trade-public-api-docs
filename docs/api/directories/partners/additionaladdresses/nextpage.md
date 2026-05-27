@@ -2,6 +2,8 @@
 
 Returns the next page for additional addresses.
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_partners.htm)
+
 ## Endpoint
 
 - **Base URL:** `https://api.armsoft.am/trade/v1`
