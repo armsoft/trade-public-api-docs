@@ -118,7 +118,7 @@ Current version: **v1**
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET | `/directories/cashdesks` | List all cash desks |
+| GET | `/directories/cashdesks` | List all cash desks (optional `?showAlsoClosed=false` hides closed ones) |
 | GET | `/directories/cashdesks/{code}` | Get cash desk by code |
 | POST | `/directories/cashdesks` | Create new cash desk |
 | PUT | `/directories/cashdesks/{code}` | Update cash desk |
@@ -163,7 +163,7 @@ Current version: **v1**
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET | `/directories/storages` | Get all storages |
+| GET | `/directories/storages` | Get all storages (optional `?showAlsoClosed=false` hides closed ones) |
 | GET | `/directories/storages/{code}` | Get storage by code |
 | POST | `/directories/storages` | Create new storage |
 | PUT | `/directories/storages/{code}` | Update storage |

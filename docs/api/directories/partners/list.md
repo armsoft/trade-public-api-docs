@@ -22,6 +22,7 @@ Returns a list of partners using complex filters.
   "group": "",
   "extended": true,
   "lastModifiedDate": null,
+  "showAlsoClosed": false,
   "pageSize": 5000
 }
 ```
@@ -32,6 +33,8 @@ Returns a list of partners using complex filters.
 - `group` filters by partner group code.
 - `extended` when `true` includes additional partner fields.
 - `lastModifiedDate` returns records changed after the given timestamp.
+- `showAlsoClosed` when `true` closed partners (`isClosed: true`) are returned together with the open
+  ones. When omitted or `false` only partners that are not closed are returned.
 - `pageSize` (optional) controls pagination:
   - `0` or omitted – all rows in one response
   - `> 0` – return specified number per page; see [Pagination](../../../pagination.md)
@@ -42,6 +45,11 @@ Returns a list of partners using complex filters.
 - **Content type:** `application/json`
 
 Returns a `PartnerRowApiResponse` object containing paging metadata and an array of partners.
+
+### Response field notes
+
+- `isClosed` – `true` when the partner is closed (no longer in active use). Closed partners are
+  returned only when the request is sent with `"showAlsoClosed": true`.
 
 ## Usage example
 
@@ -98,7 +106,8 @@ The reply uses the same `PartnerRowApiResponse` format. Continue calling until
       "taxCode": "123456789",
       "group": "G001",
       "supplier": true,
-      "customer": false
+      "customer": false,
+      "isClosed": false
     }
   ]
 }

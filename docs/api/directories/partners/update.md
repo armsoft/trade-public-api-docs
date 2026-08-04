@@ -22,6 +22,11 @@ Replaces all fields of an existing partner.
 
 `Partner` object.
 
+### Body field notes
+
+- `isClosed` (optional, boolean) – set to `true` to mark the partner as closed, `false` to reopen it.
+  Closed partners are returned by [List Partners](list.md) only when `"showAlsoClosed": true` is sent.
+
 ## Successful response
 
 - **Status:** `200 OK`

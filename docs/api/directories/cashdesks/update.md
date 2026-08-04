@@ -27,11 +27,18 @@ Updates an existing cash desk identified by code.
   "nextSaleNumber": "3005",
   "default": false,
   "ecr": true,
-  "cashLimit": "150000"
+  "cashLimit": "150000",
+  "isClosed": false
 }
 ```
 
 `CashDesk` object.
+
+### Body field notes
+
+- `isClosed` (optional, boolean) – set to `true` to mark the cash desk as closed, `false` to reopen it.
+  Closed cash desks are hidden from `GET /v1/directories/cashdesks` when the request is sent with
+  `showAlsoClosed=false`.
 
 ## Successful response
 

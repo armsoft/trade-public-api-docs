@@ -23,3 +23,9 @@ Returns one partner by partner code.
 - **Content type:** `application/json`
 
 Returns a `Partner` object.
+
+### Response field notes
+
+- `isClosed` – `true` when the partner is closed (no longer in active use). A closed partner is still
+  returned by this endpoint; the flag only affects [List Partners](list.md), where closed partners are
+  included exclusively when `"showAlsoClosed": true` is sent.

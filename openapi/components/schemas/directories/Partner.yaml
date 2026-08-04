@@ -73,6 +73,9 @@ properties:
   defaultContractCode:
     type: string
     nullable: true
+  isClosed:
+    type: boolean
+    nullable: true
   contracts:
     type: array
     items:

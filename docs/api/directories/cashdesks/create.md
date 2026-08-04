@@ -21,11 +21,17 @@ Creates a new cash desk record.
   "nextSaleNumber": "3001",
   "default": false,
   "ecr": false,
-  "cashLimit": "100000"
+  "cashLimit": "100000",
+  "isClosed": false
 }
 ```
 
 `CashDesk` object.
+
+### Body field notes
+
+- `isClosed` (optional, boolean) – marks the cash desk as closed. Omit it or send `false` to create
+  an active cash desk.
 
 ## Successful response
 

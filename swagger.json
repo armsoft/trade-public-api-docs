@@ -359,6 +359,14 @@
         ],
         "parameters": [
           {
+            "name": "showAlsoClosed",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": true
+            }
+          },
+          {
             "name": "Accept-Language",
             "in": "header",
             "description": "Request culture (hy-AM, en-US, ru-RU)",
@@ -5343,6 +5351,14 @@
         ],
         "parameters": [
           {
+            "name": "showAlsoClosed",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": true
+            }
+          },
+          {
             "name": "Accept-Language",
             "in": "header",
             "description": "Request culture (hy-AM, en-US, ru-RU)",
@@ -5841,7 +5857,8 @@
               }
             }
           }
-        }
+        },
+        "security": [ ]
       }
     }
   },
@@ -6095,6 +6112,11 @@
           "cashLimit": {
             "type": "string",
             "description": "hy-AM: Կանխիկի սահմանաչափ | en-US: Cash limit | ru-RU: Лимит наличных",
+            "nullable": true
+          },
+          "isClosed": {
+            "type": "boolean",
+            "description": "hy-AM: Փակված | en-US: Closed | ru-RU: Закрыто",
             "nullable": true
           }
         },
@@ -7460,6 +7482,11 @@
             "description": "hy-AM: Հիմնական | en-US: Default | ru-RU: Основной",
             "nullable": true
           },
+          "isClosed": {
+            "type": "boolean",
+            "description": "hy-AM: Փակված | en-US: Closed | ru-RU: Закрыто",
+            "nullable": true
+          },
           "contracts": {
             "type": "array",
             "items": {
@@ -7631,6 +7658,10 @@
             "description": "hy-AM: Վերջին փոփոխություն | en-US: Last change | ru-RU: Последнее изменение",
             "format": "date-time",
             "nullable": true
+          },
+          "showAlsoClosed": {
+            "type": "boolean",
+            "description": "hy-AM: Ցույց տալ նաև փակվածները | en-US: Show also closed | ru-RU: Показать также закрытые"
           }
         },
         "additionalProperties": false
@@ -7764,7 +7795,7 @@
           },
           "userName": {
             "type": "string",
-            "description": "hy-AM: Ստեղծող | en-US: Creator | ru-RU: Creator",
+            "description": "hy-AM: Ստեղծող | en-US: Creator | ru-RU: Создатель",
             "nullable": true
           },
           "creationDate": {
@@ -7778,6 +7809,10 @@
             "description": "hy-AM: Վերջին փոփոխություն | en-US: Last change | ru-RU: Последнее изменение",
             "format": "date-time",
             "nullable": true
+          },
+          "isClosed": {
+            "type": "boolean",
+            "description": "hy-AM: Փակված | en-US: Closed | ru-RU: Закрыто"
           }
         },
         "additionalProperties": false
@@ -8912,7 +8947,7 @@
           },
           "lastModifierName": {
             "type": "string",
-            "description": "hy-AM: Վերջին խմբագրող | en-US: Last modifier | ru-RU: Last modifier",
+            "description": "hy-AM: Վերջին խմբագրող | en-US: Last modifier | ru-RU: Последний редактор",
             "nullable": true
           },
           "lastModifyDate": {
@@ -8923,7 +8958,7 @@
           },
           "creatorName": {
             "type": "string",
-            "description": "hy-AM: Ստեղծող | en-US: Creator | ru-RU: Creator",
+            "description": "hy-AM: Ստեղծող | en-US: Creator | ru-RU: Создатель",
             "nullable": true
           },
           "creationDate": {
@@ -10905,6 +10940,11 @@
           "retail": {
             "type": "boolean",
             "description": "hy-AM: Մանրածախ | en-US: Retail | ru-RU: Розничный",
+            "nullable": true
+          },
+          "isClosed": {
+            "type": "boolean",
+            "description": "hy-AM: Փակված | en-US: Closed | ru-RU: Закрыто",
             "nullable": true
           }
         },

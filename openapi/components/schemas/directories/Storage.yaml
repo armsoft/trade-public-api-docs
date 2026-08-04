@@ -15,5 +15,8 @@ properties:
   retail:
     type: boolean
     nullable: true
+  isClosed:
+    type: boolean
+    nullable: true
 additionalProperties: false
 

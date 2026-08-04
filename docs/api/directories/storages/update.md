@@ -25,10 +25,18 @@ A `Storage` object with updated values.
 {
   "code": "ST001",
   "name": "Main Warehouse - Updated",
+  "stockkeeper": "John Smith",
   "address": "1000 Market St",
-  "phone": "555-0111"
+  "retail": false,
+  "isClosed": false
 }
 ```
+
+### Body field notes
+
+- `isClosed` (optional, boolean) – set to `true` to mark the storage as closed, `false` to reopen it.
+  Closed storages are hidden from `GET /v1/directories/storages` when the request is sent with
+  `showAlsoClosed=false`.
 
 ## Successful response
 

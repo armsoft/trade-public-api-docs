@@ -16,6 +16,11 @@ Creates a partner.
 
 `Partner` object.
 
+### Body field notes
+
+- `isClosed` (optional, boolean) – marks the partner as closed. Omit it or send `false` to create an
+  active partner.
+
 ## Successful response
 
 - **Status:** `201 Created`

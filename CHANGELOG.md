@@ -2,6 +2,25 @@
 
 All notable changes to the ArmSoft SME Trade Public API are documented here.
 
+## [Unreleased] - 2026-07-31
+
+### Added
+
+#### Closed records support
+- `isClosed` flag added to the `CashDesk`, `Storage`, `Partner` and `PartnerRow` schemas –
+  marks a directory record that is closed and no longer in active use.
+- `GET /directories/cashdesks` – new optional `showAlsoClosed` query parameter
+  (default `true`; pass `false` to return only cash desks that are not closed).
+- `GET /directories/storages` – new optional `showAlsoClosed` query parameter
+  (default `true`; pass `false` to return only storages that are not closed).
+- `POST /directories/partners/list` – new optional `showAlsoClosed` filter in `PartnerFilters`
+  (omitted or `false` returns only partners that are not closed).
+
+### Changed
+- Russian field labels corrected for `PartnerRow.userName` (`Создатель`),
+  `ProductRow.creatorName` (`Создатель`) and `ProductRow.lastModifierName` (`Последний редактор`).
+- `GET /api/Version` is documented as not requiring the `apiKey` header, matching the served spec.
+
 ## [1.0.0] - 2026-02-20
 
 ### Added

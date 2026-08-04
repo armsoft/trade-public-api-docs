@@ -1,6 +1,13 @@
 /directories/cashdesks:
   get:
     tags: [CashDesks]
+    parameters:
+      - name: showAlsoClosed
+        in: query
+        required: false
+        schema:
+          type: boolean
+          default: true
     responses:
       '200':
         description: OK

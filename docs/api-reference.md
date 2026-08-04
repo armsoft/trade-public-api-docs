@@ -1421,6 +1421,7 @@ func main() {
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
+|showAlsoClosed|query|boolean|false|none|
 |Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
 
 > Example responses
@@ -1428,7 +1429,7 @@ func main() {
 > 200 Response
 
 ```
-[{"code":"string","name":"string","nextCashInputOrderNumber":"string","nextCashOutputOrderNumber":"string","nextSaleNumber":"string","nextSaleReturnNumber":"string","nextShiftNumber":"string","default":true,"ecr":true,"cashLimit":"string"}]
+[{"code":"string","name":"string","nextCashInputOrderNumber":"string","nextCashOutputOrderNumber":"string","nextSaleNumber":"string","nextSaleReturnNumber":"string","nextShiftNumber":"string","default":true,"ecr":true,"cashLimit":"string","isClosed":true}]
 ```
 
 ```json
@@ -1443,7 +1444,8 @@ func main() {
     "nextShiftNumber": "string",
     "default": true,
     "ecr": true,
-    "cashLimit": "string"
+    "cashLimit": "string",
+    "isClosed": true
   }
 ]
 ```
@@ -1472,6 +1474,7 @@ Status Code **200**
 |» default|boolean¦null|false|none|hy-AM: Հիմնական | en-US: Default | ru-RU: Основной|
 |» ecr|boolean¦null|false|none|none|
 |» cashLimit|string¦null|false|none|hy-AM: Կանխիկի սահմանաչափ | en-US: Cash limit | ru-RU: Лимит наличных|
+|» isClosed|boolean¦null|false|none|hy-AM: Փակված | en-US: Closed | ru-RU: Закрыто|
 
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
@@ -1512,7 +1515,8 @@ const inputBody = '{
   "nextShiftNumber": "string",
   "default": true,
   "ecr": true,
-  "cashLimit": "string"
+  "cashLimit": "string",
+  "isClosed": true
 }';
 const headers = {
   'Content-Type':'application/json',
@@ -1663,7 +1667,8 @@ func main() {
   "nextShiftNumber": "string",
   "default": true,
   "ecr": true,
-  "cashLimit": "string"
+  "cashLimit": "string",
+  "isClosed": true
 }
 ```
 
@@ -1679,7 +1684,7 @@ func main() {
 > 201 Response
 
 ```
-{"code":"string","name":"string","nextCashInputOrderNumber":"string","nextCashOutputOrderNumber":"string","nextSaleNumber":"string","nextSaleReturnNumber":"string","nextShiftNumber":"string","default":true,"ecr":true,"cashLimit":"string"}
+{"code":"string","name":"string","nextCashInputOrderNumber":"string","nextCashOutputOrderNumber":"string","nextSaleNumber":"string","nextSaleReturnNumber":"string","nextShiftNumber":"string","default":true,"ecr":true,"cashLimit":"string","isClosed":true}
 ```
 
 ```json
@@ -1693,7 +1698,8 @@ func main() {
   "nextShiftNumber": "string",
   "default": true,
   "ecr": true,
-  "cashLimit": "string"
+  "cashLimit": "string",
+  "isClosed": true
 }
 ```
 
@@ -1875,7 +1881,7 @@ func main() {
 > 200 Response
 
 ```
-{"code":"string","name":"string","nextCashInputOrderNumber":"string","nextCashOutputOrderNumber":"string","nextSaleNumber":"string","nextSaleReturnNumber":"string","nextShiftNumber":"string","default":true,"ecr":true,"cashLimit":"string"}
+{"code":"string","name":"string","nextCashInputOrderNumber":"string","nextCashOutputOrderNumber":"string","nextSaleNumber":"string","nextSaleReturnNumber":"string","nextShiftNumber":"string","default":true,"ecr":true,"cashLimit":"string","isClosed":true}
 ```
 
 ```json
@@ -1889,7 +1895,8 @@ func main() {
   "nextShiftNumber": "string",
   "default": true,
   "ecr": true,
-  "cashLimit": "string"
+  "cashLimit": "string",
+  "isClosed": true
 }
 ```
 
@@ -1939,7 +1946,8 @@ const inputBody = '{
   "nextShiftNumber": "string",
   "default": true,
   "ecr": true,
-  "cashLimit": "string"
+  "cashLimit": "string",
+  "isClosed": true
 }';
 const headers = {
   'Content-Type':'application/json',
@@ -2090,7 +2098,8 @@ func main() {
   "nextShiftNumber": "string",
   "default": true,
   "ecr": true,
-  "cashLimit": "string"
+  "cashLimit": "string",
+  "isClosed": true
 }
 ```
 
@@ -2107,7 +2116,7 @@ func main() {
 > 200 Response
 
 ```
-{"code":"string","name":"string","nextCashInputOrderNumber":"string","nextCashOutputOrderNumber":"string","nextSaleNumber":"string","nextSaleReturnNumber":"string","nextShiftNumber":"string","default":true,"ecr":true,"cashLimit":"string"}
+{"code":"string","name":"string","nextCashInputOrderNumber":"string","nextCashOutputOrderNumber":"string","nextSaleNumber":"string","nextSaleReturnNumber":"string","nextShiftNumber":"string","default":true,"ecr":true,"cashLimit":"string","isClosed":true}
 ```
 
 ```json
@@ -2121,7 +2130,8 @@ func main() {
   "nextShiftNumber": "string",
   "default": true,
   "ecr": true,
-  "cashLimit": "string"
+  "cashLimit": "string",
+  "isClosed": true
 }
 ```
 
@@ -4677,7 +4687,8 @@ const inputBody = '{
   ],
   "group": "string",
   "extended": true,
-  "lastModifiedDate": "2019-08-24T14:15:22Z"
+  "lastModifiedDate": "2019-08-24T14:15:22Z",
+  "showAlsoClosed": true
 }';
 const headers = {
   'Content-Type':'application/json',
@@ -4825,7 +4836,8 @@ func main() {
   ],
   "group": "string",
   "extended": true,
-  "lastModifiedDate": "2019-08-24T14:15:22Z"
+  "lastModifiedDate": "2019-08-24T14:15:22Z",
+  "showAlsoClosed": true
 }
 ```
 
@@ -4841,7 +4853,7 @@ func main() {
 > 200 Response
 
 ```
-{"id":"497f6eca-6276-4993-bfeb-53cbbbba6f08","hasMore":true,"data":[{"id":0,"code":"string","name":"string","fullName":"string","taxCode":"string","group":"string","groupName":"string","supplier":true,"customer":true,"legalAddress":"string","businessAddress":"string","managerName":"string","managerPosition":"string","accountantName":"string","accountantPosition":"string","paymentMainAim":"string","phoneNumber":"string","email":"string","stateRegisterNumber":"string","passportNumber":"string","gender":"string","birthDate":"2019-08-24","idDocumentType":"string","status":"string","settlementAccount":"string","userName":"string","creationDate":"2019-08-24T14:15:22Z","lastChange":"2019-08-24T14:15:22Z"}]}
+{"id":"497f6eca-6276-4993-bfeb-53cbbbba6f08","hasMore":true,"data":[{"id":0,"code":"string","name":"string","fullName":"string","taxCode":"string","group":"string","groupName":"string","supplier":true,"customer":true,"legalAddress":"string","businessAddress":"string","managerName":"string","managerPosition":"string","accountantName":"string","accountantPosition":"string","paymentMainAim":"string","phoneNumber":"string","email":"string","stateRegisterNumber":"string","passportNumber":"string","gender":"string","birthDate":"2019-08-24","idDocumentType":"string","status":"string","settlementAccount":"string","userName":"string","creationDate":"2019-08-24T14:15:22Z","lastChange":"2019-08-24T14:15:22Z","isClosed":true}]}
 ```
 
 ```json
@@ -4877,7 +4889,8 @@ func main() {
       "settlementAccount": "string",
       "userName": "string",
       "creationDate": "2019-08-24T14:15:22Z",
-      "lastChange": "2019-08-24T14:15:22Z"
+      "lastChange": "2019-08-24T14:15:22Z",
+      "isClosed": true
     }
   ]
 }
@@ -5080,7 +5093,7 @@ func main() {
 > 200 Response
 
 ```
-{"id":"497f6eca-6276-4993-bfeb-53cbbbba6f08","hasMore":true,"data":[{"id":0,"code":"string","name":"string","fullName":"string","taxCode":"string","group":"string","groupName":"string","supplier":true,"customer":true,"legalAddress":"string","businessAddress":"string","managerName":"string","managerPosition":"string","accountantName":"string","accountantPosition":"string","paymentMainAim":"string","phoneNumber":"string","email":"string","stateRegisterNumber":"string","passportNumber":"string","gender":"string","birthDate":"2019-08-24","idDocumentType":"string","status":"string","settlementAccount":"string","userName":"string","creationDate":"2019-08-24T14:15:22Z","lastChange":"2019-08-24T14:15:22Z"}]}
+{"id":"497f6eca-6276-4993-bfeb-53cbbbba6f08","hasMore":true,"data":[{"id":0,"code":"string","name":"string","fullName":"string","taxCode":"string","group":"string","groupName":"string","supplier":true,"customer":true,"legalAddress":"string","businessAddress":"string","managerName":"string","managerPosition":"string","accountantName":"string","accountantPosition":"string","paymentMainAim":"string","phoneNumber":"string","email":"string","stateRegisterNumber":"string","passportNumber":"string","gender":"string","birthDate":"2019-08-24","idDocumentType":"string","status":"string","settlementAccount":"string","userName":"string","creationDate":"2019-08-24T14:15:22Z","lastChange":"2019-08-24T14:15:22Z","isClosed":true}]}
 ```
 
 ```json
@@ -5116,7 +5129,8 @@ func main() {
       "settlementAccount": "string",
       "userName": "string",
       "creationDate": "2019-08-24T14:15:22Z",
-      "lastChange": "2019-08-24T14:15:22Z"
+      "lastChange": "2019-08-24T14:15:22Z",
+      "isClosed": true
     }
   ]
 }
@@ -5300,7 +5314,7 @@ func main() {
 > 200 Response
 
 ```
-{"id":0,"code":"string","name":"string","fullName":"string","taxCode":"string","group":"string","supplier":true,"customer":true,"legalAddress":"string","businessAddress":"string","managerName":"string","managerPosition":"string","accountantName":"string","accountantPosition":"string","paymentMainAim":"string","phoneNumber":"string","email":"string","stateRegisterNumber":"string","passportNumber":"string","gender":"string","birthDate":"2019-08-24","idDocumentType":"string","status":"string","defaultContractCode":"string","contracts":[{"code":"string","name":"string","currency":"string","priceType":"string","date":"2019-08-24","description":"string","discountPercent":0.1,"cardCode":"string","bonusCard":true,"bonusPercent":0.1,"bonusPoint":0.1,"validationPeriodStart":"2019-08-24","validationPeriodEnd":"2019-08-24","canceled":true,"receivablesControl":true,"receivablesLimit":0.1,"default":true}],"settlementAccounts":[{"account":"string","name":"string","default":true}],"additionalAddresses":[{"name":"string","default":true}]}
+{"id":0,"code":"string","name":"string","fullName":"string","taxCode":"string","group":"string","supplier":true,"customer":true,"legalAddress":"string","businessAddress":"string","managerName":"string","managerPosition":"string","accountantName":"string","accountantPosition":"string","paymentMainAim":"string","phoneNumber":"string","email":"string","stateRegisterNumber":"string","passportNumber":"string","gender":"string","birthDate":"2019-08-24","idDocumentType":"string","status":"string","defaultContractCode":"string","isClosed":true,"contracts":[{"code":"string","name":"string","currency":"string","priceType":"string","date":"2019-08-24","description":"string","discountPercent":0.1,"cardCode":"string","bonusCard":true,"bonusPercent":0.1,"bonusPoint":0.1,"validationPeriodStart":"2019-08-24","validationPeriodEnd":"2019-08-24","canceled":true,"receivablesControl":true,"receivablesLimit":0.1,"default":true}],"settlementAccounts":[{"account":"string","name":"string","default":true}],"additionalAddresses":[{"name":"string","default":true}]}
 ```
 
 ```json
@@ -5329,6 +5343,7 @@ func main() {
   "idDocumentType": "string",
   "status": "string",
   "defaultContractCode": "string",
+  "isClosed": true,
   "contracts": [
     {
       "code": "string",
@@ -5427,6 +5442,7 @@ const inputBody = '{
   "idDocumentType": "string",
   "status": "string",
   "defaultContractCode": "string",
+  "isClosed": true,
   "contracts": [
     {
       "code": "string",
@@ -5626,6 +5642,7 @@ func main() {
   "idDocumentType": "string",
   "status": "string",
   "defaultContractCode": "string",
+  "isClosed": true,
   "contracts": [
     {
       "code": "string",
@@ -5676,7 +5693,7 @@ func main() {
 > 200 Response
 
 ```
-{"id":0,"code":"string","name":"string","fullName":"string","taxCode":"string","group":"string","supplier":true,"customer":true,"legalAddress":"string","businessAddress":"string","managerName":"string","managerPosition":"string","accountantName":"string","accountantPosition":"string","paymentMainAim":"string","phoneNumber":"string","email":"string","stateRegisterNumber":"string","passportNumber":"string","gender":"string","birthDate":"2019-08-24","idDocumentType":"string","status":"string","defaultContractCode":"string","contracts":[{"code":"string","name":"string","currency":"string","priceType":"string","date":"2019-08-24","description":"string","discountPercent":0.1,"cardCode":"string","bonusCard":true,"bonusPercent":0.1,"bonusPoint":0.1,"validationPeriodStart":"2019-08-24","validationPeriodEnd":"2019-08-24","canceled":true,"receivablesControl":true,"receivablesLimit":0.1,"default":true}],"settlementAccounts":[{"account":"string","name":"string","default":true}],"additionalAddresses":[{"name":"string","default":true}]}
+{"id":0,"code":"string","name":"string","fullName":"string","taxCode":"string","group":"string","supplier":true,"customer":true,"legalAddress":"string","businessAddress":"string","managerName":"string","managerPosition":"string","accountantName":"string","accountantPosition":"string","paymentMainAim":"string","phoneNumber":"string","email":"string","stateRegisterNumber":"string","passportNumber":"string","gender":"string","birthDate":"2019-08-24","idDocumentType":"string","status":"string","defaultContractCode":"string","isClosed":true,"contracts":[{"code":"string","name":"string","currency":"string","priceType":"string","date":"2019-08-24","description":"string","discountPercent":0.1,"cardCode":"string","bonusCard":true,"bonusPercent":0.1,"bonusPoint":0.1,"validationPeriodStart":"2019-08-24","validationPeriodEnd":"2019-08-24","canceled":true,"receivablesControl":true,"receivablesLimit":0.1,"default":true}],"settlementAccounts":[{"account":"string","name":"string","default":true}],"additionalAddresses":[{"name":"string","default":true}]}
 ```
 
 ```json
@@ -5705,6 +5722,7 @@ func main() {
   "idDocumentType": "string",
   "status": "string",
   "defaultContractCode": "string",
+  "isClosed": true,
   "contracts": [
     {
       "code": "string",
@@ -5969,6 +5987,7 @@ const inputBody = '{
   "idDocumentType": "string",
   "status": "string",
   "defaultContractCode": "string",
+  "isClosed": true,
   "contracts": [
     {
       "code": "string",
@@ -6168,6 +6187,7 @@ func main() {
   "idDocumentType": "string",
   "status": "string",
   "defaultContractCode": "string",
+  "isClosed": true,
   "contracts": [
     {
       "code": "string",
@@ -6217,7 +6237,7 @@ func main() {
 > 201 Response
 
 ```
-{"id":0,"code":"string","name":"string","fullName":"string","taxCode":"string","group":"string","supplier":true,"customer":true,"legalAddress":"string","businessAddress":"string","managerName":"string","managerPosition":"string","accountantName":"string","accountantPosition":"string","paymentMainAim":"string","phoneNumber":"string","email":"string","stateRegisterNumber":"string","passportNumber":"string","gender":"string","birthDate":"2019-08-24","idDocumentType":"string","status":"string","defaultContractCode":"string","contracts":[{"code":"string","name":"string","currency":"string","priceType":"string","date":"2019-08-24","description":"string","discountPercent":0.1,"cardCode":"string","bonusCard":true,"bonusPercent":0.1,"bonusPoint":0.1,"validationPeriodStart":"2019-08-24","validationPeriodEnd":"2019-08-24","canceled":true,"receivablesControl":true,"receivablesLimit":0.1,"default":true}],"settlementAccounts":[{"account":"string","name":"string","default":true}],"additionalAddresses":[{"name":"string","default":true}]}
+{"id":0,"code":"string","name":"string","fullName":"string","taxCode":"string","group":"string","supplier":true,"customer":true,"legalAddress":"string","businessAddress":"string","managerName":"string","managerPosition":"string","accountantName":"string","accountantPosition":"string","paymentMainAim":"string","phoneNumber":"string","email":"string","stateRegisterNumber":"string","passportNumber":"string","gender":"string","birthDate":"2019-08-24","idDocumentType":"string","status":"string","defaultContractCode":"string","isClosed":true,"contracts":[{"code":"string","name":"string","currency":"string","priceType":"string","date":"2019-08-24","description":"string","discountPercent":0.1,"cardCode":"string","bonusCard":true,"bonusPercent":0.1,"bonusPoint":0.1,"validationPeriodStart":"2019-08-24","validationPeriodEnd":"2019-08-24","canceled":true,"receivablesControl":true,"receivablesLimit":0.1,"default":true}],"settlementAccounts":[{"account":"string","name":"string","default":true}],"additionalAddresses":[{"name":"string","default":true}]}
 ```
 
 ```json
@@ -6246,6 +6266,7 @@ func main() {
   "idDocumentType": "string",
   "status": "string",
   "defaultContractCode": "string",
+  "isClosed": true,
   "contracts": [
     {
       "code": "string",
@@ -23419,6 +23440,7 @@ func main() {
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
+|showAlsoClosed|query|boolean|false|none|
 |Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
 
 > Example responses
@@ -23426,7 +23448,7 @@ func main() {
 > 200 Response
 
 ```
-[{"code":"string","name":"string","stockkeeper":"string","address":"string","retail":true}]
+[{"code":"string","name":"string","stockkeeper":"string","address":"string","retail":true,"isClosed":true}]
 ```
 
 ```json
@@ -23436,7 +23458,8 @@ func main() {
     "name": "string",
     "stockkeeper": "string",
     "address": "string",
-    "retail": true
+    "retail": true,
+    "isClosed": true
   }
 ]
 ```
@@ -23460,6 +23483,7 @@ Status Code **200**
 |» stockkeeper|string¦null|false|none|hy-AM: Պահեստապետ | en-US: Stockkeeper | ru-RU: Заведующий складом|
 |» address|string¦null|false|none|hy-AM: Հասցե | en-US: Address | ru-RU: Адрес|
 |» retail|boolean¦null|false|none|hy-AM: Մանրածախ | en-US: Retail | ru-RU: Розничный|
+|» isClosed|boolean¦null|false|none|hy-AM: Փակված | en-US: Closed | ru-RU: Закрыто|
 
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
@@ -23495,7 +23519,8 @@ const inputBody = '{
   "name": "string",
   "stockkeeper": "string",
   "address": "string",
-  "retail": true
+  "retail": true,
+  "isClosed": true
 }';
 const headers = {
   'Content-Type':'application/json',
@@ -23641,7 +23666,8 @@ func main() {
   "name": "string",
   "stockkeeper": "string",
   "address": "string",
-  "retail": true
+  "retail": true,
+  "isClosed": true
 }
 ```
 
@@ -23657,7 +23683,7 @@ func main() {
 > 201 Response
 
 ```
-{"code":"string","name":"string","stockkeeper":"string","address":"string","retail":true}
+{"code":"string","name":"string","stockkeeper":"string","address":"string","retail":true,"isClosed":true}
 ```
 
 ```json
@@ -23666,7 +23692,8 @@ func main() {
   "name": "string",
   "stockkeeper": "string",
   "address": "string",
-  "retail": true
+  "retail": true,
+  "isClosed": true
 }
 ```
 
@@ -23848,7 +23875,7 @@ func main() {
 > 200 Response
 
 ```
-{"code":"string","name":"string","stockkeeper":"string","address":"string","retail":true}
+{"code":"string","name":"string","stockkeeper":"string","address":"string","retail":true,"isClosed":true}
 ```
 
 ```json
@@ -23857,7 +23884,8 @@ func main() {
   "name": "string",
   "stockkeeper": "string",
   "address": "string",
-  "retail": true
+  "retail": true,
+  "isClosed": true
 }
 ```
 
@@ -23902,7 +23930,8 @@ const inputBody = '{
   "name": "string",
   "stockkeeper": "string",
   "address": "string",
-  "retail": true
+  "retail": true,
+  "isClosed": true
 }';
 const headers = {
   'Content-Type':'application/json',
@@ -24048,7 +24077,8 @@ func main() {
   "name": "string",
   "stockkeeper": "string",
   "address": "string",
-  "retail": true
+  "retail": true,
+  "isClosed": true
 }
 ```
 
@@ -24065,7 +24095,7 @@ func main() {
 > 200 Response
 
 ```
-{"code":"string","name":"string","stockkeeper":"string","address":"string","retail":true}
+{"code":"string","name":"string","stockkeeper":"string","address":"string","retail":true,"isClosed":true}
 ```
 
 ```json
@@ -24074,7 +24104,8 @@ func main() {
   "name": "string",
   "stockkeeper": "string",
   "address": "string",
-  "retail": true
+  "retail": true,
+  "isClosed": true
 }
 ```
 
@@ -25421,8 +25452,7 @@ API Key
 ```shell
 # You can also use wget
 curl -X GET /trade/api/Version \
-  -H 'Accept: text/plain' \
-  -H 'apiKey: API_KEY'
+  -H 'Accept: text/plain'
 
 ```
 
@@ -25436,8 +25466,7 @@ Accept: text/plain
 ```javascript
 
 const headers = {
-  'Accept':'text/plain',
-  'apiKey':'API_KEY'
+  'Accept':'text/plain'
 };
 
 fetch('/trade/api/Version',
@@ -25459,8 +25488,7 @@ require 'rest-client'
 require 'json'
 
 headers = {
-  'Accept' => 'text/plain',
-  'apiKey' => 'API_KEY'
+  'Accept' => 'text/plain'
 }
 
 result = RestClient.get '/trade/api/Version',
@@ -25474,8 +25502,7 @@ p JSON.parse(result)
 ```python
 import requests
 headers = {
-  'Accept': 'text/plain',
-  'apiKey': 'API_KEY'
+  'Accept': 'text/plain'
 }
 
 r = requests.get('/trade/api/Version', headers = headers)
@@ -25491,7 +25518,6 @@ require 'vendor/autoload.php';
 
 $headers = array(
     'Accept' => 'text/plain',
-    'apiKey' => 'API_KEY',
 );
 
 $client = new \GuzzleHttp\Client();
@@ -25545,7 +25571,6 @@ func main() {
 
     headers := map[string][]string{
         "Accept": []string{"text/plain"},
-        "apiKey": []string{"API_KEY"},
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
@@ -25579,9 +25604,8 @@ func main() {
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|string|
 
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-API Key
+<aside class="success">
+This operation does not require authentication
 </aside>
 
 # Schemas
@@ -25802,7 +25826,8 @@ API Key
   "nextShiftNumber": "string",
   "default": true,
   "ecr": true,
-  "cashLimit": "string"
+  "cashLimit": "string",
+  "isClosed": true
 }
 
 ```
@@ -25821,6 +25846,7 @@ API Key
 |default|boolean¦null|false|none|hy-AM: Հիմնական | en-US: Default | ru-RU: Основной|
 |ecr|boolean¦null|false|none|none|
 |cashLimit|string¦null|false|none|hy-AM: Կանխիկի սահմանաչափ | en-US: Cash limit | ru-RU: Лимит наличных|
+|isClosed|boolean¦null|false|none|hy-AM: Փակված | en-US: Closed | ru-RU: Закрыто|
 
 <h2 id="tocS_Contract">Contract</h2>
 <!-- backwards compatibility -->
@@ -26690,6 +26716,7 @@ API Key
   "idDocumentType": "string",
   "status": "string",
   "defaultContractCode": "string",
+  "isClosed": true,
   "contracts": [
     {
       "code": "string",
@@ -26756,6 +26783,7 @@ API Key
 |idDocumentType|string¦null|false|none|hy-AM: Անձը հաստատող փաստաթղթի տեսակ | en-US: ID document type | ru-RU: Документ, удостоверяющий личность|
 |status|string¦null|false|none|hy-AM: Կարգավիճակ | en-US: Status | ru-RU: Статус|
 |defaultContractCode|string¦null|false|none|hy-AM: Հիմնական | en-US: Default | ru-RU: Основной|
+|isClosed|boolean¦null|false|none|hy-AM: Փակված | en-US: Closed | ru-RU: Закрыто|
 |contracts|[[PartnerContractRow](#schemapartnercontractrow)]¦null|false|none|hy-AM: Պայմանագրեր | en-US: Contracts | ru-RU: Договоры партнеров|
 |settlementAccounts|[[PartnerSettlementAccountRow](#schemapartnersettlementaccountrow)]¦null|false|none|hy-AM: Հաշվարկային հաշիվներ | en-US: Settlement accounts | ru-RU: Банковские счета|
 |additionalAddresses|[[PartnerBusinessAddressRow](#schemapartnerbusinessaddressrow)]¦null|false|none|hy-AM: Լրացուցիչ հասցեներ | en-US: Additional addresses | ru-RU: Дополнительные адреса|
@@ -26849,7 +26877,8 @@ API Key
   ],
   "group": "string",
   "extended": true,
-  "lastModifiedDate": "2019-08-24T14:15:22Z"
+  "lastModifiedDate": "2019-08-24T14:15:22Z",
+  "showAlsoClosed": true
 }
 
 ```
@@ -26863,6 +26892,7 @@ API Key
 |group|string¦null|false|none|hy-AM: Խումբ | en-US: Group | ru-RU: Группа|
 |extended|boolean|false|none|hy-AM: Ընդլայնված | en-US: Extended | ru-RU: Расширенный|
 |lastModifiedDate|string(date-time)¦null|false|none|hy-AM: Վերջին փոփոխություն | en-US: Last change | ru-RU: Последнее изменение|
+|showAlsoClosed|boolean|false|none|hy-AM: Ցույց տալ նաև փակվածները | en-US: Show also closed | ru-RU: Показать также закрытые|
 
 <h2 id="tocS_PartnerRow">PartnerRow</h2>
 <!-- backwards compatibility -->
@@ -26900,7 +26930,8 @@ API Key
   "settlementAccount": "string",
   "userName": "string",
   "creationDate": "2019-08-24T14:15:22Z",
-  "lastChange": "2019-08-24T14:15:22Z"
+  "lastChange": "2019-08-24T14:15:22Z",
+  "isClosed": true
 }
 
 ```
@@ -26934,9 +26965,10 @@ API Key
 |idDocumentType|string¦null|false|none|hy-AM: Անձը հաստատող փաստաթղթի տեսակ | en-US: ID document type | ru-RU: Документ, удостоверяющий личность|
 |status|string¦null|false|none|hy-AM: Կարգավիճակ | en-US: Status | ru-RU: Статус|
 |settlementAccount|string¦null|false|none|hy-AM: Հաշվարկային հաշիվ | en-US: Settlement account | ru-RU: Банковский счет|
-|userName|string¦null|false|none|hy-AM: Ստեղծող | en-US: Creator | ru-RU: Creator|
+|userName|string¦null|false|none|hy-AM: Ստեղծող | en-US: Creator | ru-RU: Создатель|
 |creationDate|string(date-time)¦null|false|none|hy-AM: Ստեղծման ամսաթիվ | en-US: Creation date | ru-RU: Дата создания|
 |lastChange|string(date-time)¦null|false|none|hy-AM: Վերջին փոփոխություն | en-US: Last change | ru-RU: Последнее изменение|
+|isClosed|boolean|false|none|hy-AM: Փակված | en-US: Closed | ru-RU: Закрыто|
 
 <h2 id="tocS_PartnerRowApiResponse">PartnerRowApiResponse</h2>
 <!-- backwards compatibility -->
@@ -26978,7 +27010,8 @@ API Key
       "settlementAccount": "string",
       "userName": "string",
       "creationDate": "2019-08-24T14:15:22Z",
-      "lastChange": "2019-08-24T14:15:22Z"
+      "lastChange": "2019-08-24T14:15:22Z",
+      "isClosed": true
     }
   ]
 }
@@ -27845,9 +27878,9 @@ API Key
 |nameRU|string¦null|false|none|hy-AM: Անվանում (ռուսերեն) | en-US: Name (Russian) | ru-RU: Наименование (русский)|
 |additionalSpecification1|string¦null|false|none|hy-AM: Լրացուցիչ բնութագիր | en-US: Additional specification | ru-RU: Дополнительная характеристика|
 |additionalSpecification2|string¦null|false|none|hy-AM: Լրացուցիչ բնութագիր | en-US: Additional specification | ru-RU: Дополнительная характеристика|
-|lastModifierName|string¦null|false|none|hy-AM: Վերջին խմբագրող | en-US: Last modifier | ru-RU: Last modifier|
+|lastModifierName|string¦null|false|none|hy-AM: Վերջին խմբագրող | en-US: Last modifier | ru-RU: Последний редактор|
 |lastModifyDate|string(date-time)¦null|false|none|hy-AM: Վերջին փոփոխություն | en-US: Last change | ru-RU: Последнее изменение|
-|creatorName|string¦null|false|none|hy-AM: Ստեղծող | en-US: Creator | ru-RU: Creator|
+|creatorName|string¦null|false|none|hy-AM: Ստեղծող | en-US: Creator | ru-RU: Создатель|
 |creationDate|string(date-time)¦null|false|none|hy-AM: Ստեղծման ամսաթիվ | en-US: Creation date | ru-RU: Дата создания|
 |prices|object¦null|false|none|hy-AM: Գին | en-US: Price | ru-RU: Цена|
 |» **additionalProperties**|number(double)|false|none|none|
@@ -29202,7 +29235,8 @@ API Key
   "name": "string",
   "stockkeeper": "string",
   "address": "string",
-  "retail": true
+  "retail": true,
+  "isClosed": true
 }
 
 ```
@@ -29216,6 +29250,7 @@ API Key
 |stockkeeper|string¦null|false|none|hy-AM: Պահեստապետ | en-US: Stockkeeper | ru-RU: Заведующий складом|
 |address|string¦null|false|none|hy-AM: Հասցե | en-US: Address | ru-RU: Адрес|
 |retail|boolean¦null|false|none|hy-AM: Մանրածախ | en-US: Retail | ru-RU: Розничный|
+|isClosed|boolean¦null|false|none|hy-AM: Փակված | en-US: Closed | ru-RU: Закрыто|
 
 <h2 id="tocS_StorageInputOrder">StorageInputOrder</h2>
 <!-- backwards compatibility -->

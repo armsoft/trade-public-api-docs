@@ -16,9 +16,14 @@ public class CashDesksClient
         _http.DefaultRequestHeaders.Add("apiKey", apiKey);
     }
 
-    public async Task<JsonElement?> GetAllAsync()
+    /// <summary>
+    /// Returns all cash desks. Pass <paramref name="showAlsoClosed"/> as false to skip
+    /// cash desks marked as closed (isClosed = true); the API includes them by default.
+    /// </summary>
+    public async Task<JsonElement?> GetAllAsync(bool showAlsoClosed = true)
     {
-        var response = await _http.GetAsync($"/directories/cashdesks");
+        var response = await _http.GetAsync(
+            $"/directories/cashdesks?showAlsoClosed={showAlsoClosed.ToString().ToLowerInvariant()}");
         if (response.StatusCode == HttpStatusCode.NotFound) return null;
         response.EnsureSuccessStatusCode();
         return (await JsonDocument.ParseAsync(await response.Content.ReadAsStreamAsync())).RootElement;

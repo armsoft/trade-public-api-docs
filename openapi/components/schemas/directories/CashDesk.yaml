@@ -30,5 +30,8 @@ properties:
   cashLimit:
     type: string
     nullable: true
+  isClosed:
+    type: boolean
+    nullable: true
 additionalProperties: false
 

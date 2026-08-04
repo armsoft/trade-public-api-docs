@@ -87,5 +87,7 @@ properties:
     type: string
     format: date-time
     nullable: true
+  isClosed:
+    type: boolean
 additionalProperties: false
 

@@ -14,6 +14,8 @@ var filters = new
 {
     codes = new[] { "P100", "P101" },
     extended = true,
+    // set to true to also receive partners marked as closed (isClosed = true)
+    showAlsoClosed = false,
     pageSize = 5000
 };
 

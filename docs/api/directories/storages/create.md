@@ -19,10 +19,17 @@ A `Storage` object:
 {
   "code": "ST002",
   "name": "Secondary Warehouse",
+  "stockkeeper": "Ann Petrosyan",
   "address": "2000 Industrial Rd",
-  "phone": "555-0200"
+  "retail": false,
+  "isClosed": false
 }
 ```
+
+### Body field notes
+
+- `isClosed` (optional, boolean) – marks the storage as closed. Omit it or send `false` to create an
+  active storage.
 
 ## Successful response
 
