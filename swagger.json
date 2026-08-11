@@ -8809,7 +8809,7 @@
           },
           "weight": {
             "type": "boolean",
-            "description": "hy-AM: Քաշային | en-US:  | ru-RU: Весовой"
+            "description": "hy-AM: Քաշային | en-US: Weight | ru-RU: Весовой"
           },
           "pluCode": {
             "type": "integer",
@@ -9485,7 +9485,7 @@
           },
           "showZeroRows": {
             "type": "boolean",
-            "description": "hy-AM: Քանակ | en-US: Quantity | ru-RU: Количество"
+            "description": "hy-AM: Ցույց տալ զրոյական տողերը | en-US: Show zero rows | ru-RU: Показать нулевые строки"
           }
         },
         "additionalProperties": false

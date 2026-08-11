@@ -24,6 +24,13 @@ Returns short product balances report for a date and filters.
 }
 ```
 
+### Request body field notes
+
+- `date` – balance date of the report.
+- `showZeroRows` – when `true` products with a zero balance are also returned; `false` returns only
+  products with a non-zero balance.
+- `pageSize` (optional) controls pagination; see [Pagination](../../pagination.md).
+
 ## Usage example
 
 ```bash

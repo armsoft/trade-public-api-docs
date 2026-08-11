@@ -2,7 +2,10 @@
 
 All notable changes to the ArmSoft SME Trade Public API are documented here.
 
-## [Unreleased] - 2026-07-31
+## [1.1.0] - 2026-08-11
+
+Published to `https://api.armsoft.am/trade`. The API's own `info.version` stays `1.0`;
+all changes below are backward compatible.
 
 ### Added
 
@@ -19,7 +22,16 @@ All notable changes to the ArmSoft SME Trade Public API are documented here.
 ### Changed
 - Russian field labels corrected for `PartnerRow.userName` (`Создатель`),
   `ProductRow.creatorName` (`Создатель`) and `ProductRow.lastModifierName` (`Последний редактор`).
+- English label added for `ProductRow.weight` (`Weight`, previously empty).
+- `ProductsBalancesShortParam.showZeroRows` label corrected – it described itself as
+  `Quantity`, now `Show zero rows` / `Показать нулевые строки`.
 - `GET /api/Version` is documented as not requiring the `apiKey` header, matching the served spec.
+
+### Documentation
+- Curated OpenAPI spec (`openapi/`) completed: added the partner additional-addresses and
+  settlement-accounts list/nextpage endpoints, their five schemas, and `GET /api/Version`.
+  It now covers all 65 paths and 72 schemas of the published API.
+- `POST /reports/productsbalances/short` – documented the `showZeroRows` and `date` filters.
 
 ## [1.0.0] - 2026-02-20
 

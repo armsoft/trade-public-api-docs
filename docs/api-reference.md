@@ -27850,7 +27850,7 @@ This operation does not require authentication
 |costingMethodName|string¦null|false|none|hy-AM: Հաշվառման մեթոդ | en-US: Costing  method | ru-RU: Метод списания|
 |vat|boolean|false|none|none|
 |checkMarking|boolean|false|none|hy-AM: Ստուգել դրոշմանիշերի լրացումը | en-US: Check Marking | ru-RU: Проверять заполнение маркировки|
-|weight|boolean|false|none|hy-AM: Քաշային | en-US:  | ru-RU: Весовой|
+|weight|boolean|false|none|hy-AM: Քաշային | en-US: Weight | ru-RU: Весовой|
 |pluCode|integer(int32)¦null|false|none|none|
 |showInPriceLists|boolean|false|none|hy-AM: Ցույց տալ գնացուցակներում | en-US: Show in price lists | ru-RU: Включить в прайс-лист|
 |environmentalFeePercent|number(double)|false|none|hy-AM: Բնապահպանական հարկի % | en-US: Environmental fee (%) | ru-RU: % экологического налога|
@@ -28334,7 +28334,7 @@ This operation does not require authentication
 |codes|[string]¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
 |showQuantitiesWithAdditionalUnits|boolean|false|none|hy-AM: Քանակները ցույց տալ լրացուցիչ չափման միավորով | en-US: Show quantities with additional units | ru-RU: Показать количество в доп. единице|
 |priceType|string¦null|false|none|hy-AM: Գնի տեսակ | en-US: Price type | ru-RU: Тип цены|
-|showZeroRows|boolean|false|none|hy-AM: Քանակ | en-US: Quantity | ru-RU: Количество|
+|showZeroRows|boolean|false|none|hy-AM: Ցույց տալ զրոյական տողերը | en-US: Show zero rows | ru-RU: Показать нулевые строки|
 
 <h2 id="tocS_ProductsGroup">ProductsGroup</h2>
 <!-- backwards compatibility -->

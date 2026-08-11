@@ -1,0 +1,37 @@
+/directories/partners/additionaladdresses/list:
+  post:
+    tags: [Partners]
+    # The API reuses PartnersSettlementAccountFilters as the filter body for this endpoint.
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/directories/PartnersSettlementAccountFilters.yaml
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: ../../components/schemas/directories/PartnersAdditionalAddressesRowApiResponse.yaml
+      '401':
+        $ref: ../../components/responses/Unauthorized.yaml
+/directories/partners/additionaladdresses/list/nextpage:
+  post:
+    tags: [Partners]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/_shared/NextPageRequest.yaml
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: ../../components/schemas/directories/PartnersAdditionalAddressesRowApiResponse.yaml
+      '401':
+        $ref: ../../components/responses/Unauthorized.yaml

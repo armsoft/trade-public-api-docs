@@ -52,6 +52,8 @@ tags:
     description: Document journal endpoints
   - name: Reports
     description: Report endpoints
+  - name: Version
+    description: API version endpoint
 
 paths:
   /directories/products/list:
@@ -101,6 +103,14 @@ paths:
     $ref: ./paths/directories/partners_contracts.yaml#/~1directories~1partners~1contracts~1list~1nextpage
   /directories/partners/{partnerCode}/contracts/{contractCode}:
     $ref: ./paths/directories/partners_{partnerCode}_contracts_{contractCode}.yaml#/~1directories~1partners~1{partnerCode}~1contracts~1{contractCode}
+  /directories/partners/additionaladdresses/list:
+    $ref: ./paths/directories/partners_additionaladdresses.yaml#/~1directories~1partners~1additionaladdresses~1list
+  /directories/partners/additionaladdresses/list/nextpage:
+    $ref: ./paths/directories/partners_additionaladdresses.yaml#/~1directories~1partners~1additionaladdresses~1list~1nextpage
+  /directories/partners/settlementaccounts/list:
+    $ref: ./paths/directories/partners_settlementaccounts.yaml#/~1directories~1partners~1settlementaccounts~1list
+  /directories/partners/settlementaccounts/list/nextpage:
+    $ref: ./paths/directories/partners_settlementaccounts.yaml#/~1directories~1partners~1settlementaccounts~1list~1nextpage
   # Partners Groups
   /directories/partnersgroups:
     $ref: ./paths/directories/partnersgroups.yaml#/~1directories~1partnersgroups
@@ -190,6 +200,9 @@ paths:
     $ref: ./paths/reports/salesanalysis.yaml#/~1reports~1salesanalysis
   /reports/salesanalysis/nextpage:
     $ref: ./paths/reports/salesanalysis.yaml#/~1reports~1salesanalysis~1nextpage
+  # System
+  /api/Version:
+    $ref: ./paths/version.yaml#/~1api~1Version
 
 components:
   securitySchemes:
@@ -238,6 +251,16 @@ components:
       $ref: ./components/schemas/directories/PartnerRowApiResponse.yaml
     PartnerSettlementAccountRow:
       $ref: ./components/schemas/directories/PartnerSettlementAccountRow.yaml
+    PartnersSettlementAccountFilters:
+      $ref: ./components/schemas/directories/PartnersSettlementAccountFilters.yaml
+    PartnersSettlementAccountRow:
+      $ref: ./components/schemas/directories/PartnersSettlementAccountRow.yaml
+    PartnersSettlementAccountRowApiResponse:
+      $ref: ./components/schemas/directories/PartnersSettlementAccountRowApiResponse.yaml
+    PartnersAdditionalAddressesRow:
+      $ref: ./components/schemas/directories/PartnersAdditionalAddressesRow.yaml
+    PartnersAdditionalAddressesRowApiResponse:
+      $ref: ./components/schemas/directories/PartnersAdditionalAddressesRowApiResponse.yaml
     PartnersGroup:
       $ref: ./components/schemas/directories/PartnersGroup.yaml
     # Directories — Products
