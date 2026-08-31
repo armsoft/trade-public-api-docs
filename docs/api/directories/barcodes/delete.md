@@ -1,5 +1,7 @@
 # Barcodes - Delete
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_barcodes.htm)
+
 ## Description
 
 Deletes a barcode record by code.

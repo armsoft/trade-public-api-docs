@@ -1,5 +1,7 @@
 # Reports - Products Balances Short (Next Page)
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_productsbalancesshort.htm)
+
 ## Description
 
 Retrieves the next page for products balances short report.

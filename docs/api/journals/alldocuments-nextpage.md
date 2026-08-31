@@ -1,5 +1,7 @@
 # Journals - All Documents (Next Page)
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_alldocuments.htm)
+
 ## Description
 
 Retrieves the next page for an ongoing documents journal request.

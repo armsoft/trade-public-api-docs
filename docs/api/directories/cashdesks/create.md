@@ -1,5 +1,7 @@
 # Cash Desks - Create
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_cashdesks.htm)
+
 ## Description
 
 Creates a new cash desk record.

@@ -1,5 +1,7 @@
 # Storages - Update
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_storageslist.htm)
+
 ## Description
 
 Updates an existing storage record.

@@ -1,5 +1,7 @@
 # Product Groups - Create
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_productsgroups.htm)
+
 ## Description
 
 Creates a new product group entry.

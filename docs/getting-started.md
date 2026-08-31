@@ -1,5 +1,7 @@
 # Getting Started with ArmSoft SME Trade Public API
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi.htm)
+
 This guide will help you make your first API call in under 5 minutes.
 
 ## Prerequisites

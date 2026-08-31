@@ -1,5 +1,7 @@
 # Journals - ECR Checks (Next Page)
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_ecrchecks.htm)
+
 ## Description
 
 Retrieves the next page for an ongoing ECR checks journal request.

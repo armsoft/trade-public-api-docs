@@ -1,5 +1,7 @@
 # Reports - Bonus Balances (Next Page)
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_bonusbalances.htm)
+
 ## Description
 
 Retrieves the next page for bonus balances.

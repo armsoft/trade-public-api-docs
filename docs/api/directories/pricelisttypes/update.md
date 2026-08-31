@@ -1,5 +1,7 @@
 # Price List Types - Update
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_pricelisttypes.htm)
+
 ## Description
 
 Replaces an existing price list type.

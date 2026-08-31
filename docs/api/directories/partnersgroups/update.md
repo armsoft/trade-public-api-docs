@@ -1,5 +1,7 @@
 # Partners Groups - Update
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_partnersgroups.htm)
+
 ## Description
 
 Updates an existing partner group by code.

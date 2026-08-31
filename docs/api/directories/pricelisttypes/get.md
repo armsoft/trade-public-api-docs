@@ -1,5 +1,7 @@
 # Price List Types - Get
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_pricelisttypes.htm)
+
 ## Description
 
 Retrieves price list type information.  

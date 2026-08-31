@@ -5,6 +5,8 @@
 [![OpenAPI](https://img.shields.io/badge/OpenAPI-3.0-green.svg)](./openapi/openapi.yaml)
 [![Sync Swagger](https://github.com/armsoft/trade-public-api-docs/actions/workflows/sync-swagger.yml/badge.svg)](https://github.com/armsoft/trade-public-api-docs/actions/workflows/sync-swagger.yml)
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi.htm)
+
 Official documentation for the ArmSoft Trade Public API.
 
 ## 📋 Overview
@@ -195,7 +197,6 @@ Current version: **v1**
 | POST | `/reports/bonusbalances` | Bonus balances report |
 | POST | `/reports/bonusbalances/nextpage` | Bonus balances next page |
 
-
 📖 **[Code Examples](examples/README.md)**
 
 ## 📖 Documentation
@@ -270,8 +271,8 @@ Set the `Accept-Language` header to receive localized responses:
 | 200 | OK - Successful request |
 | 201 | Created - Resource created successfully |
 | 400 | Bad Request - Invalid request data |
-| 401 | Unauthorized - Invalid or missing API key |
-| 403 | Forbidden - Insufficient permissions |
+| 401 | Unauthorized - Missing or invalid API key |
+| 403 | Forbidden - Public API disabled for the key, or insufficient permissions |
 | 404 | Not Found - Resource doesn't exist |
 | 405 | Method Not Allowed |
 | 409 | Conflict - Resource conflict (e.g., duplicate) |

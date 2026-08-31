@@ -1,5 +1,7 @@
 # Partners - Create
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_partners.htm)
+
 ## Description
 
 Creates a partner.

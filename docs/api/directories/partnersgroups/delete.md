@@ -1,5 +1,7 @@
 # Partners Groups - Delete
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_partnersgroups.htm)
+
 ## Description
 
 Deletes a partner group by code.

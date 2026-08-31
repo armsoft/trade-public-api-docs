@@ -1,5 +1,7 @@
 # Price List Types - Delete
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_pricelisttypes.htm)
+
 ## Description
 
 Deletes a price list type by code.

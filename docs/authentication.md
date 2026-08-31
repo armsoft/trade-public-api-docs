@@ -104,9 +104,11 @@ API keys with restricted permissions are limited to the following endpoints:
 Every request is validated server-side before processing:
 1. The server reads the `apiKey` header value.
 2. The key is looked up in the system and its access level is checked.
-3. If the key is missing or invalid, a `401 Unauthorized` response is returned immediately.
-4. If the key exists but lacks permission for the requested operation, a `401` with an access-denied message is returned.
-5. On success, the request proceeds and the response is localized according to the `Accept-Language` header.
+3. If the key is missing, a `401 Unauthorized` response is returned immediately.
+4. If the key is not valid, a `401 Unauthorized` response is returned with the message produced by the authorization service.
+5. If the key exists but Public API access is not enabled for it, a `403 Forbidden` with an access-denied message is returned.
+6. If the key exists but lacks permission for the requested operation, a `403 Forbidden` with an access-denied message is returned.
+7. On success, the request proceeds and the response is localized according to the `Accept-Language` header.
 
 ## Response Codes & Errors
 
@@ -114,9 +116,10 @@ Every request is validated server-side before processing:
 
 | Status Code | Description | Error Response |
 |------------|-------------|----------------|
-| `401 Unauthorized` | API key is missing | *(No response body)* |
-| `401 Unauthorized` | API key is invalid | `{ "message": "Public API access is not available for this API Key" }` |
-| `401 Unauthorized` | Insufficient permissions | `{ "message": "Access denied. This API Key has limited access and cannot perform this operation." }` |
+| `401 Unauthorized` | API key header is missing | `{ "message": "Missing API Key" }` |
+| `401 Unauthorized` | API key is invalid | `{ "message": "..." }` (message from the authorization service) |
+| `403 Forbidden` | Public API is not enabled for the key | `{ "message": "Public API access is not available for this API Key" }` |
+| `403 Forbidden` | Insufficient permissions | `{ "message": "Access denied. This API Key has limited access and cannot perform this operation." }` |
 
 ### Error Examples
 
@@ -129,22 +132,23 @@ curl -X GET "https://api.armsoft.am/trade/v1/directories/products/PROD001"
 
 **Response:**
 
-```
-HTTP/1.1 401 Unauthorized (No response body)
+```json
+HTTP/1.1 401 Unauthorized
+{ "message": "Missing API Key" }
 ```
 
-#### Invalid API Key
+#### API Key Without Public API Access
 **Request:**
 
 ```bash
 curl -X GET "https://api.armsoft.am/trade/v1/directories/products/PROD001" \
-  -H "apiKey: invalid-key-12345"
+  -H "apiKey: not-enabled-key-12345"
 ```
 
 **Response:**
 
 ```json
-HTTP/1.1 401 Unauthorized
+HTTP/1.1 403 Forbidden
 { "message": "Public API access is not available for this API Key" }
 ```
 
@@ -159,7 +163,7 @@ curl -X DELETE "https://api.armsoft.am/trade/v1/directories/products/PROD001" \
 **Response:**
 
 ```json
-HTTP/1.1 401 Unauthorized
+HTTP/1.1 403 Forbidden
 { "message": "Access denied. This API Key has limited access and cannot perform this operation." }
 ```
 

@@ -1,5 +1,7 @@
 # C# Directory Examples
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_lists.htm)
+
 This folder contains C# client wrappers and example code for the API directory endpoints.
 
 ## Added clients
@@ -28,4 +30,3 @@ This folder contains C# client wrappers and example code for the API directory e
 - `/reports/salesanalysis/nextpage`
 - `/reports/bonusbalances`
 - `/reports/bonusbalances/nextpage`
-

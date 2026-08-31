@@ -1,5 +1,7 @@
 # Examples
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi.htm)
+
 Example requests are currently documented directly in endpoint pages and guides.
 
 ## Where to start

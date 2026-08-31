@@ -1,5 +1,7 @@
 # Barcodes - GetAll
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_barcodeslist.htm)
+
 ## Description
 
 Returns a list of barcodes using simple filters.

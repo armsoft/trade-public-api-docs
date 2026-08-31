@@ -1,5 +1,7 @@
 # Barcodes - Get
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_barcodes.htm)
+
 ## Description
 
 Retrieves a barcode record by its code.

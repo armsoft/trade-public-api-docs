@@ -1,5 +1,7 @@
 # Products - GetAll
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_producslist.htm)
+
 ## Description
 
 Returns a list of products using complex filters.

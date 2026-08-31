@@ -1,5 +1,7 @@
 # Storages - Get
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_storageslist.htm)
+
 ## Description
 
 Retrieves storage information.

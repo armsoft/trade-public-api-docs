@@ -1,5 +1,7 @@
 # Partners - Delete
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_partners.htm)
+
 ## Description
 
 Permanently deletes a partner.

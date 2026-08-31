@@ -1,5 +1,7 @@
 # Partners Groups - Create
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_partnersgroups.htm)
+
 ## Description
 
 Creates a new partner group.

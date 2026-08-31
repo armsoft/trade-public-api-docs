@@ -1,5 +1,7 @@
 # Barcodes - Next Page
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_barcodeslist.htm)
+
 ## Description
 
 Fetches the next page of results for a previously executed `/list` request. Use when the initial list call returned `hasMore: true`.

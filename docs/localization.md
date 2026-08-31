@@ -1,5 +1,7 @@
 # Localization
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi.htm)
+
 The API supports three locales for human-readable display fields (e.g. `typeName`, `groupName`, `countryName`).
 
 ## Accept-Language Header

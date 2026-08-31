@@ -1,5 +1,7 @@
 # Cash Desks - Update
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_cashdesks.htm)
+
 ## Description
 
 Updates an existing cash desk identified by code.

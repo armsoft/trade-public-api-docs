@@ -1,6 +1,26 @@
 # Changelog
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi.htm)
+
 All notable changes to the ArmSoft SME Trade Public API are documented here.
+
+## [1.1.1] - 2026-08-31
+
+Documentation-only release; the API itself is unchanged.
+
+### Fixed
+- Authorization failures were documented as `401 Unauthorized`. The API returns
+  `403 Forbidden` when Public API access is not enabled for the key
+  (`Public API access is not available for this API Key`) and when a limited-access key calls an
+  endpoint it may not use (`Access denied. This API Key has limited access and cannot perform this
+  operation.`). Only a missing or invalid key is `401`, and a missing key does return a body
+  (`{ "message": "Missing API Key" }`), not an empty response.
+
+### Documentation
+- Every page now links to its topic in the ArmSoft Trade online manual
+  (`https://online.armsoft.am/trade7/`).
+- `docs/api/version.md` pointed at the REST API chapter; it now points at the
+  Version topic (`restapi_version.htm`).
 
 ## [1.1.0] - 2026-08-11
 
@@ -92,5 +112,5 @@ all changes below are backward compatible.
 
 For questions or issues:
 - Review [documentation](docs/)
-- Check [troubleshooting guide](docs/troubleshooting/)
+- Check the [error handling guide](docs/error-handling.md)
 - Contact support@armsoft.am

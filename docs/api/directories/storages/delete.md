@@ -1,5 +1,7 @@
 # Storages - Delete
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_storageslist.htm)
+
 ## Description
 
 Deletes a storage record by code.

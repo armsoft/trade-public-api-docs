@@ -1,5 +1,7 @@
 # Barcodes - Create
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_barcodes.htm)
+
 ## Description
 
 Creates a new barcode record.

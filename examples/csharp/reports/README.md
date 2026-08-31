@@ -1,5 +1,7 @@
 # C# Report Examples
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_reports.htm)
+
 This folder contains C# client wrappers and example code for the API reports endpoints.
 
 ## Examples
@@ -16,4 +18,3 @@ This folder contains C# client wrappers and example code for the API reports end
 - `salesanalysis-nextpage.cs` - POST `/reports/salesanalysis/nextpage`
 - `bonusbalances.cs` - POST `/reports/bonusbalances`
 - `bonusbalances-nextpage.cs` - POST `/reports/bonusbalances/nextpage`
-

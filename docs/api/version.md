@@ -1,8 +1,8 @@
 # Version
 
-Retrieves the current API version string.
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_version.htm)
 
-🔗 [Online documentation](https://online.armsoft.am/trade7/restapi.htm)
+Retrieves the current API version string.
 
 ## Endpoint
 

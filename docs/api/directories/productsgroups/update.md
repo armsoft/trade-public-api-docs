@@ -1,5 +1,7 @@
 # Product Groups - Update
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_productsgroups.htm)
+
 ## Description
 
 Updates an existing product group.

@@ -1,5 +1,7 @@
 # Reports - Partners Balances (Next Page)
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_partnersbalances.htm)
+
 ## Description
 
 Retrieves the next page for partners balances.

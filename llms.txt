@@ -34,6 +34,7 @@
 - Optional locale header: `Accept-Language` (`hy-AM`, `en-US`, `ru-RU`)
 - Full Access keys: complete CRUD on all resources
 - Limited Access keys: read-only product catalog + sale document creation (online store use case)
+- 401 when the key is missing or invalid; 403 when Public API is disabled for the key or the key has limited access
 
 ## Endpoints (v1)
 

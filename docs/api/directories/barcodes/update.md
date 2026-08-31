@@ -1,5 +1,7 @@
 # Barcodes - Update
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_barcodes.htm)
+
 ## Description
 
 Replaces an existing barcode record with new values.

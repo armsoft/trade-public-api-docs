@@ -1,5 +1,7 @@
 # Partners - Get
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_partners.htm)
+
 ## Description
 
 Returns one partner by partner code.

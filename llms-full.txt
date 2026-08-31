@@ -37,9 +37,10 @@ Accept-Language: en-US
 
 | Status | Meaning |
 |--------|---------|
-| 401 (no body) | API key missing |
-| 401 `{ "message": "Public API access is not available for this API Key" }` | Invalid key |
-| 401 `{ "message": "Access denied. This API Key has limited access and cannot perform this operation." }` | Insufficient permissions |
+| 401 `{ "message": "Missing API Key" }` | API key header missing |
+| 401 | API key invalid (message comes from the authorization service) |
+| 403 `{ "message": "Public API access is not available for this API Key" }` | Public API not enabled for the key |
+| 403 `{ "message": "Access denied. This API Key has limited access and cannot perform this operation." }` | Insufficient permissions |
 
 ---
 
@@ -92,7 +93,7 @@ To stop paginating early:
 | 201 | Created — resource created (POST) |
 | 400 | Bad Request — validation error |
 | 401 | Unauthorized — missing/invalid API key |
-| 403 | Forbidden — key valid but action not allowed |
+| 403 | Forbidden — Public API disabled for the key, or the key has limited access |
 | 404 | Not Found — resource does not exist |
 | 405 | Method Not Allowed |
 | 409 | Conflict — duplicate code or resource in use |

@@ -1,5 +1,7 @@
 # C# Document Examples
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_documents.htm)
+
 This folder contains C# examples for documents API endpoints.
 
 ## Examples
@@ -12,4 +14,3 @@ This folder contains C# examples for documents API endpoints.
 - `create-sale.cs` — POST `/documents/sale`
 - `create-salereturn.cs` — POST `/documents/salereturn`
 - `create-transferinvoice.cs` — POST `/documents/transferinvoice`
-

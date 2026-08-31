@@ -1,5 +1,7 @@
 # Product Groups - Delete
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_productsgroups.htm)
+
 ## Description
 
 Removes a product group by code.

@@ -1,5 +1,7 @@
 # Reports - Products Balances (Next Page)
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_productsbalances.htm)
+
 ## Description
 
 Retrieves the next page for products balances.

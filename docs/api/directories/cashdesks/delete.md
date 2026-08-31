@@ -1,5 +1,7 @@
 # Cash Desks - Delete
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_cashdesks.htm)
+
 ## Description
 
 Deletes a cash desk record by code.

@@ -1,5 +1,7 @@
 # Products - Get
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_producs.htm)
+
 ## Description
 
 Returns one product by product code.

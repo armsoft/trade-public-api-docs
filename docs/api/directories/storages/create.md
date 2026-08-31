@@ -1,5 +1,7 @@
 # Storages - Create
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_storageslist.htm)
+
 ## Description
 
 Create a new storage record.

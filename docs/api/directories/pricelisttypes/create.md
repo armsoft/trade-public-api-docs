@@ -1,5 +1,7 @@
 # Price List Types - Create
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_pricelisttypes.htm)
+
 ## Description
 
 Creates a new price list type.

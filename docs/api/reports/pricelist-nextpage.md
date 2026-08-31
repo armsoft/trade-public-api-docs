@@ -1,5 +1,7 @@
 # Reports - Price List (Next Page)
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_pricelist.htm)
+
 ## Description
 
 Retrieves the next page for price list report results.

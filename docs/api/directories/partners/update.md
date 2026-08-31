@@ -1,5 +1,7 @@
 # Partners - Update
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_partners.htm)
+
 ## Description
 
 Replaces all fields of an existing partner.

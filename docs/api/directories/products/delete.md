@@ -1,5 +1,7 @@
 # Products - Delete
 
+🔗 [Online documentation](https://online.armsoft.am/trade7/restapi_producs.htm)
+
 ## Description
 
 Deletes a product by code.
