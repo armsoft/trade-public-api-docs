@@ -49,6 +49,9 @@ properties:
     type: integer
     format: int32
     nullable: true
+  shelfLifeDays:
+    type: integer
+    format: int32
   showInPriceLists:
     type: boolean
     nullable: true

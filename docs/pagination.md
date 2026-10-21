@@ -146,8 +146,14 @@ Pagination is supported on these calls:
 - `POST /v1/directories/barcodes/list`
 - `POST /v1/directories/partners/list`
 - `POST /v1/directories/partners/contracts/list`
-- `POST /v1/reports/journals/{journalName}`
-- `POST /v1/reports/reports/{reportName}`
-- Other directory and report list endpoints
+- `POST /v1/journals/alldocuments`
+- `POST /v1/journals/ecrchecks`
+- `POST /v1/reports/partnersbalances`
+- `POST /v1/reports/productsbalances`
+- `POST /v1/reports/productsbalances/short`
+- `POST /v1/reports/pricelist`
+- `POST /v1/reports/salesanalysis`
+- `POST /v1/reports/bonusbalances`
+- Other directory list endpoints
 
 Consult the specific endpoint documentation for details on available filters and response properties.

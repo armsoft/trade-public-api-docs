@@ -4,6 +4,22 @@
 
 All notable changes to the ArmSoft SME Trade Public API are documented here.
 
+## [1.2.0] - 2026-10-21
+
+Published to `https://api.armsoft.am/trade`. The API's own `info.version` stays `1.0`;
+the change below is backward compatible.
+
+### Added
+- `shelfLifeDays` (integer, shelf life in days) added to the `Product` and `ProductRow` schemas –
+  returned by `POST /directories/products/list`, its `nextpage` call and
+  `GET /directories/products/{code}`, and accepted by `POST /directories/products` and
+  `PUT /directories/products/{code}`. It is nullable in `ProductRow`.
+
+### Fixed
+- `docs/pagination.md` listed `POST /v1/reports/journals/{journalName}` and
+  `POST /v1/reports/reports/{reportName}`, which the API does not serve. It now lists the actual
+  paginated journal and report routes.
+
 ## [1.1.1] - 2026-08-31
 
 Documentation-only release; the API itself is unchanged.

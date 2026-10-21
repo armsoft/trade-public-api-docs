@@ -145,6 +145,10 @@ properties:
     type: integer
     format: int32
     nullable: true
+  shelfLifeDays:
+    type: integer
+    format: int32
+    nullable: true
   lastModifiedDate:
     type: string
     format: date-time
