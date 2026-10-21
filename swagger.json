@@ -8397,6 +8397,12 @@
             "format": "int32",
             "nullable": true
           },
+          "shelfLifeDays": {
+            "type": "integer",
+            "description": "hy-AM: Պիտանելիության ժամկետ (օր) | en-US: Shelf life (days) | ru-RU: Срок годности (дней)",
+            "format": "int32",
+            "nullable": true
+          },
           "showInPriceLists": {
             "type": "boolean",
             "description": "hy-AM: Ցույց տալ գնացուցակներում | en-US: Show in price lists | ru-RU: Включить в прайс-лист",
@@ -8815,6 +8821,11 @@
             "type": "integer",
             "format": "int32",
             "nullable": true
+          },
+          "shelfLifeDays": {
+            "type": "integer",
+            "description": "hy-AM: Պիտանելիության ժամկետ (օր) | en-US: Shelf life (days) | ru-RU: Срок годности (дней)",
+            "format": "int32"
           },
           "showInPriceLists": {
             "type": "boolean",

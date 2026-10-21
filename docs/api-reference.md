@@ -10773,7 +10773,7 @@ func main() {
 > 200 Response
 
 ```
-{"id":"497f6eca-6276-4993-bfeb-53cbbbba6f08","hasMore":true,"data":[{"id":0,"code":"string","name":"string","fullName":"string","type":"string","typeName":"string","cpaClassifier":"string","group":"string","groupName":"string","groupPath":"string","baseUnitMeasure":"string","baseUnitMeasureAbbreviation":"string","alternativeUnitMeasure":"string","alternativeUnitMeasureAbbreviation":"string","barcode":"string","specification":"string","externalCode":"string","costingMethod":"string","costingMethodName":"string","vat":true,"checkMarking":true,"weight":true,"pluCode":0,"showInPriceLists":true,"environmentalFeePercent":0.1,"labelUnitMeasure":"string","labelUnitMeasureAbbreviation":"string","labelUnitMeasureCoefficient":0.1,"country":"string","countryName":"string","producer":"string","producerName":"string","property1":"string","property2":"string","minimumQuantity":0.1,"maximumQuantity":0.1,"addedValuePercent":0.1,"aoeCoefficient":0.1,"bonusPercent":0.1,"bonusPoint":0.1,"discountPercent":0.1,"mainSupplierId":0,"mainSupplierName":"string","substituteItemsGroup":"string","substituteItemsGroupName":"string","nameEN":"string","nameRU":"string","additionalSpecification1":"string","additionalSpecification2":"string","lastModifierName":"string","lastModifyDate":"2019-08-24T14:15:22Z","creatorName":"string","creationDate":"2019-08-24T14:15:22Z","prices":{"property1":0.1,"property2":0.1}}]}
+{"id":"497f6eca-6276-4993-bfeb-53cbbbba6f08","hasMore":true,"data":[{"id":0,"code":"string","name":"string","fullName":"string","type":"string","typeName":"string","cpaClassifier":"string","group":"string","groupName":"string","groupPath":"string","baseUnitMeasure":"string","baseUnitMeasureAbbreviation":"string","alternativeUnitMeasure":"string","alternativeUnitMeasureAbbreviation":"string","barcode":"string","specification":"string","externalCode":"string","costingMethod":"string","costingMethodName":"string","vat":true,"checkMarking":true,"weight":true,"pluCode":0,"shelfLifeDays":0,"showInPriceLists":true,"environmentalFeePercent":0.1,"labelUnitMeasure":"string","labelUnitMeasureAbbreviation":"string","labelUnitMeasureCoefficient":0.1,"country":"string","countryName":"string","producer":"string","producerName":"string","property1":"string","property2":"string","minimumQuantity":0.1,"maximumQuantity":0.1,"addedValuePercent":0.1,"aoeCoefficient":0.1,"bonusPercent":0.1,"bonusPoint":0.1,"discountPercent":0.1,"mainSupplierId":0,"mainSupplierName":"string","substituteItemsGroup":"string","substituteItemsGroupName":"string","nameEN":"string","nameRU":"string","additionalSpecification1":"string","additionalSpecification2":"string","lastModifierName":"string","lastModifyDate":"2019-08-24T14:15:22Z","creatorName":"string","creationDate":"2019-08-24T14:15:22Z","prices":{"property1":0.1,"property2":0.1}}]}
 ```
 
 ```json
@@ -10805,6 +10805,7 @@ func main() {
       "checkMarking": true,
       "weight": true,
       "pluCode": 0,
+      "shelfLifeDays": 0,
       "showInPriceLists": true,
       "environmentalFeePercent": 0.1,
       "labelUnitMeasure": "string",
@@ -11041,7 +11042,7 @@ func main() {
 > 200 Response
 
 ```
-{"id":"497f6eca-6276-4993-bfeb-53cbbbba6f08","hasMore":true,"data":[{"id":0,"code":"string","name":"string","fullName":"string","type":"string","typeName":"string","cpaClassifier":"string","group":"string","groupName":"string","groupPath":"string","baseUnitMeasure":"string","baseUnitMeasureAbbreviation":"string","alternativeUnitMeasure":"string","alternativeUnitMeasureAbbreviation":"string","barcode":"string","specification":"string","externalCode":"string","costingMethod":"string","costingMethodName":"string","vat":true,"checkMarking":true,"weight":true,"pluCode":0,"showInPriceLists":true,"environmentalFeePercent":0.1,"labelUnitMeasure":"string","labelUnitMeasureAbbreviation":"string","labelUnitMeasureCoefficient":0.1,"country":"string","countryName":"string","producer":"string","producerName":"string","property1":"string","property2":"string","minimumQuantity":0.1,"maximumQuantity":0.1,"addedValuePercent":0.1,"aoeCoefficient":0.1,"bonusPercent":0.1,"bonusPoint":0.1,"discountPercent":0.1,"mainSupplierId":0,"mainSupplierName":"string","substituteItemsGroup":"string","substituteItemsGroupName":"string","nameEN":"string","nameRU":"string","additionalSpecification1":"string","additionalSpecification2":"string","lastModifierName":"string","lastModifyDate":"2019-08-24T14:15:22Z","creatorName":"string","creationDate":"2019-08-24T14:15:22Z","prices":{"property1":0.1,"property2":0.1}}]}
+{"id":"497f6eca-6276-4993-bfeb-53cbbbba6f08","hasMore":true,"data":[{"id":0,"code":"string","name":"string","fullName":"string","type":"string","typeName":"string","cpaClassifier":"string","group":"string","groupName":"string","groupPath":"string","baseUnitMeasure":"string","baseUnitMeasureAbbreviation":"string","alternativeUnitMeasure":"string","alternativeUnitMeasureAbbreviation":"string","barcode":"string","specification":"string","externalCode":"string","costingMethod":"string","costingMethodName":"string","vat":true,"checkMarking":true,"weight":true,"pluCode":0,"shelfLifeDays":0,"showInPriceLists":true,"environmentalFeePercent":0.1,"labelUnitMeasure":"string","labelUnitMeasureAbbreviation":"string","labelUnitMeasureCoefficient":0.1,"country":"string","countryName":"string","producer":"string","producerName":"string","property1":"string","property2":"string","minimumQuantity":0.1,"maximumQuantity":0.1,"addedValuePercent":0.1,"aoeCoefficient":0.1,"bonusPercent":0.1,"bonusPoint":0.1,"discountPercent":0.1,"mainSupplierId":0,"mainSupplierName":"string","substituteItemsGroup":"string","substituteItemsGroupName":"string","nameEN":"string","nameRU":"string","additionalSpecification1":"string","additionalSpecification2":"string","lastModifierName":"string","lastModifyDate":"2019-08-24T14:15:22Z","creatorName":"string","creationDate":"2019-08-24T14:15:22Z","prices":{"property1":0.1,"property2":0.1}}]}
 ```
 
 ```json
@@ -11073,6 +11074,7 @@ func main() {
       "checkMarking": true,
       "weight": true,
       "pluCode": 0,
+      "shelfLifeDays": 0,
       "showInPriceLists": true,
       "environmentalFeePercent": 0.1,
       "labelUnitMeasure": "string",
@@ -11290,7 +11292,7 @@ func main() {
 > 200 Response
 
 ```
-{"id":0,"code":"string","name":"string","fullName":"string","type":"string","cpaClassifier":"string","group":"string","baseUnitMeasure":"string","baseUnitMeasureName":"string","baseUnitMeasureAbbreviation":"string","alternativeUnitMeasure":"string","alternativeUnitMeasureName":"string","alternativeUnitMeasureAbbreviation":"string","barcode":"string","specification":"string","externalCode":"string","costingMethod":"string","vat":true,"checkMarking":true,"weight":true,"pluCode":0,"showInPriceLists":true,"environmentalFeePercent":0.1,"labelUnitMeasure":"string","labelUnitMeasureCoefficient":0.1,"country":"string","producer":"string","property1":"string","property2":"string","minimumQuantity":0.1,"maximumQuantity":0.1,"addedValuePercent":0.1,"aoeCoefficient":0.1,"bonusPercent":0.1,"bonusPoint":0.1,"discountPercent":0.1,"mainSupplierId":0,"mainSupplierCode":"string","substituteItemsGroup":"string","nameEN":"string","nameRU":"string","additionalSpecification1":"string","additionalSpecification2":"string","measureUnits":[{"code":"string","abbreviation":"string","coefficient":0.1,"default":true}],"barcodes":[{"unitMeasure":"string","abbreviation":"string","barcode":"string"}]}
+{"id":0,"code":"string","name":"string","fullName":"string","type":"string","cpaClassifier":"string","group":"string","baseUnitMeasure":"string","baseUnitMeasureName":"string","baseUnitMeasureAbbreviation":"string","alternativeUnitMeasure":"string","alternativeUnitMeasureName":"string","alternativeUnitMeasureAbbreviation":"string","barcode":"string","specification":"string","externalCode":"string","costingMethod":"string","vat":true,"checkMarking":true,"weight":true,"pluCode":0,"shelfLifeDays":0,"showInPriceLists":true,"environmentalFeePercent":0.1,"labelUnitMeasure":"string","labelUnitMeasureCoefficient":0.1,"country":"string","producer":"string","property1":"string","property2":"string","minimumQuantity":0.1,"maximumQuantity":0.1,"addedValuePercent":0.1,"aoeCoefficient":0.1,"bonusPercent":0.1,"bonusPoint":0.1,"discountPercent":0.1,"mainSupplierId":0,"mainSupplierCode":"string","substituteItemsGroup":"string","nameEN":"string","nameRU":"string","additionalSpecification1":"string","additionalSpecification2":"string","measureUnits":[{"code":"string","abbreviation":"string","coefficient":0.1,"default":true}],"barcodes":[{"unitMeasure":"string","abbreviation":"string","barcode":"string"}]}
 ```
 
 ```json
@@ -11316,6 +11318,7 @@ func main() {
   "checkMarking": true,
   "weight": true,
   "pluCode": 0,
+  "shelfLifeDays": 0,
   "showInPriceLists": true,
   "environmentalFeePercent": 0.1,
   "labelUnitMeasure": "string",
@@ -11414,6 +11417,7 @@ const inputBody = '{
   "checkMarking": true,
   "weight": true,
   "pluCode": 0,
+  "shelfLifeDays": 0,
   "showInPriceLists": true,
   "environmentalFeePercent": 0.1,
   "labelUnitMeasure": "string",
@@ -11613,6 +11617,7 @@ func main() {
   "checkMarking": true,
   "weight": true,
   "pluCode": 0,
+  "shelfLifeDays": 0,
   "showInPriceLists": true,
   "environmentalFeePercent": 0.1,
   "labelUnitMeasure": "string",
@@ -11666,7 +11671,7 @@ func main() {
 > 200 Response
 
 ```
-{"id":0,"code":"string","name":"string","fullName":"string","type":"string","cpaClassifier":"string","group":"string","baseUnitMeasure":"string","baseUnitMeasureName":"string","baseUnitMeasureAbbreviation":"string","alternativeUnitMeasure":"string","alternativeUnitMeasureName":"string","alternativeUnitMeasureAbbreviation":"string","barcode":"string","specification":"string","externalCode":"string","costingMethod":"string","vat":true,"checkMarking":true,"weight":true,"pluCode":0,"showInPriceLists":true,"environmentalFeePercent":0.1,"labelUnitMeasure":"string","labelUnitMeasureCoefficient":0.1,"country":"string","producer":"string","property1":"string","property2":"string","minimumQuantity":0.1,"maximumQuantity":0.1,"addedValuePercent":0.1,"aoeCoefficient":0.1,"bonusPercent":0.1,"bonusPoint":0.1,"discountPercent":0.1,"mainSupplierId":0,"mainSupplierCode":"string","substituteItemsGroup":"string","nameEN":"string","nameRU":"string","additionalSpecification1":"string","additionalSpecification2":"string","measureUnits":[{"code":"string","abbreviation":"string","coefficient":0.1,"default":true}],"barcodes":[{"unitMeasure":"string","abbreviation":"string","barcode":"string"}]}
+{"id":0,"code":"string","name":"string","fullName":"string","type":"string","cpaClassifier":"string","group":"string","baseUnitMeasure":"string","baseUnitMeasureName":"string","baseUnitMeasureAbbreviation":"string","alternativeUnitMeasure":"string","alternativeUnitMeasureName":"string","alternativeUnitMeasureAbbreviation":"string","barcode":"string","specification":"string","externalCode":"string","costingMethod":"string","vat":true,"checkMarking":true,"weight":true,"pluCode":0,"shelfLifeDays":0,"showInPriceLists":true,"environmentalFeePercent":0.1,"labelUnitMeasure":"string","labelUnitMeasureCoefficient":0.1,"country":"string","producer":"string","property1":"string","property2":"string","minimumQuantity":0.1,"maximumQuantity":0.1,"addedValuePercent":0.1,"aoeCoefficient":0.1,"bonusPercent":0.1,"bonusPoint":0.1,"discountPercent":0.1,"mainSupplierId":0,"mainSupplierCode":"string","substituteItemsGroup":"string","nameEN":"string","nameRU":"string","additionalSpecification1":"string","additionalSpecification2":"string","measureUnits":[{"code":"string","abbreviation":"string","coefficient":0.1,"default":true}],"barcodes":[{"unitMeasure":"string","abbreviation":"string","barcode":"string"}]}
 ```
 
 ```json
@@ -11692,6 +11697,7 @@ func main() {
   "checkMarking": true,
   "weight": true,
   "pluCode": 0,
+  "shelfLifeDays": 0,
   "showInPriceLists": true,
   "environmentalFeePercent": 0.1,
   "labelUnitMeasure": "string",
@@ -11956,6 +11962,7 @@ const inputBody = '{
   "checkMarking": true,
   "weight": true,
   "pluCode": 0,
+  "shelfLifeDays": 0,
   "showInPriceLists": true,
   "environmentalFeePercent": 0.1,
   "labelUnitMeasure": "string",
@@ -12155,6 +12162,7 @@ func main() {
   "checkMarking": true,
   "weight": true,
   "pluCode": 0,
+  "shelfLifeDays": 0,
   "showInPriceLists": true,
   "environmentalFeePercent": 0.1,
   "labelUnitMeasure": "string",
@@ -12207,7 +12215,7 @@ func main() {
 > 201 Response
 
 ```
-{"id":0,"code":"string","name":"string","fullName":"string","type":"string","cpaClassifier":"string","group":"string","baseUnitMeasure":"string","baseUnitMeasureName":"string","baseUnitMeasureAbbreviation":"string","alternativeUnitMeasure":"string","alternativeUnitMeasureName":"string","alternativeUnitMeasureAbbreviation":"string","barcode":"string","specification":"string","externalCode":"string","costingMethod":"string","vat":true,"checkMarking":true,"weight":true,"pluCode":0,"showInPriceLists":true,"environmentalFeePercent":0.1,"labelUnitMeasure":"string","labelUnitMeasureCoefficient":0.1,"country":"string","producer":"string","property1":"string","property2":"string","minimumQuantity":0.1,"maximumQuantity":0.1,"addedValuePercent":0.1,"aoeCoefficient":0.1,"bonusPercent":0.1,"bonusPoint":0.1,"discountPercent":0.1,"mainSupplierId":0,"mainSupplierCode":"string","substituteItemsGroup":"string","nameEN":"string","nameRU":"string","additionalSpecification1":"string","additionalSpecification2":"string","measureUnits":[{"code":"string","abbreviation":"string","coefficient":0.1,"default":true}],"barcodes":[{"unitMeasure":"string","abbreviation":"string","barcode":"string"}]}
+{"id":0,"code":"string","name":"string","fullName":"string","type":"string","cpaClassifier":"string","group":"string","baseUnitMeasure":"string","baseUnitMeasureName":"string","baseUnitMeasureAbbreviation":"string","alternativeUnitMeasure":"string","alternativeUnitMeasureName":"string","alternativeUnitMeasureAbbreviation":"string","barcode":"string","specification":"string","externalCode":"string","costingMethod":"string","vat":true,"checkMarking":true,"weight":true,"pluCode":0,"shelfLifeDays":0,"showInPriceLists":true,"environmentalFeePercent":0.1,"labelUnitMeasure":"string","labelUnitMeasureCoefficient":0.1,"country":"string","producer":"string","property1":"string","property2":"string","minimumQuantity":0.1,"maximumQuantity":0.1,"addedValuePercent":0.1,"aoeCoefficient":0.1,"bonusPercent":0.1,"bonusPoint":0.1,"discountPercent":0.1,"mainSupplierId":0,"mainSupplierCode":"string","substituteItemsGroup":"string","nameEN":"string","nameRU":"string","additionalSpecification1":"string","additionalSpecification2":"string","measureUnits":[{"code":"string","abbreviation":"string","coefficient":0.1,"default":true}],"barcodes":[{"unitMeasure":"string","abbreviation":"string","barcode":"string"}]}
 ```
 
 ```json
@@ -12233,6 +12241,7 @@ func main() {
   "checkMarking": true,
   "weight": true,
   "pluCode": 0,
+  "shelfLifeDays": 0,
   "showInPriceLists": true,
   "environmentalFeePercent": 0.1,
   "labelUnitMeasure": "string",
@@ -27507,6 +27516,7 @@ This operation does not require authentication
   "checkMarking": true,
   "weight": true,
   "pluCode": 0,
+  "shelfLifeDays": 0,
   "showInPriceLists": true,
   "environmentalFeePercent": 0.1,
   "labelUnitMeasure": "string",
@@ -27573,6 +27583,7 @@ This operation does not require authentication
 |checkMarking|boolean¦null|false|none|hy-AM: Ստուգել դրոշմանիշերի լրացումը | en-US: Check Marking | ru-RU: Проверять заполнение маркировки|
 |weight|boolean¦null|false|none|hy-AM: Քաշային | en-US: Weight | ru-RU: Весовой|
 |pluCode|integer(int32)¦null|false|none|none|
+|shelfLifeDays|integer(int32)¦null|false|none|hy-AM: Պիտանելիության ժամկետ (օր) | en-US: Shelf life (days) | ru-RU: Срок годности (дней)|
 |showInPriceLists|boolean¦null|false|none|hy-AM: Ցույց տալ գնացուցակներում | en-US: Show in price lists | ru-RU: Включить в прайс-лист|
 |environmentalFeePercent|number(double)¦null|false|none|hy-AM: Բնապահպանական հարկի % | en-US: Environmental fee (%) | ru-RU: % экологического налога|
 |labelUnitMeasure|string¦null|false|none|hy-AM: Գնապիտակի չափման միավոր | en-US: Unit of measure of label | ru-RU: Единица измерения ценника|
@@ -27787,6 +27798,7 @@ This operation does not require authentication
   "checkMarking": true,
   "weight": true,
   "pluCode": 0,
+  "shelfLifeDays": 0,
   "showInPriceLists": true,
   "environmentalFeePercent": 0.1,
   "labelUnitMeasure": "string",
@@ -27852,6 +27864,7 @@ This operation does not require authentication
 |checkMarking|boolean|false|none|hy-AM: Ստուգել դրոշմանիշերի լրացումը | en-US: Check Marking | ru-RU: Проверять заполнение маркировки|
 |weight|boolean|false|none|hy-AM: Քաշային | en-US: Weight | ru-RU: Весовой|
 |pluCode|integer(int32)¦null|false|none|none|
+|shelfLifeDays|integer(int32)|false|none|hy-AM: Պիտանելիության ժամկետ (օր) | en-US: Shelf life (days) | ru-RU: Срок годности (дней)|
 |showInPriceLists|boolean|false|none|hy-AM: Ցույց տալ գնացուցակներում | en-US: Show in price lists | ru-RU: Включить в прайс-лист|
 |environmentalFeePercent|number(double)|false|none|hy-AM: Բնապահպանական հարկի % | en-US: Environmental fee (%) | ru-RU: % экологического налога|
 |labelUnitMeasure|string¦null|false|none|hy-AM: Գնապիտակի չափման միավոր | en-US: Unit of measure of label | ru-RU: Единица измерения ценника|
@@ -27921,6 +27934,7 @@ This operation does not require authentication
       "checkMarking": true,
       "weight": true,
       "pluCode": 0,
+      "shelfLifeDays": 0,
       "showInPriceLists": true,
       "environmentalFeePercent": 0.1,
       "labelUnitMeasure": "string",
