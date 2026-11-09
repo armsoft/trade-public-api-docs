@@ -48,6 +48,10 @@ tags:
     description: Transfer invoice document endpoints
   - name: ProductsMovement
     description: Products movement document endpoints
+  - name: ProductsKitting
+    description: Products kitting document endpoints
+  - name: ProductsStockTaking
+    description: Products stocktaking document endpoints
   - name: Journals
     description: Document journal endpoints
   - name: Reports
@@ -166,6 +170,16 @@ paths:
     $ref: ./paths/documents/productsmovement.yaml#/~1documents~1productsmovement
   /documents/productsmovement/{isn}:
     $ref: ./paths/documents/productsmovement_{isn}.yaml#/~1documents~1productsmovement~1{isn}
+  # Documents — Products Kitting
+  /documents/productskitting:
+    $ref: ./paths/documents/productskitting.yaml#/~1documents~1productskitting
+  /documents/productskitting/{isn}:
+    $ref: ./paths/documents/productskitting_{isn}.yaml#/~1documents~1productskitting~1{isn}
+  # Documents — Products Stocktaking
+  /documents/productsstocktaking:
+    $ref: ./paths/documents/productsstocktaking.yaml#/~1documents~1productsstocktaking
+  /documents/productsstocktaking/{isn}:
+    $ref: ./paths/documents/productsstocktaking_{isn}.yaml#/~1documents~1productsstocktaking~1{isn}
   # Journals
   /journals/alldocuments:
     $ref: ./paths/journals/alldocuments.yaml#/~1journals~1alldocuments
@@ -319,6 +333,14 @@ components:
       $ref: ./components/schemas/documents/ProductsMovement.yaml
     ProductsMovementSpecificationRow:
       $ref: ./components/schemas/documents/ProductsMovementSpecificationRow.yaml
+    ProductsKitting:
+      $ref: ./components/schemas/documents/ProductsKitting.yaml
+    ProductsKittingSpecificationRow:
+      $ref: ./components/schemas/documents/ProductsKittingSpecificationRow.yaml
+    ProductsStockTaking:
+      $ref: ./components/schemas/documents/ProductsStockTaking.yaml
+    ProductsStockTakingSpecificationRow:
+      $ref: ./components/schemas/documents/ProductsStockTakingSpecificationRow.yaml
     # Reports
     BonusBalancesDataRow:
       $ref: ./components/schemas/reports/BonusBalancesDataRow.yaml

@@ -1,0 +1,18 @@
+/documents/productskitting:
+  post:
+    tags: [ProductsKitting]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/documents/ProductsKitting.yaml
+    responses:
+      '201':
+        description: Created
+        content:
+          application/json:
+            schema:
+              $ref: ../../components/schemas/documents/ProductsKitting.yaml
+      '401':
+        $ref: ../../components/responses/Unauthorized.yaml

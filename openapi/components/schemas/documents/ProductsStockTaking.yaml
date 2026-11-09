@@ -1,0 +1,45 @@
+type: object
+properties:
+  isn:
+    type: string
+    format: uuid
+  date:
+    type: string
+    format: date
+    nullable: true
+  documentNumber:
+    type: string
+    nullable: true
+  state:
+    type: integer
+    format: int32
+  storage:
+    type: string
+    nullable: true
+  productGroup:
+    type: string
+    nullable: true
+  currency:
+    type: string
+    nullable: true
+  currencyExchangeRate:
+    type: number
+    format: double
+  currencyExchangeBase:
+    type: number
+    format: double
+  priceListType:
+    type: string
+    nullable: true
+  comment:
+    type: string
+    nullable: true
+  owner:
+    type: string
+    nullable: true
+  itemList:
+    type: array
+    items:
+      $ref: "#/components/schemas/ProductsStockTakingSpecificationRow"
+    nullable: true
+additionalProperties: false

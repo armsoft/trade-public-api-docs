@@ -4,6 +4,26 @@
 
 All notable changes to the ArmSoft SME Trade Public API are documented here.
 
+## [1.3.0] - 2026-11-09
+
+Published to `https://api.armsoft.am/trade`. The API's own `info.version` stays `1.0`;
+the changes below add new endpoints and are backward compatible for existing calls.
+
+### Added
+- **Products Kitting** documents (`ProductsKitting` tag) – `POST /documents/productskitting`,
+  `GET`, `PUT` and `DELETE /documents/productskitting/{isn}`, with the `ProductsKitting` and
+  `ProductsKittingSpecificationRow` schemas. See `docs/api/documents/productskitting.md` and
+  `examples/csharp/documents/create-productskitting.cs`.
+- **Products Stocktaking** documents (`ProductsStockTaking` tag) –
+  `POST /documents/productsstocktaking`, `GET`, `PUT` and `DELETE /documents/productsstocktaking/{isn}`,
+  with the `ProductsStockTaking` and `ProductsStockTakingSpecificationRow` schemas. See
+  `docs/api/documents/productsstocktaking.md` and
+  `examples/csharp/documents/create-productsstocktaking.cs`.
+
+### Changed
+- `currencyExchangeRate` and `currencyExchangeBase` in the `StorageInputOrder` and
+  `StorageInputOrderRetail` schemas are no longer nullable; the API always returns a number.
+
 ## [1.2.0] - 2026-10-21
 
 Published to `https://api.armsoft.am/trade`. The API's own `info.version` stays `1.0`;

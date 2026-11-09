@@ -25,7 +25,7 @@ Official documentation for the **ArmSoft Trade Public API** — programmatic acc
 | Category | Operations |
 |---|---|
 | **Directories** | Manage products, partners, barcodes, cash desks, storages, price list types |
-| **Documents** | Create and retrieve sales, invoices, transfer invoices, storage orders |
+| **Documents** | Create and retrieve sales, invoices, transfer invoices, storage orders, products movement, kitting and stocktaking |
 | **Journals** | Query all-documents journal and ECR checks |
 | **Reports** | Products balances, partners balances, price lists, sales analysis, bonus balances |
 

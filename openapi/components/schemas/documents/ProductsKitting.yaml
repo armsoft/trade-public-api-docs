@@ -1,0 +1,63 @@
+type: object
+properties:
+  isn:
+    type: string
+    format: uuid
+  date:
+    type: string
+    format: date
+    nullable: true
+  documentNumber:
+    type: string
+    nullable: true
+  state:
+    type: integer
+    format: int32
+  storageOutput:
+    type: string
+    nullable: true
+  storageInput:
+    type: string
+    nullable: true
+  kit:
+    type: string
+    nullable: true
+  unit:
+    type: string
+    nullable: true
+  quantity:
+    type: number
+    format: double
+    nullable: true
+  expirationDate:
+    type: string
+    format: date
+    nullable: true
+  country:
+    type: string
+    nullable: true
+  producer:
+    type: string
+    nullable: true
+  property1:
+    type: string
+    nullable: true
+  property2:
+    type: string
+    nullable: true
+  comment:
+    type: string
+    nullable: true
+  owner:
+    type: string
+    nullable: true
+  totalAmount:
+    type: number
+    format: double
+    nullable: true
+  kitComponents:
+    type: array
+    items:
+      $ref: "#/components/schemas/ProductsKittingSpecificationRow"
+    nullable: true
+additionalProperties: false

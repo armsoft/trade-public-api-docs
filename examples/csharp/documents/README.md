@@ -11,6 +11,8 @@ This folder contains C# examples for documents API endpoints.
 - `create-storageinputorder.cs` — POST `/documents/storageinputorder`
 - `create-storageinputorderretail.cs` — POST `/documents/storageinputorderretail`
 - `create-productsmovement.cs` — POST `/documents/productsmovement`
+- `create-productskitting.cs` — POST `/documents/productskitting`
+- `create-productsstocktaking.cs` — POST `/documents/productsstocktaking`
 - `create-sale.cs` — POST `/documents/sale`
 - `create-salereturn.cs` — POST `/documents/salereturn`
 - `create-transferinvoice.cs` — POST `/documents/transferinvoice`

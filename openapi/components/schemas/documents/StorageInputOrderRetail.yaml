@@ -44,11 +44,9 @@ properties:
   currencyExchangeRate:
     type: number
     format: double
-    nullable: true
   currencyExchangeBase:
     type: number
     format: double
-    nullable: true
   vatCalculationType:
     type: string
     nullable: true
