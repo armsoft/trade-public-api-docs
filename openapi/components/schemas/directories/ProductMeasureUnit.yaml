@@ -1,24 +1,29 @@
 type: object
 description: Alternative measurement unit for a product
 properties:
-  default:
-    type: boolean
-    nullable: true
-  coefficient:
-    type: number
-    format: decimal
-    nullable: true
   itemId:
     type: integer
     format: int32
   itemCode:
     type: string
+    nullable: true
   itemName:
     type: string
+    nullable: true
   unitMeasure:
     type: string
+    nullable: true
   unitMeasureName:
     type: string
+    nullable: true
   unitMeasureAbbreviation:
     type: string
-additionalProperties: true
+    nullable: true
+  coefficient:
+    type: number
+    format: double
+    nullable: true
+  default:
+    type: boolean
+    nullable: true
+additionalProperties: false

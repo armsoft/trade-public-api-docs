@@ -25,6 +25,7 @@ properties:
   reportCurrency:
     minLength: 1
     type: string
+    nullable: true
   openedByContracts:
     type: boolean
 additionalProperties: false

@@ -18,12 +18,13 @@ properties:
   group:
     type: string
     nullable: true
+  groupName:
+    type: string
+    nullable: true
   supplier:
     type: boolean
-    nullable: true
   customer:
     type: boolean
-    nullable: true
   legalAddress:
     type: string
     nullable: true
@@ -68,9 +69,6 @@ properties:
     type: string
     nullable: true
   status:
-    type: string
-    nullable: true
-  groupName:
     type: string
     nullable: true
   settlementAccount:

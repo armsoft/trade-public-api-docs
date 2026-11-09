@@ -1,10 +1,15 @@
 type: object
 properties:
-  showMode:
-    type: string
-    description: Product visibility mode. `1` = only in price list, `2` = only not in price list, `3` = all.
-    enum: ['1', '2', '3']
-    example: '3'
+  pageSize:
+    type: integer
+    format: int32
+    nullable: true
+    minimum: 0
+    description: |
+      Number of rows to return per request. If omitted or set to `0`, all rows are
+      returned in a single response. When greater than zero, minimum value can be 5000 the response will include
+      pagination metadata (`id` and `hasMore`).
+    example: 5000
   group:
     type: string
     nullable: true
@@ -18,29 +23,29 @@ properties:
     type: array
     items:
       type: string
+    nullable: true
     description: Product code filter list (maps to `filters.Codes`)
-  extended:
-    type: boolean
-    description: Include extended fields (maps to `filters.Extended`)
-    default: false
+  showMode:
+    type: string
+    nullable: true
+    description: Product visibility mode. `1` = only in price list, `2` = only not in price list, `3` = all.
+    enum: ['1', '2', '3']
+    example: '3'
   priceListTypes:
     type: array
     items:
       type: string
+    nullable: true
     description: Price list type code list (maps to `filters.PriceListTypes`)
+  extended:
+    type: boolean
+    description: Include extended fields (maps to `filters.Extended`)
+    default: false
   lastModifiedDate:
     type: string
     format: date-time
     nullable: true
     description: Return records changed after this timestamp
-  pageSize:
-    type: integer
-    format: int32
-    minimum: 0
-     description: |
-      Number of rows to return per request. If omitted or set to `0`, all rows are
-      returned in a single response. When greater than zero, minimum value can be 5000 the response will include
-      pagination metadata (`id` and `hasMore`).
-    example: 5000
 required:
   - showMode
+additionalProperties: false

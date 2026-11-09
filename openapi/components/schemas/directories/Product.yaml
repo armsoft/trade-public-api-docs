@@ -3,39 +3,59 @@ description: Product DTO used for create, update, and get operations
 properties:
   id:
     type: integer
-    format: int64
+    format: int32
     example: 100000
   code:
     type: string
+    nullable: true
     example: "1001"
   name:
     type: string
+    nullable: true
     example: "Հեռուստացույց LED Panasonic TX-LR55ET5"
   fullName:
     type: string
+    nullable: true
   type:
     type: string
+    nullable: true
     description: "1 = Products, 2 = Services"
   cpaClassifier:
     type: string
+    nullable: true
   group:
     type: string
+    nullable: true
   baseUnitMeasure:
     type: string
+    nullable: true
+  baseUnitMeasureName:
+    type: string
+    nullable: true
   baseUnitMeasureAbbreviation:
     type: string
+    nullable: true
   alternativeUnitMeasure:
     type: string
+    nullable: true
+  alternativeUnitMeasureName:
+    type: string
+    nullable: true
   alternativeUnitMeasureAbbreviation:
     type: string
+    nullable: true
   barcode:
     type: string
+    nullable: true
   specification:
     type: string
+    nullable: true
   externalCode:
     type: string
+    nullable: true
   costingMethod:
     type: string
+    nullable: true
   vat:
     type: boolean
     nullable: true
@@ -52,100 +72,91 @@ properties:
   shelfLifeDays:
     type: integer
     format: int32
+    nullable: true
   showInPriceLists:
     type: boolean
     nullable: true
   environmentalFeePercent:
     type: number
-    format: decimal
+    format: double
     nullable: true
   labelUnitMeasure:
     type: string
+    nullable: true
   labelUnitMeasureCoefficient:
     type: number
-    format: decimal
+    format: double
     nullable: true
   country:
     type: string
+    nullable: true
   producer:
     type: string
+    nullable: true
   property1:
     type: string
+    nullable: true
   property2:
     type: string
+    nullable: true
   minimumQuantity:
     type: number
-    format: decimal
+    format: double
     nullable: true
   maximumQuantity:
     type: number
-    format: decimal
+    format: double
     nullable: true
   addedValuePercent:
     type: number
-    format: decimal
+    format: double
     nullable: true
   aoeCoefficient:
     type: number
-    format: decimal
+    format: double
     nullable: true
   bonusPercent:
     type: number
-    format: decimal
+    format: double
     nullable: true
   bonusPoint:
     type: number
-    format: decimal
+    format: double
     nullable: true
   discountPercent:
     type: number
-    format: decimal
+    format: double
     nullable: true
   mainSupplierId:
     type: integer
     format: int32
     nullable: true
-  substituteItemsGroup:
-    type: string
-  nameEN:
-    type: string
-  nameRU:
-    type: string
-  additionalSpecification1:
-    type: string
-  additionalSpecification2:
-    type: string
-  baseUnitMeasureName:
-    type: string
-  alternativeUnitMeasureName:
-    type: string
   mainSupplierCode:
     type: string
+    nullable: true
+  substituteItemsGroup:
+    type: string
+    nullable: true
+  nameEN:
+    type: string
+    nullable: true
+  nameRU:
+    type: string
+    nullable: true
+  additionalSpecification1:
+    type: string
+    nullable: true
+  additionalSpecification2:
+    type: string
+    nullable: true
   measureUnits:
     type: array
     items:
-      type: object
-      properties:
-        default:
-          type: boolean
-          nullable: true
-        coefficient:
-          type: number
-          format: decimal
-          nullable: true
-        code:
-          type: string
-        abbreviation:
-          type: string
+      $ref: "#/components/schemas/ProductMeasureUnitRow"
+    nullable: true
   barcodes:
     type: array
     items:
-      type: object
-      properties:
-        unitMeasure:
-          type: string
-        abbreviation:
-          type: string
-        barcode:
-          type: string
-additionalProperties: true
+      $ref: "#/components/schemas/ProductBarcodeRow"
+    nullable: true
+additionalProperties: false

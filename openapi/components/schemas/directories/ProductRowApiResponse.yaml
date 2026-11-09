@@ -11,5 +11,7 @@ properties:
     type: array
     items:
       $ref: ./ProductRow.yaml
+    nullable: true
 required:
   - data
+additionalProperties: false

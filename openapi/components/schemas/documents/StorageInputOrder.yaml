@@ -58,7 +58,6 @@ properties:
   discountPercent:
     type: number
     format: double
-    nullable: true
   vatAmount:
     type: number
     format: double
@@ -74,7 +73,7 @@ properties:
   vehicle:
     type: string
     nullable: true
-  chiefAccount:
+  chiefAccountant:
     type: string
     nullable: true
   allowed:

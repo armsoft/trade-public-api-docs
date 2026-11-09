@@ -1,146 +1,71 @@
 type: object
 description: Product row returned by list endpoint
 properties:
-  typeName:
-    type: string
-  groupName:
-    type: string
-  groupPath:
-    type: string
-  labelUnitMeasureAbbreviation:
-    type: string
-  costingMethodName:
-    type: string
-  countryName:
-    type: string
-  producerName:
-    type: string
-  mainSupplierName:
-    type: string
-  substituteItemsGroupName:
-    type: string
-  lastModifierName:
-    type: string
-  lastModifyDate:
-    type: string
-    format: date-time
-    nullable: true
-  creatorName:
-    type: string
-  creationDate:
-    type: string
-    format: date-time
-    nullable: true
-  prices:
-    type: object
-    additionalProperties:
-      type: number
-      format: decimal
   id:
     type: integer
-    format: int64
+    format: int32
     example: 100000
   code:
     type: string
+    nullable: true
     example: "1001"
   name:
     type: string
+    nullable: true
   fullName:
     type: string
+    nullable: true
   type:
     type: string
+    nullable: true
+  typeName:
+    type: string
+    nullable: true
   cpaClassifier:
     type: string
+    nullable: true
   group:
     type: string
+    nullable: true
+  groupName:
+    type: string
+    nullable: true
+  groupPath:
+    type: string
+    nullable: true
   baseUnitMeasure:
     type: string
+    nullable: true
   baseUnitMeasureAbbreviation:
     type: string
+    nullable: true
   alternativeUnitMeasure:
     type: string
+    nullable: true
   alternativeUnitMeasureAbbreviation:
     type: string
+    nullable: true
   barcode:
     type: string
+    nullable: true
   specification:
     type: string
+    nullable: true
   externalCode:
     type: string
+    nullable: true
   costingMethod:
     type: string
+    nullable: true
+  costingMethodName:
+    type: string
+    nullable: true
   vat:
     type: boolean
-    nullable: true
   checkMarking:
     type: boolean
-    nullable: true
   weight:
     type: boolean
-    nullable: true
-  showInPriceLists:
-    type: boolean
-    nullable: true
-  environmentalFeePercent:
-    type: number
-    format: decimal
-    nullable: true
-  labelUnitMeasure:
-    type: string
-  labelUnitMeasureCoefficient:
-    type: number
-    format: decimal
-    nullable: true
-  country:
-    type: string
-  producer:
-    type: string
-  property1:
-    type: string
-  property2:
-    type: string
-  minimumQuantity:
-    type: number
-    format: decimal
-    nullable: true
-  maximumQuantity:
-    type: number
-    format: decimal
-    nullable: true
-  addedValuePercent:
-    type: number
-    format: decimal
-    nullable: true
-  aoeCoefficient:
-    type: number
-    format: decimal
-    nullable: true
-  bonusPercent:
-    type: number
-    format: decimal
-    nullable: true
-  bonusPoint:
-    type: number
-    format: decimal
-    nullable: true
-  discountPercent:
-    type: number
-    format: decimal
-    nullable: true
-  mainSupplierId:
-    type: integer
-    format: int32
-    nullable: true
-  substituteItemsGroup:
-    type: string
-  nameEN:
-    type: string
-  nameRU:
-    type: string
-  additionalSpecification1:
-    type: string
-  additionalSpecification2:
-    type: string
   pluCode:
     type: integer
     format: int32
@@ -148,9 +73,102 @@ properties:
   shelfLifeDays:
     type: integer
     format: int32
+  showInPriceLists:
+    type: boolean
+  environmentalFeePercent:
+    type: number
+    format: double
+  labelUnitMeasure:
+    type: string
     nullable: true
-  lastModifiedDate:
+  labelUnitMeasureAbbreviation:
+    type: string
+    nullable: true
+  labelUnitMeasureCoefficient:
+    type: number
+    format: double
+  country:
+    type: string
+    nullable: true
+  countryName:
+    type: string
+    nullable: true
+  producer:
+    type: string
+    nullable: true
+  producerName:
+    type: string
+    nullable: true
+  property1:
+    type: string
+    nullable: true
+  property2:
+    type: string
+    nullable: true
+  minimumQuantity:
+    type: number
+    format: double
+  maximumQuantity:
+    type: number
+    format: double
+  addedValuePercent:
+    type: number
+    format: double
+  aoeCoefficient:
+    type: number
+    format: double
+  bonusPercent:
+    type: number
+    format: double
+  bonusPoint:
+    type: number
+    format: double
+  discountPercent:
+    type: number
+    format: double
+  mainSupplierId:
+    type: integer
+    format: int32
+    nullable: true
+  mainSupplierName:
+    type: string
+    nullable: true
+  substituteItemsGroup:
+    type: string
+    nullable: true
+  substituteItemsGroupName:
+    type: string
+    nullable: true
+  nameEN:
+    type: string
+    nullable: true
+  nameRU:
+    type: string
+    nullable: true
+  additionalSpecification1:
+    type: string
+    nullable: true
+  additionalSpecification2:
+    type: string
+    nullable: true
+  lastModifierName:
+    type: string
+    nullable: true
+  lastModifyDate:
     type: string
     format: date-time
     nullable: true
-additionalProperties: true
+  creatorName:
+    type: string
+    nullable: true
+  creationDate:
+    type: string
+    format: date-time
+    nullable: true
+  prices:
+    type: object
+    nullable: true
+    additionalProperties:
+      type: number
+      format: decimal
+additionalProperties: false

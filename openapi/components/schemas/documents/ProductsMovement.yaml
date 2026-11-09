@@ -31,7 +31,7 @@ properties:
   mediator:
     type: string
     nullable: true
-  chiefAccount:
+  chiefAccountant:
     type: string
     nullable: true
   allowed:

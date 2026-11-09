@@ -43,9 +43,6 @@ properties:
     type: number
     format: double
     nullable: true
-  accumulatedBonus:
-    type: number
-    format: double
   environmentalFeePercent:
     type: number
     format: double

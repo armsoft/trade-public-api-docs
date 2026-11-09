@@ -13,6 +13,15 @@
         description: OK
       '401':
         $ref: ../../components/responses/Unauthorized.yaml
+  post:
+    tags: [CashDesks]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/directories/CashDesk.yaml
+    responses:
       '201':
         description: Created
         content:

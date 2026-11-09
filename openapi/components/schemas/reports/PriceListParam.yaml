@@ -29,6 +29,7 @@ properties:
   itemsShowMode:
     minLength: 1
     type: string
+    nullable: true
   showAvailables:
     type: boolean
 additionalProperties: false

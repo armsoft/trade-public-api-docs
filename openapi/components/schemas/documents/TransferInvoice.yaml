@@ -19,10 +19,10 @@ properties:
   currency:
     type: string
     nullable: true
-  exchangeRate:
+  currencyExchangeRate:
     type: number
     format: double
-  exchangeBase:
+  currencyExchangeBase:
     type: number
     format: double
   contract:

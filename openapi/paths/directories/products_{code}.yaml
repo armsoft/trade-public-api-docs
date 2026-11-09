@@ -31,6 +31,24 @@
         $ref: ../../components/responses/InternalError.yaml
       '503':
         $ref: ../../components/responses/ServiceUnavailable.yaml
+  put:
+    tags: [Products]
+    summary: Update product
+    operationId: Products_Update
+    parameters:
+      - name: code
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Product code
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/directories/Product.yaml
+    responses:
       '200':
         description: Product updated successfully
         content:
@@ -55,6 +73,18 @@
         $ref: ../../components/responses/InternalError.yaml
       '503':
         $ref: ../../components/responses/ServiceUnavailable.yaml
+  delete:
+    tags: [Products]
+    summary: Delete product
+    operationId: Products_Delete
+    parameters:
+      - name: code
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Product code
+    responses:
       '200':
         description: Product deleted successfully
       '401':

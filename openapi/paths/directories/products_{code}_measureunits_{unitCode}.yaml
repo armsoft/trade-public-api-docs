@@ -37,6 +37,30 @@
         $ref: ../../components/responses/InternalError.yaml
       '503':
         $ref: ../../components/responses/ServiceUnavailable.yaml
+  put:
+    tags: [Measure Units]
+    summary: Update product measure unit
+    operationId: ProductsMeasureUnits_Update
+    parameters:
+      - name: productCode
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Product code
+      - name: unitCode
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Measure unit code
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/directories/ProductMeasureUnit.yaml
+    responses:
       '200':
         description: Product measure unit updated successfully
         content:
@@ -61,6 +85,24 @@
         $ref: ../../components/responses/InternalError.yaml
       '503':
         $ref: ../../components/responses/ServiceUnavailable.yaml
+  delete:
+    tags: [Measure Units]
+    summary: Delete product measure unit
+    operationId: ProductsMeasureUnits_Delete
+    parameters:
+      - name: productCode
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Product code
+      - name: unitCode
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Measure unit code
+    responses:
       '200':
         description: Product measure unit deleted successfully
       '401':
