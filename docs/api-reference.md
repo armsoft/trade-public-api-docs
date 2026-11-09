@@ -14556,6 +14556,980 @@ To perform this operation, you must be authenticated by means of one of the foll
 API Key
 </aside>
 
+<h1 id="trade-public-api-productskitting">ProductsKitting</h1>
+
+## get__v1_documents_productskitting_{isn}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X GET /trade/v1/documents/productskitting/{isn} \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+GET /trade/v1/documents/productskitting/{isn} HTTP/1.1
+
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+
+const headers = {
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/trade/v1/documents/productskitting/{isn}',
+{
+  method: 'GET',
+
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.get '/trade/v1/documents/productskitting/{isn}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.get('/trade/v1/documents/productskitting/{isn}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('GET','/trade/v1/documents/productskitting/{isn}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/trade/v1/documents/productskitting/{isn}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("GET", "/trade/v1/documents/productskitting/{isn}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`GET /v1/documents/productskitting/{isn}`
+
+<h3 id="get__v1_documents_productskitting_{isn}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|isn|path|string(uuid)|true|none|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+
+> Example responses
+
+> 200 Response
+
+```
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"storageOutput":"string","storageInput":"string","kit":"string","unit":"string","quantity":0.1,"expirationDate":"2019-08-24","country":"string","producer":"string","property1":"string","property2":"string","comment":"string","owner":"string","totalAmount":0.1,"kitComponents":[{"type":"string","id":0,"code":"string","name":"string","unit":"string","unitAbbreviation":"string","quantity":0.1,"amount":0.1,"rowNumber":0,"rowId":0}]}
+```
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "storageOutput": "string",
+  "storageInput": "string",
+  "kit": "string",
+  "unit": "string",
+  "quantity": 0.1,
+  "expirationDate": "2019-08-24",
+  "country": "string",
+  "producer": "string",
+  "property1": "string",
+  "property2": "string",
+  "comment": "string",
+  "owner": "string",
+  "totalAmount": 0.1,
+  "kitComponents": [
+    {
+      "type": "string",
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unit": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "amount": 0.1,
+      "rowNumber": 0,
+      "rowId": 0
+    }
+  ]
+}
+```
+
+<h3 id="get__v1_documents_productskitting_{isn}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[ProductsKitting](#schemaproductskitting)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## put__v1_documents_productskitting_{isn}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X PUT /trade/v1/documents/productskitting/{isn} \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+PUT /trade/v1/documents/productskitting/{isn} HTTP/1.1
+
+Content-Type: application/json
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+const inputBody = '{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "storageOutput": "string",
+  "storageInput": "string",
+  "kit": "string",
+  "unit": "string",
+  "quantity": 0.1,
+  "expirationDate": "2019-08-24",
+  "country": "string",
+  "producer": "string",
+  "property1": "string",
+  "property2": "string",
+  "comment": "string",
+  "owner": "string",
+  "totalAmount": 0.1,
+  "kitComponents": [
+    {
+      "type": "string",
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unit": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "amount": 0.1,
+      "rowNumber": 0,
+      "rowId": 0
+    }
+  ]
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/trade/v1/documents/productskitting/{isn}',
+{
+  method: 'PUT',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.put '/trade/v1/documents/productskitting/{isn}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.put('/trade/v1/documents/productskitting/{isn}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('PUT','/trade/v1/documents/productskitting/{isn}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/trade/v1/documents/productskitting/{isn}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("PUT");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Content-Type": []string{"application/json"},
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("PUT", "/trade/v1/documents/productskitting/{isn}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`PUT /v1/documents/productskitting/{isn}`
+
+> Body parameter
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "storageOutput": "string",
+  "storageInput": "string",
+  "kit": "string",
+  "unit": "string",
+  "quantity": 0.1,
+  "expirationDate": "2019-08-24",
+  "country": "string",
+  "producer": "string",
+  "property1": "string",
+  "property2": "string",
+  "comment": "string",
+  "owner": "string",
+  "totalAmount": 0.1,
+  "kitComponents": [
+    {
+      "type": "string",
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unit": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "amount": 0.1,
+      "rowNumber": 0,
+      "rowId": 0
+    }
+  ]
+}
+```
+
+<h3 id="put__v1_documents_productskitting_{isn}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|isn|path|string(uuid)|true|none|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+|body|body|[ProductsKitting](#schemaproductskitting)|false|none|
+
+> Example responses
+
+> 200 Response
+
+```
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"storageOutput":"string","storageInput":"string","kit":"string","unit":"string","quantity":0.1,"expirationDate":"2019-08-24","country":"string","producer":"string","property1":"string","property2":"string","comment":"string","owner":"string","totalAmount":0.1,"kitComponents":[{"type":"string","id":0,"code":"string","name":"string","unit":"string","unitAbbreviation":"string","quantity":0.1,"amount":0.1,"rowNumber":0,"rowId":0}]}
+```
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "storageOutput": "string",
+  "storageInput": "string",
+  "kit": "string",
+  "unit": "string",
+  "quantity": 0.1,
+  "expirationDate": "2019-08-24",
+  "country": "string",
+  "producer": "string",
+  "property1": "string",
+  "property2": "string",
+  "comment": "string",
+  "owner": "string",
+  "totalAmount": 0.1,
+  "kitComponents": [
+    {
+      "type": "string",
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unit": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "amount": 0.1,
+      "rowNumber": 0,
+      "rowId": 0
+    }
+  ]
+}
+```
+
+<h3 id="put__v1_documents_productskitting_{isn}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[ProductsKitting](#schemaproductskitting)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## delete__v1_documents_productskitting_{isn}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X DELETE /trade/v1/documents/productskitting/{isn} \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+DELETE /trade/v1/documents/productskitting/{isn} HTTP/1.1
+
+Accept-Language: hy-AM
+
+```
+
+```javascript
+
+const headers = {
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/trade/v1/documents/productskitting/{isn}',
+{
+  method: 'DELETE',
+
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.delete '/trade/v1/documents/productskitting/{isn}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.delete('/trade/v1/documents/productskitting/{isn}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('DELETE','/trade/v1/documents/productskitting/{isn}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/trade/v1/documents/productskitting/{isn}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("DELETE");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("DELETE", "/trade/v1/documents/productskitting/{isn}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`DELETE /v1/documents/productskitting/{isn}`
+
+<h3 id="delete__v1_documents_productskitting_{isn}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|isn|path|string(uuid)|true|none|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+
+<h3 id="delete__v1_documents_productskitting_{isn}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## post__v1_documents_productskitting
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X POST /trade/v1/documents/productskitting \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+POST /trade/v1/documents/productskitting HTTP/1.1
+
+Content-Type: application/json
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+const inputBody = '{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "storageOutput": "string",
+  "storageInput": "string",
+  "kit": "string",
+  "unit": "string",
+  "quantity": 0.1,
+  "expirationDate": "2019-08-24",
+  "country": "string",
+  "producer": "string",
+  "property1": "string",
+  "property2": "string",
+  "comment": "string",
+  "owner": "string",
+  "totalAmount": 0.1,
+  "kitComponents": [
+    {
+      "type": "string",
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unit": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "amount": 0.1,
+      "rowNumber": 0,
+      "rowId": 0
+    }
+  ]
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/trade/v1/documents/productskitting',
+{
+  method: 'POST',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.post '/trade/v1/documents/productskitting',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.post('/trade/v1/documents/productskitting', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('POST','/trade/v1/documents/productskitting', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/trade/v1/documents/productskitting");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("POST");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Content-Type": []string{"application/json"},
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("POST", "/trade/v1/documents/productskitting", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`POST /v1/documents/productskitting`
+
+> Body parameter
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "storageOutput": "string",
+  "storageInput": "string",
+  "kit": "string",
+  "unit": "string",
+  "quantity": 0.1,
+  "expirationDate": "2019-08-24",
+  "country": "string",
+  "producer": "string",
+  "property1": "string",
+  "property2": "string",
+  "comment": "string",
+  "owner": "string",
+  "totalAmount": 0.1,
+  "kitComponents": [
+    {
+      "type": "string",
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unit": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "amount": 0.1,
+      "rowNumber": 0,
+      "rowId": 0
+    }
+  ]
+}
+```
+
+<h3 id="post__v1_documents_productskitting-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+|body|body|[ProductsKitting](#schemaproductskitting)|false|none|
+
+> Example responses
+
+> 201 Response
+
+```
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"storageOutput":"string","storageInput":"string","kit":"string","unit":"string","quantity":0.1,"expirationDate":"2019-08-24","country":"string","producer":"string","property1":"string","property2":"string","comment":"string","owner":"string","totalAmount":0.1,"kitComponents":[{"type":"string","id":0,"code":"string","name":"string","unit":"string","unitAbbreviation":"string","quantity":0.1,"amount":0.1,"rowNumber":0,"rowId":0}]}
+```
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "storageOutput": "string",
+  "storageInput": "string",
+  "kit": "string",
+  "unit": "string",
+  "quantity": 0.1,
+  "expirationDate": "2019-08-24",
+  "country": "string",
+  "producer": "string",
+  "property1": "string",
+  "property2": "string",
+  "comment": "string",
+  "owner": "string",
+  "totalAmount": 0.1,
+  "kitComponents": [
+    {
+      "type": "string",
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unit": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "amount": 0.1,
+      "rowNumber": 0,
+      "rowId": 0
+    }
+  ]
+}
+```
+
+<h3 id="post__v1_documents_productskitting-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|[ProductsKitting](#schemaproductskitting)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
 <h1 id="trade-public-api-productsmovement">ProductsMovement</h1>
 
 ## get__v1_documents_productsmovement_{isn}
@@ -15586,6 +16560,973 @@ func main() {
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|[ProductsMovement](#schemaproductsmovement)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+<h1 id="trade-public-api-productsstocktaking">ProductsStockTaking</h1>
+
+## get__v1_documents_productsstocktaking_{isn}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X GET /trade/v1/documents/productsstocktaking/{isn} \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+GET /trade/v1/documents/productsstocktaking/{isn} HTTP/1.1
+
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+
+const headers = {
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/trade/v1/documents/productsstocktaking/{isn}',
+{
+  method: 'GET',
+
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.get '/trade/v1/documents/productsstocktaking/{isn}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.get('/trade/v1/documents/productsstocktaking/{isn}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('GET','/trade/v1/documents/productsstocktaking/{isn}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/trade/v1/documents/productsstocktaking/{isn}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("GET", "/trade/v1/documents/productsstocktaking/{isn}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`GET /v1/documents/productsstocktaking/{isn}`
+
+<h3 id="get__v1_documents_productsstocktaking_{isn}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|isn|path|string(uuid)|true|none|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+
+> Example responses
+
+> 200 Response
+
+```
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"storage":"string","productGroup":"string","currency":"string","currencyExchangeRate":0.1,"currencyExchangeBase":0.1,"priceListType":"string","comment":"string","owner":"string","itemList":[{"id":0,"code":"string","name":"string","unit":"string","unitAbbreviation":"string","registeredQuantity":0.1,"actualQuantity":0.1,"variance":0.1,"registeredAmount":0.1,"price":0.1,"actualAmount":0.1,"salePrice":0.1,"saleAmount":0.1,"rowNumber":0}]}
+```
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "storage": "string",
+  "productGroup": "string",
+  "currency": "string",
+  "currencyExchangeRate": 0.1,
+  "currencyExchangeBase": 0.1,
+  "priceListType": "string",
+  "comment": "string",
+  "owner": "string",
+  "itemList": [
+    {
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unit": "string",
+      "unitAbbreviation": "string",
+      "registeredQuantity": 0.1,
+      "actualQuantity": 0.1,
+      "variance": 0.1,
+      "registeredAmount": 0.1,
+      "price": 0.1,
+      "actualAmount": 0.1,
+      "salePrice": 0.1,
+      "saleAmount": 0.1,
+      "rowNumber": 0
+    }
+  ]
+}
+```
+
+<h3 id="get__v1_documents_productsstocktaking_{isn}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[ProductsStockTaking](#schemaproductsstocktaking)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## put__v1_documents_productsstocktaking_{isn}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X PUT /trade/v1/documents/productsstocktaking/{isn} \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+PUT /trade/v1/documents/productsstocktaking/{isn} HTTP/1.1
+
+Content-Type: application/json
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+const inputBody = '{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "storage": "string",
+  "productGroup": "string",
+  "currency": "string",
+  "currencyExchangeRate": 0.1,
+  "currencyExchangeBase": 0.1,
+  "priceListType": "string",
+  "comment": "string",
+  "owner": "string",
+  "itemList": [
+    {
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unit": "string",
+      "unitAbbreviation": "string",
+      "registeredQuantity": 0.1,
+      "actualQuantity": 0.1,
+      "variance": 0.1,
+      "registeredAmount": 0.1,
+      "price": 0.1,
+      "actualAmount": 0.1,
+      "salePrice": 0.1,
+      "saleAmount": 0.1,
+      "rowNumber": 0
+    }
+  ]
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/trade/v1/documents/productsstocktaking/{isn}',
+{
+  method: 'PUT',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.put '/trade/v1/documents/productsstocktaking/{isn}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.put('/trade/v1/documents/productsstocktaking/{isn}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('PUT','/trade/v1/documents/productsstocktaking/{isn}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/trade/v1/documents/productsstocktaking/{isn}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("PUT");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Content-Type": []string{"application/json"},
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("PUT", "/trade/v1/documents/productsstocktaking/{isn}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`PUT /v1/documents/productsstocktaking/{isn}`
+
+> Body parameter
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "storage": "string",
+  "productGroup": "string",
+  "currency": "string",
+  "currencyExchangeRate": 0.1,
+  "currencyExchangeBase": 0.1,
+  "priceListType": "string",
+  "comment": "string",
+  "owner": "string",
+  "itemList": [
+    {
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unit": "string",
+      "unitAbbreviation": "string",
+      "registeredQuantity": 0.1,
+      "actualQuantity": 0.1,
+      "variance": 0.1,
+      "registeredAmount": 0.1,
+      "price": 0.1,
+      "actualAmount": 0.1,
+      "salePrice": 0.1,
+      "saleAmount": 0.1,
+      "rowNumber": 0
+    }
+  ]
+}
+```
+
+<h3 id="put__v1_documents_productsstocktaking_{isn}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|isn|path|string(uuid)|true|none|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+|body|body|[ProductsStockTaking](#schemaproductsstocktaking)|false|none|
+
+> Example responses
+
+> 200 Response
+
+```
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"storage":"string","productGroup":"string","currency":"string","currencyExchangeRate":0.1,"currencyExchangeBase":0.1,"priceListType":"string","comment":"string","owner":"string","itemList":[{"id":0,"code":"string","name":"string","unit":"string","unitAbbreviation":"string","registeredQuantity":0.1,"actualQuantity":0.1,"variance":0.1,"registeredAmount":0.1,"price":0.1,"actualAmount":0.1,"salePrice":0.1,"saleAmount":0.1,"rowNumber":0}]}
+```
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "storage": "string",
+  "productGroup": "string",
+  "currency": "string",
+  "currencyExchangeRate": 0.1,
+  "currencyExchangeBase": 0.1,
+  "priceListType": "string",
+  "comment": "string",
+  "owner": "string",
+  "itemList": [
+    {
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unit": "string",
+      "unitAbbreviation": "string",
+      "registeredQuantity": 0.1,
+      "actualQuantity": 0.1,
+      "variance": 0.1,
+      "registeredAmount": 0.1,
+      "price": 0.1,
+      "actualAmount": 0.1,
+      "salePrice": 0.1,
+      "saleAmount": 0.1,
+      "rowNumber": 0
+    }
+  ]
+}
+```
+
+<h3 id="put__v1_documents_productsstocktaking_{isn}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[ProductsStockTaking](#schemaproductsstocktaking)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## delete__v1_documents_productsstocktaking_{isn}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X DELETE /trade/v1/documents/productsstocktaking/{isn} \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+DELETE /trade/v1/documents/productsstocktaking/{isn} HTTP/1.1
+
+Accept-Language: hy-AM
+
+```
+
+```javascript
+
+const headers = {
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/trade/v1/documents/productsstocktaking/{isn}',
+{
+  method: 'DELETE',
+
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.delete '/trade/v1/documents/productsstocktaking/{isn}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.delete('/trade/v1/documents/productsstocktaking/{isn}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('DELETE','/trade/v1/documents/productsstocktaking/{isn}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/trade/v1/documents/productsstocktaking/{isn}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("DELETE");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("DELETE", "/trade/v1/documents/productsstocktaking/{isn}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`DELETE /v1/documents/productsstocktaking/{isn}`
+
+<h3 id="delete__v1_documents_productsstocktaking_{isn}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|isn|path|string(uuid)|true|none|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+
+<h3 id="delete__v1_documents_productsstocktaking_{isn}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|None|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+API Key
+</aside>
+
+## post__v1_documents_productsstocktaking
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X POST /trade/v1/documents/productsstocktaking \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: text/plain' \
+  -H 'Accept-Language: hy-AM' \
+  -H 'apiKey: API_KEY'
+
+```
+
+```http
+POST /trade/v1/documents/productsstocktaking HTTP/1.1
+
+Content-Type: application/json
+Accept: text/plain
+Accept-Language: hy-AM
+
+```
+
+```javascript
+const inputBody = '{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "storage": "string",
+  "productGroup": "string",
+  "currency": "string",
+  "currencyExchangeRate": 0.1,
+  "currencyExchangeBase": 0.1,
+  "priceListType": "string",
+  "comment": "string",
+  "owner": "string",
+  "itemList": [
+    {
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unit": "string",
+      "unitAbbreviation": "string",
+      "registeredQuantity": 0.1,
+      "actualQuantity": 0.1,
+      "variance": 0.1,
+      "registeredAmount": 0.1,
+      "price": 0.1,
+      "actualAmount": 0.1,
+      "salePrice": 0.1,
+      "saleAmount": 0.1,
+      "rowNumber": 0
+    }
+  ]
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'text/plain',
+  'Accept-Language':'hy-AM',
+  'apiKey':'API_KEY'
+};
+
+fetch('/trade/v1/documents/productsstocktaking',
+{
+  method: 'POST',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'text/plain',
+  'Accept-Language' => 'hy-AM',
+  'apiKey' => 'API_KEY'
+}
+
+result = RestClient.post '/trade/v1/documents/productsstocktaking',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'text/plain',
+  'Accept-Language': 'hy-AM',
+  'apiKey': 'API_KEY'
+}
+
+r = requests.post('/trade/v1/documents/productsstocktaking', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'text/plain',
+    'Accept-Language' => 'hy-AM',
+    'apiKey' => 'API_KEY',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('POST','/trade/v1/documents/productsstocktaking', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("/trade/v1/documents/productsstocktaking");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("POST");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Content-Type": []string{"application/json"},
+        "Accept": []string{"text/plain"},
+        "Accept-Language": []string{"hy-AM"},
+        "apiKey": []string{"API_KEY"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("POST", "/trade/v1/documents/productsstocktaking", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
+
+```
+
+`POST /v1/documents/productsstocktaking`
+
+> Body parameter
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "storage": "string",
+  "productGroup": "string",
+  "currency": "string",
+  "currencyExchangeRate": 0.1,
+  "currencyExchangeBase": 0.1,
+  "priceListType": "string",
+  "comment": "string",
+  "owner": "string",
+  "itemList": [
+    {
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unit": "string",
+      "unitAbbreviation": "string",
+      "registeredQuantity": 0.1,
+      "actualQuantity": 0.1,
+      "variance": 0.1,
+      "registeredAmount": 0.1,
+      "price": 0.1,
+      "actualAmount": 0.1,
+      "salePrice": 0.1,
+      "saleAmount": 0.1,
+      "rowNumber": 0
+    }
+  ]
+}
+```
+
+<h3 id="post__v1_documents_productsstocktaking-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|Accept-Language|header|string|false|Request culture (hy-AM, en-US, ru-RU)|
+|body|body|[ProductsStockTaking](#schemaproductsstocktaking)|false|none|
+
+> Example responses
+
+> 201 Response
+
+```
+{"isn":"13a02e4e-9f55-416a-842c-b67b097485f4","date":"2019-08-24","documentNumber":"string","state":0,"storage":"string","productGroup":"string","currency":"string","currencyExchangeRate":0.1,"currencyExchangeBase":0.1,"priceListType":"string","comment":"string","owner":"string","itemList":[{"id":0,"code":"string","name":"string","unit":"string","unitAbbreviation":"string","registeredQuantity":0.1,"actualQuantity":0.1,"variance":0.1,"registeredAmount":0.1,"price":0.1,"actualAmount":0.1,"salePrice":0.1,"saleAmount":0.1,"rowNumber":0}]}
+```
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "storage": "string",
+  "productGroup": "string",
+  "currency": "string",
+  "currencyExchangeRate": 0.1,
+  "currencyExchangeBase": 0.1,
+  "priceListType": "string",
+  "comment": "string",
+  "owner": "string",
+  "itemList": [
+    {
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unit": "string",
+      "unitAbbreviation": "string",
+      "registeredQuantity": 0.1,
+      "actualQuantity": 0.1,
+      "variance": 0.1,
+      "registeredAmount": 0.1,
+      "price": 0.1,
+      "actualAmount": 0.1,
+      "salePrice": 0.1,
+      "saleAmount": 0.1,
+      "rowNumber": 0
+    }
+  ]
+}
+```
+
+<h3 id="post__v1_documents_productsstocktaking-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|[ProductsStockTaking](#schemaproductsstocktaking)|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 <aside class="warning">
@@ -28380,6 +30321,111 @@ This operation does not require authentication
 |nameEN|string¦null|false|none|hy-AM: Անվանում (անգլերեն) | en-US: Name (english) | ru-RU: Наименование (английский)|
 |nameRU|string¦null|false|none|hy-AM: Անվանում (ռուսերեն) | en-US: Name (russian) | ru-RU: Наименование (русский)|
 
+<h2 id="tocS_ProductsKitting">ProductsKitting</h2>
+<!-- backwards compatibility -->
+<a id="schemaproductskitting"></a>
+<a id="schema_ProductsKitting"></a>
+<a id="tocSproductskitting"></a>
+<a id="tocsproductskitting"></a>
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "storageOutput": "string",
+  "storageInput": "string",
+  "kit": "string",
+  "unit": "string",
+  "quantity": 0.1,
+  "expirationDate": "2019-08-24",
+  "country": "string",
+  "producer": "string",
+  "property1": "string",
+  "property2": "string",
+  "comment": "string",
+  "owner": "string",
+  "totalAmount": 0.1,
+  "kitComponents": [
+    {
+      "type": "string",
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unit": "string",
+      "unitAbbreviation": "string",
+      "quantity": 0.1,
+      "amount": 0.1,
+      "rowNumber": 0,
+      "rowId": 0
+    }
+  ]
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|isn|string(uuid)|false|none|none|
+|date|string(date)¦null|false|none|hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата|
+|documentNumber|string¦null|false|none|hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док.|
+|state|integer(int32)|false|none|hy-AM: Վիճակ | en-US: State | ru-RU: Состояние|
+|storageOutput|string¦null|false|none|hy-AM: Պահեստ ելքի | en-US: Storage output | ru-RU: Из склада|
+|storageInput|string¦null|false|none|hy-AM: Պահեստ մուտքի | en-US: Storage input | ru-RU: В склад|
+|kit|string¦null|false|none|hy-AM: Կոմպլեկտ | en-US: Kit | ru-RU: Комплект|
+|unit|string¦null|false|none|hy-AM: Միավոր | en-US: Unit | ru-RU: Единица|
+|quantity|number(double)¦null|false|none|hy-AM: Քանակ | en-US: Quantity | ru-RU: Количество|
+|expirationDate|string(date)¦null|false|none|hy-AM: Օգտ.ժամկետ | en-US: Exp. date | ru-RU: Срок годн.|
+|country|string¦null|false|none|hy-AM: Երկիր | en-US: Country | ru-RU: Страна|
+|producer|string¦null|false|none|hy-AM: Արտադրող | en-US: Producer | ru-RU: Производитель|
+|property1|string¦null|false|none|hy-AM: Հատկություն 1 | en-US: Property 1 | ru-RU: Свойство 1|
+|property2|string¦null|false|none|hy-AM: Հատկություն 2 | en-US: Property 2 | ru-RU: Свойство 2|
+|comment|string¦null|false|none|hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий|
+|owner|string¦null|false|none|hy-AM: Հեղինակ | en-US: Owner | ru-RU: Автор|
+|totalAmount|number(double)¦null|false|none|hy-AM: Ընդհանուր գումար | en-US: Total amount | ru-RU: Общая сумма|
+|kitComponents|[[ProductsKittingSpecificationRow](#schemaproductskittingspecificationrow)]¦null|false|none|hy-AM: Կոմպլեկտների բաղադրամասեր | en-US: Kit's components | ru-RU: Комплектующие|
+
+<h2 id="tocS_ProductsKittingSpecificationRow">ProductsKittingSpecificationRow</h2>
+<!-- backwards compatibility -->
+<a id="schemaproductskittingspecificationrow"></a>
+<a id="schema_ProductsKittingSpecificationRow"></a>
+<a id="tocSproductskittingspecificationrow"></a>
+<a id="tocsproductskittingspecificationrow"></a>
+
+```json
+{
+  "type": "string",
+  "id": 0,
+  "code": "string",
+  "name": "string",
+  "unit": "string",
+  "unitAbbreviation": "string",
+  "quantity": 0.1,
+  "amount": 0.1,
+  "rowNumber": 0,
+  "rowId": 0
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|type|string¦null|false|none|hy-AM: Տեսակ | en-US: Type | ru-RU: Вид|
+|id|integer(int32)¦null|false|none|hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер|
+|code|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|name|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|unit|string¦null|false|none|hy-AM: Միավոր | en-US: Unit | ru-RU: Единица|
+|unitAbbreviation|string¦null|false|none|hy-AM: Հապավում | en-US: Abbreviation | ru-RU: Сокращение|
+|quantity|number(double)¦null|false|none|hy-AM: Քանակ | en-US: Quantity | ru-RU: Количество|
+|amount|number(double)¦null|false|none|hy-AM: Գումար | en-US: Amount | ru-RU: Сумма|
+|rowNumber|integer(int32)|false|none|hy-AM: Տողի N | en-US: line N | ru-RU: N строки|
+|rowId|integer(int32)¦null|false|none|hy-AM: Տողերի ID | en-US: Lines ID | ru-RU: ID линий|
+
 <h2 id="tocS_ProductsMovement">ProductsMovement</h2>
 <!-- backwards compatibility -->
 <a id="schemaproductsmovement"></a>
@@ -28504,6 +30550,113 @@ This operation does not require authentication
 |description|string¦null|false|none|hy-AM: Նկարագրություն | en-US: Description | ru-RU: Описание|
 |rowNumber|integer(int32)|false|none|hy-AM: Տողի N | en-US: line N | ru-RU: N строки|
 |rowId|integer(int32)|false|none|hy-AM: Տողերի ID | en-US: Lines ID | ru-RU: ID линий|
+
+<h2 id="tocS_ProductsStockTaking">ProductsStockTaking</h2>
+<!-- backwards compatibility -->
+<a id="schemaproductsstocktaking"></a>
+<a id="schema_ProductsStockTaking"></a>
+<a id="tocSproductsstocktaking"></a>
+<a id="tocsproductsstocktaking"></a>
+
+```json
+{
+  "isn": "13a02e4e-9f55-416a-842c-b67b097485f4",
+  "date": "2019-08-24",
+  "documentNumber": "string",
+  "state": 0,
+  "storage": "string",
+  "productGroup": "string",
+  "currency": "string",
+  "currencyExchangeRate": 0.1,
+  "currencyExchangeBase": 0.1,
+  "priceListType": "string",
+  "comment": "string",
+  "owner": "string",
+  "itemList": [
+    {
+      "id": 0,
+      "code": "string",
+      "name": "string",
+      "unit": "string",
+      "unitAbbreviation": "string",
+      "registeredQuantity": 0.1,
+      "actualQuantity": 0.1,
+      "variance": 0.1,
+      "registeredAmount": 0.1,
+      "price": 0.1,
+      "actualAmount": 0.1,
+      "salePrice": 0.1,
+      "saleAmount": 0.1,
+      "rowNumber": 0
+    }
+  ]
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|isn|string(uuid)|false|none|none|
+|date|string(date)¦null|false|none|hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата|
+|documentNumber|string¦null|false|none|hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док.|
+|state|integer(int32)|false|none|hy-AM: Վիճակ | en-US: State | ru-RU: Состояние|
+|storage|string¦null|false|none|hy-AM: Պահեստ | en-US: Storage | ru-RU: Склад|
+|productGroup|string¦null|false|none|hy-AM: Ապրանքների խումբ | en-US: Product's group | ru-RU: Группа товаров|
+|currency|string¦null|false|none|hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта|
+|currencyExchangeRate|number(double)|false|none|hy-AM: Արտարժույթի փոխարժեք | en-US: Currency exchange rate | ru-RU: Курс валюты|
+|currencyExchangeBase|number(double)|false|none|hy-AM: Արտարժույթի փոխարժեք | en-US: Currency exchange rate | ru-RU: Курс валюты|
+|priceListType|string¦null|false|none|hy-AM: Գնի տեսակ | en-US: Pricelist type | ru-RU: Тип цены|
+|comment|string¦null|false|none|hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий|
+|owner|string¦null|false|none|hy-AM: Հեղինակ | en-US: Owner | ru-RU: Автор|
+|itemList|[[ProductsStockTakingSpecificationRow](#schemaproductsstocktakingspecificationrow)]¦null|false|none|hy-AM: Անվանացուցակ | en-US: Items list | ru-RU: Список товаров и услуг|
+
+<h2 id="tocS_ProductsStockTakingSpecificationRow">ProductsStockTakingSpecificationRow</h2>
+<!-- backwards compatibility -->
+<a id="schemaproductsstocktakingspecificationrow"></a>
+<a id="schema_ProductsStockTakingSpecificationRow"></a>
+<a id="tocSproductsstocktakingspecificationrow"></a>
+<a id="tocsproductsstocktakingspecificationrow"></a>
+
+```json
+{
+  "id": 0,
+  "code": "string",
+  "name": "string",
+  "unit": "string",
+  "unitAbbreviation": "string",
+  "registeredQuantity": 0.1,
+  "actualQuantity": 0.1,
+  "variance": 0.1,
+  "registeredAmount": 0.1,
+  "price": 0.1,
+  "actualAmount": 0.1,
+  "salePrice": 0.1,
+  "saleAmount": 0.1,
+  "rowNumber": 0
+}
+
+```
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|id|integer(int32)|false|none|hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер|
+|code|string¦null|false|none|hy-AM: Կոդ | en-US: Code | ru-RU: Код|
+|name|string¦null|false|none|hy-AM: Անվանում | en-US: Name | ru-RU: Наименование|
+|unit|string¦null|false|none|hy-AM: Միավոր | en-US: Unit | ru-RU: Единица|
+|unitAbbreviation|string¦null|false|none|hy-AM: Հապավում | en-US: Abbreviation | ru-RU: Сокращение|
+|registeredQuantity|number(double)|false|none|hy-AM: Հաշվ.քանակ | en-US: Registered quantity | ru-RU: Кол-во бух.|
+|actualQuantity|number(double)|false|none|hy-AM: Փաստ.քանակ | en-US: Actual quantity | ru-RU: Кол-во факт.|
+|variance|number(double)|false|none|hy-AM: Շեղում | en-US: Variance | ru-RU: Отклонение|
+|registeredAmount|number(double)|false|none|hy-AM: Հաշվ.գումար | en-US: Registered amount | ru-RU: Сумма бух.|
+|price|number(double)¦null|false|none|hy-AM: Գին | en-US: Price | ru-RU: Цена|
+|actualAmount|number(double)¦null|false|none|hy-AM: Փաստ.գումար | en-US: Actual amount | ru-RU: Сумма факт.|
+|salePrice|number(double)¦null|false|none|hy-AM: Վաճառքի գին | en-US: Sale price | ru-RU: Цена продажи|
+|saleAmount|number(double)¦null|false|none|hy-AM: Վաճառքի գումար | en-US: Sale amount | ru-RU: Сумма продажи|
+|rowNumber|integer(int32)|false|none|hy-AM: Տողի N | en-US: line N | ru-RU: N строки|
 
 <h2 id="tocS_Sale">Sale</h2>
 <!-- backwards compatibility -->
@@ -29347,8 +31500,8 @@ This operation does not require authentication
 |comment|string¦null|false|none|hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий|
 |owner|string¦null|false|none|hy-AM: Հեղինակ | en-US: Owner | ru-RU: Автор|
 |currency|string¦null|false|none|hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта|
-|currencyExchangeRate|number(double)¦null|false|none|hy-AM: Արտարժույթի փոխարժեք | en-US: Currency exchange rate | ru-RU: Курс валюты|
-|currencyExchangeBase|number(double)¦null|false|none|hy-AM: Արտարժույթի փոխարժեք | en-US: Currency exchange rate | ru-RU: Курс валюты|
+|currencyExchangeRate|number(double)|false|none|hy-AM: Արտարժույթի փոխարժեք | en-US: Currency exchange rate | ru-RU: Курс валюты|
+|currencyExchangeBase|number(double)|false|none|hy-AM: Արտարժույթի փոխարժեք | en-US: Currency exchange rate | ru-RU: Курс валюты|
 |vatCalculationType|string¦null|false|none|none|
 |includeVATInCost|boolean|false|none|hy-AM: Ներառել ԱԱՀ-ն ինքնարժեքի մեջ | en-US: Include VAT in cost | ru-RU: НДС включить в себестоимость|
 |priceType|string¦null|false|none|hy-AM: Գնի տեսակ | en-US: Pricelist type | ru-RU: Тип цены|
@@ -29447,8 +31600,8 @@ This operation does not require authentication
 |comment|string¦null|false|none|hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий|
 |owner|string¦null|false|none|hy-AM: Հեղինակ | en-US: Owner | ru-RU: Автор|
 |currency|string¦null|false|none|hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта|
-|currencyExchangeRate|number(double)¦null|false|none|hy-AM: Արտարժույթի փոխարժեք | en-US: Currency exchange rate | ru-RU: Курс валюты|
-|currencyExchangeBase|number(double)¦null|false|none|hy-AM: Արտարժույթի փոխարժեք | en-US: Currency exchange rate | ru-RU: Курс валюты|
+|currencyExchangeRate|number(double)|false|none|hy-AM: Արտարժույթի փոխարժեք | en-US: Currency exchange rate | ru-RU: Курс валюты|
+|currencyExchangeBase|number(double)|false|none|hy-AM: Արտարժույթի փոխարժեք | en-US: Currency exchange rate | ru-RU: Курс валюты|
 |vatCalculationType|string¦null|false|none|none|
 |includeVATInCost|boolean|false|none|hy-AM: Ներառել ԱԱՀ-ն ինքնարժեքի մեջ | en-US: Include VAT in cost | ru-RU: НДС включить в себестоимость|
 |priceType|string¦null|false|none|hy-AM: Գնի տեսակ | en-US: Pricelist type | ru-RU: Тип цены|

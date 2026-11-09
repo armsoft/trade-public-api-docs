@@ -3520,6 +3520,222 @@
         }
       }
     },
+    "/v1/documents/productskitting/{isn}": {
+      "get": {
+        "tags": [
+          "ProductsKitting"
+        ],
+        "parameters": [
+          {
+            "name": "isn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Request culture (hy-AM, en-US, ru-RU)",
+            "schema": {
+              "type": "string",
+              "default": "hy-AM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductsKitting"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductsKitting"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductsKitting"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ProductsKitting"
+        ],
+        "parameters": [
+          {
+            "name": "isn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Request culture (hy-AM, en-US, ru-RU)",
+            "schema": {
+              "type": "string",
+              "default": "hy-AM"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductsKitting"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductsKitting"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductsKitting"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductsKitting"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductsKitting"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductsKitting"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ProductsKitting"
+        ],
+        "parameters": [
+          {
+            "name": "isn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Request culture (hy-AM, en-US, ru-RU)",
+            "schema": {
+              "type": "string",
+              "default": "hy-AM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/v1/documents/productskitting": {
+      "post": {
+        "tags": [
+          "ProductsKitting"
+        ],
+        "parameters": [
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Request culture (hy-AM, en-US, ru-RU)",
+            "schema": {
+              "type": "string",
+              "default": "hy-AM"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductsKitting"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductsKitting"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductsKitting"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductsKitting"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductsKitting"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductsKitting"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
     "/v1/documents/productsmovement/{isn}": {
       "get": {
         "tags": [
@@ -3726,6 +3942,222 @@
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProductsMovement"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/v1/documents/productsstocktaking/{isn}": {
+      "get": {
+        "tags": [
+          "ProductsStockTaking"
+        ],
+        "parameters": [
+          {
+            "name": "isn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Request culture (hy-AM, en-US, ru-RU)",
+            "schema": {
+              "type": "string",
+              "default": "hy-AM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductsStockTaking"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductsStockTaking"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductsStockTaking"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ProductsStockTaking"
+        ],
+        "parameters": [
+          {
+            "name": "isn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Request culture (hy-AM, en-US, ru-RU)",
+            "schema": {
+              "type": "string",
+              "default": "hy-AM"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductsStockTaking"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductsStockTaking"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductsStockTaking"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductsStockTaking"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductsStockTaking"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductsStockTaking"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ProductsStockTaking"
+        ],
+        "parameters": [
+          {
+            "name": "isn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Request culture (hy-AM, en-US, ru-RU)",
+            "schema": {
+              "type": "string",
+              "default": "hy-AM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/v1/documents/productsstocktaking": {
+      "post": {
+        "tags": [
+          "ProductsStockTaking"
+        ],
+        "parameters": [
+          {
+            "name": "Accept-Language",
+            "in": "header",
+            "description": "Request culture (hy-AM, en-US, ru-RU)",
+            "schema": {
+              "type": "string",
+              "default": "hy-AM"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductsStockTaking"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductsStockTaking"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductsStockTaking"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductsStockTaking"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductsStockTaking"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductsStockTaking"
                 }
               }
             }
@@ -9537,6 +9969,168 @@
         },
         "additionalProperties": false
       },
+      "ProductsKitting": {
+        "type": "object",
+        "properties": {
+          "isn": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "date": {
+            "type": "string",
+            "description": "hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата",
+            "format": "date",
+            "nullable": true
+          },
+          "documentNumber": {
+            "type": "string",
+            "description": "hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док.",
+            "nullable": true
+          },
+          "state": {
+            "type": "integer",
+            "description": "hy-AM: Վիճակ | en-US: State | ru-RU: Состояние",
+            "format": "int32"
+          },
+          "storageOutput": {
+            "type": "string",
+            "description": "hy-AM: Պահեստ ելքի | en-US: Storage output | ru-RU: Из склада",
+            "nullable": true
+          },
+          "storageInput": {
+            "type": "string",
+            "description": "hy-AM: Պահեստ մուտքի | en-US: Storage input | ru-RU: В склад",
+            "nullable": true
+          },
+          "kit": {
+            "type": "string",
+            "description": "hy-AM: Կոմպլեկտ | en-US: Kit | ru-RU: Комплект",
+            "nullable": true
+          },
+          "unit": {
+            "type": "string",
+            "description": "hy-AM: Միավոր | en-US: Unit | ru-RU: Единица",
+            "nullable": true
+          },
+          "quantity": {
+            "type": "number",
+            "description": "hy-AM: Քանակ | en-US: Quantity | ru-RU: Количество",
+            "format": "double",
+            "nullable": true
+          },
+          "expirationDate": {
+            "type": "string",
+            "description": "hy-AM: Օգտ.ժամկետ | en-US: Exp. date | ru-RU: Срок годн.",
+            "format": "date",
+            "nullable": true
+          },
+          "country": {
+            "type": "string",
+            "description": "hy-AM: Երկիր | en-US: Country | ru-RU: Страна",
+            "nullable": true
+          },
+          "producer": {
+            "type": "string",
+            "description": "hy-AM: Արտադրող | en-US: Producer | ru-RU: Производитель",
+            "nullable": true
+          },
+          "property1": {
+            "type": "string",
+            "description": "hy-AM: Հատկություն 1 | en-US: Property 1 | ru-RU: Свойство 1",
+            "nullable": true
+          },
+          "property2": {
+            "type": "string",
+            "description": "hy-AM: Հատկություն 2 | en-US: Property 2 | ru-RU: Свойство 2",
+            "nullable": true
+          },
+          "comment": {
+            "type": "string",
+            "description": "hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий",
+            "nullable": true
+          },
+          "owner": {
+            "type": "string",
+            "description": "hy-AM: Հեղինակ | en-US: Owner | ru-RU: Автор",
+            "nullable": true
+          },
+          "totalAmount": {
+            "type": "number",
+            "description": "hy-AM: Ընդհանուր գումար | en-US: Total amount | ru-RU: Общая сумма",
+            "format": "double",
+            "nullable": true
+          },
+          "kitComponents": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductsKittingSpecificationRow"
+            },
+            "description": "hy-AM: Կոմպլեկտների բաղադրամասեր | en-US: Kit's components | ru-RU: Комплектующие",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductsKittingSpecificationRow": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "hy-AM: Տեսակ | en-US: Type | ru-RU: Вид",
+            "nullable": true
+          },
+          "id": {
+            "type": "integer",
+            "description": "hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер",
+            "format": "int32",
+            "nullable": true
+          },
+          "code": {
+            "type": "string",
+            "description": "hy-AM: Կոդ | en-US: Code | ru-RU: Код",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование",
+            "nullable": true
+          },
+          "unit": {
+            "type": "string",
+            "description": "hy-AM: Միավոր | en-US: Unit | ru-RU: Единица",
+            "nullable": true
+          },
+          "unitAbbreviation": {
+            "type": "string",
+            "description": "hy-AM: Հապավում | en-US: Abbreviation | ru-RU: Сокращение",
+            "nullable": true
+          },
+          "quantity": {
+            "type": "number",
+            "description": "hy-AM: Քանակ | en-US: Quantity | ru-RU: Количество",
+            "format": "double",
+            "nullable": true
+          },
+          "amount": {
+            "type": "number",
+            "description": "hy-AM: Գումար | en-US: Amount | ru-RU: Сумма",
+            "format": "double",
+            "nullable": true
+          },
+          "rowNumber": {
+            "type": "integer",
+            "description": "hy-AM: Տողի N | en-US: line N | ru-RU: N строки",
+            "format": "int32"
+          },
+          "rowId": {
+            "type": "integer",
+            "description": "hy-AM: Տողերի ID | en-US: Lines ID | ru-RU: ID линий",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "ProductsMovement": {
         "type": "object",
         "properties": {
@@ -9734,6 +10328,160 @@
           "rowId": {
             "type": "integer",
             "description": "hy-AM: Տողերի ID | en-US: Lines ID | ru-RU: ID линий",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductsStockTaking": {
+        "type": "object",
+        "properties": {
+          "isn": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "date": {
+            "type": "string",
+            "description": "hy-AM: Ամսաթիվ | en-US: Date | ru-RU: Дата",
+            "format": "date",
+            "nullable": true
+          },
+          "documentNumber": {
+            "type": "string",
+            "description": "hy-AM: Փաստաթղթի N | en-US: Document N | ru-RU: Номер док.",
+            "nullable": true
+          },
+          "state": {
+            "type": "integer",
+            "description": "hy-AM: Վիճակ | en-US: State | ru-RU: Состояние",
+            "format": "int32"
+          },
+          "storage": {
+            "type": "string",
+            "description": "hy-AM: Պահեստ | en-US: Storage | ru-RU: Склад",
+            "nullable": true
+          },
+          "productGroup": {
+            "type": "string",
+            "description": "hy-AM: Ապրանքների խումբ | en-US: Product's group | ru-RU: Группа товаров",
+            "nullable": true
+          },
+          "currency": {
+            "type": "string",
+            "description": "hy-AM: Արժույթ | en-US: Currency | ru-RU: Валюта",
+            "nullable": true
+          },
+          "currencyExchangeRate": {
+            "type": "number",
+            "description": "hy-AM: Արտարժույթի փոխարժեք | en-US: Currency exchange rate | ru-RU: Курс валюты",
+            "format": "double"
+          },
+          "currencyExchangeBase": {
+            "type": "number",
+            "description": "hy-AM: Արտարժույթի փոխարժեք | en-US: Currency exchange rate | ru-RU: Курс валюты",
+            "format": "double"
+          },
+          "priceListType": {
+            "type": "string",
+            "description": "hy-AM: Գնի տեսակ | en-US: Pricelist type | ru-RU: Тип цены",
+            "nullable": true
+          },
+          "comment": {
+            "type": "string",
+            "description": "hy-AM: Մեկնաբանություն | en-US: Comment | ru-RU: Комментарий",
+            "nullable": true
+          },
+          "owner": {
+            "type": "string",
+            "description": "hy-AM: Հեղինակ | en-US: Owner | ru-RU: Автор",
+            "nullable": true
+          },
+          "itemList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductsStockTakingSpecificationRow"
+            },
+            "description": "hy-AM: Անվանացուցակ | en-US: Items list | ru-RU: Список товаров и услуг",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductsStockTakingSpecificationRow": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "hy-AM: Ներքին համար | en-US: Inner number | ru-RU: Внутренний номер",
+            "format": "int32"
+          },
+          "code": {
+            "type": "string",
+            "description": "hy-AM: Կոդ | en-US: Code | ru-RU: Код",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "hy-AM: Անվանում | en-US: Name | ru-RU: Наименование",
+            "nullable": true
+          },
+          "unit": {
+            "type": "string",
+            "description": "hy-AM: Միավոր | en-US: Unit | ru-RU: Единица",
+            "nullable": true
+          },
+          "unitAbbreviation": {
+            "type": "string",
+            "description": "hy-AM: Հապավում | en-US: Abbreviation | ru-RU: Сокращение",
+            "nullable": true
+          },
+          "registeredQuantity": {
+            "type": "number",
+            "description": "hy-AM: Հաշվ.քանակ | en-US: Registered quantity | ru-RU: Кол-во бух.",
+            "format": "double"
+          },
+          "actualQuantity": {
+            "type": "number",
+            "description": "hy-AM: Փաստ.քանակ | en-US: Actual quantity | ru-RU: Кол-во факт.",
+            "format": "double"
+          },
+          "variance": {
+            "type": "number",
+            "description": "hy-AM: Շեղում | en-US: Variance | ru-RU: Отклонение",
+            "format": "double"
+          },
+          "registeredAmount": {
+            "type": "number",
+            "description": "hy-AM: Հաշվ.գումար | en-US: Registered amount | ru-RU: Сумма бух.",
+            "format": "double"
+          },
+          "price": {
+            "type": "number",
+            "description": "hy-AM: Գին | en-US: Price | ru-RU: Цена",
+            "format": "double",
+            "nullable": true
+          },
+          "actualAmount": {
+            "type": "number",
+            "description": "hy-AM: Փաստ.գումար | en-US: Actual amount | ru-RU: Сумма факт.",
+            "format": "double",
+            "nullable": true
+          },
+          "salePrice": {
+            "type": "number",
+            "description": "hy-AM: Վաճառքի գին | en-US: Sale price | ru-RU: Цена продажи",
+            "format": "double",
+            "nullable": true
+          },
+          "saleAmount": {
+            "type": "number",
+            "description": "hy-AM: Վաճառքի գումար | en-US: Sale amount | ru-RU: Сумма продажи",
+            "format": "double",
+            "nullable": true
+          },
+          "rowNumber": {
+            "type": "integer",
+            "description": "hy-AM: Տողի N | en-US: line N | ru-RU: N строки",
             "format": "int32"
           }
         },
@@ -11033,14 +11781,12 @@
           "currencyExchangeRate": {
             "type": "number",
             "description": "hy-AM: Արտարժույթի փոխարժեք | en-US: Currency exchange rate | ru-RU: Курс валюты",
-            "format": "double",
-            "nullable": true
+            "format": "double"
           },
           "currencyExchangeBase": {
             "type": "number",
             "description": "hy-AM: Արտարժույթի փոխարժեք | en-US: Currency exchange rate | ru-RU: Курс валюты",
-            "format": "double",
-            "nullable": true
+            "format": "double"
           },
           "vatCalculationType": {
             "type": "string",
@@ -11182,14 +11928,12 @@
           "currencyExchangeRate": {
             "type": "number",
             "description": "hy-AM: Արտարժույթի փոխարժեք | en-US: Currency exchange rate | ru-RU: Курс валюты",
-            "format": "double",
-            "nullable": true
+            "format": "double"
           },
           "currencyExchangeBase": {
             "type": "number",
             "description": "hy-AM: Արտարժույթի փոխարժեք | en-US: Currency exchange rate | ru-RU: Курс валюты",
-            "format": "double",
-            "nullable": true
+            "format": "double"
           },
           "vatCalculationType": {
             "type": "string",
@@ -11823,7 +12567,13 @@
       "name": "ProductsGroups"
     },
     {
+      "name": "ProductsKitting"
+    },
+    {
       "name": "ProductsMovement"
+    },
+    {
+      "name": "ProductsStockTaking"
     },
     {
       "name": "Reports"
